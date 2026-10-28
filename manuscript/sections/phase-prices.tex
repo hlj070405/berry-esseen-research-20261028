@@ -1,0 +1,152 @@
+\section{Phase interpolation and complementary prices}\label{pp:section}
+
+For fixed actual parameters, let
+\begin{equation}\label{pp:actual-residual}
+ R(t)=\PP\{S_n\le k+t\}
+ -\Phi\left(\frac{k+t-np}{\sqrt{npq+\lambda}}\right)-c_n\rho,
+ \qquad \lambda=ns,
+\end{equation}
+where $0<c_n\le\CE/\sqrt n$. In particular $\rho$ and
+$npq+\lambda$ remain fixed when $t$ changes.
+The prices of Section~\ref{mc:section} majorize this residual;
+the actual CDF itself need not be differentiable.
+
+\begin{lemma}[Semiconvex interpolation]\label{pp:chord}
+Let $E$ be continuous on $[a,b]$ and suppose
+$E(t)+Mt^2/2$ is convex there, with $M\ge0$.
+If $E(a)\le L$ and $E(b)\le U$, then
+\begin{equation}\label{pp:chord-bound}
+ E(a+y)\le L+\frac{U-L}{b-a}y
+                   +\frac M2y(b-a-y),\qquad 0\le y\le b-a.
+\end{equation}
+The same conclusion holds if $E'$ is absolutely continuous and
+$E''\ge-M$ almost everywhere, or if $E''\ge-M$ in the sense of
+distributions. A supremum of functions sharing this semiconvexity
+constant remains semiconvex wherever finite.
+\end{lemma}
+\begin{proof}
+Apply the convex chord inequality to $E(t)+Mt^2/2$ and subtract
+the quadratic. Each of the derivative conditions implies that
+this function is convex. Supremum preserves convexity.
+\end{proof}
+
+For example, keep a fixed comparison law $Z$ and a legal slope
+$\eta(p)$, and put
+\[
+ E(t)=F_k+\eta(p)\{t+Q_Z(t+\pi_k/\eta(p))\}
+ -\Phi\left(\frac{k+t-np}{\sqrt{npq+\lambda}}\right)-c_n\rho.
+\]
+The reference term is convex in phase. The Gaussian contribution
+has second derivative
+\[
+ \frac{(k+t-np)\phi((k+t-np)/\sqrt A)}{A^{3/2}},
+ \qquad A=npq+\lambda.
+\]
+Consequently, throughout $p\in[p_l,p_u]\subset(0,1/2)$,
+$\lambda\ge\lambda_l$ and $t\in[a,b]$, a valid constant is
+\begin{equation}\label{pp:gaussian-curvature}
+ M=\frac{(np_u-k-a)_+\phi(0)}
+          {\{np_l(1-p_l)+\lambda_l\}^{3/2}}.
+\end{equation}
+In particular $M=0$ for phases $a\ge np_u-k$.
+The same argument applies to a fixed clipped-square price,
+whose positive-part-square term is convex in phase.
+Uniform bounds on the two phase faces therefore control the whole
+phase interval. Different valid lower bounds on the same actual
+$\rho$ may be used to estimate those two faces.
+
+Semiconvexity also permits an atom to cross an activation threshold
+inside a probability interval. If $x$ is $C^2$ on that interval,
+then $(x_+)^2$ is $C^1$, its derivative is absolutely continuous,
+and almost everywhere
+\begin{equation}\label{pp:activation-curvature}
+ ((x_+)^2)'=2x_+x',\qquad
+ ((x_+)^2)''=2\mathbf1_{\{x>0\}}(x')^2+2x_+x''.
+\end{equation}
+Thus interval bounds with $x_+\in[0,(\sup x)_+]$ and the indicator
+in $[0,1]$ give a valid curvature bound across zero.
+There is no singular derivative at the crossing. In the rest of this
+section $Z_b(V)$ has $n$ independent summands, so the number $m$
+in \eqref{mc:bentkus} is $n$. For instance, if
+only the lowest atom of $Z_b(V)$ can lie below $y$, the exact identity
+\begin{equation}\label{pp:one-clip}
+ \E(Z_b(V)-y)_+^2
+ =V+y^2-\left(1+\frac{V}{nb^2}\right)^{-n}(V/b+y)_+^2
+\end{equation}
+may be differentiated in this way. The condition that every other
+atom is at least $y$ is still required.
+For $n>1$ this identity also gives a uniform lower variance derivative
+when $y\le y_{\max}<b$. Put
+\[
+ z_* =\frac{2n-\sqrt{2n(n-1)}}{n+1},\qquad
+ m_* =1-\left(\frac{n-z_*}{n-y_{\max}/b}\right)^{n-1}
+                         (2z_*-z_*^2).
+\]
+Then $K_V(V,y)\ge m_*$ throughout any region where at most the
+lowest atom is clipped. If none is clipped, $K_V=1$.
+Otherwise, with $r=1+V/(nb^2)$ and
+$z=(V/b+y)/(br)\in[0,1]$, differentiation gives
+\[
+ K_V=1-\left(\frac{n-z}{n-y/b}\right)^{n-1}(2z-z^2).
+\]
+The denominator is positive, and the subtracted expression increases
+with $y$. Its derivative in
+$z$ has the sign of $2n-4nz+(n+1)z^2$, whose unique zero in
+$[0,1]$ is $z_*$. This proves the bound, including activation
+boundaries by continuity.
+
+\begin{lemma}[A finite lower envelope of phase prices]\label{pp:mixture}
+Suppose $R(t)\le E_i(t)$ for $1\le i\le r$, and that on $[0,H_i]$
+the function $E_i$ is semiconvex with constant $M_i$ and has
+endpoint upper bounds $L_i,U_i$. Choose
+$M\ge\max_i M_i$ and $0<H\le\min_i H_i$, and write
+\[
+ A_i=L_i,\qquad B_i=\frac{U_i-L_i}{H_i}+\frac{MH_i}{2},
+ \qquad q_i(t)=A_i+B_it-\frac M2t^2.
+\]
+Then, throughout $[0,H]$,
+\begin{equation}\label{pp:mixed-bound}
+ R(t)\le q(t):=\min_i(A_i+B_it)-\frac M2t^2.
+\end{equation}
+The maximum of $q$ is attained among $0,H$, the vertices $B_i/M$
+when $M>0$, and the intersections $(A_j-A_i)/(B_i-B_j)$ when
+$B_i\ne B_j$, retaining only points in $[0,H]$.
+\end{lemma}
+\begin{proof}
+Lemma~\ref{pp:chord} gives $E_i\le q_i$ on its own interval.
+Their minimum therefore majorizes the same actual residual. Between
+consecutive intersections of the affine parts, $q$ agrees with one
+concave quadratic. Its maximum is at a vertex or a segment endpoint.
+\end{proof}
+
+No mixing parameter is needed. The old fixed-mixture certificates
+remain valid because, for every fixed probability vector $(\theta_i)$,
+\[
+ \min_iq_i(t)\le\sum_i\theta_iq_i(t).
+\]
+Thus any certified upper bound for such a mixture also bounds the
+lower envelope. With rational face bounds and curvature, every point
+in the finite candidate set and every value evaluated there is rational.
+An estimate using a coefficient $c_i\le c_n$ already majorizes
+the residual with coefficient $c_n$, since $\rho\ge0$.
+Thus the directed lower coefficients in the finite calculation need
+no alignment cost when the target is $c_n=\CE/\sqrt n$.
+
+\begin{lemma}[A short CDF bridge]\label{pp:cdf-bridge}
+For the same actual law in \eqref{pp:actual-residual}, suppose
+$npq+\lambda\ge A_*>0$ and $R(b)\le U$. Then, for every $t\le b$,
+\begin{equation}\label{pp:bridge-bound}
+ R(t)\le U+\frac{\phi(0)}{\sqrt{A_*}}(b-t).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The actual closed CDF is nondecreasing. Hence
+$R(t)\le R(b)+\Phi((k+b-np)/\sqrt{npq+\lambda})
+-\Phi((k+t-np)/\sqrt{npq+\lambda})$.
+Bound the last difference by the maximum normal density.
+\end{proof}
+
+Only the price at $b$ is needed in this bridge. Its comparison
+law, activation conditions or curvature estimates need not extend
+to the smaller phases. The fixed actual moment and variance, and
+monotonicity of the actual CDF, suffice.

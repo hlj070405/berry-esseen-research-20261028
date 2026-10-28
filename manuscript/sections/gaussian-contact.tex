@@ -1,0 +1,206 @@
+\section{Gaussian contact as a Peano remainder}\label{gc:section}
+
+The initial support bounds admit a single analytic proof. The key is to
+recognize the contact kernel as a Gaussian Hermite remainder, and then
+apply the classical Peano-kernel representation. This replaces the
+initial actual-index support calculations and supplies the radial
+contractions used by the tail route. Remaining actual-index refinements
+and coordinate-strip exclusions retain their own proofs.
+
+Let $Z$ be standard normal. For $g\in C^3(\mathbb R)$ with bounded
+third derivative, put
+\[
+ L_xg=g(x)-\E g(Z)-x\E g'(Z)-\frac{x^2-1}{2}\E g''(Z).
+\]
+These expectations exist because $g,g',g''$ grow at most cubically,
+quadratically and linearly.
+
+\begin{lemma}[A uniform Gaussian Peano kernel]\label{gc:kernel}
+For $|x|\ge2$,
+\begin{equation}\label{gc:kernel-bound}
+ |L_xg|\le\|g'''\|_\infty
+       \left\{\frac{|x|^3-3|x|}{6}+\frac34\right\}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Taylor's integral remainder anchored at zero, followed by Fubini, gives
+\begin{equation}\label{gc:peano}
+ \begin{aligned}
+ L_xg&=\int_{\mathbb R}g'''(t)K_x(t)\,dt,\\
+ K_x(t)&=\frac{(x-t)^2}{2}
+       \{\mathbf1_{\{t<x\}}-\overline\Phi(t)\}+(t/2-x)\phi(t).
+ \end{aligned}
+\end{equation}
+Indeed $L_x$ annihilates all quadratic polynomials. Applying it to
+$(u-t)_+^2/2$, and using the first two truncated Gaussian moments,
+gives exactly this kernel. The anchored remainders are bounded by
+Gaussian absolute moments of orders at most three, justifying the
+interchanges. The displayed kernel has integrable Gaussian tails.
+Testing $g(u)=u^3/6$ and reflecting give
+\[
+ \int K_x(t)\,dt=\frac{x^3-3x}{6},\qquad
+ K_{-x}(-t)=-K_x(t)\quad\text{almost everywhere}.
+\]
+
+Take $x\ge2$. We first show $K_x(t)\ge0$ for $t\le x/2$.
+For $t=-y\le0$, this is the Mills inequality
+\[
+ m(y):=\frac{\overline\Phi(y)}{\phi(y)}
+ \ge\frac{2x+y}{(x+y)^2}.
+\]
+Cauchy--Schwarz for the integrals of $1,u,u^2$ against
+$e^{-yu-u^2/2}du$ gives $m^2+ym\ge1$. Hence
+\[
+ m(y)\ge\frac{\sqrt{y^2+4}-y}{2}
+       \ge\frac{y+4}{(y+2)^2}
+       \ge\frac{y+2x}{(y+x)^2}.
+\]
+The middle comparison follows by squaring positive quantities; the
+last follows by differentiation in $x\ge2$.
+
+For $0\le t\le1$, $K_x(t)$ increases in $x\ge2$, since
+$\partial_xK_x=(x-t)\Phi(t)-\phi(t)>0$. The elementary bounds
+$39/100<\phi(0)<2/5$, $e^{-u}\ge1-u$ and
+$e^{-u}\le1-u+u^2/2$ give $K_2(t)\ge P(t)$, where
+\[
+ P(t)=\frac15-\frac t{50}-\frac{13t^2}{100}
+       -\frac{7t^3}{200}+\frac{3t^4}{100}-\frac{3t^5}{400}.
+\]
+On $[0,1]$, $P'(t)\le-49t/200-1/50<0$, so
+$P(t)\ge P(1)=3/80>0$.
+For $1\le t\le x/2$ the same monotonicity in $x$ gives
+\[
+ K_x(t)\ge K_{2t}(t)
+       =\frac t2\{t\Phi(t)-3\phi(t)\}>0.
+\]
+The expression in braces increases for $t\ge1$; at $1$ it is
+positive because $\Phi(1)\ge33/40$ and $\phi(1)<49/200$.
+
+Writing $a=x/2$, we can now bound the negative part by
+\begin{align}\label{gc:negative-part}
+ \int K_x^-&\le\int_a^{2x}(x-t/2)\phi(t)\,dt
+       +\frac12\int_x^\infty(t-x)^2\overline\Phi(t)\,dt\notag\\
+ &\le\frac32\phi(a)+\frac12\phi(2x)+\frac{\phi(x)}{x^4}
+ <\frac{5943}{16000}<\frac38.
+\end{align}
+The first integral uses $\overline\Phi(a)\le\phi(a)/a$.
+The second is $\E(Z-x)_+^3/6$, at most $\phi(x)/x^4$ by
+$\phi(x+u)\le\phi(x)e^{-xu}$. The last rational bound uses
+$\phi(1)<49/200$, $\phi(2)<11/200$ and $\phi(4)<1/1000$.
+Each follows from a positive partial sum of the exponential series.
+Thus $\|K_x\|_1=\int K_x+2\int K_x^-$ proves
+\eqref{gc:kernel-bound}.
+
+\end{proof}
+
+The signed moment needed for contact also has a support-free bound.
+For $a=\E|X|>0$, $\beta=\E[X|X|]$ and $\rho=\E|X|^3$,
+\begin{equation}\label{ut:initial-signed-moment}
+ a\rho\ge1+\beta^2,\qquad a^2+\beta^2\le1,\qquad
+ |\beta|\le\sqrt{\frac{\rho\sqrt{\rho^2+8}-\rho^2-2}{2}}.
+\end{equation}
+For the first inequality, apply Bessel's inequality to $|X|^{3/2}$
+and the orthogonal functions $|X|^{1/2}$ and
+$\operatorname{sgn}(X)|X|^{1/2}$. Their squared norms are $a$ and
+their inner products with $|X|^{3/2}$ are $1,\beta$.
+Cauchy--Schwarz for $X$ and $|X|-a$ proves the second inequality;
+eliminating $a$ proves the last.
+
+\begin{proposition}[Initial support without index subdivisions]\label{gc:initial-support}
+Let $(P,H)$ be a standardized positive closed global maximizing pair
+at index $n\ge25$, with $C=C_n\ge\CE$ and $C_{n-1}\le C$.
+Then
+\[
+ \rho\le11/10\ \Longrightarrow\ \operatorname{supp}P\subset(-12/5,12/5),
+\]
+\[
+ \rho\le6/5\ \Longrightarrow\ \operatorname{supp}P\subset(-13/5,13/5).
+\]
+No higher moment or defect bound is required.
+\end{proposition}
+\begin{proof}
+For $g(u)=n^{3/2}\Phi((H-u)/\sqrt{n-1})$, Gaussian convolution gives
+\begin{align*}
+ \E g(Z)&=n^{3/2}\Phi(H/\sqrt n),\\
+ \E g'(Z)&=-n\phi(H/\sqrt n),\qquad
+ \E g''(Z)=-H\phi(H/\sqrt n).
+\end{align*}
+Thus $L_xg=\mathcal H_n(H,x)$ exactly. Also
+$\|g'''\|_\infty=(n/(n-1))^{3/2}\phi(0)<213/500$ for $n\ge25$.
+For $s_n=\sqrt{n/(n-1)}$ and $e_n=n(s_n-1)-1/2$,
+\begin{equation}\label{gc:scale}
+ 0<e_n<\frac{2}{5n}\le\frac2{125}.
+\end{equation}
+Indeed, for $z=1/n\le1/25$,
+\[
+ (1-z)(1+z/2+2z^2/5)^2-1
+ =z^2\{1/20-13z/20-6z^2/25-4z^3/25\}>0.
+\]
+The bracket decreases and is positive at $1/25$; omitting the
+quadratic correction proves the lower bound.
+
+By \eqref{ut:initial-signed-moment}, $\rho\le11/10$ gives
+$|\beta|<127/500$, and $\rho\le6/5$ gives $|\beta|<44/125$.
+For either $(\rho_u,b,R)=(11/10,127/500,12/5)$ or
+$(6/5,44/125,13/5)$, put
+\begin{align*}
+ Q(r)&=-r^3+3\rho_ur^2/2+3br+2\rho_u/125,\\
+ V(r)&=\frac{213}{500}\{(r^3-3r)/6+3/4\}
+                                      +\frac{819}{2000}Q(r).
+\end{align*}
+At $r=R$, $Q<0$, $Q'<-8$ and $Q''<-11$; since $Q'''=-6$,
+the multiplier of $C$ remains negative on the whole ray.
+The contact inequality \eqref{loc:support-test} therefore has
+right side at most $V(r)$ for $|x|=r\ge R$, using
+$C\ge\CE>819/2000$ in the negative term. Direct substitution gives
+\[
+ V(12/5)=-278919/1250000,\qquad V(13/5)=-85993/1250000.
+\]
+In both rows $V'(R)<-5/2$, $V''(R)<-7/2$ and $V'''<-2$.
+Hence $V<0$ on both entire rays, contradicting contact at any
+support point there, including atoms and accumulation points.
+\end{proof}
+
+\begin{corollary}[All-index radial support at zero predecessor loss]\label{gc:tail-support}
+Let $(P,H)$ be a standardized positive closed global maximizing pair
+with $n\ge47$, $C=C_n\ge\CE$ and $C_{n-1}\le C$.
+For each row below, the already established moment bounds
+$\rho\le\rho_u$, $|\beta|\le b$ imply
+$\operatorname{supp}P\subset(-R,R)$:
+\[
+\begin{array}{c|c|c|c}
+ \rho_u&b&R&\text{contact upper bound at }R\\\hline
+ 7361/4000&643/1000&96/25&-1/20\\
+ 139/100&43/100&3&-23/100\\
+ 12563/10000&1963/5000&27/10&-9/500\\
+ 603687/500000&4014/15625&5/2&-49/500
+\end{array}
+\]
+\end{corollary}
+\begin{proof}
+The predecessor allowance is zero. The same Gaussian function has
+$\|g'''\|_\infty<207/500$ and $e_n<2/235$ for $n\ge47$.
+For each row put
+\begin{align*}
+ Q(r)&=-r^3+3\rho_ur^2/2+3br+2\rho_u/235,\\
+ V(r)&=\frac{207}{500}\{(r^3-3r)/6+3/4\}
+       +\frac{819}{2000}Q(r).
+\end{align*}
+Direct substitution gives the strict upper bounds in the table.
+In all four rows $Q(R)<0$, $Q'(R)<-8$, $Q''(R)<-11$,
+$V'(R)<-5/2$, $V''(R)<-7/2$ and $V'''<-2$.
+The whole-ray argument in Proposition~\ref{gc:initial-support}
+therefore applies unchanged.
+\end{proof}
+
+These moment bounds are used in predecessor order. The global envelope
+supplies the first row. The original central preparation, performed
+at radius $3.84$, supplies the last row for all nine surviving central
+intervals. The complementary acquisition at $3.84$ supplies the second
+row; after contraction to $3$, its left-input and signed-resource
+calculations supply the third. Thus no contraction uses a moment
+bound obtained from its own output radius. The later coordinate-strip
+exclusions retain their original bounded-threshold proofs.
+The unsigned $\beta$ caps in these resource rows follow from
+$\beta=(1-\theta)(1-2p)+\theta_+-\theta_-$, hence
+$|\beta|\le(1-\theta)|1-2p|+\theta$; no sign of $\beta$ is assumed.

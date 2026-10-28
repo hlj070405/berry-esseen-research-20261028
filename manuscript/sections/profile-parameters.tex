@@ -1,0 +1,64 @@
+\section{The analytic profile parameters}\label{app:parameters}
+The table gives the original joint inward intercept $\Delta$ and
+noise intercept $\Lambda$, together with the improved necessary
+actual-noise cap $L_*$, for the $34$ middle-moment profiles.
+All entries are exact terminating decimals. The simultaneous
+signed coefficients, outward support caps and contact domains
+are supplied as exact rational numbers in the accompanying
+\texttt{profile-parameters.json}; they are acquired conditions
+on an extremizer, not independent free parameters.
+\begingroup\small
+\begin{longtable}{ccrrr}\toprule
+$n$ & interval & $\Delta$ & $\Lambda$ & $L_*$\\\midrule\endhead
+$26$ & $I_{34}$ & 0.07393 & 0.448664 & 0.26204965\\
+$26$ & $I_{35}$ & 0.078697 & 0.469161 & 0.27350801\\
+$26$ & $I_{36}$ & 0.08286 & 0.484491 & 0.28185367\\
+$26$ & $I_{37}$ & 0.086366 & 0.494588 & 0.29863673\\
+$26$ & $I_{38}$ & 0.083933 & 0.467679 & 0.28297254\\
+$26$ & $I_{39}$ & 0.077665 & 0.420047 & 0.2556063\\
+\addlinespace
+$27$ & $I_{34}$ & 0.071192 & 0.448664 & 0.25573091\\
+$27$ & $I_{35}$ & 0.075782 & 0.469161 & 0.26738858\\
+$27$ & $I_{36}$ & 0.079791 & 0.484491 & 0.2759327\\
+$27$ & $I_{37}$ & 0.083167 & 0.494588 & 0.29258472\\
+$27$ & $I_{38}$ & 0.080824 & 0.467679 & 0.27794155\\
+$27$ & $I_{39}$ & 0.074788 & 0.420047 & 0.25182702\\
+$27$ & $I_{40}$ & 0.06347 & 0.34526 & 0.20897126\\
+\addlinespace
+$28$ & $I_{34}$ & 0.068649 & 0.448664 & 0.25004307\\
+$28$ & $I_{35}$ & 0.073076 & 0.469161 & 0.26192751\\
+$28$ & $I_{36}$ & 0.076941 & 0.484491 & 0.27068902\\
+$28$ & $I_{37}$ & 0.080197 & 0.494588 & 0.28726658\\
+$28$ & $I_{38}$ & 0.077938 & 0.467679 & 0.27351126\\
+$28$ & $I_{39}$ & 0.072117 & 0.420047 & 0.24847935\\
+$28$ & $I_{40}$ & 0.061204 & 0.34526 & 0.20687478\\
+\addlinespace
+$29$ & $I_{34}$ & 0.066282 & 0.448664 & 0.24487077\\
+$29$ & $I_{35}$ & 0.070556 & 0.469161 & 0.25700268\\
+$29$ & $I_{36}$ & 0.074288 & 0.484491 & 0.26599549\\
+$29$ & $I_{37}$ & 0.077432 & 0.494588 & 0.28254209\\
+$29$ & $I_{38}$ & 0.07525 & 0.467679 & 0.26957152\\
+$29$ & $I_{39}$ & 0.06963 & 0.420047 & 0.24548928\\
+$29$ & $I_{40}$ & 0.059093 & 0.34526 & 0.20498657\\
+\addlinespace
+$30$ & $I_{34}$ & 0.064073 & 0.448664 & 0.24012598\\
+$30$ & $I_{35}$ & 0.068204 & 0.469161 & 0.25252129\\
+$30$ & $I_{36}$ & 0.071812 & 0.484491 & 0.26175592\\
+$30$ & $I_{37}$ & 0.074851 & 0.494588 & 0.27830578\\
+$30$ & $I_{38}$ & 0.072742 & 0.467679 & 0.26603838\\
+$30$ & $I_{39}$ & 0.067309 & 0.420047 & 0.24279925\\
+$30$ & $I_{40}$ & 0.057124 & 0.34526 & 0.20327613\\
+\bottomrule\end{longtable}\endgroup
+The analytic programs use the Python 3 standard library and retain
+exact rational arithmetic. In the companion directory
+\path{finite-steps/source/analytic}, the seven actual-$30$
+profiles can be recomputed with
+\par\noindent\texttt{python -B}\ \path{replay_n30_analytic_panels_20261027.py}
+\ \texttt{--output fresh.json}\par
+An explicit \texttt{--output} argument selects a fresh filename;
+the program refuses to overwrite an existing result.
+The option \texttt{--indices 37} recomputes just that complete
+profile, including its contact domain and the CDF bridge.
+The finite-index mathematical companion states the count and phase
+composition for every profile; the executable calculation supplies
+the enclosed faces, derivatives and strict margins used there.

@@ -1,0 +1,195 @@
+\section{The seven lower-moment comparison plans}\label{app:finite-details}
+
+This appendix gives the complete plans underlying Proposition~\ref{fc:lowprofiles}.
+All use the common comparison, curvature and allocation rules of the main text.
+
+\begin{lemma}[One lower-moment profile]\label{fc:low40}
+Under the retained actual-$26$ acquisition and the global predecessor
+$C_{25}\le\CE$, the entire original profile
+$p\in[.40,.41]$, $1\le\rho\le11/10$ has a strictly negative
+conditional count residual. A uniform upper bound is
+$-5610547/10^{12}$.
+\end{lemma}
+\begin{proof}
+The original inward and noise intercepts are
+$\Delta=.057809$ and $\Lambda=.301161$.
+The necessary signed resource plane improves the actual-noise cap
+to $L_*=.17805629$. The original contact inequalities exclude
+$25$ of the $27$ count roots, leaving only $10$ and $11$.
+
+Current-count comparisons cover count $10$ on $[-1/2,0]$ with
+slope multiplier $1$, and count $11$ on its two half intervals
+with multipliers $3/2$ and $1$. Their upper bounds are respectively
+$-.000005610547$, $-.000934723659$, and $-.003337615615$.
+
+For the positive half of count $10$, retain the seven noise
+intervals and four allocation intervals above.
+On the first noise interval join the current price to the
+reflected-square price at $t=1/32$; on the second join at
+$1/8$; on intervals $3$--$7$ join at $1/4$.
+Each reflected-square price uses reference count $11$, width
+$h=7/8$ and Corollary~\ref{ce:allocation-interval}.
+Here $11>26p$, $p<1/2$, and the positive affine inward cap
+decreases in allocation. The moment floor therefore increases
+in allocation. All next-atom, legal-width and same-noise derivative
+gates hold on their whole stated domains. In the first interval
+$y_{\max}=3/32>0$ is allowed by the extended variance-derivative
+bound in Section~\ref{pp:section}.
+
+Every current prefix is at most $-.000025632850$;
+every clipped suffix is at most $-.001597137326$.
+Probability and phase chords include every closed boundary.
+The two pieces in each noise/allocation region meet at the stated
+phase, and the full noise union is $[0,L_*]$.
+Together with the three half-interval comparisons and the contact
+exclusions this covers the whole original profile. The least strict
+bound is $-.000005610547$.
+\end{proof}
+
+This replaces a conditional count comparison. The original support,
+floor and acquisition proofs remain its inputs; replaying the pure
+physical acquisition formulas does not establish those inputs anew.
+
+\begin{lemma}[An adjacent lower-moment profile]\label{fc:low39}
+Under the retained actual-$26$ acquisition and $C_{25}\le\CE$,
+the entire original profile $p\in[.39,.40]$, $1\le\rho\le11/10$
+has conditional count residual at most $-98710877/10^{12}$.
+\end{lemma}
+\begin{proof}
+The original intercepts are $\Delta=.05769$, $\Lambda=.30708$;
+the same signed resource argument gives $\lambda\le .17375152$.
+Contact excludes $24$ count roots. Only $9,10,11$ remain, and
+the count-$9$ contact lower phase is greater than $1/4$.
+Count $11$ has the two current-count half-interval comparisons
+with slope multipliers $3/2,1$.
+
+For the lower counts one reference law covers both sides of a
+nearest-count boundary. Use source count $9$, reference count $10$
+and width $7/8$. On noise intervals $1,2$ its auxiliary phase runs
+through $[1/4,7/8]$, and on intervals $3$--$7$ through $[1/4,3/4]$.
+The exact threshold identity
+\[
+ 9+(1+t)=10+t
+\]
+therefore covers count $9$ and the lower part of count $10$ by
+one continuous price in each noise group. Lemma~\ref{mc:staircase}
+holds for every real phase, so an auxiliary phase greater than
+$1/2$ is permitted. Here $10<26p$ throughout the probability
+interval, and Corollary~\ref{ce:allocation-interval} selects the
+lower allocation endpoint for both variance and moment cost.
+
+The remaining count-$10$ negative phases are $[-1/8,0]$ on
+the first two noise intervals and $[-1/4,0]$ on the others;
+current-count prices cover them. Its positive half uses the
+same $1/32,1/8,1/4$ handoffs as in Lemma~\ref{fc:low40}, now
+with this profile's own resources. Reference count $11>26p$
+selects the upper allocation endpoint for variance and the lower
+one for moment cost. All legal-width, next-atom, noise-derivative
+and continuous probability/phase gates are strict on their stated
+domains. The whole closed unions retain every original count,
+noise and allocation region, with largest upper bound
+$-.000098710877$.
+\end{proof}
+
+\begin{lemma}[Reversed signed noise prices]\label{fc:low41}
+Under the retained actual-$26$ acquisition and $C_{25}\le\CE$,
+the entire original profile $p\in[.41,.42]$, $1\le\rho\le11/10$
+has conditional count residual at most $-24705293/(5\cdot10^{11})$.
+\end{lemma}
+\begin{proof}
+The original intercepts are $\Delta=.054236$, $\Lambda=.276951$.
+Here $h_+-h_-<0$. The positive endpoint coefficients in
+\eqref{loc:two-endpoint-noise} still give a valid finite resource
+iteration and $\lambda\le L_*=.162619$, retaining the original
+joint intercept $\Lambda$. For the actual moment floor,
+\eqref{ce:signed-allocation-gate} is greater than $.473372164977$;
+both negative terms from the increasing inward cap are included.
+Thus $G$ increases with allocation on the whole domain.
+
+For current-count prices, the necessary weaker plane
+\[
+ g(a_0+a_1)+\lambda h_-
+ \le\mathfrak R+L_*(h_--h_+)_+
+\]
+supplies an allocation-independent inward cap. Its intercept is
+smaller than the original $\Delta$, and its noise slope is larger
+than $\Delta/\Lambda$, as required by the fixed-reference estimate.
+
+Contact excludes $24$ count roots and leaves $10,11,12$.
+Count $10$ starts above $-1/8$, and count $12$ ends below $-1/4$.
+Current-count prefixes cover count $10$ through $1/32,1/8,1/4$
+on the first, second and remaining noise intervals.
+One source-$10$, reference-$11$ square then covers both its
+positive suffix and the negative prefix of count $11$.
+On noise intervals $1,2$ the width is $7/8$ and its auxiliary
+phase ends at $7/8$. On intervals $3$--$6$ use width $9/8$
+with phase $[1/4,7/8]$. On the last interval use width $7/8$
+and phase $[1/4,3/4]$. The identity $10+(1+t)=11+t$
+gives the original count-$11$ phases exactly.
+
+Current-count prices complete count $11$ through zero and on its
+positive half; count $12$ uses slope multiplier $3/2$ on
+$[-1/2,-1/4]$. The original seven noise intervals and four
+allocation intervals are unchanged. All width, next-atom,
+allocation and noise gates, followed by the probability/phase
+chords, give a strict bound on the full closed unions.
+Their largest upper bound is $-.000049410586$.
+\end{proof}
+
+\begin{corollary}[A complete lower-moment strip]\label{fc:p41-strip}\label{fc:n27-low41}\label{fc:n28-low41}\label{fc:n29-low41}\label{fc:n30-low41}
+At each integer $n=26,\ldots,30$, under the retained actual-$n$ acquisition
+and $C_{n-1}\le\CE$, the original profile $p\in[.41,.42]$,
+$1\le\rho\le11/10$ has the following conditional count bounds.
+The original noise intercept is $\Lambda=.276951$ in all rows.
+The five residual bounds are the corresponding rows of
+Proposition~\ref{fc:lowprofiles}.
+
+\end{corollary}
+\begin{proof}
+Use the same comparison rules with each integer's own masses,
+variance and moment normalization. Lemma~\ref{fc:low41} gives $26$.
+At $27$, contact excludes
+$25$ of the $28$ roots and leaves $10,11,12$.
+Reference count $11<27p$ uses lower allocation
+endpoints for variance and cost, while $12>27p$ uses the two
+allocation corners. The signed moment derivative gate is positive.
+On the lowest noise interval the source-$10$ square
+runs through auxiliary phase $15/16$, which is exactly count-$11$
+phase $-1/16$. The current price on $[-1/16,1/32]$ and its
+clipped-square continuation then close the middle count.
+
+At $28$, the remaining counts are $11$ and $12$.
+Their outer phase intervals are $[-17/64,1/2]$ and $[-1/2,15/32]$.
+The same fixed current
+references for count $11$ use the phase faces $-1/8$ and $0$,
+followed by the square continuations. Count $12$ joins current
+slopes $3/2$ and $1$ at phase $-1/32$. Reference count $12>28p$
+has fixed variance direction throughout the probability interval.
+
+At $29$, contact excludes $27$ roots and leaves $11,12,13$.
+Reference count $12$ crosses $29p$ at $p=12/29$ inside the
+original probability interval. Use both variance-endpoint branches
+in \eqref{ce:variance-endpoint-max}, with the same actual noise
+and the lower-allocation moment cost in both. Each branch has
+its own whole-interval noise and curvature checks before their
+maximum is bounded. The lowest-count square starts at phase
+$1/8$, below the contact lower bound $.15468890249$; on the
+sixth noise interval, auxiliary phase $13/16$ meets original
+count-$12$ phase $-3/16$.
+
+At $30$, contact leaves only $12,13$, with valid outer phase
+intervals $[-7/16,1/2]$ and $[-1/2,5/16]$. The negative part
+of count $12$ uses a lower-allocation square and current prices;
+on the lowest noise interval the same current reference is
+interpolated through one extra phase face, $-1/8$.
+Its positive part hands off at $1/128$ with width $2/3$ on
+that interval. Here $y_{\max}=125/384>0$ and the one-clip
+and variance-derivative conditions hold on the whole region.
+Higher-noise square prices use width $5/4$ where specified
+by the plan, and the shifted-count joins close count $13$.
+
+All these explicit finite plans retain the seven original noise and
+four allocation intervals. Their remaining pieces use the current
+or square envelopes, and their closed unions cover every retained
+contact interval. Their largest upper bounds are those in the table.
+\end{proof}

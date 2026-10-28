@@ -1,0 +1,173 @@
+\documentclass[aop,preprint]{imsart}
+\RequirePackage{amsthm,amsmath,amsfonts,amssymb}
+\RequirePackage[numbers]{natbib}
+\usepackage{mathtools,booktabs,longtable}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\startlocaldefs
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\CE}{C_{\mathrm E}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\pos}[1]{(#1)_+}
+\numberwithin{equation}{section}
+\endlocaldefs
+\begin{document}
+\hypersetup{pdfsubject={Working draft for mathematical review}}
+\begin{frontmatter}
+\pdfsubject{Working draft for mathematical review}
+\title{Completing the iid Berry--Esseen inequality at Esseen's constant}
+\runtitle{The iid Berry--Esseen inequality}
+\begin{aug}
+\author[A]{\fnms{Linjie}~\snm{Huang}\ead[label=e1]{2025122310@jou.edu.cn}}
+\address[A]{Jiangsu Ocean University\printead[presep={,\ }]{e1}}
+\end{aug}
+\begin{abstract}
+We give a computer-assisted completion of the iid Berry--Esseen inequality
+at Esseen's constant for arbitrary standardized real distributions with
+finite third absolute moment and every positive sample size. The
+finite-index argument uses a common coupling of conditional residuals:
+all incoming binomial count layers are charged against the loss at the
+current layer. One-sided second-moment comparison bounds the resulting
+test-function expectations by explicit finite reference laws, while the
+third-moment cost remains that of the original distribution. The noise,
+inward support and moment cost are constrained by one shared resource
+budget. Convexity, lower curvature bounds and finite lower envelopes of
+valid prices extend finite calculations over continuous parameter domains,
+including atom activations and closed boundaries. These comparisons
+complete the five actual-index implications from 26 through 30.
+Combined in predecessor order with the supporting low-index, bridge
+and local arguments from the moment-defect framework of
+Rodziewicz and Ko\l{}odziejek, they cover all sample sizes.
+A Gaussian Peano remainder supplies the initial support radii without
+index subdivisions. Using the existing heat-smoothing estimate, we start the uniform local induction
+at 47 from two sharp predecessors. We state
+the exact global inputs and distinguish their continuous proofs from
+the rational computations certifying the remaining regions.
+\end{abstract}
+\begin{keyword}[class=MSC]
+\kwdgroup[type=primary]{\kwd{60F05}}
+\kwdgroup[type=secondary]{\kwd{60E15}}
+\end{keyword}
+\begin{keyword}
+\kwd{Berry--Esseen inequality}
+\kwd{normal approximation}
+\kwd{moment comparison}
+\kwd{computer-assisted proof}
+\end{keyword}
+\end{frontmatter}
+\noindent\textit{Working draft, 28 October 2026.}
+
+\section{The problem and the proof architecture}
+Let \(X_1,X_2,\ldots\) be iid real random variables with
+\(\E X_1=0\), \(\E X_1^2=1\), and \(\rho=\E|X_1|^3<\infty\). Put
+\[
+ \Delta_n(P)=\sup_{x\in\mathbb R}
+ \left|\PP\!\left(\frac{X_1+\cdots+X_n}{\sqrt n}\le x\right)-\Phi(x)\right|,
+ \qquad
+ \CE=\frac{3+\sqrt{10}}{6\sqrt{2\pi}}.
+\]
+The sharp iid conjecture asks whether
+\[
+ \sqrt n\,\Delta_n(P)\le\CE\rho
+ \quad\text{for every such }P\text{ and every }n\ge1.
+\]
+Esseen's Bernoulli asymptotic lower bound makes this constant necessary;
+Schulz proved the complete binomial case \cite{Schulz2016}.
+The mathematical issue is the uniform bound for arbitrary real laws,
+rather than the identification of the candidate constant.
+An eventual-in-sample-size theorem of He and Cheng
+\cite{HeCheng2026} gives a uniform upper bound beyond an explicit
+large threshold. It does not settle the finite range.
+The moment-defect framework of Rodziewicz and Ko\l{}odziejek
+\cite{RK2026} provides a different route through finite-index
+localization and propagation. Its public conditional continuation
+retains finite-index premises. Our comparison argument addresses
+the remaining five actual-index regions; the proof dependencies
+needed for the all-index conclusion are made explicit below.
+
+The finite-index argument below retains a single original law throughout.
+Its conditional variances, inward support and third absolute moment pay
+the same budget. The reference laws introduced by moment comparison
+bound expectations of particular test functions; they do not replace
+the original law in the statement of the theorem.
+The proof uses four ranges: the supporting low-index results through
+$25$, the five new implications through $30$, the actual-index bridge
+through $46$, and a uniform induction for all $n\ge47$.
+The last step uses a support-free Gaussian replacement estimate to
+discharge the hypotheses of the existing local comparison theorem.
+
+\input{sections/moment-comparison}
+\input{sections/phase-prices}
+\input{sections/certificate-envelopes}
+\input{sections/global-inputs}
+\input{sections/localization}
+\input{sections/finite-completion}
+
+\section*{AI assistance}
+OpenAI Codex was used to develop and simplify mathematical arguments,
+implement exact-arithmetic calculations, and draft this manuscript.
+
+\appendix
+\input{sections/uniform-transfer}
+\input{sections/gaussian-contact}
+\input{sections/profile-parameters}
+\input{sections/finite-profile-details}
+\input{sections/companion-references}
+
+\begin{thebibliography}{99}
+\bibitem{Bentkus2004}
+V. Bentkus, \emph{On Hoeffding's inequalities},
+Ann. Probab. \textbf{32} (2004), 1650--1673.
+\href{https://doi.org/10.1214/009117904000000360}{doi:10.1214/009117904000000360}.
+\bibitem{Pinelis2006}
+I. Pinelis, \emph{Binomial upper bounds on generalized moments and tail
+probabilities of (super)martingales with differences bounded from above},
+IMS Lecture Notes--Monograph Series \textbf{51} (2006), 33--52.
+\href{https://doi.org/10.1214/074921706000000743}{doi:10.1214/074921706000000743}.
+\bibitem{Schulz2016}
+J. Schulz, \emph{The optimal Berry--Esseen constant in the binomial case},
+Dissertation, Universit\"at Trier, 2016.
+\href{https://d-nb.info/1197702695/34}{Full dissertation}.
+\bibitem{Prawitz1972}
+H. Prawitz, \emph{Limits for a distribution, if the characteristic
+function is given in a finite domain}, Scandinavian Actuarial Journal
+\textbf{1972} (1972), no.~2, 138--154.
+\href{https://doi.org/10.1080/03461238.1972.10404645}{doi:10.1080/03461238.1972.10404645}.
+\bibitem{Shevtsova2012}
+I. Shevtsova, \emph{Moment-type estimates with asymptotically optimal
+structure for the accuracy of the normal approximation},
+Annales Mathematicae et Informaticae \textbf{39} (2012), 241--307.
+\url{https://ami.uni-eszterhazy.hu/uploads/papers/finalpdf/AMI_39_from241to307.pdf}.
+\bibitem{Shevtsova2013}
+I.~G. Shevtsova, \emph{On the absolute constants in the Berry--Esseen
+inequality and its structural and nonuniform improvements},
+Inform. Primen. \textbf{7} (2013), no.~1, 124--125 (in Russian).
+\url{https://www.mathnet.ru/eng/ia252}.
+\bibitem{HeCheng2026}
+H. He and G. Cheng, \emph{The Berry--Esseen Constant Conjecture is
+Eventually True}, arXiv:2609.06358v3 [math.PR], 30 September 2026.
+\url{https://arxiv.org/abs/2609.06358v3}.
+\bibitem{RK2026}
+K. Rodziewicz and B. Ko\l{}odziejek,
+\emph{Moment defects and sharp iid Berry--Esseen bounds},
+public working manuscript, version 3, 2026.
+\href{https://hexagonmath.org/2610.00147v3}{Version record}.
+\bibitem{RKFive2026}
+K. Rodziewicz and B. Ko\l{}odziejek,
+\emph{Five summands in the iid Berry--Esseen conjecture:
+A sign-count proof and the finite-index dependency chain},
+working draft, 20 October 2026.
+\href{https://github.com/rodziewiczk/berry-esseen-045-certificate/blob/75a94708872e2bc053f42a279559b23ed91e4402/moment-defects/five-summands-2026-10-20/manuscript.tex}{Frozen source}.
+\bibitem{RKSources2026}
+K. Rodziewicz and B. Ko\l{}odziejek,
+\emph{Supplementary proof and certificate sources for the iid
+Berry--Esseen problem}, repository snapshot, 23 October 2026.
+\href{https://github.com/rodziewiczk/berry-esseen-045-certificate/tree/75a94708872e2bc053f42a279559b23ed91e4402}{Source collection}.
+\end{thebibliography}
+\end{document}

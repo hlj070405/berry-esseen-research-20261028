@@ -1,0 +1,279 @@
+\section{Global inputs and their dependencies}\label{gi:section}
+
+For a standardized real law $P$ with finite $\rho(P)=\E|X|^3$, write
+\[
+ R_n(P)=\frac{\sqrt n\,\Delta_n(P)}{\rho(P)},\qquad
+ C_n=\sup_P R_n(P).
+\]
+The supremum is over all such laws, without a support restriction.
+We use the classical iid moment envelope \cite{Shevtsova2013}
+\begin{equation}\label{gi:moment-envelope}
+ R_n(P)\le T(\rho):=
+ \min\{.469,\ .3322(1+.429/\rho),\ .3031(1+.646/\rho)\}.
+\end{equation}
+All terminating decimals denote rational numbers.
+
+We include the variational starting point and contact argument;
+compare He--Cheng~\cite[Lemmas~6.1 and~6.3, equations~(12)--(15)]{HeCheng2026}.
+\begin{lemma}[A contrary extremizer]\label{gi:extremizer}
+If $C_n\ge\CE$, the supremum defining $C_n$ is attained by a
+standardized law $P$ with $\rho(P)<2$. After reflection if necessary,
+there is a finite $H$ such that
+\[
+ F_n(H)-\Phi(H/\sqrt n)=C_n\rho(P)/\sqrt n,
+ \qquad F_n(H)=P^{*n}(( -\infty,H]).
+\]
+\end{lemma}
+\begin{proof}
+The classical moment envelope in \eqref{gi:moment-envelope} gives
+$C_n\le.469<1/2$ and
+$T(2)\le.3031(1+.646/2)=.4010013<\CE$.
+Thus a maximizing sequence whose scores tend to $C_n\ge\CE$
+eventually has third moments below $2$. Tightness and this third-moment
+bound give a weakly convergent subsequence $P_j\Rightarrow P$ whose
+first two moments remain $0,1$. Pass also to
+$\rho(P_j)\to\rho_*\in[1,2]$, so $\rho(P)\le\rho_*$.
+
+Reflection converts a negative discrepancy into a limit of positive
+closed discrepancies. Choose corresponding thresholds $H_j$ with
+an error tending to zero. These thresholds stay bounded: Chebyshev's
+inequality and the normal tail bound make the discrepancy tend uniformly
+to zero as $|H_j|\to\infty$. Passing to $H_j\to H$, the closed-set
+inequality for weak convergence gives
+\[
+ F_n(H)-\Phi(H/\sqrt n)\ge C_n\rho_*/\sqrt n.
+\]
+Maximality and $\rho(P)\le\rho_*$ force equality and
+$\rho(P)=\rho_*$. The moment envelope then gives $\rho(P)<2$.
+
+For the contact condition, put $z=H/\sqrt n$ and $m=\E[X|X|]$.
+Perturb the common marginal to
+$Q_\varepsilon=(1-\varepsilon)P+\varepsilon\delta_x$.
+Write $\mu_\varepsilon,\sigma_\varepsilon^2$ and
+$\beta_\varepsilon$ for its mean, variance and centered third
+absolute moment. The threshold $H$ stays fixed in these original
+coordinates. By the definition of $C_n$,
+\[
+ J(\varepsilon)=Q_\varepsilon^{*n}(( -\infty,H])
+ -\Phi\left(\frac{H-n\mu_\varepsilon}{\sigma_\varepsilon\sqrt n}\right)
+ -\frac{C_n\beta_\varepsilon}{\sqrt n\,\sigma_\varepsilon^3}
+ \le0=J(0).
+\]
+The right derivative at zero therefore gives
+\begin{align}\label{gi:contact}
+ \mathcal D(x)={}&n\{F_{n-1}(H-x)-F_n(H)\}
+ +\phi(z)\left\{\sqrt n x+\frac z2(x^2-1)\right\}\notag\\
+ &-\frac{C_n}{\sqrt n}
+ \left\{|x|^3-\frac32\rho x^2-3mx+\frac12\rho\right\}\le0.
+\end{align}
+Here $F_0$ is the CDF of the point mass at zero when $n=1$.
+Indeed the perturbed mean and variance have derivatives $x$ and
+$x^2-1$, and the centered third absolute moment has derivative
+$|x|^3-\rho-3mx$. The convolution derivative is exactly
+$n\{F_{n-1}(H-x)-F_n(H)\}$, preserving the common marginal.
+The integral of $\mathcal D$ under $P$ is zero.
+Since $\mathcal D$ is upper semicontinuous, it is zero at every
+point of the support, including atoms.
+
+\end{proof}
+
+The heat-smoothing estimate below is already present in
+Rodziewicz--Ko\l{}odziejek~\cite[Section~15]{RK2026}.
+\begin{lemma}[A coarse Gaussian entry]\label{gi:gaussian-entry}
+For $n\ge2$,
+\[
+ C_n\le C_{n-1}\sqrt{\frac n{n-1}}
+       +\frac{\sqrt n}{15(n-1)^{3/2}}
+       +\frac{2\sqrt n}{25(n-1)^2}.
+\]
+In particular, $C_{n-1}\le\CE$ and $n\ge26$ imply
+\begin{equation}\label{gi:small-excess}
+ n(C_n-\CE)<\frac3{10},\qquad C_n<.422.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $v=n-1$ and $F_v(t)=\Phi(t/\sqrt v)$. Conditioning on the last
+summand, replacing the first $v$ summands by a Gaussian costs at most
+$C_v\rho/\sqrt v$. Taylor expansion in the last standardized summand gives
+\[
+ \left|\E F_v(H-X)-F_v(H)-\tfrac12F_v''(H)\right|
+ \le\frac{\phi(0)\rho}{6v^{3/2}}<\frac{\rho}{15v^{3/2}}.
+\]
+The heat identity $\partial_vF_v=F_v''/2$ gives the matching expansion
+in the variance variable, with error at most
+$\|\phi'''\|_\infty/(8v^2)<2/(25v^2)$. Here Gaussian Fourier
+inversion gives $\|\phi'''\|_\infty\le2/\pi<16/25$.
+Combine the errors, multiply by $\sqrt n/\rho$, use $\rho\ge1$,
+and take the threshold and law suprema. This is the elementary
+heat-smoothing estimate also used in the supporting global route.
+For the last assertion put $x=n/(n-1)$. Under the sharp predecessor,
+\[
+ n(C_n-\CE)\le\frac{\CE x}{\sqrt x+1}
+       +\left(\frac1{15}+\frac2{25\sqrt{n-1}}\right)x^{3/2}.
+\]
+When $n\ge26$, $x\le26/25$, $\sqrt x<51/50$ and $\CE<.41$.
+Also $x/(\sqrt x+1)\le(3x+1)/8$, since
+$(\sqrt x-1)^2(3\sqrt x+1)\ge0$. Consequently the right side is less than
+\[
+ \frac{41}{100}\frac{3(26/25)+1}{8}
+ +\left(\frac1{15}+\frac2{125}\right)\frac{26}{25}\frac{51}{50}
+ =\frac{747107}{2500000}<\frac3{10}.
+\]
+Also $\CE+3/(10\cdot26)<.422$.
+In particular, the sharp bound $C_{29}\le\CE$ already implies
+$C_{30}<\CE+.01$, the coarse premise of input (II)
+below. The sharp index-$30$ conclusion still needs its own proof.
+\end{proof}
+
+The finite-index completion uses the following three conclusions of the
+supporting proofs.
+
+\begin{proposition}[Global inputs]\label{gi:inputs}
+The low-index companion, actual-index bridge and uniform local comparison
+give the following statements. Put
+$\delta_n=n\pos{C_{n-1}-C_n}$.
+\begin{enumerate}
+\item[(I)] $C_j\le\CE$ for $1\le j\le25$;
+\item[(II)] if $C_{30}<\CE+1/100$, then $C_j\le\CE$ for
+every $31\le j\le46$;
+\item[(III)] for every integer $n\ge47$, the conditions
+\[
+ 0\le n(C_n-\CE)\le7/10,\qquad \delta_n=0,
+ \qquad C_n<.4247,\qquad C_{n-1},C_{n-2}<.4253
+\]
+cannot hold simultaneously.
+\end{enumerate}
+This is the zero-allowance case of the original local exclusion;
+the least-failure argument below supplies exactly this condition.
+The exclusion (III) is uniform in $n$; its premises will be
+discharged by the Gaussian entry and predecessor induction.
+\end{proposition}
+The precise companion statements and their continuous proof sources
+are identified in Appendix~\ref{app:companions}.
+
+% Supporting source map, retained for preparation of the companion package.
+% Low indices: work/berry-esseen-n1-base-20261024/n1_base.tex;
+% work/berry-esseen-n2-public-check-20261024/collect_replay_20261024.py;
+% work/berry-esseen-n3-public-check-20261024/collect_replay_20261024.py;
+% work/berry-esseen-n4-analytic-check-20261025/check_analytic_20261025.py;
+% work/berry-esseen-n4-public-check-20261024/check_full_closure_exact_20261025.py.
+% For the low-index continuous proof map, including the actual LOW,
+% conserved-identity, resource and count derivations, see
+% work/berry-esseen-c5-complete-20261025/fresh-low-work-20261025/source/
+% work/cutoff5_20261020/audit/ANALYTIC_DEPENDENCIES_V2.txt.
+% Later low-index interfaces:
+% work/berry-esseen-c5-complete-20261025/five_sum_completion_20261025.tex;
+% work/berry-esseen-n6-complete-20261025/six_sum_interface_20261025.tex;
+% work/berry-esseen-n7-complete-20261025/seven_sum_interface_20261025.tex;
+% work/berry-esseen-n8-complete-20261025/eight_sum_interface_20261025.tex;
+% work/berry-esseen-n9-complete-20261025/nine_sum_interface_20261025.tex;
+% work/berry-esseen-n10-complete-20261025/n10-interface/main.tex;
+% work/berry-esseen-n11-14-complete-20261026/conditional_11_14_interface_20261026.tex;
+% work/berry-esseen-n15-19-complete-20261026/n15-19-interface/main.tex;
+% work/berry-esseen-n20-complete-20261025/twenty_sum_interface_20261025.tex;
+% work/berry-esseen-n20-singlebatch-20261026/actual20_singlebatch_interface_20261026.tex;
+% work/berry-esseen-n21-24-complete-20261026/n21-24-interface/main.tex;
+% work/berry-esseen-n25-full-parent-20261026/n25-interface/main.tex;
+% work/berry-esseen-n25-full-parent-20261026/literal25-fourier-proof/main.tex.
+
+The classical inputs are Prawitz's smoothing inequality \cite{Prawitz1972} in the form
+given by Shevtsova \cite[Lemma~4.1, p.~263]{Shevtsova2012},
+Shevtsova's finite iid moment bounds \cite{Shevtsova2013}, and
+Schulz's strict bound for every binomial law \cite[Theorem~1]{Schulz2016}.
+In particular, the moment envelope \eqref{gi:moment-envelope} gives
+$T(\rho)\le819/2000<\CE$ for $\rho\ge7361/4000$,
+excluding the entire larger-moment ray.
+Prawitz smoothing is applied at each actual integer, retaining its
+endpoint terms and infinite Gaussian tail. The contact, moment-defect,
+resource and convolution-count reductions are proved in the companions;
+they are not additional unnamed literature assumptions.
+
+Lemma~\ref{gi:extremizer} supplies the common starting point on a
+contrary branch, before any use of higher moments. At this same law,
+\begin{equation}\label{gi:predecessor}
+ n\pos{R_{n-1}(P)-C_n}\le n\pos{C_{n-1}-C_n}.
+\end{equation}
+Thus a global predecessor bound licenses contact allowances throughout
+the argument. A score bound restricted to a moment band is never
+substituted for that predecessor.
+
+For (I), the first four direct bounds are
+\[
+ C_1\le\tfrac25,\quad C_2\le\tfrac{2\sqrt2}{7},\quad
+ C_3\le\tfrac{59\sqrt3}{250},\quad C_4\le.4097<\CE.
+\]
+The companion compositions use the unrestricted predecessor in order
+through $24$. At $25$, a support-free Fourier bound excludes
+$\rho\ge6/5$; the two lower bands use the global $C_{24}<.419$
+and their complete resource/count covers. Their continuous reductions,
+unseeded resource steps and closed arithmetic covers are the precise
+inputs listed in Appendix~\ref{app:companions}. The fifth-index proof
+is also given separately in \cite{RKFive2026}; subsequent source
+developments are collected in \cite{RKSources2026}.
+
+% Actual-index bridge sources:
+% work/berry-esseen-n31-primary-check-20261025/sharp31_bridge_composition_20261025/main.tex;
+% work/berry-esseen-n35-complete-20261025/actual35_conditional_composition_20261025.tex;
+% work/berry-esseen-n36-38-complete-20261026/actual36_38_conditional_composition_20261026.tex;
+% work/berry-esseen-n39-complete-20261026/actual39_two_step_composition_20261026/main.tex;
+% work/berry-esseen-n40-route-20261026/n40-48-interface/main.tex.
+
+For (II), the coarse bound at $30$ gives allowance $31/100$ at
+a contrary index-$31$ extremizer. The eight closed moment bands have
+actual-$31$ support, resource and count proofs. The bridges through
+$34$ keep $mD_m\le31d$, acquire support at each actual $m$, and use
+that integer's binomial law. Subsequent implications proceed through
+$35$--$39$ and $40$--$46$, retaining both deleted predecessors where
+required. Thus the bridge starts from the stated coarse premise
+without any monotonicity assumption on $C_n$.
+
+% Large-index source:
+% work/berry-esseen-n49-check-20261025/n49_completion_20261025.tex;
+% substantive saved-output joins:
+% work/berry-esseen-n49-check-20261025/join_n49_fresh_results_20261025.py;
+% work/berry-esseen-n49-check-20261025/check_n49_final_join_20261025.py.
+
+For (III), the moment envelope gives $\rho<7361/4000$ at a contrary
+extremizer. Corollary~\ref{gc:tail-support} then gives radius $3.84$
+directly from contact and the deleted-predecessor allowance.
+It also supplies the two left radial contractions and the central
+radius-$2.5$ contraction, in their original acquisition order.
+Thus the six initial index-band and subsequent radial support
+calculations are replaced by the same cubic bound. The bounded-threshold
+coordinate-strip exclusions retain their original proofs.
+The resource and confinement schedule then supplies $45$ central
+and $38$ left probability intervals, covering $[.304,.47]$ after
+all complementary intervals have been excluded. Their resources
+retain the actual weighted quantities $nD$ and $n\E U^2$.
+The complete local comparison is uniform for every $n\ge47$.
+At positive noise it gives a strict loss relative to this law's
+own Bernoulli score; at zero noise Schulz's strict binomial theorem
+applies directly. The acquisition includes both deleted-score caps
+and the full excess interval $0\le n(C_n-\CE)\le.7$.
+
+\begin{proposition}[Induction from two sharp predecessors]\label{gi:tail}
+Input~(III) and $C_{45},C_{46}\le\CE$ imply
+$C_n<\CE$ for every integer $n\ge47$.
+\end{proposition}
+\begin{proof}
+If a failure exists, choose the least $n\ge47$ with $C_n\ge\CE$.
+Both predecessors satisfy $C_{n-1},C_{n-2}\le\CE$, so $\delta_n=0$
+and both deleted-score caps in (III) hold. The Gaussian entry gives
+\[
+ 0\le n(C_n-\CE)<3/10<7/10,\qquad
+ C_n<.422<.4247.
+\]
+All premises of (III) are now satisfied, a contradiction.
+\end{proof}
+
+The moment-defect method and the original finite subdivisions retain
+their attribution to Rodziewicz--Ko\l{}odziejek \cite{RK2026}.
+The conditional continuation in Section~11 of that working manuscript
+retains analytic and historical certificate premises, including the
+sharp assertions at $25$--$30$. It does not by itself establish (I) or
+fill the intervening finite range. Inputs (I)--(III) here refer to the
+companion proofs with their continuous reductions, complete exact
+calculations and closed-domain compositions. In particular, the proof
+order is (I), the new actual-index steps $26$--$30$, (II) through
+$46$, and Proposition~\ref{gi:tail}. The five finite ceilings in
+the independent $n\ge49$ route are unnecessary for this composition.

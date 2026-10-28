@@ -1,0 +1,218 @@
+\section{Locations of the companion proofs}\label{app:companions}
+
+The moment-defect and original count arguments are due to
+Rodziewicz--Ko\l{}odziejek \cite{RK2026}; the completion notes identify
+their reconstruction scope. The companion sources retain their original
+attribution, theorem labels and statement scopes. A label quoted below belongs to the named companion,
+not to the numbering of this article. The source collection is prepared
+by \path{prepare_global_companions.py}; it includes the local TeX
+inputs of the multifile large-index proof.
+
+\paragraph{Input (I).}
+In \path{companions/low-index/}, the first-index bound is
+\path{n1/n1_base.tex}, Theorem~1 (\texttt{thm:base}).
+The source \path{n2-n3/manuscript.tex} contains
+\texttt{n2:thm:main} and \texttt{n3:thm:main}, together with their
+support reductions and continuous-domain polynomial certificate
+implications. The complete fourth-index proof is available in the
+existing public manuscript PDF
+\path{companions/references/rk-v3/moment-defects-v3.pdf},
+Section~26, Theorem~26.1 and its proof. A TeX source for that complete
+fourth-index proof is not included.
+
+The subsequent compositions are Theorem~1
+(\texttt{composition}) in \path{n5/five_sum_completion_20261025.tex};
+Proposition~1 and its completed composition in each of
+\path{n6/six_sum_interface_20261025.tex},
+\path{n7/seven_sum_interface_20261025.tex},
+\path{n8/eight_sum_interface_20261025.tex}, and
+\path{n9/nine_sum_interface_20261025.tex};
+the theorem entitled \emph{Unrestricted tenth-index conclusion}
+in \path{n10/main.tex}; and the ordered implication at the end of
+\path{n11-14/conditional_11_14_interface_20261026.tex}
+(which has no separately numbered conclusion).
+The final blocks are Theorem~1 in \path{n15-19/main.tex},
+Proposition~1 and its completed composition in
+\path{n20/twenty_sum_interface_20261025.tex},
+Theorem~1 in \path{n21-24/main.tex}, and
+Theorem~1 in \path{n25/main.tex}.
+The high-moment complement at the actual indices $25$--$30$
+is stated and derived in \path{n25-fourier/main.tex}.
+
+These interfaces are accompanied by continuous derivations.
+The source
+\path{companions/common/finite-analytic/BE_cutoff35_streamlined.tex}
+contains \path{global:attainment}, \texttt{global:contact},
+\path{complete44ent:smooth-fourier},
+\path{complete44ent:fourier-early-low},
+\path{complete44ent:re-enclosure}, \texttt{res:contract},
+and the section \emph{One finite-count comparison for all the new indices}.
+The additional small-index proofs retain their original text format under
+\path{companions/low-index/continuous-sources/work/}.
+In particular, the fifth-index
+\path{cutoff5_20261020/audit/ANALYTIC_DEPENDENCIES_V2.txt}
+locates the conserved-identity, finite-window LOW, resource and count
+derivations; their mathematical proof texts are included alongside that
+source map. They are distinct from numerical success records.
+The original frozen arithmetic inputs and actual returned objects are
+retained under \path{companions/low-index-support/}.
+Its \path{read_low_index_support.py} describes the existing joins,
+their exact input locations and their Python or compiler requirements.
+
+\paragraph{Input (II).}
+In \path{companions/actual-index/}, the coarse entry from
+$C_{30}<\CE+.01$ and the literal bridges to $34$ are
+Propositions \texttt{prop:31} and \texttt{prop:bridges} in
+\path{n31-34/main.tex}. The exceptional band-$7$ defect-domain
+argument is \path{n31-domain/sharp31_B7_D_domain_20261025.tex}.
+Continue with the theorem entitled
+\emph{Unrestricted index--35 conclusion} in
+\path{n35/actual35_conditional_composition_20261025.tex},
+the proposition entitled \emph{Unrestricted conclusions at 36, 37 and 38}
+in \path{n36-38/actual36_38_conditional_composition_20261026.tex},
+and Propositions~1 and~2 in \path{n39/main.tex}.
+The actual-$39$ continuous-domain extension is separately included in
+\path{n39-continuous/actual39_continuous_lemmas_20261026.tex}.
+Theorem \texttt{thm:main} in \path{n40-48/main.tex} contains the
+bridge through $48$; the present composition uses its steps only
+through $46$. Its two local implications are
+\texttt{prop:forty} and \texttt{prop:two}.
+The directories \path{n40-continuous/}, \path{n40-original/},
+\path{n42-continuous/}, and \path{n42-local/} contain the corresponding
+actual-index and finite-band continuous arguments.
+The corresponding compressed inputs, returned objects and existing
+join programs are retained under \path{companions/bridge-support/}.
+The accompanying \path{read_bridge_support.py} locates the mathematical
+objects and launches the original joins against those collected inputs.
+
+\paragraph{Input (III).}
+The local resource implication \path{re:localG} in
+\path{paper_entry/resource_entry.tex} is used with $b\ge0$, $P\ge0$,
+$\ell_-\ge0$ and $L_0\ge0$. These are the physical coefficients of
+\path{conf:moment} and the nonnegative noise subintervals; they license
+the substitutions $nP\ge NP$ and $n\theta\ge\ell_-^2L_0$.
+
+The proposition \texttt{global:local} in
+\path{companions/large-index/analytic-route/paper/sections/global_route.tex}
+contains the zero-allowance uniform local exclusion (III) used here.
+In the present proof, Corollary~\ref{gc:tail-support} replaces its
+initial radius-$3.84$ calculation over six index bands, both left radial
+contractions and the central radius-$2.5$ contraction. The resource
+schedule, coordinate-strip exclusions and local comparisons are
+retained. The broader original heat-expansion route remains in the archive.
+The continuous analytic route is the multifile source
+\path{companions/large-index/analytic-route/paper/main.tex}:
+\texttt{re:acquired}, \texttt{re:enclosure}, and
+\path{shortloc:theorem} supply its resource acquisition and
+local comparison. Its included coefficient atlas derives
+compensated inversion and the conserved identity, rather than treating
+them as numerical premises. The independently completed $n\ge49$
+route is also retained in
+\path{companions/large-index/completion/n49_completion_20261025.tex};
+the new induction from $45,46$ uses the local exclusion directly.
+The selected compressed source/input archive and its original returned
+calculation archive are included under \path{companions/uniform-tail/}.
+The accompanying \path{prepare_uniform_tail_support.py} can unpack
+them to a new directory, reconstruct the exact local cover, and run
+the original transcript-to-target join. Its Windows schedule launcher
+changes two path-key expressions to POSIX spelling; all mathematical
+conditions and original archive contents are preserved.
+
+\paragraph{Weighted localization and the 34 finite profiles.}
+Appendix~\ref{ut:section} gives the mathematical proof of
+\eqref{loc:weighted-transfer}, including the raw first step, all LOW and
+HIGH terms, the weighted induction and the order of actual-index support
+acquisition. The earlier fixed-floor derivations are retained in
+\path{companions/localization/analytic/UNIFORM25_CANTELLI_PRODUCTGAP_REVIEW.txt}
+and
+\path{companions/localization/analytic/UNIFORM25_BETA0_SOURCE_AND_COMPOSITION_REVIEW.txt}.
+The inward-plane scaling is derived in
+\path{companions/localization/original/new_audit/SCALED_INWARD_PHYSICAL_DERIVATION_V1.txt}.
+Their continuous foundation is the resource-enclosure and simultaneous-contract
+argument identified above; actual-index support acquisitions are still
+separate inputs.
+
+The initial B0/B1 radii now follow directly from
+Proposition~\ref{gc:initial-support}. Their original actual-index
+radius computations are no longer premises of this first step;
+later support refinements still use their own incoming data.
+The Peano-kernel and rational-ray calculations are also retained in
+\path{gaussian_contact_peano_20261028.tex} and
+\path{gaussian_contact_peano_20261028.py} in the finite analytic directory.
+
+The full finite comparison text is
+\path{companions/finite-steps/source/analytic/finite_gap_shared_stoploss_20261026.tex}.
+Theorems \path{global-c26-complete}, \path{global-c27-complete},
+\path{global-c28-complete}, \path{global-c29-complete}, and
+\path{global-c30-complete} give the five actual-index compositions.
+Their proofs identify the constituent profile lemmas.
+At $26$, these include \path{p34-p35-count8-complete},
+\path{p35-count9-second-moment-complete},
+\path{p36-p37-count10-second-moment-complete}, and the complete-panel
+corollaries for $36$--$39$.
+At $27$, the profile conclusions are
+\path{n27-p34-complete}, \path{n27-p35-complete},
+\path{n27-p36-complete}, \path{n27-central-complete}, and
+\path{n27-p39-complete}, \path{n27-p40-complete};
+the central corollary covers both $37$ and $38$.
+The corresponding $28$ statements are
+\path{n28-p34-p35-complete}, \path{n28-p36-complete},
+\path{n28-p37-complete}, \path{n28-p38-complete}, and
+\path{n28-p39-p40-complete}.
+The last two groups are the lemmas
+\path{n29-seven-panels-complete} and
+\path{n30-seven-panels-complete}.
+The lower-moment replacement in Lemma~\ref{fc:low40} is the
+separate program \path{probe_b0_shared_reference_20261027.py}
+in that analytic source directory, with the exact output
+\path{result_b0_n26_p40_complete_frozen_20261027.json}.
+Its \texttt{--complete} entry recomputes this whole conditional
+profile without reading a stored numerical result.
+Lemma~\ref{fc:low39} uses the separate
+\path{probe_b0_p39_shared_20261027.py} and
+\path{b0_allocation_interval_clip_20261027.py}, with output
+\path{result_b0_n26_p39_complete_frozen_20261027.json} in the
+same analytic directory.
+The signed-price extension in Lemma~\ref{fc:low41} is
+\path{probe_b0_p41_shared_20261027.py}, with
+\path{b0_two_endpoint_budget_20261027.py} and
+\path{b0_signed_allocation_interval_20261027.py}; its result is
+\path{result_b0_n26_p41_complete_frozen_20261027.json}.
+Corollary~\ref{fc:n27-low41} reuses these helpers through the
+explicit \texttt{PLAN} in
+\path{probe_b0_n27_p41_shared_20261027.py}; the actual-$27$ output is
+\path{result_b0_n27_p41_complete_fresh_20261027.json}.
+The actual-$28$ plan is
+\path{probe_b0_n28_p41_shared_20261028.py}, with output
+\path{result_b0_n28_p41_complete_fresh_20261028.json}.
+The crossing application at $29$ is the \texttt{PLAN} in
+\path{probe_b0_n29_p41_shared_20261028.py}, using
+\path{b0_variance_endpoint_branches_20261028.py}; its output is
+\path{result_b0_n29_p41_complete_fresh_20261028.json}.
+The actual-$30$ plan is
+\path{probe_b0_n30_p41_shared_20261028.py}, with final output
+\path{result_b0_n30_p41_complete_frozen_20261028.json}.
+Its earlier failed complete candidate is retained in the research
+sources and supplies no completed profile bound.
+The finite lower-envelope implementation in
+\path{probe_classical_order_compression_20261028.py} replaces optimization
+over mixture weights. Its exact algebraic replay of all $25$ nonempty
+N27/P35 mixed regions agrees with the old optimized bound. All other
+old fixed-mixture bounds transfer by the pointwise domination following
+Lemma~\ref{pp:mixture}; no numerical regeneration is required for this
+logical transfer.
+The acquisition, lower-moment, ordinary-forest and unrestricted
+Fourier inputs and returned objects are retained separately in
+\path{companions/finite-other-support/}. Its
+\path{read_finite_other_support.py} provides the original mathematical
+readers with temporary source materialization. The expensive complete
+lower-moment reader is an explicit option. Partial historical count
+runs retain their original domains; the analytic profile comparisons
+supply the stated complementary regions.
+
+The companion text identifies the continuous inequalities and compositions.
+The frozen coefficient data, closed subdivision trees, exact arithmetic
+programs and archived fresh calculations are retained in the collections
+above. Their mathematical readers relate returned objects to the complete
+parameter covers and consumed contracts. Fresh numerical regeneration
+is a separate operation using the retained producer entrypoints.

@@ -1,0 +1,355 @@
+\section{From a global extremizer to a conditional comparison}\label{loc:section}
+
+Fix an actual integer $26\le n\le30$ and assume the unrestricted
+predecessor bound $C_{n-1}\le\CE$. Suppose $C=C_n\ge\CE$, and take
+the positive closed maximizing pair $(P,H)$ of
+Lemma~\ref{gi:extremizer}, with $1\le\rho\le6/5$.
+All quantities below belong to this one pair. Write
+$\beta=\E[X|X|]$, $\gamma=\E X^3$, $M_j=\E|X|^j$,
+$z=H/\sqrt n$ and $\varphi=\phi(z)$.
+The moment-defect construction and its original finite subdivisions are
+due to Rodziewicz--Ko\l{}odziejek~\cite{RK2026}.
+We spell out the continuous implications needed to interpret the finite
+rows; the arithmetic verification of a row is a separate obligation.
+
+First, the predecessor bound has a pointwise support consequence.
+Set $s_n=\sqrt{n/(n-1)}$, $e_n=n(s_n-1)-1/2$, and
+\[
+ \mathcal H_n(H,x)=n^{3/2}
+ \{\Phi((H-x)/\sqrt{n-1})-\Phi(H/\sqrt n)\}
+ +nx\varphi+\tfrac H2(x^2-1)\varphi.
+\]
+Multiplying \eqref{gi:contact} by $\sqrt n$ and using
+$F_{n-1}(H-x)\le\Phi((H-x)/\sqrt{n-1})+
+C_{n-1}\rho/\sqrt{n-1}$ gives
+\begin{equation}\label{loc:support-test}
+ \sqrt n\,\mathcal D(x)\le\mathcal H_n(H,x)
+ +C\{-|x|^3+\tfrac32\rho x^2+3\beta x+\rho e_n\}.
+\end{equation}
+The otherwise present allowance
+$n\rho s_n(C_{n-1}-C)_+$ is zero. Since $\mathcal D=0$ on the
+full support, a strictly negative upper bound for the right side on
+$x\le-R_-$ or $x\ge R_+$ excludes that entire ray, including atoms.
+The bound must hold for every real $H$ and every moment and score value
+in the incoming intervals. Thus each support refinement uses the actual
+integer $n$ and previously established moment intervals. In particular,
+a support calculation at $25$ cannot simply be relabelled at $n$.
+For the initial radius no such calculation is needed:
+Proposition~\ref{gc:initial-support} gives $12/5$ when $\rho\le11/10$
+and $13/5$ when $\rho\le6/5$, by one Peano-kernel argument for all
+$n\ge25$. This precedes all higher-moment and defect refinements.
+
+Here is the physical resource behind the refinement. Put
+$\sigma=\sqrt{10}$ and $\tau(t)=\E[X\mathbf1_{\{X\ge t\}}]$.
+For every bounded component $g=(a,b)$ of the complement of the closed
+support, $\tau$ is constant there; call the value $\tau_g$. Define
+\begin{align*}
+ J&=\sum_g\tau_g(b-a)^2,&
+ J_1&=\sum_g\tau_g\int_a^b(t-a)t\,dt,\\
+ J_2&=\sum_g\tau_g\int_a^b(t-a)t|t|\,dt,&
+ D&=(3+\sigma)\rho-\gamma-3J.
+\end{align*}
+All these expressions are finite by the bounded support already proved.
+For $\nu=\mathcal L(H-X_1-\cdots-X_{n-1})$, also put
+\[
+ \mathcal L=\sum_g\tau_g\int_{[a,b)}(t-a)\,\nu(dt)\ge0.
+\]
+The half-open interval specifies the convention at atoms.
+
+\begin{lemma}[The physical defect]\label{loc:defect}
+One has $D\ge0$. If $D<(\sigma-1)\rho$, there is an actual central
+gap $(-A_-,A_+)$ with $A_-,A_+>0$. Put
+\[
+ p=\PP(X>0),\quad q=1-p,\quad v=pq,\quad
+ \mu=\E X_+=\E X_-,\quad
+ \bar A_-=\mu/q,\quad\bar A_+=\mu/p,
+\]
+and $\Delta_\pm=\bar A_\pm-A_\pm\ge0$.
+Let $\theta_\pm=\E[(X-\E[X\mid\operatorname{sgn}X])^2;
+\ \pm X>0]$ and $\theta=\theta_-+\theta_+$.
+Then, with $p_*=(4-\sigma)/2$,
+\begin{align}\label{loc:joint-defect}
+ D\ge{}&\frac{(6+2\sigma)(1-\theta)^{3/2}}{\sqrt v}
+                    (p-p_*)^2\notag\\
+ &+6\mu\{(A_-+A_+)(\Delta_-+\Delta_+)+\Delta_-\Delta_+\}
+ +3(\sigma+3)A_-\theta_-+3(\sigma+1)A_+\theta_+.
+\end{align}
+\end{lemma}
+\begin{proof}
+If zero lies in the support, all gaps have one sign and
+$J\le2\int|t|\tau(t)\,dt=\rho$. Hence
+$D\ge\sigma\rho-\gamma\ge(\sigma-1)\rho$.
+Otherwise let $J_o=J-\mu(A_-+A_+)^2$ and
+\[
+ T_\pm=\E X_\pm^3-\mu A_\pm^2,
+ \qquad R_\pm=\E[X_\pm(X_\pm-A_\pm)].
+\]
+On a positive outer gap $(a,b)$,
+$(b-a)^2\le2\int_a^b(t-A_+)dt$.
+Summing and applying Tonelli, and then reflecting for the negative
+side, proves $J_o\le T_++T_--2A_+R_+-2A_-R_-$.
+Expansion gives the nonnegative decomposition
+\[
+ D=\mu(\sqrt{\sigma+1}A_--\sqrt{\sigma-1}A_+)^2
+ +(\sigma-1)T_++(\sigma+1)T_-+3(T_++T_--J_o).
+\]
+For the stronger assertion, conditional centering gives
+\[
+ \E X_\pm^3=\mu\bar A_\pm^2+
+ \E[(X_\pm+2\bar A_\pm)(X_\pm-\bar A_\pm)^2;
+                         \ \pm X>0]
+ \ge\mu\bar A_\pm^2+3A_\pm\theta_\pm,
+\]
+and $R_\pm=\theta_\pm+\mu\Delta_\pm$.
+Insert these inequalities into the preceding outer-gap bound.
+Use $\mu^2=(1-\theta)pq$ and
+$(\sigma+1)p^2+(\sigma-1)q^2-6pq
+=(6+2\sigma)(p-p_*)^2$ to obtain \eqref{loc:joint-defect}.
+\end{proof}
+
+The upper bound for this same $D$ comes from contact and Fourier
+inversion, rather than from an assumed two-point approximation.
+For $w=H^2/(2n)$ the exact conserved identity is
+\begin{equation}\label{loc:conserved}
+ n(C-\CE)\rho+n\CE\rho(1-e^{-w})
+ +\frac{n\phi(0)e^{-w}}6D+n^{3/2}\mathcal L=\mathcal R,
+\end{equation}
+where, setting
+\[
+ K_1=\E[X|X|^3]-3\beta-\tfrac32\rho\gamma,\quad
+ K_q=M_5/4-\rho M_4/2-\tfrac32\beta\gamma+\rho/2,
+ \quad U=J_1+(M_4-3)/6,
+\]
+the right side is
+\begin{equation}\label{loc:raw}
+ \mathcal R=C(3\beta J/2+3\rho J_1-3J_2-K_q)
+ +H(CK_1+\varphi U)-H^2(C\rho+\gamma\varphi/2)+E_n.
+\end{equation}
+The remainder has the exact representation
+\begin{equation}\label{loc:fourier-remainder}
+ E_n=\frac{2\sqrt n}{\pi}\int_0^\infty
+ \frac{\Im\{e^{-itH}[f(t)^n-e^{-nt^2/2}(1-in\gamma t^3/6)]\}}
+ {t^3}\,dt,\qquad f(t)=\E e^{itX}.
+\end{equation}
+This integral is absolutely convergent.
+To see the identity, write $\nu([x,\infty))\le\mathfrak q(x)$ for
+the cubic majorant furnished by \eqref{gi:contact}, with equality on
+the support. Evaluate
+$\int\tau(x)[\mathfrak q(x)-\nu([x,\infty))]dx$ first gap by gap
+and then using the density $\tau$ of the zero-bias law.
+The first evaluation is
+$\varphi J/(2\sqrt n)+G/n^{3/2}-\mathcal L$, where
+$G=3C\beta J/2+(H\varphi+3C\rho)J_1-3CJ_2$.
+For the second, contact multiplied by $X$ supplies the first truncated
+moment; the payoff $(x-z)|x-z|$ supplies the second truncated moment.
+Their difference gives
+\begin{align*}
+ C\rho+\sqrt n\mathcal L
+ &=\frac{\varphi}{6}(\gamma+3J)+(G-P_0)/n+E_n/n,\\
+ P_0&=H^2(C\rho+\gamma\varphi/2)
+      -H\{CK_1+\varphi(M_4-3)/6\}+CK_q.
+\end{align*}
+Substitute $\gamma+3J=(3+\sigma)\rho-D$ to obtain
+\eqref{loc:conserved}--\eqref{loc:raw}.
+Formula~\eqref{loc:fourier-remainder} follows from
+$\int_0^\infty(ty-\sin ty)t^{-3}dt=\pi y|y|/4$ by compensated
+Fubini; bounded support controls the origin and $t^{-3}$ controls
+infinity. No discontinuous distribution function is inverted.
+
+There is a necessary order in using this identity. A first bound
+$\mathcal R<r<n c_0$, with $C\rho\ge c_0>0$, proves
+$\varphi(\gamma+3J)/6=C\rho+\sqrt n\mathcal L-\mathcal R/n>0$.
+Only then may the Gaussian weight be removed, giving
+\begin{equation}\label{loc:unweighted}
+ n(C-\CE)\rho+\kappa nD+n^{3/2}\mathcal L\le\mathcal R,
+ \qquad \kappa=997/15000<\phi(0)/6.
+\end{equation}
+Every later raw bound $\mathcal R\le r'$ also gives
+$e^{-w}\ge1-5r'/(2n)$ and $nD\le r'/\kappa$.
+The initial pass therefore requires no defect bound of its own output.
+The actual central gap is used only after
+$D<(\sigma-1)\rho$ has been established.
+
+On a closed moment cell, the finite calculation bounds
+\eqref{loc:fourier-remainder} by a coherent expression
+$K_F+s_F|H|$, and bounds the coefficients of \eqref{loc:raw}.
+It thereby proves an envelope
+$\mathcal R\le\max_j(A_j+F_{j,\pm}|H|-Q_j^{\rm raw}H^2)$,
+where every $Q_j^{\rm raw}>0$.
+Square completion bounds the envelope on the whole half-line.
+The signed curvature uses the actual $\gamma$: if
+$\gamma\ge g_0$ and $L_\phi\le\varphi\le U_\phi$, its valid price is
+$C\rho+\tfrac12\min(L_\phi g_0,U_\phi g_0)$.
+Reflecting an auxiliary Fourier integral does not change this sign.
+Keeping the phase cost in \eqref{loc:conserved} further gives
+\begin{equation}\label{loc:phase-budget}
+ \kappa nD\le\max_j(A_j+F_{j,\pm}|H|-Q_jH^2).
+\end{equation}
+For example, a previously proved $\mathcal R\le r$ and $D\le d$
+allow the additional curvature
+$(1-5r/(2n))( .4095\rho-d/15)/2$, when positive.
+It is included once in $Q_j$.
+Thus a bound on the right side of \eqref{loc:phase-budget} is converted
+to physical $D$ using $15000/(997n)$ at the actual integer.
+
+We now give the canonical parameters required by
+Section~\ref{mc:section}. Once the central gap is licensed, put
+\begin{equation}\label{loc:canonical}
+ B=\mathbf1_{\{X>0\}},\qquad
+ \ell=\bar A_-+\bar A_+=\mu/v,\qquad
+ U=X/\ell+p-B.
+\end{equation}
+Then $\E[U\mid B]=0$ and $X=\ell(B+U-p)$ exactly.
+With $s_i=\E[U^2\mid B=i]$, $s=qs_0+ps_1$ and $\lambda_n=ns$,
+\begin{equation}\label{loc:canonical-identities}
+ \ell^2=\frac{1-\theta}{v}=\frac1{v+s},\qquad
+ \mu\ell=1-\theta,\qquad
+ \theta=\frac{s}{v+s},\qquad
+ \alpha=\frac{ps_1}{s}=\frac{\theta_+}{\theta}\quad(s>0).
+\end{equation}
+In particular, the moment in Section~\ref{mc:section} is this law's
+actual $\rho$. If its physical support is in $[-R_-,R_+]$, take
+\begin{equation}\label{loc:conditional-support}
+ a_0=\Delta_-/\ell,\quad a_1=\Delta_+/\ell,\quad
+ O_0=R_-/\ell-p,\quad O_1=R_+/\ell-q.
+\end{equation}
+These give precisely $-O_0\le U_0\le a_0$ and
+$-a_1\le U_1\le O_1$. The gap yields $a_0+a_1<1$.
+Any zero outer cap can be enlarged to a positive cap when a comparison
+formula requires division by it.
+There is no probability symmetry in this construction: the original
+positive discrepancy determines the orientation of $p$.
+
+For explicit resource coefficients, suppose the already acquired cell
+has $p\in I=[l,u]\subset(0,1)$, $\theta\le\Theta<1$,
+$A_-\ge A_l>0$, $A_+\ge B_l>0$. Let
+\begin{gather*}
+ v_* =\max_{p\in I}p(1-p),\quad S_*=A_l+B_l,\\
+ b=\frac{(6+2\sigma)(1-\Theta)^{3/2}}{\sqrt{v_*}}
+                      \operatorname{dist}(p_*,I)^2,\quad
+ g=6(1-\Theta)S_*,\\
+ K_-=3(\sigma+3)A_l,\quad K_+=3(\sigma+1)B_l,\quad
+ h_{n,\pm}=\frac{K_\pm(1-\Theta)}{nv_*}.
+\end{gather*}
+Dropping the nonnegative product in \eqref{loc:joint-defect} and
+using \eqref{loc:canonical-identities} proves the single inequality
+\begin{equation}\label{loc:affine-resource}
+ D\ge b+g(a_0+a_1)
+       +\lambda_n\{(1-\alpha)h_{n,-}+\alpha h_{n,+}\}.
+\end{equation}
+It supplies the upstream prices in \eqref{mc:signed-plane}, with
+$\mathfrak R=\overline D-b$ whenever
+$D\le\overline D$. Replacing $K_\pm$ by their minimum gives the
+scalar noise price used by the finite rows. Separate upper bounds for
+inward displacement and noise do not imply \eqref{loc:affine-resource}.
+
+The stronger signed prices used in the new comparison are finite
+consequences of this inequality. Write $R=\overline D-b\ge0$ and
+let $\mu_l>0$ be an established lower bound for $\mu$. The endpoint
+floors may first be improved by
+\begin{align*}
+ A_l&\leftarrow\max\left(A_l,
+   \sqrt{\frac{(1-\Theta)l}{1-l}}-\frac{R}{6\mu_lS_*}\right),\\
+ B_l&\leftarrow\max\left(B_l,
+   \sqrt{\frac{(1-\Theta)(1-u)}u}-\frac{R}{6\mu_lS_*}\right),
+\end{align*}
+using the old $S_*$ in the denominator. Recompute $g,h_{n,\pm}$ from
+these proved floors. Combining \eqref{loc:affine-resource} with
+$a_0+a_1\ge s_0/O_0+s_1/O_1$ gives
+\[
+ \lambda_n\{(1-\alpha)C_0(p)+\alpha C_1(p)\}\le R,
+ \quad C_0(p)=h_{n,-}+\frac{g}{n(1-p)O_0},\quad
+ C_1(p)=h_{n,+}+\frac{g}{npO_1}.
+\]
+For fixed positive caps, $C_0$ increases and $C_1$ decreases in $p$.
+Thus the uniform allocation plane is
+\begin{equation}\label{loc:uniform-allocation}
+ \lambda_n\{C_0(l)+[C_1(u)-C_0(l)]\alpha\}\le R.
+\end{equation}
+When the separately checked slope $C_1(u)-C_0(l)$ is nonnegative,
+$\lambda_n\le R/C_0(l)$. More generally, positivity of both
+endpoint coefficients always gives
+\begin{equation}\label{loc:two-endpoint-noise}
+ \lambda_n\le\frac{R}{\min\{C_0(l),C_1(u)\}}.
+\end{equation}
+This consequence permits either ordering of the signed noise prices.
+It also contains the scalar harmonic bound. Indeed, for
+$B_* =\max(O_0,O_1)\max(u,1-l)$ and
+$h_* =\min(h_{n,-},h_{n,+})$,
+\begin{equation}\label{loc:harmonic-consequence}
+ \min\{C_0(l),C_1(u)\}\ge h_*+\frac{g}{nB_*},\qquad
+ \lambda_n\le\frac{R}{h_*+g/(nB_*)}.
+\end{equation}
+This follows from $(1-l)O_0\le B_*$ and $uO_1\le B_*$.
+It improves $\theta$ through
+\eqref{loc:canonical-identities}, and hence improves the next endpoint,
+outer-cap and price estimates. A prescribed finite number of these
+steps proves the strengthened rows by induction; each step uses the
+previous variance bound. It assumes neither a fixed point nor a
+special value of the unknown allocation $\alpha$.
+
+The saved floor-$25$ enclosures are interpreted as
+\begin{equation}\label{loc:weighted-transfer}
+ \mathcal R_n\le r_{25},\qquad nD\le25D_{25}.
+\end{equation}
+This is a fixed sequence of inequalities for the same actual-$n$ law.
+Appendix~\ref{ut:section} gives the complete low/high-frequency
+candidates, their index gates and the finite stage induction.
+The first unseeded raw bound licenses removal of the Gaussian weight
+before its defect output is used. Every subsequent step first
+transfers the incoming physical bounds, acquires the needed support
+at the actual integer, and then restores the weighted defect bound.
+Neither extremality at $25$ nor monotonicity of an adaptively rounded
+program is assumed. Physical deductions may use the weaker $D\le D_{25}$.
+
+For the exported plane set $r=25/n$, $K=\min(K_-,K_+)$,
+$h_{25}=K(1-\Theta)/(25v_*)$ and $R=D_{25}-b$.
+If $R>0$, write $d=R/g$ and $L=R/h_{25}$. Then
+the resulting scaled plane is
+\begin{equation}\label{loc:scaled-plane}
+ \frac{a_0+a_1}{rd}+\frac{\lambda_n}{L}
+ \le1-(n/25-1)\frac bR\le1.
+\end{equation}
+The joint noise intercept $L$ stays fixed. Appendix~\ref{ut:section}
+derives this plane, its zero-residual boundary and the weighted
+specialization of \eqref{loc:harmonic-consequence}.
+
+Finally, new physical support can improve these same parameters.
+From an established $\theta\le t<1$, choose
+$0<\ell_l\le\sqrt{(1-t)/v_*}$. Then
+\[
+ O_0\le R_-/\ell_l-l,\qquad
+ O_1\le R_+/\ell_l-(1-u).
+\]
+Intersect with previous caps and apply the same endpoint elimination;
+\eqref{loc:canonical-identities} then updates the variance and mean
+bounds. Each step consumes the preceding bound. A scalar consequence
+does not replace the joint intercept $L$ in \eqref{loc:scaled-plane}.
+
+Consequently a finite acquisition must cover the entire initial moment
+and probability domain by closed cells; prove the support, Fourier and
+coefficient inequalities on each cell; and either exclude it by a strict
+contradiction or export the simultaneous quantities above. Its surviving
+rows are necessary conditions on the original global extremizer.
+For the surviving middle-band profiles, the acquired contact radii
+satisfy $H_-,H_+<2$, the original $\Lambda<1/2$, and
+$p\in[.32,.43]$. Since $\lambda_n\le\Lambda$ and $n\ge26$,
+$\sqrt{pq+\lambda_n/n}<3/5$. Hence the raw threshold belongs to
+\[
+ np+H/\ell\in(np-6/5,np+6/5)\subset(0,n).
+\]
+At this raw threshold the comparison uses
+$np+H/\ell=k+t$ with $|t|\le1/2$, including both choices at a tie.
+Every nearest integer lies in $0\le k\le n$; all such integers are
+covered or excluded by the acquired contact bounds.
+This supplies the continuous meaning of the finite
+comparison inputs, independently of their file labels.
+
+% Substantive retained derivation: work/berry-esseen-low26-30-20261026/source/
+% cutoff25_20261011/new_root/initial25_b1_exact_v1/RETAINED_ANALYTIC_FRAMEWORK.tex,
+% contact/support, identity_fourier, resource_enclosure, and joint-gap sections.
+% The fixed-floor interpretation and exact beta0 additions are in source/analytic/
+% UNIFORM25_CANTELLI_PRODUCTGAP_REVIEW.txt and
+% UNIFORM25_BETA0_SOURCE_AND_COMPOSITION_REVIEW.txt.
+% Scaled inward plane: source/original/new_audit/
+% SCALED_INWARD_PHYSICAL_DERIVATION_V1.txt.

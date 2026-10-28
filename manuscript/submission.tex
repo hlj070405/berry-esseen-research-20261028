@@ -1,0 +1,3167 @@
+\documentclass[aop,preprint]{imsart}
+\RequirePackage{amsthm,amsmath,amsfonts,amssymb}
+\RequirePackage[numbers]{natbib}
+\usepackage{mathtools,booktabs,longtable}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\startlocaldefs
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\CE}{C_{\mathrm E}}
+\newcommand{\E}{\mathbb E}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\pos}[1]{(#1)_+}
+\numberwithin{equation}{section}
+\endlocaldefs
+\begin{document}
+\hypersetup{pdfsubject={Working draft for mathematical review}}
+\begin{frontmatter}
+\pdfsubject{Working draft for mathematical review}
+\title{Completing the iid Berry--Esseen inequality at Esseen's constant}
+\runtitle{The iid Berry--Esseen inequality}
+\begin{aug}
+\author[A]{\fnms{Linjie}~\snm{Huang}\ead[label=e1]{2025122310@jou.edu.cn}}
+\address[A]{Jiangsu Ocean University\printead[presep={,\ }]{e1}}
+\end{aug}
+\begin{abstract}
+We give a computer-assisted completion of the iid Berry--Esseen inequality
+at Esseen's constant for arbitrary standardized real distributions with
+finite third absolute moment and every positive sample size. The
+finite-index argument uses a common coupling of conditional residuals:
+all incoming binomial count layers are charged against the loss at the
+current layer. One-sided second-moment comparison bounds the resulting
+test-function expectations by explicit finite reference laws, while the
+third-moment cost remains that of the original distribution. The noise,
+inward support and moment cost are constrained by one shared resource
+budget. Convexity, lower curvature bounds and finite lower envelopes of
+valid prices extend finite calculations over continuous parameter domains,
+including atom activations and closed boundaries. These comparisons
+complete the five actual-index implications from 26 through 30.
+Combined in predecessor order with the supporting low-index, bridge
+and local arguments from the moment-defect framework of
+Rodziewicz and Ko\l{}odziejek, they cover all sample sizes.
+A Gaussian Peano remainder supplies the initial support radii without
+index subdivisions. Using the existing heat-smoothing estimate, we start the uniform local induction
+at 47 from two sharp predecessors. We state
+the exact global inputs and distinguish their continuous proofs from
+the rational computations certifying the remaining regions.
+\end{abstract}
+\begin{keyword}[class=MSC]
+\kwdgroup[type=primary]{\kwd{60F05}}
+\kwdgroup[type=secondary]{\kwd{60E15}}
+\end{keyword}
+\begin{keyword}
+\kwd{Berry--Esseen inequality}
+\kwd{normal approximation}
+\kwd{moment comparison}
+\kwd{computer-assisted proof}
+\end{keyword}
+\end{frontmatter}
+\noindent\textit{Working draft, 28 October 2026.}
+
+\section{The problem and the proof architecture}
+Let \(X_1,X_2,\ldots\) be iid real random variables with
+\(\E X_1=0\), \(\E X_1^2=1\), and \(\rho=\E|X_1|^3<\infty\). Put
+\[
+ \Delta_n(P)=\sup_{x\in\mathbb R}
+ \left|\PP\!\left(\frac{X_1+\cdots+X_n}{\sqrt n}\le x\right)-\Phi(x)\right|,
+ \qquad
+ \CE=\frac{3+\sqrt{10}}{6\sqrt{2\pi}}.
+\]
+The sharp iid conjecture asks whether
+\[
+ \sqrt n\,\Delta_n(P)\le\CE\rho
+ \quad\text{for every such }P\text{ and every }n\ge1.
+\]
+Esseen's Bernoulli asymptotic lower bound makes this constant necessary;
+Schulz proved the complete binomial case \cite{Schulz2016}.
+The mathematical issue is the uniform bound for arbitrary real laws,
+rather than the identification of the candidate constant.
+An eventual-in-sample-size theorem of He and Cheng
+\cite{HeCheng2026} gives a uniform upper bound beyond an explicit
+large threshold. It does not settle the finite range.
+The moment-defect framework of Rodziewicz and Ko\l{}odziejek
+\cite{RK2026} provides a different route through finite-index
+localization and propagation. Its public conditional continuation
+retains finite-index premises. Our comparison argument addresses
+the remaining five actual-index regions; the proof dependencies
+needed for the all-index conclusion are made explicit below.
+
+The finite-index argument below retains a single original law throughout.
+Its conditional variances, inward support and third absolute moment pay
+the same budget. The reference laws introduced by moment comparison
+bound expectations of particular test functions; they do not replace
+the original law in the statement of the theorem.
+The proof uses four ranges: the supporting low-index results through
+$25$, the five new implications through $30$, the actual-index bridge
+through $46$, and a uniform induction for all $n\ge47$.
+The last step uses a support-free Gaussian replacement estimate to
+discharge the hypotheses of the existing local comparison theorem.
+
+\section{Common residuals and moment prices}\label{mc:section}
+
+Fix $0<p<1$, write $q=1-p$ and $v=pq$, and let $B$ be
+Bernoulli with parameter $p$. Conditional on $B=i$, let $U$ have
+the law of a centered variable $U_i$, where
+\begin{equation}\label{mc:support}
+ -O_0\le U_0\le a_0,\qquad -a_1\le U_1\le O_1,
+ \qquad a_0+a_1\le\Delta<1.
+\end{equation}
+Here $O_i>0$ and $a_i\ge0$. Put $s_i=\E U_i^2$,
+$m_i=\E U_i^3$ and $s=qs_0+ps_1$. We assume that
+$Y=B+U-p$ is nonpositive on $\{B=0\}$ and nonnegative on
+$\{B=1\}$. Thus $X=Y/\sqrt{v+s}$ has mean zero and variance one.
+Throughout this section
+\[
+ \rho=\E|X|^3,\qquad R_0=v(1-2v)
+\]
+refer to this actual law.
+
+Let $(B_i,\widetilde U_i)$ be independent copies of $(B,U)$, and put
+$S_n=\sum_{i=1}^n(B_i+\widetilde U_i)$. For $1\le k<n$,
+write $N=n-k$, $\pi_j=\binom njp^jq^{n-j}$,
+$F_k=\sum_{j=0}^k\pi_j$, and
+\[
+ H_r=\sum_{j=k+1}^{k+r}\pi_j,\qquad d=1-\Delta.
+\]
+On an auxiliary probability space take independent pairs
+$(U_{0i},U_{1i})$, each with the prescribed marginals, and set
+$W_j=\sum_{i\le j}U_{1i}+\sum_{i>j}U_{0i}$.
+Conditioning on $\sum B_i=j$ gives the same residual law $W_j$.
+
+\begin{lemma}[One coupled staircase]\label{mc:staircase}
+Let $t$ be real and choose any slope satisfying
+\[
+ \eta\ge\max_{1\le r\le N}\frac{H_r}{rd}.
+\]
+Then
+\begin{equation}\label{mc:stoploss}
+ \PP\{S_n\le k+t\}
+ \le F_k+\eta\left\{t+\E(W_k-t-\pi_k/\eta)_+\right\}.
+\end{equation}
+If $h>0$ satisfies
+\begin{equation}\label{mc:square-gate}
+ \frac{H_r}{\pi_k}\le\frac{2rd}{h}+\frac{r^2d^2}{h^2}
+ \quad(1\le r\le N),
+\end{equation}
+then
+\begin{equation}\label{mc:clipped-square}
+ \PP\{S_n\le k+t\}
+ \le F_{k-1}+\frac{\pi_k}{h^2}\E(t+h-W_k)_+^2.
+\end{equation}
+In particular, writing $V=\E W_k^2=Ns_0+ks_1$ gives
+\begin{equation}\label{mc:full-square}
+ \PP\{S_n\le k+t\}
+ \le F_k+\frac{\pi_k}{h^2}(V+t^2+2ht).
+\end{equation}
+When $\pi_{k+1},\ldots,\pi_n$ decrease, the least legal stop-loss
+slope is $\pi_{k+1}/d$, and it suffices in
+\eqref{mc:square-gate} to check $r=1$.
+\end{lemma}
+\begin{proof}
+The support bounds give $W_{k+r}-W_k\ge-r\Delta$ in this coupling.
+After discarding losses at counts below $k$, the CDF minus $F_k$
+is at most $\E g(t-W_k)$, where
+\[
+ g(y)=-\pi_k\mathbf1_{\{y<0\}}
+       +\sum_{r=1}^N\pi_{k+r}\mathbf1_{\{y\ge rd\}}.
+\]
+For every $y$, including each jump point,
+$g(y)\le\eta y+\eta(-y-\pi_k/\eta)_+$.
+Taking expectations proves \eqref{mc:stoploss}.
+Likewise $g(y)+\pi_k\le\pi_k(y+h)_+^2/h^2$:
+at the $r$th incoming jump this is precisely
+\eqref{mc:square-gate}, and between jumps the right side increases.
+This proves \eqref{mc:clipped-square}; replacing the positive part
+by the full square gives \eqref{mc:full-square}.
+Finally $H_r\le r\pi_{k+1}$ in the decreasing case.
+\end{proof}
+
+For $t<0$ and $V\le\overline V$, the choice
+$h=-t+\overline V/(-t)$ in \eqref{mc:full-square}, when legal,
+gives $F_k-\pi_k t^2/(\overline V+t^2)$. All these inequalities
+hold for closed CDFs and allow arbitrary atoms in the conditional laws.
+
+The moment identity, cubic endpoint inequality and shared budget below
+come from the framework of Rodziewicz--Ko\l{}odziejek~\cite{RK2026};
+we retain their allocation explicitly for the conditional prices.
+\begin{lemma}[The actual third-moment budget]\label{mc:budget}
+The standardized moment satisfies
+\begin{equation}\label{mc:rho-identity}
+ \rho(v+s)^{3/2}=R_0+3v(s_0+s_1)-qm_0+pm_1.
+\end{equation}
+If $s>0$, put $\alpha=ps_1/s$. For any positive cap
+$a_0+a_1\le\delta$,
+\begin{equation}\label{mc:allocation-floor}
+ \rho\ge g_\delta(\alpha):=
+ \frac{R_0+\{3[p+\alpha(q-p)]-\delta\}s
+ +\{(1-\alpha)/\sqrt q+\alpha/\sqrt p\}^2s^2/\delta}
+ {(v+s)^{3/2}}.
+\end{equation}
+The same allocation gives the count variance
+\begin{equation}\label{mc:count-variance}
+ V_k=s\left\{\frac{N(1-\alpha)}q+\frac{k\alpha}p\right\}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Expand $|Y|^3=(p-U_0)^3$ and $(q+U_1)^3$ in the two groups to
+obtain \eqref{mc:rho-identity}. If $Z$ is centered, $Z\le a$ and
+$\E Z^2=z$, then
+$\E[(a-Z)(Z+z/a)^2]\ge0$ yields
+$\E Z^3\le az-z^2/a$. Apply this to $U_0$ and $-U_1$.
+Zero caps force the corresponding centered residual and variance
+to vanish; omit their zero contributions. Cauchy--Schwarz gives
+\[
+ -qm_0+pm_1\ge
+ -s\{(1-\alpha)a_0+\alpha a_1\}
+ +\frac{(\sqrt q\,s_0+\sqrt p\,s_1)^2}{a_0+a_1}.
+\]
+Bound the first term below by $-s\delta$ and the denominator
+above by $\delta$, then use
+$v(s_0+s_1)=s[p+\alpha(q-p)]$ to obtain
+\eqref{mc:allocation-floor}. Equation~\eqref{mc:count-variance}
+follows from independence.
+\end{proof}
+
+If $p<1/2$, this floor increases with $\alpha$ for fixed $\delta$.
+For any positive affine cap $\delta(\alpha)$ it is convex in
+$\alpha$, since an affine square divided by a positive affine
+function is convex. At $s=0$ both residuals vanish almost surely,
+and \eqref{mc:rho-identity} gives the Bernoulli moment directly.
+
+The support bounds also imply $s_i\le O_i a_i$ by averaging
+$(U_i+\ell_i)(r_i-U_i)\ge0$ over the corresponding support
+$[-\ell_i,r_i]$. Suppose an upstream resource bound for this law gives
+\[
+ g(a_0+a_1)+\lambda\{(1-\alpha)\mathfrak h_-
+                         +\alpha\mathfrak h_+\}\le\mathfrak R,
+ \qquad \lambda=ns,\quad g>0.
+\]
+Its coefficients must be supplied by the applicable resource theorem.
+Combining it with $a_0+a_1\ge s_0/O_0+s_1/O_1$ yields
+\begin{equation}\label{mc:signed-plane}
+ \lambda\left\{(1-\alpha)
+       \left(\mathfrak h_-+\frac g{nqO_0}\right)
+ +\alpha\left(\mathfrak h_++\frac g{npO_1}\right)\right\}
+ \le\mathfrak R.
+\end{equation}
+This necessary plane retains the actual allocation and its common noise.
+
+\begin{lemma}[Classical two-moment comparison]\label{mc:two-moment}
+For $a>0$, $z\ge0$, let $T_{a,z}$ have mean zero, variance $z$
+and atoms $a,-z/a$, with probabilities
+$z/(a^2+z),a^2/(a^2+z)$; put $T_{a,0}=0$.
+If $U$ is centered, $U\le a$ and $\E U^2\le z$, then
+\begin{equation}\label{mc:pinelis}
+ \E(U-c)_+^2\le\E(T_{a,z}-c)_+^2\qquad(c\in\mathbb R).
+\end{equation}
+This comparison is preserved by independent addition. The reference
+expectation increases when either $a$ or $z$ increases.
+If $U_1,\ldots,U_m$ are independent, centered, bounded above by
+one common $b>0$, and have total variance at most $V$, then
+\begin{equation}\label{mc:bentkus}
+ \E\left(\sum_i U_i-c\right)_+^2
+ \le \E(Z_b(V)-c)_+^2,
+ \qquad Z_b(V)=\sum_{i=1}^mT_{b,V/m,i},
+\end{equation}
+where the reference summands are independent.
+\end{lemma}
+\begin{proof}
+Write $l=-z/a$, allowing $\E U^2\le z$ throughout.
+If $c\le l$, then $\E(U-c)_+^2\le\E U^2+c^2\le z+c^2$,
+the reference value. If $c\ge a$, both
+sides vanish. For $l<c<a$, the pointwise majorant
+\[
+ (u-c)_+^2\le\left(\frac{a-c}{a-l}\right)^2(u-l)^2
+ \quad(u\le a)
+\]
+has a nonnegative quadratic coefficient and equality at both reference
+atoms. Its expectation increases with $\E U^2$, proving
+\eqref{mc:pinelis}. This is the squared-positive-part case of
+Pinelis~\cite[Lemma~3.2 and Theorem~2.1]{Pinelis2006}.
+Apply the same comparison to $T_{a_1,z_1}$ with upper bounds
+$a_2\ge a_1$ and $z_2\ge z_1$: this proves both parameter
+monotonicities without differentiation. Conditioning on the other
+independent summands proves preservation by addition. Zero variance
+is the zero law; a centered variable with upper endpoint zero is
+also zero and may be omitted. Jensen's inequality includes these
+boundaries without assigning positive variance to $T_{0,z}$.
+After replacement with common upper endpoint $b$, Bentkus's
+variance equalization~\cite[Lemma~4.5]{Bentkus2004}, scaled from
+$b=1$, gives \eqref{mc:bentkus}.
+\end{proof}
+
+Only test-function expectations are compared in this lemma.
+The original conditional distributions need not have finite support.
+For $K(V,c)=\E(Z_b(V)-c)_+^2$ one also has
+\begin{equation}\label{mc:variance-derivative}
+ 0\le K_V\le1.
+\end{equation}
+There is an order proof. Both $K(V,c)$ and
+$\E(c-Z_b(V))_+^2$ increase with $V$: for the latter use
+$-T_{b,z}\overset d=T_{z/b,z}$ and the two parameter monotonicities.
+Their sum is $V+c^2$, hence
+\[
+ 0\le K(V_2,c)-K(V_1,c)\le V_2-V_1\qquad(0\le V_1\le V_2).
+\]
+The finite reference formula is $C^1$ for $V>0$, including atom
+activations, so \eqref{mc:variance-derivative} follows.
+Zero variance follows directly by Jensen and continuity.
+
+For any finite reference sum $Z$ dominating the squared positive
+parts of $W_k$, define
+\begin{equation}\label{mc:Q}
+ Q_Z(A)=\inf_{h>0}\frac{\E(Z-A+h)_+^2}{4h}.
+\end{equation}
+The inequality $x_+\le(x+h)_+^2/(4h)$ gives
+$\E(W_k-A)_+\le Q_Z(A)$.
+Write
+\[
+ M_j=\sum_{z_i-A+h>0}w_i(z_i-A)^j.
+\]
+On a fixed active set the value is $(M_2/h+2M_1+M_0h)/4$.
+A positive stationary width satisfies $h^2=M_2/M_0$ and has
+price $(\sqrt{M_0M_2}+M_1)/2$; its adjacent activation inequalities
+must also hold. The objective is convex in $h$, with continuous
+derivative at activations. If $Z\le A$, its infimum is zero.
+The analogous clipped-square objective and its interior stationary width are
+\[
+ M_2/h^2+2M_1/h+M_0,\qquad h=-M_2/M_1\quad(M_1<0),
+\]
+subject also to the legal staircase gate.
+
+\begin{lemma}[Convex reference prices]\label{mc:convex-prices}
+For a fixed reference law $Z$, the price $Q_Z$ is nonincreasing,
+convex and $1$-Lipschitz in $A$.
+\end{lemma}
+\begin{proof}
+The map $(A,h)\mapsto\E(Z-A+h)_+^2/h$ is a convex perspective,
+so partial minimization proves convexity of $Q_Z$.
+At a positive optimizer,
+$Q_Z'(A)=-(M_0+M_1/h)/2\in[-1,0]$, by
+$M_1^2\le M_0M_2=M_0^2h^2$ and $M_0\le1$.
+Convexity extends these bounds to all subgradients.
+\end{proof}
+
+\section{Phase interpolation and complementary prices}\label{pp:section}
+
+For fixed actual parameters, let
+\begin{equation}\label{pp:actual-residual}
+ R(t)=\PP\{S_n\le k+t\}
+ -\Phi\left(\frac{k+t-np}{\sqrt{npq+\lambda}}\right)-c_n\rho,
+ \qquad \lambda=ns,
+\end{equation}
+where $0<c_n\le\CE/\sqrt n$. In particular $\rho$ and
+$npq+\lambda$ remain fixed when $t$ changes.
+The prices of Section~\ref{mc:section} majorize this residual;
+the actual CDF itself need not be differentiable.
+
+\begin{lemma}[Semiconvex interpolation]\label{pp:chord}
+Let $E$ be continuous on $[a,b]$ and suppose
+$E(t)+Mt^2/2$ is convex there, with $M\ge0$.
+If $E(a)\le L$ and $E(b)\le U$, then
+\begin{equation}\label{pp:chord-bound}
+ E(a+y)\le L+\frac{U-L}{b-a}y
+                   +\frac M2y(b-a-y),\qquad 0\le y\le b-a.
+\end{equation}
+The same conclusion holds if $E'$ is absolutely continuous and
+$E''\ge-M$ almost everywhere, or if $E''\ge-M$ in the sense of
+distributions. A supremum of functions sharing this semiconvexity
+constant remains semiconvex wherever finite.
+\end{lemma}
+\begin{proof}
+Apply the convex chord inequality to $E(t)+Mt^2/2$ and subtract
+the quadratic. Each of the derivative conditions implies that
+this function is convex. Supremum preserves convexity.
+\end{proof}
+
+For example, keep a fixed comparison law $Z$ and a legal slope
+$\eta(p)$, and put
+\[
+ E(t)=F_k+\eta(p)\{t+Q_Z(t+\pi_k/\eta(p))\}
+ -\Phi\left(\frac{k+t-np}{\sqrt{npq+\lambda}}\right)-c_n\rho.
+\]
+The reference term is convex in phase. The Gaussian contribution
+has second derivative
+\[
+ \frac{(k+t-np)\phi((k+t-np)/\sqrt A)}{A^{3/2}},
+ \qquad A=npq+\lambda.
+\]
+Consequently, throughout $p\in[p_l,p_u]\subset(0,1/2)$,
+$\lambda\ge\lambda_l$ and $t\in[a,b]$, a valid constant is
+\begin{equation}\label{pp:gaussian-curvature}
+ M=\frac{(np_u-k-a)_+\phi(0)}
+          {\{np_l(1-p_l)+\lambda_l\}^{3/2}}.
+\end{equation}
+In particular $M=0$ for phases $a\ge np_u-k$.
+The same argument applies to a fixed clipped-square price,
+whose positive-part-square term is convex in phase.
+Uniform bounds on the two phase faces therefore control the whole
+phase interval. Different valid lower bounds on the same actual
+$\rho$ may be used to estimate those two faces.
+
+Semiconvexity also permits an atom to cross an activation threshold
+inside a probability interval. If $x$ is $C^2$ on that interval,
+then $(x_+)^2$ is $C^1$, its derivative is absolutely continuous,
+and almost everywhere
+\begin{equation}\label{pp:activation-curvature}
+ ((x_+)^2)'=2x_+x',\qquad
+ ((x_+)^2)''=2\mathbf1_{\{x>0\}}(x')^2+2x_+x''.
+\end{equation}
+Thus interval bounds with $x_+\in[0,(\sup x)_+]$ and the indicator
+in $[0,1]$ give a valid curvature bound across zero.
+There is no singular derivative at the crossing. In the rest of this
+section $Z_b(V)$ has $n$ independent summands, so the number $m$
+in \eqref{mc:bentkus} is $n$. For instance, if
+only the lowest atom of $Z_b(V)$ can lie below $y$, the exact identity
+\begin{equation}\label{pp:one-clip}
+ \E(Z_b(V)-y)_+^2
+ =V+y^2-\left(1+\frac{V}{nb^2}\right)^{-n}(V/b+y)_+^2
+\end{equation}
+may be differentiated in this way. The condition that every other
+atom is at least $y$ is still required.
+For $n>1$ this identity also gives a uniform lower variance derivative
+when $y\le y_{\max}<b$. Put
+\[
+ z_* =\frac{2n-\sqrt{2n(n-1)}}{n+1},\qquad
+ m_* =1-\left(\frac{n-z_*}{n-y_{\max}/b}\right)^{n-1}
+                         (2z_*-z_*^2).
+\]
+Then $K_V(V,y)\ge m_*$ throughout any region where at most the
+lowest atom is clipped. If none is clipped, $K_V=1$.
+Otherwise, with $r=1+V/(nb^2)$ and
+$z=(V/b+y)/(br)\in[0,1]$, differentiation gives
+\[
+ K_V=1-\left(\frac{n-z}{n-y/b}\right)^{n-1}(2z-z^2).
+\]
+The denominator is positive, and the subtracted expression increases
+with $y$. Its derivative in
+$z$ has the sign of $2n-4nz+(n+1)z^2$, whose unique zero in
+$[0,1]$ is $z_*$. This proves the bound, including activation
+boundaries by continuity.
+
+\begin{lemma}[A finite lower envelope of phase prices]\label{pp:mixture}
+Suppose $R(t)\le E_i(t)$ for $1\le i\le r$, and that on $[0,H_i]$
+the function $E_i$ is semiconvex with constant $M_i$ and has
+endpoint upper bounds $L_i,U_i$. Choose
+$M\ge\max_i M_i$ and $0<H\le\min_i H_i$, and write
+\[
+ A_i=L_i,\qquad B_i=\frac{U_i-L_i}{H_i}+\frac{MH_i}{2},
+ \qquad q_i(t)=A_i+B_it-\frac M2t^2.
+\]
+Then, throughout $[0,H]$,
+\begin{equation}\label{pp:mixed-bound}
+ R(t)\le q(t):=\min_i(A_i+B_it)-\frac M2t^2.
+\end{equation}
+The maximum of $q$ is attained among $0,H$, the vertices $B_i/M$
+when $M>0$, and the intersections $(A_j-A_i)/(B_i-B_j)$ when
+$B_i\ne B_j$, retaining only points in $[0,H]$.
+\end{lemma}
+\begin{proof}
+Lemma~\ref{pp:chord} gives $E_i\le q_i$ on its own interval.
+Their minimum therefore majorizes the same actual residual. Between
+consecutive intersections of the affine parts, $q$ agrees with one
+concave quadratic. Its maximum is at a vertex or a segment endpoint.
+\end{proof}
+
+No mixing parameter is needed. The old fixed-mixture certificates
+remain valid because, for every fixed probability vector $(\theta_i)$,
+\[
+ \min_iq_i(t)\le\sum_i\theta_iq_i(t).
+\]
+Thus any certified upper bound for such a mixture also bounds the
+lower envelope. With rational face bounds and curvature, every point
+in the finite candidate set and every value evaluated there is rational.
+An estimate using a coefficient $c_i\le c_n$ already majorizes
+the residual with coefficient $c_n$, since $\rho\ge0$.
+Thus the directed lower coefficients in the finite calculation need
+no alignment cost when the target is $c_n=\CE/\sqrt n$.
+
+\begin{lemma}[A short CDF bridge]\label{pp:cdf-bridge}
+For the same actual law in \eqref{pp:actual-residual}, suppose
+$npq+\lambda\ge A_*>0$ and $R(b)\le U$. Then, for every $t\le b$,
+\begin{equation}\label{pp:bridge-bound}
+ R(t)\le U+\frac{\phi(0)}{\sqrt{A_*}}(b-t).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The actual closed CDF is nondecreasing. Hence
+$R(t)\le R(b)+\Phi((k+b-np)/\sqrt{npq+\lambda})
+-\Phi((k+t-np)/\sqrt{npq+\lambda})$.
+Bound the last difference by the maximum normal density.
+\end{proof}
+
+Only the price at $b$ is needed in this bridge. Its comparison
+law, activation conditions or curvature estimates need not extend
+to the smaller phases. The fixed actual moment and variance, and
+monotonicity of the actual CDF, suffice.
+
+\section{Continuous envelopes for the finite certificates}\label{ce:section}
+
+The finite calculations use two envelopes. The first freezes a
+moment-comparison law on an entire parameter box. The second keeps the
+same noise in the comparison variance and moment cost until a derivative
+test licenses its elimination. The tests below are obligations of each
+certificate, rather than consequences asserted for every parameter choice.
+
+\begin{proposition}[A fixed-reference box]\label{ce:fixed-box}
+Let $p\in[p_l,p_u]\subset(0,1/2)$ and $\ell\le\lambda\le u$, with
+$\nu=np_l(1-p_l)+\ell>0$. Suppose a reference expression $A(p,t)$,
+independent of the actual noise, and a differentiable moment floor
+$g(p,\lambda)$ give
+\[
+ R(t)\le A(p,t)-\Phi\left(\frac{k+t-np}{\sqrt{npq+\lambda}}\right)
+                      -c_ng(p,\lambda).
+\]
+If $g_\lambda\ge b$ throughout the box, then
+\begin{align}\label{ce:fixed-box-bound}
+ R(t)\le{}&A(p,t)-\Phi\left(\frac{k+t-np}{\sqrt{npq+\ell}}\right)
+                      -c_ng(p,\ell)+J(t),\\
+ J(t)={}&(u-\ell)
+ \left\{\frac{(k+t-np_l)_+\phi(0)}{2\nu^{3/2}}-c_nb\right\}_+.
+ \notag
+\end{align}
+If $A(p,\cdot)$ is convex, the upper function has the phase
+semiconvexity constant in \eqref{pp:gaussian-curvature} with
+$\lambda_l=\ell$.
+\end{proposition}
+\begin{proof}
+For $\mu=k+t-np$, differentiation of the explicit surrogate gives
+\[
+ \frac\partial{\partial\lambda}
+ \left\{-\Phi\left(\frac\mu{\sqrt{npq+\lambda}}\right)-c_ng(p,\lambda)\right\}
+ =\frac{\mu\phi(\mu/\sqrt{npq+\lambda})}{2(npq+\lambda)^{3/2}}
+                           -c_ng_\lambda.
+\]
+Its upper bound is the expression in braces defining $J$.
+Integrate from $\ell$ to the actual $\lambda$. The nonnegative
+correction $J$ is convex in $t$, so only the Gaussian term contributes
+to the lower phase-curvature bound.
+\end{proof}
+
+Here $A$ may be the current-count price
+\[
+ A(p,t)=F_k+\eta(p)\{t+Q_Z(t+\pi_k/\eta(p))\},
+\]
+or a fixed reflected-square reference price. For example, upper bounds
+$a,z_0,z_1$ on the first group's inward support and the two conditional
+variances give
+\[
+ Z=\sum_{i=1}^{n-k}T_{a,z_0,i}+\sum_{i=1}^{k}T_{O_1,z_1,i}.
+\]
+Lemma~\ref{mc:two-moment} makes this one law valid throughout the box.
+The necessary resource plane \eqref{mc:signed-plane} is retained when
+bounding $\lambda(1-\alpha)$ and $\lambda\alpha$ for $z_0,z_1$.
+An inward cap and an allocation lower bound similarly give
+\[
+ a_0\le\delta-\frac{\alpha\lambda}{npO_1}.
+\]
+These relations keep the variance and support corners within a single
+proved resource budget.
+
+The probability direction can also be bounded without a probability
+mesh. At a fixed phase, put $a(p)=t+\pi_k(p)/\eta(p)$.
+For the term $\eta Q_Z(a)$, a lower second-derivative bound is supplied by
+\begin{equation}\label{ce:probability-curvature}
+ \eta''Q_Z(a)+2\eta'Q_Z'(a)a'+\eta Q_Z'(a)a''.
+\end{equation}
+The omitted term is $\eta Q_Z''(a)(a')^2\ge0$, interpreted weakly
+at an activation point. The remaining binomial, Gaussian and moment-floor
+derivatives are explicit. Bounds on these expressions and on
+$-1\le Q_Z'\le0$ give a uniform probability chord by
+Lemma~\ref{pp:chord}. Face bounds obtained from different moment
+estimates are combined through the same fixed-reference envelope with
+the actual law's original moment and variance.
+
+\begin{proposition}[A coherent reflected-square envelope]\label{ce:coherent}
+Let $j=k+1<n$ and fix a legal square width $h$ for reference count $j$.
+Suppose the centered reflected residual summands have one common upper
+bound $b>0$. Set
+\[
+ V_j=\frac\lambda n\left\{\frac{(n-j)(1-\alpha)}q+\frac{j\alpha}p\right\},
+ \qquad K(V,y)=\E(Z_b(V)-y)_+^2.
+\]
+Let $G(p,\lambda,\alpha)$ be a valid actual-moment floor, convex in
+$\alpha\in[0,1]$ and differentiable there. A positive affine inward
+cap in \eqref{mc:allocation-floor} supplies such a floor.
+Define
+\begin{align}\label{ce:coherent-price}
+ E(p,\lambda,\alpha,t)={}&F_k+
+     \frac{\pi_j}{h^2}K(V_j,1-t-h)
+ -\Phi\left(\frac{k+t-np}{\sqrt{npq+\lambda}}\right)
+ -c_nG(p,\lambda,\alpha).
+\end{align}
+Suppose, on the whole stated probability, noise and phase domain,
+\begin{equation}\label{ce:alpha-gate}
+ c_nG_\alpha(p,\lambda,0)
+ \ge\frac{\pi_j\lambda(j-np)_+}{npq\,h^2},
+\end{equation}
+and
+\begin{align}\label{ce:noise-gate}
+ \frac{\pi_j(n-j)}{nq h^2}K_V(V_j(p,\lambda,0),1-t-h)
+ +\frac{(k+t-np)\phi((k+t-np)/\sqrt{npq+\lambda})}
+                  {2(npq+\lambda)^{3/2}}\notag\\
+  {}-c_nG_\lambda(p,\lambda,0)\ge0.
+\end{align}
+Then for every actual $\lambda\in[\ell,u]$ and allocation,
+\begin{equation}\label{ce:coherent-bound}
+ R(t)\le E(p,\lambda,\alpha,t)\le E(p,u,0,t).
+\end{equation}
+The zero-noise boundary is included by continuity.
+\end{proposition}
+\begin{proof}
+Apply \eqref{mc:clipped-square} at count $j$ and phase $t-1$,
+then apply \eqref{mc:bentkus} to the reflected residual sum.
+This proves the first upper bound with the same actual third moment,
+replaced only by its valid lower floor $G$.
+
+By \eqref{mc:variance-derivative}, $0\le K_V\le1$, and
+$\partial_\alpha V_j=\lambda(j-np)/(npq)$.
+Convexity gives $G_\alpha(p,\lambda,\alpha)\ge G_\alpha(p,\lambda,0)$.
+Thus \eqref{ce:alpha-gate} implies $E_\alpha\le0$.
+On the formal zero-allocation face, \eqref{ce:noise-gate} is exactly
+$\partial_\lambda E(p,\lambda,0,t)\ge0$. Integrating the two
+monotonicities proves \eqref{ce:coherent-bound}.
+\end{proof}
+
+Zero allocation here is an endpoint of the majorizing function; it need
+not describe an admissible original law. The first elimination uses the
+universal bound $0\le K_V\le1$. Only afterwards is a one-clip formula
+needed to evaluate the formal face or obtain the sharper lower derivative
+in \eqref{ce:noise-gate}. Its next-atom condition is checked on that face.
+The resulting explicit function $E(p,u,0,t)$ is bounded in probability
+and phase by the weak-curvature rules of Section~\ref{pp:section}.
+
+\begin{corollary}[An allocation interval]\label{ce:allocation-interval}
+In the same reflected-square setting, retain one allocation interval
+$[\alpha_-,\alpha_+]$. Suppose the moment floor $G$ is nondecreasing
+in allocation throughout the domain. For either endpoint
+$\xi\in\{\alpha_-,\alpha_+\}$ define
+\begin{align}\label{ce:two-corners}
+ E_{\xi}(p,\lambda,t):={}&F_k+
+ \frac{\pi_j}{h^2}K(V_j(p,\lambda,\xi),1-t-h)\notag\\
+ &-\Phi\left(\frac{k+t-np}{\sqrt{npq+\lambda}}\right)
+ -c_nG(p,\lambda,\alpha_-).
+\end{align}
+Then, throughout the original probability interval, including a crossing
+of $j=np$,
+\begin{equation}\label{ce:variance-endpoint-max}
+ R(t)\le\max\{E_{\alpha_-}(p,\lambda,t),
+              E_{\alpha_+}(p,\lambda,t)\}.
+\end{equation}
+If $j\ge np$ everywhere, only $\xi=\alpha_+$ is needed;
+if $j\le np$ everywhere, only $\xi=\alpha_-$ is needed.
+If $\partial_\lambda E_\xi\ge0$ on $[\ell,u]$ for every retained
+branch, replace $\lambda$ by $u$ in the resulting maximum.
+\end{corollary}
+\begin{proof}
+The variance $V_j$ is affine in allocation, so its maximum on an
+interval occurs at an endpoint. Since $K$ increases with variance
+and the moment cost is at least $G(p,\lambda,\alpha_-)$,
+\eqref{ce:variance-endpoint-max} follows. The derivative
+$\partial_\alpha V_j=\lambda(j-np)/(npq)$ selects a single endpoint
+when its sign is fixed. Each retained explicit branch keeps the
+same actual $\lambda$ and can be increased to $u$ under its own
+noise derivative condition. Zero noise is included by continuity.
+\end{proof}
+
+The noise gate in this corollary is explicit. With
+$\nu_\xi=\{(n-j)(1-\xi)/q+j\xi/p\}/n$, it is
+\[
+ \frac{\pi_j\nu_\xi}{h^2}K_V(\nu_\xi\lambda,1-t-h)
+ +\frac{(k+t-np)\phi((k+t-np)/\sqrt{npq+\lambda})}
+               {2(npq+\lambda)^{3/2}}
+ -c_nG_\lambda(p,\lambda,\alpha_-)\ge0.
+\]
+Probability and phase bounds are also applied to each explicit branch
+before taking their maximum. A single branch across a crossing is
+only an auxiliary expression; the maximum in
+\eqref{ce:variance-endpoint-max} gives the actual residual bound.
+Both allocation rules use one endpoint test. The affine-cap moment
+floor is convex by Section~\ref{mc:section}, so
+$G_\alpha(p,\lambda,\alpha_-)\ge0$ implies $G(\alpha)\ge G(\alpha_-)$.
+The stronger endpoint payment in \eqref{ce:alpha-gate}, with $0$
+replaced by $\alpha_-$, instead makes the full price nonincreasing.
+To evaluate that endpoint, write $\delta=A-\lambda(H+r\alpha)>0$,
+$B=(1-\alpha)/\sqrt q+\alpha/\sqrt p$ and
+$B_\alpha=1/\sqrt p-1/\sqrt q$. Direct differentiation gives
+\begin{equation}\label{ce:signed-allocation-derivative}
+ G_\alpha=\frac{s}{(v+s)^{3/2}}
+ \left\{3(q-p)+\lambda r+s\left(
+ \frac{2BB_\alpha}{\delta}+\frac{\lambda rB^2}{\delta^2}\right)\right\}.
+\end{equation}
+For $p\in[p_l,p_u]\subset(0,1/2)$, $0\le\lambda\le L$,
+$\delta\ge\delta_*>0$ and $B\le B_*$, a lower bound on the
+braced quantity is
+\begin{equation}\label{ce:signed-allocation-gate}
+ 3(1-2p_u)+L\min(0,r)
+       +\frac{L^2\min(0,r)B_*^2}{n\delta_*^2}.
+\end{equation}
+This is an optional sufficient bound for the endpoint test.
+The omitted $2BB_\alpha$ term is nonnegative, so a positive bound
+licenses the choice for either sign of $r$.
+Zero noise again follows by continuity.
+
+\section{Global inputs and their dependencies}\label{gi:section}
+
+For a standardized real law $P$ with finite $\rho(P)=\E|X|^3$, write
+\[
+ R_n(P)=\frac{\sqrt n\,\Delta_n(P)}{\rho(P)},\qquad
+ C_n=\sup_P R_n(P).
+\]
+The supremum is over all such laws, without a support restriction.
+We use the classical iid moment envelope \cite{Shevtsova2013}
+\begin{equation}\label{gi:moment-envelope}
+ R_n(P)\le T(\rho):=
+ \min\{.469,\ .3322(1+.429/\rho),\ .3031(1+.646/\rho)\}.
+\end{equation}
+All terminating decimals denote rational numbers.
+
+We include the variational starting point and contact argument;
+compare He--Cheng~\cite[Lemmas~6.1 and~6.3, equations~(12)--(15)]{HeCheng2026}.
+\begin{lemma}[A contrary extremizer]\label{gi:extremizer}
+If $C_n\ge\CE$, the supremum defining $C_n$ is attained by a
+standardized law $P$ with $\rho(P)<2$. After reflection if necessary,
+there is a finite $H$ such that
+\[
+ F_n(H)-\Phi(H/\sqrt n)=C_n\rho(P)/\sqrt n,
+ \qquad F_n(H)=P^{*n}(( -\infty,H]).
+\]
+\end{lemma}
+\begin{proof}
+The classical moment envelope in \eqref{gi:moment-envelope} gives
+$C_n\le.469<1/2$ and
+$T(2)\le.3031(1+.646/2)=.4010013<\CE$.
+Thus a maximizing sequence whose scores tend to $C_n\ge\CE$
+eventually has third moments below $2$. Tightness and this third-moment
+bound give a weakly convergent subsequence $P_j\Rightarrow P$ whose
+first two moments remain $0,1$. Pass also to
+$\rho(P_j)\to\rho_*\in[1,2]$, so $\rho(P)\le\rho_*$.
+
+Reflection converts a negative discrepancy into a limit of positive
+closed discrepancies. Choose corresponding thresholds $H_j$ with
+an error tending to zero. These thresholds stay bounded: Chebyshev's
+inequality and the normal tail bound make the discrepancy tend uniformly
+to zero as $|H_j|\to\infty$. Passing to $H_j\to H$, the closed-set
+inequality for weak convergence gives
+\[
+ F_n(H)-\Phi(H/\sqrt n)\ge C_n\rho_*/\sqrt n.
+\]
+Maximality and $\rho(P)\le\rho_*$ force equality and
+$\rho(P)=\rho_*$. The moment envelope then gives $\rho(P)<2$.
+
+For the contact condition, put $z=H/\sqrt n$ and $m=\E[X|X|]$.
+Perturb the common marginal to
+$Q_\varepsilon=(1-\varepsilon)P+\varepsilon\delta_x$.
+Write $\mu_\varepsilon,\sigma_\varepsilon^2$ and
+$\beta_\varepsilon$ for its mean, variance and centered third
+absolute moment. The threshold $H$ stays fixed in these original
+coordinates. By the definition of $C_n$,
+\[
+ J(\varepsilon)=Q_\varepsilon^{*n}(( -\infty,H])
+ -\Phi\left(\frac{H-n\mu_\varepsilon}{\sigma_\varepsilon\sqrt n}\right)
+ -\frac{C_n\beta_\varepsilon}{\sqrt n\,\sigma_\varepsilon^3}
+ \le0=J(0).
+\]
+The right derivative at zero therefore gives
+\begin{align}\label{gi:contact}
+ \mathcal D(x)={}&n\{F_{n-1}(H-x)-F_n(H)\}
+ +\phi(z)\left\{\sqrt n x+\frac z2(x^2-1)\right\}\notag\\
+ &-\frac{C_n}{\sqrt n}
+ \left\{|x|^3-\frac32\rho x^2-3mx+\frac12\rho\right\}\le0.
+\end{align}
+Here $F_0$ is the CDF of the point mass at zero when $n=1$.
+Indeed the perturbed mean and variance have derivatives $x$ and
+$x^2-1$, and the centered third absolute moment has derivative
+$|x|^3-\rho-3mx$. The convolution derivative is exactly
+$n\{F_{n-1}(H-x)-F_n(H)\}$, preserving the common marginal.
+The integral of $\mathcal D$ under $P$ is zero.
+Since $\mathcal D$ is upper semicontinuous, it is zero at every
+point of the support, including atoms.
+
+\end{proof}
+
+The heat-smoothing estimate below is already present in
+Rodziewicz--Ko\l{}odziejek~\cite[Section~15]{RK2026}.
+\begin{lemma}[A coarse Gaussian entry]\label{gi:gaussian-entry}
+For $n\ge2$,
+\[
+ C_n\le C_{n-1}\sqrt{\frac n{n-1}}
+       +\frac{\sqrt n}{15(n-1)^{3/2}}
+       +\frac{2\sqrt n}{25(n-1)^2}.
+\]
+In particular, $C_{n-1}\le\CE$ and $n\ge26$ imply
+\begin{equation}\label{gi:small-excess}
+ n(C_n-\CE)<\frac3{10},\qquad C_n<.422.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $v=n-1$ and $F_v(t)=\Phi(t/\sqrt v)$. Conditioning on the last
+summand, replacing the first $v$ summands by a Gaussian costs at most
+$C_v\rho/\sqrt v$. Taylor expansion in the last standardized summand gives
+\[
+ \left|\E F_v(H-X)-F_v(H)-\tfrac12F_v''(H)\right|
+ \le\frac{\phi(0)\rho}{6v^{3/2}}<\frac{\rho}{15v^{3/2}}.
+\]
+The heat identity $\partial_vF_v=F_v''/2$ gives the matching expansion
+in the variance variable, with error at most
+$\|\phi'''\|_\infty/(8v^2)<2/(25v^2)$. Here Gaussian Fourier
+inversion gives $\|\phi'''\|_\infty\le2/\pi<16/25$.
+Combine the errors, multiply by $\sqrt n/\rho$, use $\rho\ge1$,
+and take the threshold and law suprema. This is the elementary
+heat-smoothing estimate also used in the supporting global route.
+For the last assertion put $x=n/(n-1)$. Under the sharp predecessor,
+\[
+ n(C_n-\CE)\le\frac{\CE x}{\sqrt x+1}
+       +\left(\frac1{15}+\frac2{25\sqrt{n-1}}\right)x^{3/2}.
+\]
+When $n\ge26$, $x\le26/25$, $\sqrt x<51/50$ and $\CE<.41$.
+Also $x/(\sqrt x+1)\le(3x+1)/8$, since
+$(\sqrt x-1)^2(3\sqrt x+1)\ge0$. Consequently the right side is less than
+\[
+ \frac{41}{100}\frac{3(26/25)+1}{8}
+ +\left(\frac1{15}+\frac2{125}\right)\frac{26}{25}\frac{51}{50}
+ =\frac{747107}{2500000}<\frac3{10}.
+\]
+Also $\CE+3/(10\cdot26)<.422$.
+In particular, the sharp bound $C_{29}\le\CE$ already implies
+$C_{30}<\CE+.01$, the coarse premise of input (II)
+below. The sharp index-$30$ conclusion still needs its own proof.
+\end{proof}
+
+The finite-index completion uses the following three conclusions of the
+supporting proofs.
+
+\begin{proposition}[Global inputs]\label{gi:inputs}
+The low-index companion, actual-index bridge and uniform local comparison
+give the following statements. Put
+$\delta_n=n\pos{C_{n-1}-C_n}$.
+\begin{enumerate}
+\item[(I)] $C_j\le\CE$ for $1\le j\le25$;
+\item[(II)] if $C_{30}<\CE+1/100$, then $C_j\le\CE$ for
+every $31\le j\le46$;
+\item[(III)] for every integer $n\ge47$, the conditions
+\[
+ 0\le n(C_n-\CE)\le7/10,\qquad \delta_n=0,
+ \qquad C_n<.4247,\qquad C_{n-1},C_{n-2}<.4253
+\]
+cannot hold simultaneously.
+\end{enumerate}
+This is the zero-allowance case of the original local exclusion;
+the least-failure argument below supplies exactly this condition.
+The exclusion (III) is uniform in $n$; its premises will be
+discharged by the Gaussian entry and predecessor induction.
+\end{proposition}
+The precise companion statements and their continuous proof sources
+are identified in Appendix~\ref{app:companions}.
+
+
+The classical inputs are Prawitz's smoothing inequality \cite{Prawitz1972} in the form
+given by Shevtsova \cite[Lemma~4.1, p.~263]{Shevtsova2012},
+Shevtsova's finite iid moment bounds \cite{Shevtsova2013}, and
+Schulz's strict bound for every binomial law \cite[Theorem~1]{Schulz2016}.
+In particular, the moment envelope \eqref{gi:moment-envelope} gives
+$T(\rho)\le819/2000<\CE$ for $\rho\ge7361/4000$,
+excluding the entire larger-moment ray.
+Prawitz smoothing is applied at each actual integer, retaining its
+endpoint terms and infinite Gaussian tail. The contact, moment-defect,
+resource and convolution-count reductions are proved in the companions;
+they are not additional unnamed literature assumptions.
+
+Lemma~\ref{gi:extremizer} supplies the common starting point on a
+contrary branch, before any use of higher moments. At this same law,
+\begin{equation}\label{gi:predecessor}
+ n\pos{R_{n-1}(P)-C_n}\le n\pos{C_{n-1}-C_n}.
+\end{equation}
+Thus a global predecessor bound licenses contact allowances throughout
+the argument. A score bound restricted to a moment band is never
+substituted for that predecessor.
+
+For (I), the first four direct bounds are
+\[
+ C_1\le\tfrac25,\quad C_2\le\tfrac{2\sqrt2}{7},\quad
+ C_3\le\tfrac{59\sqrt3}{250},\quad C_4\le.4097<\CE.
+\]
+The companion compositions use the unrestricted predecessor in order
+through $24$. At $25$, a support-free Fourier bound excludes
+$\rho\ge6/5$; the two lower bands use the global $C_{24}<.419$
+and their complete resource/count covers. Their continuous reductions,
+unseeded resource steps and closed arithmetic covers are the precise
+inputs listed in Appendix~\ref{app:companions}. The fifth-index proof
+is also given separately in \cite{RKFive2026}; subsequent source
+developments are collected in \cite{RKSources2026}.
+
+
+For (II), the coarse bound at $30$ gives allowance $31/100$ at
+a contrary index-$31$ extremizer. The eight closed moment bands have
+actual-$31$ support, resource and count proofs. The bridges through
+$34$ keep $mD_m\le31d$, acquire support at each actual $m$, and use
+that integer's binomial law. Subsequent implications proceed through
+$35$--$39$ and $40$--$46$, retaining both deleted predecessors where
+required. Thus the bridge starts from the stated coarse premise
+without any monotonicity assumption on $C_n$.
+
+
+For (III), the moment envelope gives $\rho<7361/4000$ at a contrary
+extremizer. Corollary~\ref{gc:tail-support} then gives radius $3.84$
+directly from contact and the deleted-predecessor allowance.
+It also supplies the two left radial contractions and the central
+radius-$2.5$ contraction, in their original acquisition order.
+Thus the six initial index-band and subsequent radial support
+calculations are replaced by the same cubic bound. The bounded-threshold
+coordinate-strip exclusions retain their original proofs.
+The resource and confinement schedule then supplies $45$ central
+and $38$ left probability intervals, covering $[.304,.47]$ after
+all complementary intervals have been excluded. Their resources
+retain the actual weighted quantities $nD$ and $n\E U^2$.
+The complete local comparison is uniform for every $n\ge47$.
+At positive noise it gives a strict loss relative to this law's
+own Bernoulli score; at zero noise Schulz's strict binomial theorem
+applies directly. The acquisition includes both deleted-score caps
+and the full excess interval $0\le n(C_n-\CE)\le.7$.
+
+\begin{proposition}[Induction from two sharp predecessors]\label{gi:tail}
+Input~(III) and $C_{45},C_{46}\le\CE$ imply
+$C_n<\CE$ for every integer $n\ge47$.
+\end{proposition}
+\begin{proof}
+If a failure exists, choose the least $n\ge47$ with $C_n\ge\CE$.
+Both predecessors satisfy $C_{n-1},C_{n-2}\le\CE$, so $\delta_n=0$
+and both deleted-score caps in (III) hold. The Gaussian entry gives
+\[
+ 0\le n(C_n-\CE)<3/10<7/10,\qquad
+ C_n<.422<.4247.
+\]
+All premises of (III) are now satisfied, a contradiction.
+\end{proof}
+
+The moment-defect method and the original finite subdivisions retain
+their attribution to Rodziewicz--Ko\l{}odziejek \cite{RK2026}.
+The conditional continuation in Section~11 of that working manuscript
+retains analytic and historical certificate premises, including the
+sharp assertions at $25$--$30$. It does not by itself establish (I) or
+fill the intervening finite range. Inputs (I)--(III) here refer to the
+companion proofs with their continuous reductions, complete exact
+calculations and closed-domain compositions. In particular, the proof
+order is (I), the new actual-index steps $26$--$30$, (II) through
+$46$, and Proposition~\ref{gi:tail}. The five finite ceilings in
+the independent $n\ge49$ route are unnecessary for this composition.
+
+\section{From a global extremizer to a conditional comparison}\label{loc:section}
+
+Fix an actual integer $26\le n\le30$ and assume the unrestricted
+predecessor bound $C_{n-1}\le\CE$. Suppose $C=C_n\ge\CE$, and take
+the positive closed maximizing pair $(P,H)$ of
+Lemma~\ref{gi:extremizer}, with $1\le\rho\le6/5$.
+All quantities below belong to this one pair. Write
+$\beta=\E[X|X|]$, $\gamma=\E X^3$, $M_j=\E|X|^j$,
+$z=H/\sqrt n$ and $\varphi=\phi(z)$.
+The moment-defect construction and its original finite subdivisions are
+due to Rodziewicz--Ko\l{}odziejek~\cite{RK2026}.
+We spell out the continuous implications needed to interpret the finite
+rows; the arithmetic verification of a row is a separate obligation.
+
+First, the predecessor bound has a pointwise support consequence.
+Set $s_n=\sqrt{n/(n-1)}$, $e_n=n(s_n-1)-1/2$, and
+\[
+ \mathcal H_n(H,x)=n^{3/2}
+ \{\Phi((H-x)/\sqrt{n-1})-\Phi(H/\sqrt n)\}
+ +nx\varphi+\tfrac H2(x^2-1)\varphi.
+\]
+Multiplying \eqref{gi:contact} by $\sqrt n$ and using
+$F_{n-1}(H-x)\le\Phi((H-x)/\sqrt{n-1})+
+C_{n-1}\rho/\sqrt{n-1}$ gives
+\begin{equation}\label{loc:support-test}
+ \sqrt n\,\mathcal D(x)\le\mathcal H_n(H,x)
+ +C\{-|x|^3+\tfrac32\rho x^2+3\beta x+\rho e_n\}.
+\end{equation}
+The otherwise present allowance
+$n\rho s_n(C_{n-1}-C)_+$ is zero. Since $\mathcal D=0$ on the
+full support, a strictly negative upper bound for the right side on
+$x\le-R_-$ or $x\ge R_+$ excludes that entire ray, including atoms.
+The bound must hold for every real $H$ and every moment and score value
+in the incoming intervals. Thus each support refinement uses the actual
+integer $n$ and previously established moment intervals. In particular,
+a support calculation at $25$ cannot simply be relabelled at $n$.
+For the initial radius no such calculation is needed:
+Proposition~\ref{gc:initial-support} gives $12/5$ when $\rho\le11/10$
+and $13/5$ when $\rho\le6/5$, by one Peano-kernel argument for all
+$n\ge25$. This precedes all higher-moment and defect refinements.
+
+Here is the physical resource behind the refinement. Put
+$\sigma=\sqrt{10}$ and $\tau(t)=\E[X\mathbf1_{\{X\ge t\}}]$.
+For every bounded component $g=(a,b)$ of the complement of the closed
+support, $\tau$ is constant there; call the value $\tau_g$. Define
+\begin{align*}
+ J&=\sum_g\tau_g(b-a)^2,&
+ J_1&=\sum_g\tau_g\int_a^b(t-a)t\,dt,\\
+ J_2&=\sum_g\tau_g\int_a^b(t-a)t|t|\,dt,&
+ D&=(3+\sigma)\rho-\gamma-3J.
+\end{align*}
+All these expressions are finite by the bounded support already proved.
+For $\nu=\mathcal L(H-X_1-\cdots-X_{n-1})$, also put
+\[
+ \mathcal L=\sum_g\tau_g\int_{[a,b)}(t-a)\,\nu(dt)\ge0.
+\]
+The half-open interval specifies the convention at atoms.
+
+\begin{lemma}[The physical defect]\label{loc:defect}
+One has $D\ge0$. If $D<(\sigma-1)\rho$, there is an actual central
+gap $(-A_-,A_+)$ with $A_-,A_+>0$. Put
+\[
+ p=\PP(X>0),\quad q=1-p,\quad v=pq,\quad
+ \mu=\E X_+=\E X_-,\quad
+ \bar A_-=\mu/q,\quad\bar A_+=\mu/p,
+\]
+and $\Delta_\pm=\bar A_\pm-A_\pm\ge0$.
+Let $\theta_\pm=\E[(X-\E[X\mid\operatorname{sgn}X])^2;
+\ \pm X>0]$ and $\theta=\theta_-+\theta_+$.
+Then, with $p_*=(4-\sigma)/2$,
+\begin{align}\label{loc:joint-defect}
+ D\ge{}&\frac{(6+2\sigma)(1-\theta)^{3/2}}{\sqrt v}
+                    (p-p_*)^2\notag\\
+ &+6\mu\{(A_-+A_+)(\Delta_-+\Delta_+)+\Delta_-\Delta_+\}
+ +3(\sigma+3)A_-\theta_-+3(\sigma+1)A_+\theta_+.
+\end{align}
+\end{lemma}
+\begin{proof}
+If zero lies in the support, all gaps have one sign and
+$J\le2\int|t|\tau(t)\,dt=\rho$. Hence
+$D\ge\sigma\rho-\gamma\ge(\sigma-1)\rho$.
+Otherwise let $J_o=J-\mu(A_-+A_+)^2$ and
+\[
+ T_\pm=\E X_\pm^3-\mu A_\pm^2,
+ \qquad R_\pm=\E[X_\pm(X_\pm-A_\pm)].
+\]
+On a positive outer gap $(a,b)$,
+$(b-a)^2\le2\int_a^b(t-A_+)dt$.
+Summing and applying Tonelli, and then reflecting for the negative
+side, proves $J_o\le T_++T_--2A_+R_+-2A_-R_-$.
+Expansion gives the nonnegative decomposition
+\[
+ D=\mu(\sqrt{\sigma+1}A_--\sqrt{\sigma-1}A_+)^2
+ +(\sigma-1)T_++(\sigma+1)T_-+3(T_++T_--J_o).
+\]
+For the stronger assertion, conditional centering gives
+\[
+ \E X_\pm^3=\mu\bar A_\pm^2+
+ \E[(X_\pm+2\bar A_\pm)(X_\pm-\bar A_\pm)^2;
+                         \ \pm X>0]
+ \ge\mu\bar A_\pm^2+3A_\pm\theta_\pm,
+\]
+and $R_\pm=\theta_\pm+\mu\Delta_\pm$.
+Insert these inequalities into the preceding outer-gap bound.
+Use $\mu^2=(1-\theta)pq$ and
+$(\sigma+1)p^2+(\sigma-1)q^2-6pq
+=(6+2\sigma)(p-p_*)^2$ to obtain \eqref{loc:joint-defect}.
+\end{proof}
+
+The upper bound for this same $D$ comes from contact and Fourier
+inversion, rather than from an assumed two-point approximation.
+For $w=H^2/(2n)$ the exact conserved identity is
+\begin{equation}\label{loc:conserved}
+ n(C-\CE)\rho+n\CE\rho(1-e^{-w})
+ +\frac{n\phi(0)e^{-w}}6D+n^{3/2}\mathcal L=\mathcal R,
+\end{equation}
+where, setting
+\[
+ K_1=\E[X|X|^3]-3\beta-\tfrac32\rho\gamma,\quad
+ K_q=M_5/4-\rho M_4/2-\tfrac32\beta\gamma+\rho/2,
+ \quad U=J_1+(M_4-3)/6,
+\]
+the right side is
+\begin{equation}\label{loc:raw}
+ \mathcal R=C(3\beta J/2+3\rho J_1-3J_2-K_q)
+ +H(CK_1+\varphi U)-H^2(C\rho+\gamma\varphi/2)+E_n.
+\end{equation}
+The remainder has the exact representation
+\begin{equation}\label{loc:fourier-remainder}
+ E_n=\frac{2\sqrt n}{\pi}\int_0^\infty
+ \frac{\Im\{e^{-itH}[f(t)^n-e^{-nt^2/2}(1-in\gamma t^3/6)]\}}
+ {t^3}\,dt,\qquad f(t)=\E e^{itX}.
+\end{equation}
+This integral is absolutely convergent.
+To see the identity, write $\nu([x,\infty))\le\mathfrak q(x)$ for
+the cubic majorant furnished by \eqref{gi:contact}, with equality on
+the support. Evaluate
+$\int\tau(x)[\mathfrak q(x)-\nu([x,\infty))]dx$ first gap by gap
+and then using the density $\tau$ of the zero-bias law.
+The first evaluation is
+$\varphi J/(2\sqrt n)+G/n^{3/2}-\mathcal L$, where
+$G=3C\beta J/2+(H\varphi+3C\rho)J_1-3CJ_2$.
+For the second, contact multiplied by $X$ supplies the first truncated
+moment; the payoff $(x-z)|x-z|$ supplies the second truncated moment.
+Their difference gives
+\begin{align*}
+ C\rho+\sqrt n\mathcal L
+ &=\frac{\varphi}{6}(\gamma+3J)+(G-P_0)/n+E_n/n,\\
+ P_0&=H^2(C\rho+\gamma\varphi/2)
+      -H\{CK_1+\varphi(M_4-3)/6\}+CK_q.
+\end{align*}
+Substitute $\gamma+3J=(3+\sigma)\rho-D$ to obtain
+\eqref{loc:conserved}--\eqref{loc:raw}.
+Formula~\eqref{loc:fourier-remainder} follows from
+$\int_0^\infty(ty-\sin ty)t^{-3}dt=\pi y|y|/4$ by compensated
+Fubini; bounded support controls the origin and $t^{-3}$ controls
+infinity. No discontinuous distribution function is inverted.
+
+There is a necessary order in using this identity. A first bound
+$\mathcal R<r<n c_0$, with $C\rho\ge c_0>0$, proves
+$\varphi(\gamma+3J)/6=C\rho+\sqrt n\mathcal L-\mathcal R/n>0$.
+Only then may the Gaussian weight be removed, giving
+\begin{equation}\label{loc:unweighted}
+ n(C-\CE)\rho+\kappa nD+n^{3/2}\mathcal L\le\mathcal R,
+ \qquad \kappa=997/15000<\phi(0)/6.
+\end{equation}
+Every later raw bound $\mathcal R\le r'$ also gives
+$e^{-w}\ge1-5r'/(2n)$ and $nD\le r'/\kappa$.
+The initial pass therefore requires no defect bound of its own output.
+The actual central gap is used only after
+$D<(\sigma-1)\rho$ has been established.
+
+On a closed moment cell, the finite calculation bounds
+\eqref{loc:fourier-remainder} by a coherent expression
+$K_F+s_F|H|$, and bounds the coefficients of \eqref{loc:raw}.
+It thereby proves an envelope
+$\mathcal R\le\max_j(A_j+F_{j,\pm}|H|-Q_j^{\rm raw}H^2)$,
+where every $Q_j^{\rm raw}>0$.
+Square completion bounds the envelope on the whole half-line.
+The signed curvature uses the actual $\gamma$: if
+$\gamma\ge g_0$ and $L_\phi\le\varphi\le U_\phi$, its valid price is
+$C\rho+\tfrac12\min(L_\phi g_0,U_\phi g_0)$.
+Reflecting an auxiliary Fourier integral does not change this sign.
+Keeping the phase cost in \eqref{loc:conserved} further gives
+\begin{equation}\label{loc:phase-budget}
+ \kappa nD\le\max_j(A_j+F_{j,\pm}|H|-Q_jH^2).
+\end{equation}
+For example, a previously proved $\mathcal R\le r$ and $D\le d$
+allow the additional curvature
+$(1-5r/(2n))( .4095\rho-d/15)/2$, when positive.
+It is included once in $Q_j$.
+Thus a bound on the right side of \eqref{loc:phase-budget} is converted
+to physical $D$ using $15000/(997n)$ at the actual integer.
+
+We now give the canonical parameters required by
+Section~\ref{mc:section}. Once the central gap is licensed, put
+\begin{equation}\label{loc:canonical}
+ B=\mathbf1_{\{X>0\}},\qquad
+ \ell=\bar A_-+\bar A_+=\mu/v,\qquad
+ U=X/\ell+p-B.
+\end{equation}
+Then $\E[U\mid B]=0$ and $X=\ell(B+U-p)$ exactly.
+With $s_i=\E[U^2\mid B=i]$, $s=qs_0+ps_1$ and $\lambda_n=ns$,
+\begin{equation}\label{loc:canonical-identities}
+ \ell^2=\frac{1-\theta}{v}=\frac1{v+s},\qquad
+ \mu\ell=1-\theta,\qquad
+ \theta=\frac{s}{v+s},\qquad
+ \alpha=\frac{ps_1}{s}=\frac{\theta_+}{\theta}\quad(s>0).
+\end{equation}
+In particular, the moment in Section~\ref{mc:section} is this law's
+actual $\rho$. If its physical support is in $[-R_-,R_+]$, take
+\begin{equation}\label{loc:conditional-support}
+ a_0=\Delta_-/\ell,\quad a_1=\Delta_+/\ell,\quad
+ O_0=R_-/\ell-p,\quad O_1=R_+/\ell-q.
+\end{equation}
+These give precisely $-O_0\le U_0\le a_0$ and
+$-a_1\le U_1\le O_1$. The gap yields $a_0+a_1<1$.
+Any zero outer cap can be enlarged to a positive cap when a comparison
+formula requires division by it.
+There is no probability symmetry in this construction: the original
+positive discrepancy determines the orientation of $p$.
+
+For explicit resource coefficients, suppose the already acquired cell
+has $p\in I=[l,u]\subset(0,1)$, $\theta\le\Theta<1$,
+$A_-\ge A_l>0$, $A_+\ge B_l>0$. Let
+\begin{gather*}
+ v_* =\max_{p\in I}p(1-p),\quad S_*=A_l+B_l,\\
+ b=\frac{(6+2\sigma)(1-\Theta)^{3/2}}{\sqrt{v_*}}
+                      \operatorname{dist}(p_*,I)^2,\quad
+ g=6(1-\Theta)S_*,\\
+ K_-=3(\sigma+3)A_l,\quad K_+=3(\sigma+1)B_l,\quad
+ h_{n,\pm}=\frac{K_\pm(1-\Theta)}{nv_*}.
+\end{gather*}
+Dropping the nonnegative product in \eqref{loc:joint-defect} and
+using \eqref{loc:canonical-identities} proves the single inequality
+\begin{equation}\label{loc:affine-resource}
+ D\ge b+g(a_0+a_1)
+       +\lambda_n\{(1-\alpha)h_{n,-}+\alpha h_{n,+}\}.
+\end{equation}
+It supplies the upstream prices in \eqref{mc:signed-plane}, with
+$\mathfrak R=\overline D-b$ whenever
+$D\le\overline D$. Replacing $K_\pm$ by their minimum gives the
+scalar noise price used by the finite rows. Separate upper bounds for
+inward displacement and noise do not imply \eqref{loc:affine-resource}.
+
+The stronger signed prices used in the new comparison are finite
+consequences of this inequality. Write $R=\overline D-b\ge0$ and
+let $\mu_l>0$ be an established lower bound for $\mu$. The endpoint
+floors may first be improved by
+\begin{align*}
+ A_l&\leftarrow\max\left(A_l,
+   \sqrt{\frac{(1-\Theta)l}{1-l}}-\frac{R}{6\mu_lS_*}\right),\\
+ B_l&\leftarrow\max\left(B_l,
+   \sqrt{\frac{(1-\Theta)(1-u)}u}-\frac{R}{6\mu_lS_*}\right),
+\end{align*}
+using the old $S_*$ in the denominator. Recompute $g,h_{n,\pm}$ from
+these proved floors. Combining \eqref{loc:affine-resource} with
+$a_0+a_1\ge s_0/O_0+s_1/O_1$ gives
+\[
+ \lambda_n\{(1-\alpha)C_0(p)+\alpha C_1(p)\}\le R,
+ \quad C_0(p)=h_{n,-}+\frac{g}{n(1-p)O_0},\quad
+ C_1(p)=h_{n,+}+\frac{g}{npO_1}.
+\]
+For fixed positive caps, $C_0$ increases and $C_1$ decreases in $p$.
+Thus the uniform allocation plane is
+\begin{equation}\label{loc:uniform-allocation}
+ \lambda_n\{C_0(l)+[C_1(u)-C_0(l)]\alpha\}\le R.
+\end{equation}
+When the separately checked slope $C_1(u)-C_0(l)$ is nonnegative,
+$\lambda_n\le R/C_0(l)$. More generally, positivity of both
+endpoint coefficients always gives
+\begin{equation}\label{loc:two-endpoint-noise}
+ \lambda_n\le\frac{R}{\min\{C_0(l),C_1(u)\}}.
+\end{equation}
+This consequence permits either ordering of the signed noise prices.
+It also contains the scalar harmonic bound. Indeed, for
+$B_* =\max(O_0,O_1)\max(u,1-l)$ and
+$h_* =\min(h_{n,-},h_{n,+})$,
+\begin{equation}\label{loc:harmonic-consequence}
+ \min\{C_0(l),C_1(u)\}\ge h_*+\frac{g}{nB_*},\qquad
+ \lambda_n\le\frac{R}{h_*+g/(nB_*)}.
+\end{equation}
+This follows from $(1-l)O_0\le B_*$ and $uO_1\le B_*$.
+It improves $\theta$ through
+\eqref{loc:canonical-identities}, and hence improves the next endpoint,
+outer-cap and price estimates. A prescribed finite number of these
+steps proves the strengthened rows by induction; each step uses the
+previous variance bound. It assumes neither a fixed point nor a
+special value of the unknown allocation $\alpha$.
+
+The saved floor-$25$ enclosures are interpreted as
+\begin{equation}\label{loc:weighted-transfer}
+ \mathcal R_n\le r_{25},\qquad nD\le25D_{25}.
+\end{equation}
+This is a fixed sequence of inequalities for the same actual-$n$ law.
+Appendix~\ref{ut:section} gives the complete low/high-frequency
+candidates, their index gates and the finite stage induction.
+The first unseeded raw bound licenses removal of the Gaussian weight
+before its defect output is used. Every subsequent step first
+transfers the incoming physical bounds, acquires the needed support
+at the actual integer, and then restores the weighted defect bound.
+Neither extremality at $25$ nor monotonicity of an adaptively rounded
+program is assumed. Physical deductions may use the weaker $D\le D_{25}$.
+
+For the exported plane set $r=25/n$, $K=\min(K_-,K_+)$,
+$h_{25}=K(1-\Theta)/(25v_*)$ and $R=D_{25}-b$.
+If $R>0$, write $d=R/g$ and $L=R/h_{25}$. Then
+the resulting scaled plane is
+\begin{equation}\label{loc:scaled-plane}
+ \frac{a_0+a_1}{rd}+\frac{\lambda_n}{L}
+ \le1-(n/25-1)\frac bR\le1.
+\end{equation}
+The joint noise intercept $L$ stays fixed. Appendix~\ref{ut:section}
+derives this plane, its zero-residual boundary and the weighted
+specialization of \eqref{loc:harmonic-consequence}.
+
+Finally, new physical support can improve these same parameters.
+From an established $\theta\le t<1$, choose
+$0<\ell_l\le\sqrt{(1-t)/v_*}$. Then
+\[
+ O_0\le R_-/\ell_l-l,\qquad
+ O_1\le R_+/\ell_l-(1-u).
+\]
+Intersect with previous caps and apply the same endpoint elimination;
+\eqref{loc:canonical-identities} then updates the variance and mean
+bounds. Each step consumes the preceding bound. A scalar consequence
+does not replace the joint intercept $L$ in \eqref{loc:scaled-plane}.
+
+Consequently a finite acquisition must cover the entire initial moment
+and probability domain by closed cells; prove the support, Fourier and
+coefficient inequalities on each cell; and either exclude it by a strict
+contradiction or export the simultaneous quantities above. Its surviving
+rows are necessary conditions on the original global extremizer.
+For the surviving middle-band profiles, the acquired contact radii
+satisfy $H_-,H_+<2$, the original $\Lambda<1/2$, and
+$p\in[.32,.43]$. Since $\lambda_n\le\Lambda$ and $n\ge26$,
+$\sqrt{pq+\lambda_n/n}<3/5$. Hence the raw threshold belongs to
+\[
+ np+H/\ell\in(np-6/5,np+6/5)\subset(0,n).
+\]
+At this raw threshold the comparison uses
+$np+H/\ell=k+t$ with $|t|\le1/2$, including both choices at a tie.
+Every nearest integer lies in $0\le k\le n$; all such integers are
+covered or excluded by the acquired contact bounds.
+This supplies the continuous meaning of the finite
+comparison inputs, independently of their file labels.
+
+
+\section{The five finite-index steps}\label{fc:section}
+
+We now compose the comparisons at the actual integers
+$n=26,\ldots,30$. The predecessor in each step is the unrestricted
+bound $C_{n-1}\le\CE$. All parameters in a single step describe
+one extremizer supplied by Lemma~\ref{gi:extremizer}.
+In particular, neither its third moment nor its noise is chosen
+independently for different count layers.
+Throughout this section $R(t)$ denotes \eqref{pp:actual-residual}
+with the fixed target $c_n=\CE/\sqrt n$. Computations can use
+a smaller directed rational coefficient: an upper bound for that
+larger residual is also an upper bound for this $R(t)$.
+
+\subsection{Localization and the domain of the calculation}
+The supporting localization proof gives three closed moment ranges.
+For $\rho\ge6/5$, a support-free Prawitz comparison at each actual
+integer gives $R_n(P)<.4097<\CE$; the large-moment ray is included.
+For $1\le\rho\le11/10$, the contact and resource reductions,
+with the full predecessor bound, give complete conditional count
+covers. The original covers across the five integers consist of $79$ probability
+intervals, $2289$ count roots and $74170$ terminal inequalities.
+Every other probability interval is excluded already during
+localization. These counts describe the coverage, not a replacement
+for the inequalities proving it. The present composition uses those
+ordinary count proofs on $72$ intervals.
+Proposition~\ref{fc:lowprofiles} covers the remaining seven.
+
+It remains to handle $11/10\le\rho\le6/5$.
+At each actual integer, localization covers the $100$ original
+closed intervals $[i/100,(i+1)/100]$, $0\le i<100$.
+It excludes $89$ intervals and leaves exactly
+\[
+ I_i=[i/100,(i+1)/100],\qquad 32\le i\le42.
+\]
+The four outer intervals $I_{32},I_{33},I_{41},I_{42}$ have
+complete ordinary count covers. At $n=26$, the same is true of
+$I_{40}$. The new comparisons therefore concern $34$ parameter
+profiles: $I_{34},\ldots,I_{39}$ at $26$, and
+$I_{34},\ldots,I_{40}$ at each of $27,28,29,30$.
+Their scalar caps are listed in Appendix~\ref{app:parameters}.
+
+A profile supplies inward and outward support caps
+$\Delta,O_0,O_1$, a noise cap $\Lambda$, and the necessary joint
+inequalities
+\begin{equation}\label{fc:resources}
+ a_0+a_1\le\Delta(1-\lambda/\Lambda),\qquad
+g(a_0+a_1)+\lambda
+       \{(1-\alpha)\mathfrak h_-+\alpha\mathfrak h_+\}
+       \le\mathfrak R.
+\end{equation}
+The second inequality is the consequence of
+\eqref{loc:affine-resource} with $D\le\overline D$ and
+$\mathfrak R=\overline D-b$. It can strengthen the first cap and supplies
+the signed plane \eqref{mc:signed-plane}. Its coefficients come
+from the actual-index resource proof. They are held fixed on
+their stated probability interval, not fitted to the count being
+estimated. The contact bounds also give
+\begin{equation}\label{fc:contact}
+ -H_-\sqrt{pq+\lambda/n}
+ \le k+t-np\le H_+\sqrt{pq+\lambda/n},\qquad |t|\le1/2.
+\end{equation}
+This leaves only three neighboring counts in each profile.
+The support caps, both resource bounds and the actual-moment floor
+are used simultaneously, with no finite-support assumption on the
+original conditional laws.
+
+\subsection{Bounding a whole parameter region}
+For a current-count price, let $L_*$ be the acquired actual-noise cap.
+The seven original closed noise intervals have endpoints
+\[
+ 0,\quad\Lambda/8,\quad\Lambda/4,\quad5\Lambda/16,\quad
+ 3\Lambda/8,\quad7\Lambda/16,\quad\Lambda/2,\quad L_*;
+\]
+the four allocation intervals have endpoints $0,1/4,1/2,3/4,1$.
+These endpoints are increasing in every profile.
+Their Cartesian product gives $28$ fixed reference laws per
+current-count family. Each is valid for its entire closed region
+by Lemma~\ref{mc:two-moment}; it is not a sample at its midpoint.
+The signed plane and the inward cap restrict the admissible
+conditional variances before the reference law is formed.
+The noise correction in Proposition~\ref{ce:fixed-box} preserves
+the difference between that reference law and the actual noise.
+Probability faces and phase faces extend to the whole region
+by the corresponding lower-curvature bounds. A tilted phase
+face at the Gaussian inflection is used when needed.
+
+For a reflected-square price, Proposition~\ref{ce:coherent}
+keeps the actual noise and allocation until the two derivative
+gates have been proved. The resulting endpoint envelope uses
+the same moment floor as the original law. A positive-atom
+activation is covered by the weak derivatives
+\eqref{pp:activation-curvature}. Complementary prices may then be
+combined through the finite lower envelope of Lemma~\ref{pp:mixture},
+using their directed lower target coefficients. Only explicit reference prices are
+differentiated in these steps.
+
+All parameter endpoints, chord coefficients and interval enclosures
+are rational. The square roots in the finite prices, and the
+normal CDF and density, are enclosed outwards. A stationary
+width is accepted only when it belongs to its asserted active
+set. Curvature bounds include activation boundaries. The finite
+maximum of every interpolating quadratic includes its interior
+vertex when present. Thus a negative upper bound applies to
+every point of the closed domain, including all shared faces.
+The full count roots and the unions of their closed phase
+intervals are retained when these regional bounds are composed.
+
+\subsection{Examples of the finite comparisons}
+An illustrative replacement occurs at $n=26$, $p\in I_{35}$,
+count $9$. The current-count price with the least legal slope
+is strict on $[-1/8,9/32]$ except for the last phase strip of
+the first noise interval. On that first noise interval,
+$[0,\Lambda/8]$, retain the current price through $t=1/4$ and
+use a coherent count-$10$ reflected-square price of width $9/8$
+on $[1/4,9/32]$. Its allocation and noise derivative margins
+are respectively at least $.120534962164$ and $.072056354791$,
+and its variance derivative is at least $.759364977755$.
+Its residual upper bound is $-.018464965470$ for its directed
+lower target coefficient. The other original noise intervals
+retain the current price on the whole strip.
+The resulting uniform upper bound on $[-1/8,9/32]$ is
+\begin{equation}\label{fc:n26-simple}
+ R(t)\le-.000067780727.
+\end{equation}
+The adjacent negative phases have a full-square or current-count
+bound, and $[9/32,1/2]$ has the full-square count-$10$ bound.
+Consequently this entire count layer uses only second-moment
+comparisons. The remaining count-$10$ regions in $I_{36},I_{37}$
+likewise admit current-count comparisons with the rational slope
+multipliers $1,5/4,3/2$. No fourth-moment price or optimized
+deterministic-group slope is needed by these analytic profile comparisons.
+
+A second completion illustrates why it is useful to distinguish
+the actual CDF from its price. At $n=30$, $p\in I_{37}$,
+the count-$10$ contact interval begins at the exact outward
+bound
+\[
+ a_{37}=249467754491/10^{12}<1/4.
+\]
+An endpoint estimate at $1/4$ extends over $[a_{37},1/4]$
+by Lemma~\ref{pp:cdf-bridge}. The comparison used to prove that
+endpoint estimate need not remain valid on the short interval.
+Monotonicity of the original CDF is sufficient.
+
+\begin{proposition}[Seven lower-moment profiles]\label{fc:lowprofiles}
+For each row below, retain the original actual-$n$ support and resource
+acquisition and the unrestricted predecessor $C_{n-1}\le\CE$.
+The whole profile $p\in I_i$, $1\le\rho\le11/10$ has conditional
+count residual bounded by the last column. The joint intercept
+$\Lambda$ is retained; $L_*$ is a necessary ceiling on the actual noise.
+\begin{center}\small\setlength{\tabcolsep}{3pt}
+\begin{tabular}{ccrrrr}\toprule
+$n$ & $I_i$ & $\Delta$ & $\Lambda$ & $L_*$ & residual upper\\\midrule
+26 & $I_{39}$ & .05769 & .30708 & .17375152 & $-.000098710877$\\
+26 & $I_{40}$ & .057809 & .301161 & .17805629 & $-.000005610547$\\
+26 & $I_{41}$ & .054236 & .276951 & .162619 & $-.000049410586$\\
+27 & $I_{41}$ & .052227 & .276951 & .16129388 & $-.000016889$\\
+28 & $I_{41}$ & .050362 & .276951 & .16009718 & $-.000027176644$\\
+29 & $I_{41}$ & .048625 & .276951 & .15901083 & $-.000059169468$\\
+30 & $I_{41}$ & .047004 & .276951 & .15802002 & $-.000017416596$\\
+\bottomrule\end{tabular}\end{center}
+\end{proposition}
+\begin{proof}
+Appendix~\ref{app:finite-details} gives all seven finite plans and their
+closed count/phase unions. Each uses the seven original noise bands and
+four allocation quarters. The signed resource plane first gives $L_*$;
+current-count and reflected-square prices then cover every surviving
+contact interval, with the bounds in the table.
+
+Three features require the full comparison rules: reversed signed
+prices use \eqref{loc:two-endpoint-noise}; the count-$12$ reference at
+$n=29$ crosses $np$ and uses both branches of
+\eqref{ce:variance-endpoint-max}; and the early $n=30$ square has
+$y_{\max}>0$, covered by the $y_{\max}<b$ bound in Section~\ref{pp:section}.
+The remaining steps use the same endpoint, curvature and threshold-shift
+identities, with each row's actual integer and acquired parameters.
+\end{proof}
+
+\subsection{The finite implications}
+
+
+The complete middle-moment profiles at $27$--$30$ give the following outward
+upper bounds on $R(t)$, uniformly over their probability interval,
+actual noise, allocation, all surviving counts and contact phases.
+For readability, the table reports $10^6$ times these bounds,
+rounded upwards to three decimal places.
+\begin{center}
+\begin{tabular}{crrrr}
+\toprule
+interval & $n=27$ & $n=28$ & $n=29$ & $n=30$\\
+\midrule
+$I_{34}$ & $-320.741$ & $-263.994$ & $-321.528$ & $-241.967$\\
+$I_{35}$ & $-297.200$ & $-134.578$ & $-287.407$ & $-436.298$\\
+$I_{36}$ & $-294.861$ & $-12.020$  & $-96.700$  & $-156.955$\\
+$I_{37}$ & $-145.182$ & $-12.884$  & $-1.810$   & $-63.857$\\
+$I_{38}$ & $-70.159$  & $-56.159$  & $-79.848$  & $-22.937$\\
+$I_{39}$ & $-35.366$  & $-4.435$   & $-585.317$ & $-75.052$\\
+$I_{40}$ & $-1160.650$& $-723.488$ & $-713.730$ & $-987.882$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The six analytic profiles at $26$ are also strictly negative;
+\eqref{fc:n26-simple} describes its only former fourth-moment
+region. The full results include the exact resource caps, count
+domains, price choices, derivative gates and outward rational
+bounds, rather than only these decimal margins.
+
+\begin{proposition}[The five actual-index implications]\label{fc:five}
+For each $n=26,27,28,29,30$,
+\[
+ C_{n-1}\le\CE\quad\Longrightarrow\quad C_n\le\CE.
+\]
+\end{proposition}
+\begin{proof}
+If $C_n>\CE$, Lemma~\ref{gi:extremizer} supplies a positive
+closed extremizer. The full predecessor bound makes its
+allowance \eqref{gi:predecessor} zero, so the actual-index
+localization and resource inequalities apply to this same law.
+The support-free Fourier estimate excludes $\rho\ge6/5$.
+The complete lower-moment count covers exclude
+$1\le\rho\le11/10$.
+In the remaining closed band, localization either gives an
+immediate contradiction or places the law in one of the eleven
+intervals above. The ordinary count covers and the $34$ analytic
+profiles exclude them all. Every surviving count and its entire
+contact interval has a strict negative bound, contradicting the
+positive extremal score. The three closed moment ranges exhaust
+$\rho\ge1$.
+\end{proof}
+
+\begin{theorem}[The iid Esseen-constant inequality]\label{fc:main}
+For every standardized real distribution $P$ with
+$\rho(P)=\E|X|^3<\infty$ and every positive integer $n$,
+\[
+ \sqrt n\,\Delta_n(P)\le
+ \frac{3+\sqrt{10}}{6\sqrt{2\pi}}\,\rho(P).
+\]
+The constant is optimal over this class and all $n$.
+\end{theorem}
+\begin{proof}
+Input~(I) of Proposition~\ref{gi:inputs} supplies the unrestricted
+bound at each index through $25$. Apply Proposition~\ref{fc:five}
+in order, discharging each global predecessor, to obtain the
+bounds through $30$. In particular $C_{30}<\CE+1/100$, so
+input~(II) gives $31$--$46$. Proposition~\ref{gi:tail} then gives
+every $n\ge47$ from its two sharp predecessors and the uniform
+local exclusion (III).
+These four ranges exhaust all positive integers.
+
+For the standardized Bernoulli law with
+$p_*=(4-\sqrt{10})/2$, the classical binomial asymptotic gives
+\[
+ \lim_{n\to\infty}\frac{\sqrt n\,\Delta_n(P_*)}{\rho(P_*)}=\CE;
+\]
+see Schulz \cite[Remarks~4.1 and 4.2]{Schulz2016}.
+Thus a smaller uniform constant is impossible.
+\end{proof}
+
+\section{Scope of the supporting material}\label{fc:supporting}
+The finite comparisons in Sections~\ref{mc:section}--\ref{ce:section}
+are analytic inequalities for arbitrary real conditional laws.
+The finite calculations certify their use on the closed parameter
+domains of Section~\ref{fc:section}. The supporting material also
+contains the continuous localization and the proofs of inputs
+(I)--(III). These are essential parts of the all-index argument,
+not hypotheses inferred from the numerical table.
+
+The moment-defect and localization framework, the original
+subdivisions, and the imported count and Fourier arguments are
+due to Rodziewicz and Ko\l{}odziejek \cite{RK2026}.
+The role of the present comparison method is to close the remaining
+general-law regions at the five actual integers and compose the
+supporting implications in a well-founded order.
+
+This working version includes the companion mathematical sources,
+exact acquired parameters, collected frozen arithmetic inputs and
+archived calculation outputs. The accompanying programs locate these
+materials and run their mathematical readers from the collected
+directories. Fresh numerical regeneration uses the retained producer
+entrypoints and their stated runtime requirements. The collection is
+local at this stage; no permanent public archive identifier is assigned
+in this draft.
+
+
+\section*{AI assistance}
+OpenAI Codex was used to develop and simplify mathematical arguments,
+implement exact-arithmetic calculations, and draft this manuscript.
+
+\appendix
+\section{A fixed-floor Fourier and resource transfer}\label{ut:section}
+
+This appendix proves the interpretation of the fixed floor-$25$
+acquisition used in \eqref{loc:weighted-transfer}. The floor is an
+evaluation parameter in a collection of inequalities. It is not another
+sample size at which the current law is assumed to be extremal.
+The moment-defect identity and the underlying enclosure method retain
+their attribution to Rodziewicz--Ko\l{}odziejek~\cite{RK2026}.
+
+Fix $N=25$, an integer $n\in\{26,\ldots,30\}$, and a standardized law
+$P$ attaining the unrestricted $C_n=C\ge\CE$ at a positive closed
+threshold $H$. Assume $C_{n-1}\le\CE$ and
+$\rho\in[1,11/10]$ or $\rho\in[11/10,6/5]$.
+Use $D$, $\mathcal L$ and $\mathcal R_n$ from
+\eqref{loc:conserved}--\eqref{loc:raw}, all for this actual pair $(P,H)$.
+Write $\mathcal R_n=\mathcal R$ for the right side of
+the conserved identity \eqref{loc:conserved} at this same law.
+We require an actual-index score cap $C\le c_{\rm in}$ with
+$c_{\rm in}\le434477/10^6$; the Gaussian replacement bound
+$C<.422$ under the sharp predecessor is sufficient.
+The support and moments used below must have been acquired for this
+same actual-$n$ pair. No assertion about $C_{25}(P)$ is required.
+
+\subsection{The complete low-frequency estimate}
+
+Put $f(t)=\E e^{itX}$, $\gamma=\E X^3$, and
+\begin{align*}
+ V_n(t)&=f(t)^n-e^{-nt^2/2}(1-in\gamma t^3/6),\\
+ I_0(n,H)&=\int_0^{1/2}\frac{|\Im(e^{-itH}V_n(t))|}{t^3}\,dt,\\
+ I_\infty(n)&=\int_{1/2}^{\infty}\frac{|V_n(t)|}{t^3}\,dt.
+\end{align*}
+By \eqref{loc:fourier-remainder},
+\begin{equation}\label{ut:split}
+ |E_n|\le\frac2\pi\{\sqrt n I_0(n,H)+\sqrt n I_\infty(n)\}.
+\end{equation}
+Both integrals are retained, including the entire Gaussian comparator
+on $[1/2,\infty)$.
+
+\begin{lemma}[Low-frequency candidates]\label{ut:low}
+Suppose $n>2$, $M_4\le M\le111/10$, $|\gamma|\le g\le37/20$,
+and $M_6\le\overline M_6$. For the actual coefficients
+\[
+ a=(3-M_4)/24,\qquad z_5=(10\gamma-\E X^5)/120,
+ \qquad c_5=a\gamma/6,
+\]
+let $a_*\ge|a|$ and $Z\ge|z_5|$. Define, for real $j>2$,
+\begin{gather*}
+ A_j=\frac{j-1}{2j},\quad B_j=\frac{45-M}{96}(1-2/j),
+ \quad F_j=(j/(j-1))^{3/2},\quad I_u\ge\sqrt{\pi/2},\\
+ E_6=\frac{\overline M_6}{720}+\frac{g^2}{72}
+                  +\frac{(1/2+g^2/144)^3}{5},\quad
+ T_6=a_*+Z/2+E_6/4,\quad
+ L_2(j)=\frac{E_6}{2A_j^2}+\frac{T_6^2}{2B_j^3}.
+\end{gather*}
+Each of the following complete triples satisfies
+\begin{equation}\label{ut:low-bound}
+ \sqrt n I_0(n,H)\le L_0(n)+L_H(n)|H|+L_2(n)/\sqrt n.
+\end{equation}
+The triangle triple is
+\begin{align}\label{ut:triangle}
+ L_0(j)&=I_uF_j(Z+a_*g/2)+251g^3/17280,\notag\\
+ L_H(j)&=I_uF_j a_*+251g^2/4800.
+\end{align}
+For the cancellation triple, let a closed rectangle contain the actual
+$(z_5,c_5)$, and let $J_*\ge0$ bound
+\[
+ J(z,c)=\int_0^\infty e^{-x^2/2}|zx^2-cx^4|\,dx
+\]
+at every corner of that rectangle. Then one may take
+\begin{align}\label{ut:paired}
+ L_0(j)&=F_jJ_*+\frac{F_jI_u}{j-1}
+       (35a_*g^3/48+35Zg^2/24)+251g^3/17280,\notag\\
+ L_H(j)&=F_jI_u\{a_*+5Zg/[2(j-1)]\}+251g^2/4800.
+\end{align}
+In either case, all three coefficients and $L_2(j)/\sqrt j$ are
+nonincreasing for $j\ge N$ when their physical inputs are fixed.
+\end{lemma}
+\begin{proof}
+Set $h(t)=e^{-t^2/2-i\gamma t^3/6}$. Taylor expansion gives
+\[
+ f(t)-h(t)=-at^4-iz_5t^5+r_6(t),\qquad
+ |r_6(t)|\le E_6t^6\quad(0\le t\le1/2).
+\]
+Indeed, for $u=-t^2/2-i\gamma t^3/6$,
+$|u|\le t^2(1/2+g^2/144)<1/6$;
+the omitted exponential terms cost at most $|u|^3/5$, and its
+degree-six quadratic term costs $g^2t^6/72$.
+Symmetrization and $\cos y\le1-y^2/2+y^4/24$ give
+\[
+ |f(t)|,|h(t)|\le e^{-(45-M)t^2/96}.
+\]
+Taylor expansion of the polynomial $w^n$ along the joining segment
+therefore yields
+\[
+ f(t)^n-h(t)^n=n(f(t)-h(t))h(t)^{n-1}+R_2(t),\qquad
+ |R_2(t)|\le\tfrac12n^2T_6^2t^8e^{-nB_nt^2}.
+\]
+Integrating $nr_6h^{n-1}$ and $R_2$, after division by $t^3$,
+costs at most $L_2(n)/n$.
+For $u=n\gamma t^3/6$, rotation by $Ht$ bounds the remaining
+Gaussian comparator's imaginary part by
+$e^{-nt^2/2}(|u|^3/6+|H|t u^2/2)$.
+The Gaussian even moments give its integral at most
+$n^{-1/2}(251g^3/17280+251g^2|H|/4800)$.
+
+For the leading quartic and fifth terms put $b=n-1$ and
+$v=b\gamma t^3/6$. The bounds
+$|\sin(Ht+v)|\le|H|t+bg t^3/6$ and $|\cos|\le1$
+give \eqref{ut:triangle}.
+Alternatively, the leading imaginary part after division by $t^3$
+is bounded, before multiplication by $ne^{-bt^2/2}$, by
+\[
+ |z_5t^2-atv|+a_*t|\sin v-v|+Zt^2|\cos v-1|
+                 +|H|t\{a_*t+Zt^2|\sin v|\}.
+\]
+The first integral is $nJ(z_5,c_5)/b^{3/2}$.
+The norm $J$ is convex in $(z,c)$, so its rectangle maximum is
+bounded by the largest of its corner bounds. Integrating the other
+four terms with the global sine and cosine remainders gives
+\eqref{ut:paired}. These arguments use the original $H$, without
+rescaling it to a floor-$N$ threshold.
+
+Finally,
+\[
+ \frac{F_j'}{F_j}=-\frac3{2j(j-1)},\quad
+ A_j'=\frac1{2j^2}>0,\quad B_j'=\frac{45-M}{48j^2}>0.
+\]
+Thus $F_j$, $F_j/(j-1)$, $A_j^{-2}$, $B_j^{-3}$ and
+$j^{-1/2}$ decrease. Every multiplier of these factors in
+\eqref{ut:triangle}--\eqref{ut:paired} is nonnegative, including
+$J_*$. This proves each claimed coefficient comparison.
+\end{proof}
+
+Here are the coefficient choices actually needed in these candidates.
+They are physical moment inequalities, independent of the sample size.
+For the triangle choice, assume $|X|\le R\le6$ and $M_5\le\eta$.
+One may use $a_* =\max(2,M-3)/24$, $\overline M_6=R\eta$, and
+$120Z=\min\{\eta+10g,Z_6,Z_r\}$, where
+\[
+ Z_6=\begin{cases}
+ 6(M-1)+(10-2M)g-6g^2+g^3,
+       &M\le5,\ 10-2M-12g+3g^2\ge0,\\
+ 6(M-1)+(10-2M)^2/[4(6-g)],&M\le5\text{ otherwise},\\
+ 6(M-1)+(2M-10)^2/24,&M>5,
+ \end{cases}
+\]
+and, with $r_0=\max(R,2g)>g$, put
+\[
+ t_*=\begin{cases}
+ \min(g,(10-2M)/(2(r_0-g))),&M\le5,\\
+ \min(g,(2M-10)/(2r_0)),&M>5.
+ \end{cases}
+\]
+Then
+\[
+ Z_r=\begin{cases}
+ r_0(M-1)+(10-2M)t_*-(r_0-g)t_*^2,&M\le5,\\
+ r_0(M-1)+(2M-10)t_*-r_0t_*^2,&M>5.
+ \end{cases}
+\]
+To verify them, reflect only the auxiliary Fourier integral so that
+$t=\gamma=|\gamma|\ge0$, and set $Q=X^2-tX-1$.
+Direct multiplication gives
+\begin{equation}\label{ut:pearson}
+\begin{aligned}
+ \E Q^2&=M_4-1-t^2,\\
+ \E X^5&=t^3+2t+\E[Q^2(X+2t)],\\
+ M_6&=1+3t^2+t^4+\E[Q^2\{(X+t)^2+2t^2+2\}].
+\end{aligned}
+\end{equation}
+For an enclosing radius $r\ge2g$, the two signs of
+$\E X^5-10t$ are bounded by
+$r(M-1)\pm(10-2M)t-rt^2\pm t^3$.
+Use $t^3\le gt^2$, or discard the negative cubic, and maximize the
+resulting concave quadratic on $[0,g]$. At $r=6$, the increasing
+endpoint alternative gives the first line of $Z_6$.
+
+The resource implementation also uses the following general signed
+rectangle, which does not require $M<3$ or $R>2g$.
+Suppose $0\le g_l\le|\gamma|\le g$, $M\ge1+g_l^2$, and $R\ge1$.
+From \eqref{ut:pearson}, for every feasible $t\in[g_l,g]$,
+\begin{gather*}
+ L(t)\le120z_5\le U(t),\\
+ L(t)=-R(M-1)+(10-2M)t+Rt^2+t^3,\\
+ U(t)=\begin{cases}
+ R(M-1)+(10-2M)t-Rt^2+t^3,&t\le R/2,\\
+ 8t-t^3,&t\ge R/2.
+ \end{cases}
+\end{gather*}
+The second line for $U$ uses $\E Q^2\ge0$ when $R-2t<0$;
+using $M-1-t^2$ there would have the wrong direction.
+Choose outward bounds $L_*\le\min L$ and $U_*\ge\max U$ on the
+indicated closed intervals, and set
+\begin{gather*}
+ z_l=\max(-\eta-10g,L_*)/120,\quad
+ z_u=\min(\eta+10g,U_*)/120,\quad Z=\max(|z_l|,|z_u|),\\
+ a_* =\max(|3-M|,|2-g_l^2|)/24,\\
+ c_l=\frac{3-M}{144}
+       \begin{cases}g_l,&M\le3,\\g,&M>3,\end{cases}
+ \qquad c_u=\max_{g_l\le t\le g}(2t-t^3)/144,\\
+ \overline M_6=\min\{R\eta,
+  1+3g^2+g^4+(R^2+2Rg+3g^2+2)(M-1-g_l^2)\}.
+\end{gather*}
+Check $z_l\le z_u$, $c_l\le c_u$ before using the rectangle.
+The cubic extrema can be enclosed by the Bernstein identity on a
+finite closed subdivision; this is an enclosure of the entire
+interval, rather than evaluation at finitely many sample points.
+The displayed $a_*$ uses $1+g_l^2\le M_4\le M$.
+The last line follows from the final identity in \eqref{ut:pearson},
+with all substituted factors nonnegative. These prove the hypotheses
+of Lemma~\ref{ut:low} for the general signed candidate used by both
+resource branches. The restricted $M<3$, $R>2g$ formula is not needed
+to license a call outside its own domain.
+
+The resource branch enables this signed candidate only on an already
+acquired interval $0<l\le p\le u<1/2$, with $\theta\le\Theta<1$
+and $A_-\ge A_l>0$, $A_+\ge B_l>0$.
+Write $\rho_B(p)=\{1-2p(1-p)\}/\sqrt{p(1-p)}$ and set
+\begin{gather*}
+ \rho_* =\max\left\{1,\rho_l,\rho_B(u)
+       -\max(0,3\rho_B(l)/2-3\min(A_l,B_l))\Theta\right\},\\
+ g_l=\max\left\{0,\sigma_l\rho_*-3-d_D,
+ \frac{(1-\Theta)^{3/2}(1-2u)}{\sqrt{u(1-u)}}
+                -(R+2\sqrt{u/(1-u)})\Theta\right\}.
+\end{gather*}
+Here $D\le d_D$ is an incoming bound. These are genuine physical
+lower bounds for $\rho$ and $|\gamma|$, respectively.
+For the first, conditional expansion gives
+$\rho\ge(1-\theta)^{3/2}\rho_B(p)+3\min(A_l,B_l)\theta$;
+use $(1-\theta)^{3/2}\ge1-3\theta/2$ and the monotonicity of
+$\rho_B$ on $(0,1/2)$.
+For the second, $\gamma\ge\sqrt{10}\rho-3-D$ follows from
+$J\le\rho+1$, whereas conditional expansion about the two means gives
+\[
+ \gamma\ge\frac{(1-\Theta)^{3/2}(1-2u)}{\sqrt{u(1-u)}}
+                     -(R+2\sqrt{u/(1-u)})\Theta.
+\]
+In the latter calculation the positive-class residual is nonnegative
+and the negative-class residual has magnitude at most the displayed
+coefficient times $\theta$.
+The gates are $\rho_*\le\rho_u$, $0\le g_l\le g\le37/20$,
+$1\le M\le111/10$, $R\ge1$ and $M-1-g_l^2\ge0$.
+The same $\rho_*$ is kept in the paired rectangle, score corners,
+phase callback and exports. On another probability half, or if this
+candidate is ineligible, the unpaired candidate remains available;
+ineligibility alone does not exclude a law.
+
+For completeness, the smaller Gaussian corner prices used in this
+rectangle also have an index-free proof. If $zc\le0$, then
+$J(z,c)=\sqrt{\pi/2}(|z|+3|c|)$.
+If $zc>0$, replace $(z,c)$ simultaneously by $(|z|,|c|)$ and put
+$x=z/c>0$. Splitting the integral at $\sqrt x$ gives
+\begin{equation}\label{ut:mills-norm}
+\begin{aligned}
+ J(z,c)&=\sqrt{\pi/2}(z-3c)+\sqrt{zc}e^{-x/2}
+       \left(6+\frac{2(3-x)}x\sqrt x\,\mathcal M(\sqrt x)\right),\\
+ \mathcal M(r)&=\int_0^\infty e^{-rt-t^2/2}dt.
+\end{aligned}
+\end{equation}
+For $I_j(r)=\int_0^\infty t^je^{-rt-t^2/2}dt$, integration by parts
+gives $I_0=1/(r+I_1/I_0)$ and
+$I_j/I_{j-1}=j/(r+I_{j+1}/I_j)$.
+Truncating this finite recursion with a zero last ratio gives an
+alternating upper bound at even depth and lower bound at odd depth.
+In rational form, set $d_{k+1}=1$,
+$d_j=1+j/(xd_{j+1})$ for $j=k,\ldots,1$.
+In \eqref{ut:mills-norm} replace
+$\sqrt x\mathcal M(\sqrt x)$ by $d_1^{-1}$ with $k=11$ if
+$x\ge3$, and $k=12$ if $x<3$.
+The sign of $3-x$ gives the required upper bound in both cases.
+The remaining multiplier is positive; for $x\ge3$ it exceeds
+$6-2(x-3)/x>4$.
+A negative coefficient $z-3c$ uses a lower enclosure of
+$\sqrt{\pi/2}$ and a positive coefficient uses an upper enclosure.
+The minimum with
+\[
+ \sqrt{\pi/2}|z-3c|+6\sqrt{zc}e^{-x/2}
+\]
+is also a valid corner bound. These are the two corner alternatives
+in the saved candidates. Auxiliary reflection here leaves the original
+signed $\gamma$ in the contact identity unchanged.
+
+\subsection{The complete high-frequency estimate}
+
+Let $X'$ be an independent copy of this same $X$. A candidate consists
+of fixed numbers $M,a,m,d,w$ and an actual event $E$ such that
+\begin{equation}\label{ut:event-input}
+\begin{gathered}
+ M_4\le M\le111/10,\qquad\PP(E)\ge a>0,\\
+ |X-X'|\ge d>0\text{ on }E,\qquad
+ \E[(X-X')^2\mid E]\le m,\\
+ 0<d\le12,\qquad0<w\le1/4.
+\end{gathered}
+\end{equation}
+Here $a\le1$ and $m>0$. Put $b=9/10$,
+\begin{gather*}
+ h=333/106-(22/7)^3w^2/6>0,\quad
+ \kappa_E=a(23/48)^2d^2,\quad
+ \Lambda(x)=\frac{x+2}{x^2+4x+2},\\
+ S_3=\sum_{j=1}^{20}j^{-3}+1/800,\quad
+ S_5=\sum_{j=1}^{20}(j-w)^{-5}+[4(20-w)^4]^{-1},\\
+ c=\tfrac12\left(1-\max_{u\in\{1/4,81/100\}}
+                    [1-u+(M+3)u^2/12]\right),\\
+ c_0=1/8-(M+3)/384,\qquad s=\{1-(M+3)53/600\}/2.
+\end{gather*}
+Define
+\begin{align}\label{ut:high-six}
+ \mathfrak H_j={}&A_j^{\rm high}
+ +\frac{m}{4\pi^{3/2}h\sqrt a}
+                \left(S_3+\frac{3S_5}{jah^2}\right)
+ +\frac{m\sqrt j}{2\pi^2}e^{-jah^2w^2}\notag\\
+ &+Z_j+\frac{\sqrt j}{2b^2}e^{-ja(23/48)^2}
+ +\sqrt j e^{-j/8}\{2\Lambda(j/8)+\sqrt{M-1}/3\}.
+\end{align}
+One always may choose
+\[
+ A_j^{\rm high}=2\sqrt j e^{-jc},\qquad
+ Z_j=\frac{e^{-j\kappa_Eb^2}}{2b^4\kappa_E\sqrt j}.
+\]
+If $s>0$, the first may be replaced by its minimum with
+$2\sqrt j e^{-jc_0}\Lambda(js/4)$.
+If $j\kappa_Eb^2\ge1/4$, the second may be replaced by its minimum
+with $\sqrt j e^{-j\kappa_Eb^2}\Lambda(j\kappa_Eb^2)/(2b^2)$.
+
+\begin{lemma}[High-frequency candidates and their gates]\label{ut:high}
+Under \eqref{ut:event-input}, $\sqrt n I_\infty(n)\le\mathfrak H_n$.
+A fixed choice of alternatives satisfies
+$\mathfrak H_n\le\mathfrak H_N$ for every $n\ge N$ provided
+\begin{equation}\label{ut:high-gates}
+ 2Nc'>1\quad
+ (c'\in\{c,ah^2w^2,a(23/48)^2,1/8\}).
+\end{equation}
+For the improved first term also require $s>0$ and $2Nc_0>1$;
+for the improved zero-cell term require $N\kappa_Eb^2\ge1/4$.
+An alternative failing its floor gate is omitted, even if it would
+become eligible at a larger index.
+\end{lemma}
+\begin{proof}
+On $[1/2,b]$, symmetrization gives
+$|f(t)|^2\le1-t^2+(M+3)t^4/12$, proving the first term with rate
+$c$. The sharper chord is
+\[
+ t^2/2-(M+3)t^4/24\ge c_0+s(t^2-1/4).
+\]
+It is valid since the difference is
+$(M+3)(t^2-1/4)(81/100-t^2)/24\ge0$.
+
+For $t\ge b$, let $p_E=\PP(E)$. Symmetrization, $1-u\le e^{-u}$,
+and conditional Jensen imply
+\[
+ |f(t)|^n\le e^{-n\E\sin^2(t(X-X')/2)}
+ \le\E[e^{-na\sin^2(t|X-X'|/2)}\mid E].
+\]
+For each conditional distance $D_*=|X-X'|$, partition the positive
+axis into the zero cell and the cells centred at
+$2\pi j/D_*$, $j\ge1$. In a nonzero cell write
+$t=(2\pi/D_*)(j+v)$. On $|v|\le w$,
+$|\sin(\pi v)|\ge h|v|$; on the wings it is at least $hw$.
+The paired Taylor bound
+\[
+ \{(j-v)^{-3}+(j+v)^{-3}\}/2
+             \le j^{-3}+6(j-w)^{-5}v^2
+\]
+and the Gaussian zeroth and second moments prove the second term
+of \eqref{ut:high-six}. Its Jacobian is
+$D_*^2/(4\pi^2)$, and conditional averaging uses
+$\E[D_*^2\mid E]\le m$. Summing the two positive series and
+bounding their tails after $20$ by integrals gives $S_3,S_5$.
+The wing weight is at most $D_*^2/(2\pi^2)$ and gives the third term.
+All extensions of these integrals below $b$ add nonnegative quantities.
+
+In the zero cell, $u=tD_*/2\le\pi/2$.
+For $u\le1/2$ use $\sin u\ge(23/24)u$ and $D_*\ge d$.
+This gives the zero-cell Gaussian tail $Z_j$.
+For $u\ge1/2$ use $\sin u\ge23/48$ and total weight
+$1/(2b^2)$, giving the fifth term.
+The comparator on the whole interval $[1/2,\infty)$ costs
+\[
+ \sqrt j\int_{1/2}^\infty e^{-jt^2/2}t^{-3}dt
+ +\frac{j^{3/2}|\gamma|}{6}\int_{1/2}^\infty e^{-jt^2/2}dt.
+\]
+The second integral is at most $2e^{-j/8}/j$, and Pearson gives
+$|\gamma|\le\sqrt{M-1}$. This proves the sixth term.
+
+The rational Gaussian-tail estimate used above is, for $x=jk b^2>0$,
+\begin{equation}\label{ut:rational-tail}
+ \sqrt j\int_b^\infty e^{-jkt^2}t^{-3}dt
+ \le\frac{\sqrt j e^{-x}}{2b^2}\Lambda(x).
+\end{equation}
+After substitution its remaining factor is
+$\int_0^\infty u(x+u)^{-1}e^{-u}du$.
+For $P(u)=u^2-4u+2$ and $D_x=x^2+4x+2=P(-x)$,
+division of $D_x^2-P(u)^2$ by $x+u$, followed by
+$\int u^ke^{-u}du=k!$, gives
+$\int_0^\infty (x+u)^{-1}e^{-u}du\ge(x+3)/D_x$.
+The discarded remainder is $P(u)^2/[(x+u)D_x^2]\ge0$.
+Consequently the preceding factor is at most
+$1-x(x+3)/D_x=\Lambda(x)$, proving
+\eqref{ut:rational-tail}. The simpler zero-cell alternative follows
+by replacing $t^{-4}$ by $b^{-4}$ after integrating once.
+
+For the floor comparison,
+$(\sqrt j e^{-cj})'=(\sqrt j e^{-cj})(1/(2j)-c)$,
+and $j^{-1/2}e^{-cj}$ decreases for every $c>0$.
+Also $\Lambda'(x)=-(x^2+4x+6)/(x^2+4x+2)^2<0$.
+These prove the assertions for the second, third, fifth and sixth
+terms and for either first-term choice under the stated gates.
+For the improved zero-cell choice the derivative of
+$\sqrt x e^{-x}\Lambda(x)$ has, after multiplication by positive
+factors, numerator
+\[
+ 4-10x-22x^2-13x^3-2x^4.
+\]
+It equals $-11/128$ at $x=1/4$ and decreases for $x>0$.
+This proves precisely its additional gate.
+\end{proof}
+
+The event inputs transfer without an index assumption. For $0<d^2<2$
+and $E=\{(X-X')^2\ge d^2\}$, Cantelli's inequality supplies
+\[
+ V=2M+2,\quad h_0=2-d^2>0,\quad
+ a=h_0^2/(V+h_0^2),\quad m=2+V/h_0.
+\]
+Indeed $Y=(X-X')^2$ has $\E Y=2$ and
+$\operatorname{Var}Y\le V$. Applying the elementary one-sided
+second-moment bound to $Y-2$ gives $\PP(Y\ge d^2)\ge a$.
+For $p_E=\PP(E)$, Cauchy--Schwarz applied to the covariance gives
+$\E[Y\mid E]\le2+\sqrt{V(1-p_E)/p_E}\le2+V/h_0$.
+This also licenses the older weaker parameters
+$a_U=h_0^2/(V+4)$, $m_U=2(V+4)/h_0^2$:
+$a\ge a_U$ and
+\[
+ m_U-m=\frac{(2-h_0)(V+2h_0+4)}{h_0^2}\ge0.
+\]
+Every event-dependent term of \eqref{ut:high-six} decreases in $a$
+and increases in $m$; its gates are preserved when $a$ increases.
+Thus no separate universal-event proof is needed, and old certificates
+using the weaker parameters remain valid. This domination holds for
+the same $M,d,w$; it does not identify different distance choices.
+The selected Cantelli pool uses
+$d\in\{1/2,11/20,3/5,13/20,7/10\}$ and $w=1/4$.
+Only members satisfying \eqref{ut:high-gates} at $N$ are retained.
+Replacing $M$ by a fixed outward ceiling on the $1/1000$ grid
+is legitimate as a new fourth-moment cap; it is then held fixed.
+
+After a central gap $(-A_-,A_+)$ is proved, another actual event is
+$E=\{XX'<0\}$. With $p=\PP(X>0)$, $\mu=\E X_+$ and
+$\beta=\E[X|X|]$, its exact conditional distance is
+\[
+ \PP(E)=2p(1-p),\qquad
+ \E[(X-X')^2\mid E]
+ =\frac{1+4\mu^2+\beta}{2p}
+  +\frac{1+4\mu^2-\beta}{2(1-p)}.
+\]
+The expression increases in $\mu^2$, is affine in $\beta$, and is
+convex in $p$ for $|\beta|\le1$. Incoming interval endpoints
+therefore give $m$; the independent bound $m\le2/a$ may be intersected.
+An acquired $D\le d_D<(\sigma_l-1)\rho_l$, where
+$1<\sigma_l\le\sqrt{10}$, licenses the central gap. Moreover
+\begin{equation}\label{ut:gap-input}
+\begin{gathered}
+ (A_-+A_+)^2\ge\frac{\rho_l-d_D/(\sigma_l-1)}{\mu},\qquad
+ (A_-+A_+)^2\ge\frac{2P_*}{3\mu},\\
+ P_* =\max\{(\sigma_l-1)\rho_l,\sigma_l\rho_l-\gamma_u\}-d_D.
+\end{gathered}
+\end{equation}
+The first follows from the gap decomposition's
+$T_++T_-\le D/(\sqrt{10}-1)$.
+The second follows from
+$J\le\rho+2\mu A_-A_+$ and hence $6\mu A_-A_+\ge P_*$.
+Use an incoming upper bound for $\mu$ and positive lower roots.
+The weaker first bound with $\mu\le1/2$, and independently acquired
+$A_-+A_+\ge A_l+B_l$, give the other saved distance choices.
+The gates are a positive gap, positive mean denominator and $0<d\le12$;
+no assumption $d_D<2$ is needed for \eqref{ut:gap-input}.
+
+A finite minimum of complete high-frequency candidates is valid:
+each bounds the same $\sqrt n I_\infty(n)$.
+Likewise a finite minimum of complete low-frequency triples is valid.
+One may not combine the constant of one low triple with the slope of
+another without a separate proof. Rational outward evaluations at
+$N$ bound the exact displayed expressions at $N$ and hence at $n$;
+no monotonicity of the rounding or exponential evaluator is assumed.
+
+\subsection{Raw and charged candidates at the fixed floor}
+
+Choose one complete low triple and one complete high bound at $N$.
+For a fixed rational $\omega_\pi\ge2/\pi$, put
+\begin{equation}\label{ut:fourier-floor}
+ K_F=\omega_\pi\{L_0(N)+\mathfrak H_N+L_2(N)/\sqrt N\},
+ \qquad s_F=\omega_\pi L_H(N).
+\end{equation}
+Lemmas~\ref{ut:low} and \ref{ut:high} prove
+$|E_n|\le K_F+s_F|H|$ for the actual law.
+The values $16/25$ and $212/333$ used in the two enclosure families
+both satisfy the normalization condition.
+
+Here is a precise description of the coefficient estimates which can
+be used with \eqref{ut:fourier-floor}. On an incoming physical cell
+assume that the coefficient atlas has proved
+\begin{equation}\label{ut:physical-coefficients}
+ 3\beta J/2+3\rho J_1-3J_2-K_q\le A(\rho),\qquad
+ K_1\in[k_l,k_u],\quad U\in[u_l,u_u].
+\end{equation}
+These are inequalities in the moments and support of $P$; they contain
+no sample index. For the initial cover they are proved on the signed
+$(\rho,\beta,\gamma,\mu)$ rectangles. For the resource cover they use
+the conditional moment and gap formulas of Section~\ref{loc:section}.
+The full physical derivations are the sections \emph{Signed moments
+with a common first moment}, \emph{Preserving central and outer
+integral costs} and \emph{Moment and gap coefficients for a whole
+cell} in the continuous companion's \emph{Coefficient atlas for the
+enclosure}, located in Appendix~\ref{app:companions}.
+The central polynomial is $\rho P_1(A_-,A_+)-P_2(A_-,A_+)$, where
+\begin{align*}
+ P_1&=B^3/3+AB^2/2-A^3/6,\\
+ P_2&=B^4/4+AB^3/3-A^4/12,
+\end{align*}
+where $(A,B)=(A_-,A_+)$.
+Its full-rectangle Bernstein bound is a maximum of affine functions
+of $\rho$. The outer cost is bounded by
+$3\{(\rho-B_l)_+^2T_++(R-\rho)^2T_-\}/8$.
+These and the remaining affine moment terms give the convex
+$A(\rho)$ used in the corner reduction. Every signed product with
+a possibly negative factor retains the appropriate two endpoints.
+Thus \eqref{ut:physical-coefficients}, rather than a file status, is
+the required physical-coefficient premise of a candidate.
+
+Suppose previous information gives
+$\mathcal R_n\le r$, $nD\le Nd$ and $0<r<2N/5$.
+Once removal of the Gaussian weight has been licensed, it follows that
+\begin{equation}\label{ut:incoming-envelope}
+ D\le d,\qquad L_N\le\varphi\le2/5,\quad
+ L_N=\frac{997}{2500}(1-5r/(2N))>0.
+\end{equation}
+The density statement uses the nonnegative phase term in
+\eqref{loc:conserved}, $\CE\rho>2/5$ and $n\ge N$.
+For the unseeded first pass use $L_N=0$, without assuming $r$ or $d$.
+
+For a sign $\varepsilon\in\{-1,1\}$ and a prospective score $c$, set
+\[
+ F_\varepsilon(c)=s_F+
+ \max_{k\in\{k_l,k_u\},\,u\in\{u_l,u_u\},\,phi\in\{L_N,2/5\}}
+                  \varepsilon(ck+\phi u).
+\]
+The maximum of the two signs may be used for an unsigned bound.
+If $\gamma\ge g_0(\rho)$ is an incoming signed lower bound, with
+$g_0$ affine in $\rho$ (including a fixed signed interval endpoint),
+the correct phase curvature is
+\begin{equation}\label{ut:signed-curvature}
+ q(c,\rho)=c\rho+\tfrac12
+           \min\{L_N g_0(\rho),(2/5)g_0(\rho)\}.
+\end{equation}
+In particular $g_0(\rho)=3.16\rho-3-d$ is valid since
+$J\le\rho+1$. The alternative general-envelope curvature is
+\[
+ q_{\rm gen}(c,\rho)=c\rho+L_Ng_0(\rho)/2
+                    -(2/5-L_N)(d-.16)_+/2.
+\]
+It is no larger than \eqref{ut:signed-curvature}, because
+$(-g_0(\rho))_+\le(d-.16)_+$ for $\rho\ge1$.
+Either curvature must be proved strictly positive before division.
+Using $L_Ng_0/2$ alone when $g_0<0$ would not be licensed.
+
+For the actual $H$ with sign $\varepsilon$, \eqref{loc:raw} now gives
+\begin{equation}\label{ut:raw-candidate}
+ \mathcal R_n\le K_F+C A(\rho)+F_\varepsilon(C)|H|
+                                      -q(C,\rho)H^2.
+\end{equation}
+Thus a floor candidate is an envelope for the actual raw threshold.
+It is not an estimate of a fictitious $\mathcal R_{25}(P)$.
+
+The same incoming bounds give a conserved-phase price
+\begin{equation}\label{ut:rebate}
+ e_N(\rho)=\tfrac12(1-5r/(2N))(.4095\rho-d/15)>0.
+\end{equation}
+Indeed the difference between the weighted and unweighted terms in
+\eqref{loc:conserved} is
+$n(1-e^{-w})(\CE\rho-\phi(0)D/6)$, $w=H^2/(2n)$.
+Use $1-e^{-w}\ge we^{-w}$, the density floor before multiplying by
+$\phi(0)$, $D\le d$ and $\phi(0)<2/5$.
+Consequently, with $\kappa=997/15000$,
+\begin{equation}\label{ut:charged-candidate}
+ \kappa nD+n(C-\CE)\rho
+ \le K_F+C A(\rho)+F_\varepsilon(C)|H|
+                       -\{q(C,\rho)+e_N(\rho)\}H^2.
+\end{equation}
+The first unseeded pass uses $e_N=0$.
+
+The own-score interval is also conservative at $N$. If a physical
+cell forces $D\ge d_l\ge0$ and $\rho\ge\rho_l>0$, then
+\begin{equation}\label{ut:own-score}
+ C\le .40974+
+ \frac{r/N-L_Nd_l/6}{\rho_l}
+\end{equation}
+whenever the numerator is nonnegative. A negative numerator excludes
+the cell. This follows from \eqref{loc:conserved}, since
+$r/n-\varphi d_l/6\le r/N-L_Nd_l/6$.
+The independent moment envelope and $c_{\rm in}$ may be intersected
+with \eqref{ut:own-score}.
+
+For each candidate freeze all physical coefficients before taking the
+score and moment corners. For fixed $H$, the right side of
+\eqref{ut:raw-candidate} is convex in $c$ and in $\rho$ separately:
+$A$ is convex, $F_\varepsilon$ is a maximum of affine functions,
+and $q$ is affine in $c$ and concave in $\rho$.
+The same is true after adding the affine curvature $e_N$.
+Hence the whole physical rectangle is bounded by its corners, first
+pointwise in $H$, and then by completing each corner's square.
+For $Q>0$, $\sup_{h\ge0}(A+Fh-Qh^2)=A+(F_+)^2/(4Q)$;
+using $A+F^2/(4Q)$ is a weaker valid bound.
+
+For a charged candidate split the score interval at $.40974$ and use
+\begin{equation}\label{ut:excess-charge}
+ n(C-\CE)\rho\ge N(C-.40974)_+\rho.
+\end{equation}
+On either side of this breakpoint the subtracted right side is
+affine in each of $c,\rho$ separately, so the same corner argument
+applies. Omitting this breakpoint would not follow from convexity.
+If $R_N$ is the maximum raw corner price and $B_N$ the maximum
+charged corner price, the resulting conclusions are
+\begin{equation}\label{ut:stage-output}
+ \mathcal R_n\le R_N,\qquad nD\le B_N/\kappa.
+\end{equation}
+They remain true after minima with other complete candidate bounds.
+The phase roots of these same corner quadratics bound the original
+$H$, and the pointwise charged quadratics give
+$D\le\max_j(A_j+F_{j,\varepsilon}|H|-Q_jH^2)/(\kappa n)$.
+Their normalization is therefore $15000/(997n)$.
+For an unpaired export the implementation may instead use an already
+proved $|H|\le H_*$ and the scalar weighted defect bound to write
+\[
+ \kappa nD\le\kappa Nd
+ \le\kappa Nd+\epsilon(H_*^2-H^2),\qquad\epsilon>0.
+\]
+This is a valid pointwise envelope on the acquired phase interval.
+Its artificial quadratic term asserts no additional physical curvature.
+
+\subsection{The unseeded step and finite induction}
+
+\begin{proposition}[Fixed-floor interpretation]\label{ut:transfer}
+Consider the fixed finite B0 or B1 acquisition schedule at $N=25$.
+At each Fourier step retain a complete candidate satisfying
+Lemmas~\ref{ut:low} and \ref{ut:high} at the floor, its proved
+physical coefficient bounds \eqref{ut:physical-coefficients}, and
+the positive corner divisors above. At each physical step retain only
+necessary inequalities for the current law and a complete closed
+cover of its incoming domain. Every support or strip implication is
+proved at the actual integer $n$, using its own incoming moment and
+threshold conditions before its output is used.
+Then every saved raw and defect output $(r_j,d_j)$ has the interpretation
+\begin{equation}\label{ut:induction-invariant}
+ \mathcal R_n\le r_j,\qquad nD\le Nd_j.
+\end{equation}
+The physical moment, endpoint, sign and threshold bounds exported
+alongside it apply simultaneously to the same actual-$n$ law.
+\end{proposition}
+\begin{proof}
+For the first pass there is no input $r_j$ or $d_j$.
+Proposition~\ref{gc:initial-support} supplies the initial radii
+$12/5$ on B0 and $13/5$ on B1 uniformly in the actual integer.
+Before any defect feedback,
+$M_4\le R\rho$ gives the respective ceilings $66/25$ and $78/25$;
+$M_5\le RM_4$, $M_6\le RM_5$ and $|\gamma|\le\rho\le6/5$
+license the triangle low bound and the universal or Cantelli high
+bound. The initial signed-moment cover uses $\varphi\in[0,2/5]$,
+the independent score interval and physical moment inequalities.
+It assumes neither a central gap nor a final conditional moment cap.
+
+The selected first raw cover maxima, with outward arithmetic, are
+\[
+ r_1^{\rm B0}=109743487/50000000,
+ \qquad r_1^{\rm B1}=283144217/100000000.
+\]
+These are finite upper bounds on the raw prices in
+\eqref{ut:raw-candidate}; their closed-domain arithmetic is part of
+the companion calculation. Both are below $3<.4N\le nC\rho$.
+It follows from \eqref{loc:conserved} that
+\[
+ \frac{\varphi}{6}(\gamma+3J)
+            =C\rho+\sqrt n\mathcal L-\mathcal R_n/n>0.
+\]
+Consequently $\CE\rho-\phi(0)D/6>0$. Removing the Gaussian weight
+in \eqref{loc:conserved} now lowers its left side and proves
+\begin{equation}\label{ut:bootstrap}
+ n(C-\CE)\rho+\kappa nD+n^{3/2}\mathcal L\le\mathcal R_n.
+\end{equation}
+Only at this point is the charged output from the same first cover
+used. Its corner calculation, with $e_N=0$ and
+\eqref{ut:excess-charge}, gives
+$d_1=B_N/(\kappa N)$, with the saved outward values
+\[
+ d_1^{\rm B0}=129264343/10^8,\qquad
+ d_1^{\rm B1}=16619657/10^7.
+\]
+Thus $nD\le Nd_1$, not merely $D\le d_1$.
+Both $d_1<2< (\sqrt{10}-1)\rho_l$, so the next pass may use the
+central gap. This order explains why calculating raw and charged
+corner arrays in one routine is not a circular use of a defect cap.
+
+Suppose \eqref{ut:induction-invariant} and the physical bounds have
+been established at a later incoming stage. Since $n\ge N$, the
+weaker physical statement $D\le d_j$ is available. All moment,
+common-mean, gap and conditional-variance deductions can therefore
+use $d_j$ in exactly their displayed physical directions.
+For example, the additional p-local mean caps are
+\[
+ \mu^2\le p(1+\beta)/2,\quad
+ \mu^2\le(1-p)(1-\beta)/2,\quad \mu^2\le p(1-p).
+\]
+They follow from signed-class Cauchy--Schwarz and retain the same
+meaning on both probability halves. The endpoint-product distances
+in \eqref{ut:gap-input} and all signed Pearson rectangles above
+are likewise independent of $n$.
+
+The physical inputs now license the next fixed Fourier candidates.
+Their exact low and high expressions at the actual $n$ are bounded
+by their floor-$N$ values, by the two lemmas. The floor density
+interval \eqref{ut:incoming-envelope} contains the actual density;
+the floor own-score interval \eqref{ut:own-score} contains the
+actual score; and \eqref{ut:rebate} is a lower price for the actual
+conserved phase. Equations~\eqref{ut:raw-candidate} and
+\eqref{ut:charged-candidate} therefore hold pointwise in the actual
+$H$. Their whole-cell corner maxima yield the next
+$\mathcal R_n\le R_N$ and $nD\le B_N/\kappa$.
+Writing the latter output as $d_{j+1}=B_N/(\kappa N)$ restores the
+weighted invariant at every charged stage.
+
+An excluded physical cell has an empty necessary interval or a
+strictly negative upper bound for a nonnegative resource.
+Any surviving law lies in at least one retained closed cell, so
+maximizing its new bounds over all retained cells is valid.
+Intersections with preceding bounds, finite minima of valid
+candidates and outward rounding preserve the invariant.
+This proves the assertion by induction over the prescribed finite
+schedule, including repeated local INITIAL covers, the resource
+subiterations and the final exports. The proof invokes neither
+convergence of the iteration nor extremality at a smaller sample size.
+\end{proof}
+
+\subsection{Actual support and the interpretation of geometry}
+
+The support hypotheses in Proposition~\ref{ut:transfer} use the
+actual-index Gaussian majorant \eqref{loc:support-test}.
+The original contact function $\mathcal D_n$ is zero on the full
+support; the majorant need only be nonnegative there.
+Write $s_n=\sqrt{n/(n-1)}$ and $e_n=n(s_n-1)-1/2$.
+The possible extra allowance is
+$n\rho s_n(C_{n-1}-C)_+=0$ under the assumed full predecessor.
+A support ray or an excluded strip is obtained by proving the right
+side strictly negative throughout that set, uniformly in all incoming
+moment, score and threshold parameters. The Gaussian differences,
+$s_n$ and $e_n$ in that calculation use the actual $n$.
+For a bounded $H$ test, that bound on $H$ must already have been
+proved by an earlier phase envelope. In particular the estimate
+$e_n<.384/n$, proved in the retained derivation only for $n\ge36$,
+is not used in these five actual-index requests.
+
+The initial signed-moment interval follows from the support-free
+inequality \eqref{ut:initial-signed-moment}; it requires no radius
+or higher-moment feedback.
+
+At the first support call the only moment restrictions are the
+specified rho band and its consequences, together with the actual
+score cap. An intermediate call consumes the moment intervals which
+have already been proved by the preceding resource stage. Its new
+radius licenses moment improvements only after the actual-index
+strict contact test has passed. A final moment cap cannot license
+the first support call, and a successful support calculation at $25$
+cannot license a support or strip request at $26,\ldots,30$.
+This is the one kind of acquisition step for which the floor-index
+substitution is deliberately not made.
+
+The distinction between weighted and physical quantities is also
+necessary when exporting noise. From an acquired physical inequality
+\[
+ D\ge b+g\delta+h_NNs,\quad
+ \delta=a_0+a_1,\quad b\ge0,\quad g,h_N>0,
+\]
+and $nD\le Nd_j$, put $r=N/n$ and $R_j=d_j-b$.
+If $R_j>0$, $d_0=R_j/g$ and $L=R_j/h_N$ give
+\begin{equation}\label{ut:export-plane}
+ D\le rd_j,\qquad
+ D\ge b+g\delta+rh_N\lambda_n,\qquad
+ \frac{\delta}{rd_0}+\frac{\lambda_n}{L}
+                 \le1-(n/N-1)b/R_j\le1,
+ \quad\lambda_n=ns.
+\end{equation}
+This proves the units of the actual defect, inward intercept and noise
+price. The joint intercept $L$ stays fixed. Without dividing by $R_j$,
+the original inequality reads
+$g\delta+rh_N\lambda_n\le rd_j-b$.
+A negative right side excludes the cell, and a zero right side forces
+$\delta=\lambda_n=0$. This also specifies the cases $R_j\le0$:
+zero noise is retained only when the actual scaled right side is zero.
+
+In the positive-residual case $R_j>0$, suppose physical support also gives $s\le B\delta$,
+$B>0$, and $p(1-p)\ge v_l>0$. Retain first the full scaled
+plane in \eqref{ut:export-plane} and put
+\[
+ c=1-(n/N-1)b/R_j,\qquad
+ H_N=\left(\frac1L+\frac1{NBd_0}\right)^{-1}.
+\]
+The same scalar elimination as in \eqref{loc:harmonic-consequence},
+now using $\delta\ge\lambda_n/(nB)$, $h=rh_N$,
+$\overline D=rd_j$ and $nr=N$, gives
+\begin{equation}\label{ut:scaled-harmonic}
+ \lambda_n\left(\frac1L+\frac1{NBd_0}\right)\le c,
+ \qquad \lambda_n\le cH_N.
+\end{equation}
+This is the stronger scalar export used by the actual-index adapter.
+For a nonempty cell $c\ge0$, and $b\ge0$ gives $c\le1$;
+with this same support constant $B$, $H_N$ is therefore also
+a conservative scalar cap. At $c=0$ the scaled plane retains
+$\delta=\lambda_n=0$.
+
+If only the deliberately weakened, unscaled joint plane
+$\delta/d_0+\lambda_n/L\le1$ is retained, it gives
+\[
+ \lambda_n\le\left(\frac1L+\frac1{nBd_0}\right)^{-1},\qquad
+ \theta\le\left(1+\frac{nv_l}{L}
+                         +\frac{v_l}{Bd_0}\right)^{-1}
+ \le\left(1+\frac{Nv_l}{L}
+                         +\frac{v_l}{Bd_0}\right)^{-1}.
+\]
+These weaker premises license the displayed actual-$n$
+scalar expression and the transported variance fraction. They alone
+do not license replacing that scalar expression by $H_N$.
+The stronger cap in \eqref{ut:scaled-harmonic} is available when the
+full scaled plane is retained. Both harmonic expressions are separate
+scalar consequences; the original simultaneous intercept in
+\eqref{ut:export-plane} remains $L$.
+All further signed refinements may use the transported physical
+$\theta$ and the actual support, followed by a new application of
+the same joint-defect inequality. This completes the mathematical
+transfer needed for the five actual-index acquisition schedules.
+
+
+\section{Gaussian contact as a Peano remainder}\label{gc:section}
+
+The initial support bounds admit a single analytic proof. The key is to
+recognize the contact kernel as a Gaussian Hermite remainder, and then
+apply the classical Peano-kernel representation. This replaces the
+initial actual-index support calculations and supplies the radial
+contractions used by the tail route. Remaining actual-index refinements
+and coordinate-strip exclusions retain their own proofs.
+
+Let $Z$ be standard normal. For $g\in C^3(\mathbb R)$ with bounded
+third derivative, put
+\[
+ L_xg=g(x)-\E g(Z)-x\E g'(Z)-\frac{x^2-1}{2}\E g''(Z).
+\]
+These expectations exist because $g,g',g''$ grow at most cubically,
+quadratically and linearly.
+
+\begin{lemma}[A uniform Gaussian Peano kernel]\label{gc:kernel}
+For $|x|\ge2$,
+\begin{equation}\label{gc:kernel-bound}
+ |L_xg|\le\|g'''\|_\infty
+       \left\{\frac{|x|^3-3|x|}{6}+\frac34\right\}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Taylor's integral remainder anchored at zero, followed by Fubini, gives
+\begin{equation}\label{gc:peano}
+ \begin{aligned}
+ L_xg&=\int_{\mathbb R}g'''(t)K_x(t)\,dt,\\
+ K_x(t)&=\frac{(x-t)^2}{2}
+       \{\mathbf1_{\{t<x\}}-\overline\Phi(t)\}+(t/2-x)\phi(t).
+ \end{aligned}
+\end{equation}
+Indeed $L_x$ annihilates all quadratic polynomials. Applying it to
+$(u-t)_+^2/2$, and using the first two truncated Gaussian moments,
+gives exactly this kernel. The anchored remainders are bounded by
+Gaussian absolute moments of orders at most three, justifying the
+interchanges. The displayed kernel has integrable Gaussian tails.
+Testing $g(u)=u^3/6$ and reflecting give
+\[
+ \int K_x(t)\,dt=\frac{x^3-3x}{6},\qquad
+ K_{-x}(-t)=-K_x(t)\quad\text{almost everywhere}.
+\]
+
+Take $x\ge2$. We first show $K_x(t)\ge0$ for $t\le x/2$.
+For $t=-y\le0$, this is the Mills inequality
+\[
+ m(y):=\frac{\overline\Phi(y)}{\phi(y)}
+ \ge\frac{2x+y}{(x+y)^2}.
+\]
+Cauchy--Schwarz for the integrals of $1,u,u^2$ against
+$e^{-yu-u^2/2}du$ gives $m^2+ym\ge1$. Hence
+\[
+ m(y)\ge\frac{\sqrt{y^2+4}-y}{2}
+       \ge\frac{y+4}{(y+2)^2}
+       \ge\frac{y+2x}{(y+x)^2}.
+\]
+The middle comparison follows by squaring positive quantities; the
+last follows by differentiation in $x\ge2$.
+
+For $0\le t\le1$, $K_x(t)$ increases in $x\ge2$, since
+$\partial_xK_x=(x-t)\Phi(t)-\phi(t)>0$. The elementary bounds
+$39/100<\phi(0)<2/5$, $e^{-u}\ge1-u$ and
+$e^{-u}\le1-u+u^2/2$ give $K_2(t)\ge P(t)$, where
+\[
+ P(t)=\frac15-\frac t{50}-\frac{13t^2}{100}
+       -\frac{7t^3}{200}+\frac{3t^4}{100}-\frac{3t^5}{400}.
+\]
+On $[0,1]$, $P'(t)\le-49t/200-1/50<0$, so
+$P(t)\ge P(1)=3/80>0$.
+For $1\le t\le x/2$ the same monotonicity in $x$ gives
+\[
+ K_x(t)\ge K_{2t}(t)
+       =\frac t2\{t\Phi(t)-3\phi(t)\}>0.
+\]
+The expression in braces increases for $t\ge1$; at $1$ it is
+positive because $\Phi(1)\ge33/40$ and $\phi(1)<49/200$.
+
+Writing $a=x/2$, we can now bound the negative part by
+\begin{align}\label{gc:negative-part}
+ \int K_x^-&\le\int_a^{2x}(x-t/2)\phi(t)\,dt
+       +\frac12\int_x^\infty(t-x)^2\overline\Phi(t)\,dt\notag\\
+ &\le\frac32\phi(a)+\frac12\phi(2x)+\frac{\phi(x)}{x^4}
+ <\frac{5943}{16000}<\frac38.
+\end{align}
+The first integral uses $\overline\Phi(a)\le\phi(a)/a$.
+The second is $\E(Z-x)_+^3/6$, at most $\phi(x)/x^4$ by
+$\phi(x+u)\le\phi(x)e^{-xu}$. The last rational bound uses
+$\phi(1)<49/200$, $\phi(2)<11/200$ and $\phi(4)<1/1000$.
+Each follows from a positive partial sum of the exponential series.
+Thus $\|K_x\|_1=\int K_x+2\int K_x^-$ proves
+\eqref{gc:kernel-bound}.
+
+\end{proof}
+
+The signed moment needed for contact also has a support-free bound.
+For $a=\E|X|>0$, $\beta=\E[X|X|]$ and $\rho=\E|X|^3$,
+\begin{equation}\label{ut:initial-signed-moment}
+ a\rho\ge1+\beta^2,\qquad a^2+\beta^2\le1,\qquad
+ |\beta|\le\sqrt{\frac{\rho\sqrt{\rho^2+8}-\rho^2-2}{2}}.
+\end{equation}
+For the first inequality, apply Bessel's inequality to $|X|^{3/2}$
+and the orthogonal functions $|X|^{1/2}$ and
+$\operatorname{sgn}(X)|X|^{1/2}$. Their squared norms are $a$ and
+their inner products with $|X|^{3/2}$ are $1,\beta$.
+Cauchy--Schwarz for $X$ and $|X|-a$ proves the second inequality;
+eliminating $a$ proves the last.
+
+\begin{proposition}[Initial support without index subdivisions]\label{gc:initial-support}
+Let $(P,H)$ be a standardized positive closed global maximizing pair
+at index $n\ge25$, with $C=C_n\ge\CE$ and $C_{n-1}\le C$.
+Then
+\[
+ \rho\le11/10\ \Longrightarrow\ \operatorname{supp}P\subset(-12/5,12/5),
+\]
+\[
+ \rho\le6/5\ \Longrightarrow\ \operatorname{supp}P\subset(-13/5,13/5).
+\]
+No higher moment or defect bound is required.
+\end{proposition}
+\begin{proof}
+For $g(u)=n^{3/2}\Phi((H-u)/\sqrt{n-1})$, Gaussian convolution gives
+\begin{align*}
+ \E g(Z)&=n^{3/2}\Phi(H/\sqrt n),\\
+ \E g'(Z)&=-n\phi(H/\sqrt n),\qquad
+ \E g''(Z)=-H\phi(H/\sqrt n).
+\end{align*}
+Thus $L_xg=\mathcal H_n(H,x)$ exactly. Also
+$\|g'''\|_\infty=(n/(n-1))^{3/2}\phi(0)<213/500$ for $n\ge25$.
+For $s_n=\sqrt{n/(n-1)}$ and $e_n=n(s_n-1)-1/2$,
+\begin{equation}\label{gc:scale}
+ 0<e_n<\frac{2}{5n}\le\frac2{125}.
+\end{equation}
+Indeed, for $z=1/n\le1/25$,
+\[
+ (1-z)(1+z/2+2z^2/5)^2-1
+ =z^2\{1/20-13z/20-6z^2/25-4z^3/25\}>0.
+\]
+The bracket decreases and is positive at $1/25$; omitting the
+quadratic correction proves the lower bound.
+
+By \eqref{ut:initial-signed-moment}, $\rho\le11/10$ gives
+$|\beta|<127/500$, and $\rho\le6/5$ gives $|\beta|<44/125$.
+For either $(\rho_u,b,R)=(11/10,127/500,12/5)$ or
+$(6/5,44/125,13/5)$, put
+\begin{align*}
+ Q(r)&=-r^3+3\rho_ur^2/2+3br+2\rho_u/125,\\
+ V(r)&=\frac{213}{500}\{(r^3-3r)/6+3/4\}
+                                      +\frac{819}{2000}Q(r).
+\end{align*}
+At $r=R$, $Q<0$, $Q'<-8$ and $Q''<-11$; since $Q'''=-6$,
+the multiplier of $C$ remains negative on the whole ray.
+The contact inequality \eqref{loc:support-test} therefore has
+right side at most $V(r)$ for $|x|=r\ge R$, using
+$C\ge\CE>819/2000$ in the negative term. Direct substitution gives
+\[
+ V(12/5)=-278919/1250000,\qquad V(13/5)=-85993/1250000.
+\]
+In both rows $V'(R)<-5/2$, $V''(R)<-7/2$ and $V'''<-2$.
+Hence $V<0$ on both entire rays, contradicting contact at any
+support point there, including atoms and accumulation points.
+\end{proof}
+
+\begin{corollary}[All-index radial support at zero predecessor loss]\label{gc:tail-support}
+Let $(P,H)$ be a standardized positive closed global maximizing pair
+with $n\ge47$, $C=C_n\ge\CE$ and $C_{n-1}\le C$.
+For each row below, the already established moment bounds
+$\rho\le\rho_u$, $|\beta|\le b$ imply
+$\operatorname{supp}P\subset(-R,R)$:
+\[
+\begin{array}{c|c|c|c}
+ \rho_u&b&R&\text{contact upper bound at }R\\\hline
+ 7361/4000&643/1000&96/25&-1/20\\
+ 139/100&43/100&3&-23/100\\
+ 12563/10000&1963/5000&27/10&-9/500\\
+ 603687/500000&4014/15625&5/2&-49/500
+\end{array}
+\]
+\end{corollary}
+\begin{proof}
+The predecessor allowance is zero. The same Gaussian function has
+$\|g'''\|_\infty<207/500$ and $e_n<2/235$ for $n\ge47$.
+For each row put
+\begin{align*}
+ Q(r)&=-r^3+3\rho_ur^2/2+3br+2\rho_u/235,\\
+ V(r)&=\frac{207}{500}\{(r^3-3r)/6+3/4\}
+       +\frac{819}{2000}Q(r).
+\end{align*}
+Direct substitution gives the strict upper bounds in the table.
+In all four rows $Q(R)<0$, $Q'(R)<-8$, $Q''(R)<-11$,
+$V'(R)<-5/2$, $V''(R)<-7/2$ and $V'''<-2$.
+The whole-ray argument in Proposition~\ref{gc:initial-support}
+therefore applies unchanged.
+\end{proof}
+
+These moment bounds are used in predecessor order. The global envelope
+supplies the first row. The original central preparation, performed
+at radius $3.84$, supplies the last row for all nine surviving central
+intervals. The complementary acquisition at $3.84$ supplies the second
+row; after contraction to $3$, its left-input and signed-resource
+calculations supply the third. Thus no contraction uses a moment
+bound obtained from its own output radius. The later coordinate-strip
+exclusions retain their original bounded-threshold proofs.
+The unsigned $\beta$ caps in these resource rows follow from
+$\beta=(1-\theta)(1-2p)+\theta_+-\theta_-$, hence
+$|\beta|\le(1-\theta)|1-2p|+\theta$; no sign of $\beta$ is assumed.
+
+\section{The analytic profile parameters}\label{app:parameters}
+The table gives the original joint inward intercept $\Delta$ and
+noise intercept $\Lambda$, together with the improved necessary
+actual-noise cap $L_*$, for the $34$ middle-moment profiles.
+All entries are exact terminating decimals. The simultaneous
+signed coefficients, outward support caps and contact domains
+are supplied as exact rational numbers in the accompanying
+\texttt{profile-parameters.json}; they are acquired conditions
+on an extremizer, not independent free parameters.
+\begingroup\small
+\begin{longtable}{ccrrr}\toprule
+$n$ & interval & $\Delta$ & $\Lambda$ & $L_*$\\\midrule\endhead
+$26$ & $I_{34}$ & 0.07393 & 0.448664 & 0.26204965\\
+$26$ & $I_{35}$ & 0.078697 & 0.469161 & 0.27350801\\
+$26$ & $I_{36}$ & 0.08286 & 0.484491 & 0.28185367\\
+$26$ & $I_{37}$ & 0.086366 & 0.494588 & 0.29863673\\
+$26$ & $I_{38}$ & 0.083933 & 0.467679 & 0.28297254\\
+$26$ & $I_{39}$ & 0.077665 & 0.420047 & 0.2556063\\
+\addlinespace
+$27$ & $I_{34}$ & 0.071192 & 0.448664 & 0.25573091\\
+$27$ & $I_{35}$ & 0.075782 & 0.469161 & 0.26738858\\
+$27$ & $I_{36}$ & 0.079791 & 0.484491 & 0.2759327\\
+$27$ & $I_{37}$ & 0.083167 & 0.494588 & 0.29258472\\
+$27$ & $I_{38}$ & 0.080824 & 0.467679 & 0.27794155\\
+$27$ & $I_{39}$ & 0.074788 & 0.420047 & 0.25182702\\
+$27$ & $I_{40}$ & 0.06347 & 0.34526 & 0.20897126\\
+\addlinespace
+$28$ & $I_{34}$ & 0.068649 & 0.448664 & 0.25004307\\
+$28$ & $I_{35}$ & 0.073076 & 0.469161 & 0.26192751\\
+$28$ & $I_{36}$ & 0.076941 & 0.484491 & 0.27068902\\
+$28$ & $I_{37}$ & 0.080197 & 0.494588 & 0.28726658\\
+$28$ & $I_{38}$ & 0.077938 & 0.467679 & 0.27351126\\
+$28$ & $I_{39}$ & 0.072117 & 0.420047 & 0.24847935\\
+$28$ & $I_{40}$ & 0.061204 & 0.34526 & 0.20687478\\
+\addlinespace
+$29$ & $I_{34}$ & 0.066282 & 0.448664 & 0.24487077\\
+$29$ & $I_{35}$ & 0.070556 & 0.469161 & 0.25700268\\
+$29$ & $I_{36}$ & 0.074288 & 0.484491 & 0.26599549\\
+$29$ & $I_{37}$ & 0.077432 & 0.494588 & 0.28254209\\
+$29$ & $I_{38}$ & 0.07525 & 0.467679 & 0.26957152\\
+$29$ & $I_{39}$ & 0.06963 & 0.420047 & 0.24548928\\
+$29$ & $I_{40}$ & 0.059093 & 0.34526 & 0.20498657\\
+\addlinespace
+$30$ & $I_{34}$ & 0.064073 & 0.448664 & 0.24012598\\
+$30$ & $I_{35}$ & 0.068204 & 0.469161 & 0.25252129\\
+$30$ & $I_{36}$ & 0.071812 & 0.484491 & 0.26175592\\
+$30$ & $I_{37}$ & 0.074851 & 0.494588 & 0.27830578\\
+$30$ & $I_{38}$ & 0.072742 & 0.467679 & 0.26603838\\
+$30$ & $I_{39}$ & 0.067309 & 0.420047 & 0.24279925\\
+$30$ & $I_{40}$ & 0.057124 & 0.34526 & 0.20327613\\
+\bottomrule\end{longtable}\endgroup
+The analytic programs use the Python 3 standard library and retain
+exact rational arithmetic. In the companion directory
+\path{finite-steps/source/analytic}, the seven actual-$30$
+profiles can be recomputed with
+\par\noindent\texttt{python -B}\ \path{replay_n30_analytic_panels_20261027.py}
+\ \texttt{--output fresh.json}\par
+An explicit \texttt{--output} argument selects a fresh filename;
+the program refuses to overwrite an existing result.
+The option \texttt{--indices 37} recomputes just that complete
+profile, including its contact domain and the CDF bridge.
+The finite-index mathematical companion states the count and phase
+composition for every profile; the executable calculation supplies
+the enclosed faces, derivatives and strict margins used there.
+
+\section{The seven lower-moment comparison plans}\label{app:finite-details}
+
+This appendix gives the complete plans underlying Proposition~\ref{fc:lowprofiles}.
+All use the common comparison, curvature and allocation rules of the main text.
+
+\begin{lemma}[One lower-moment profile]\label{fc:low40}
+Under the retained actual-$26$ acquisition and the global predecessor
+$C_{25}\le\CE$, the entire original profile
+$p\in[.40,.41]$, $1\le\rho\le11/10$ has a strictly negative
+conditional count residual. A uniform upper bound is
+$-5610547/10^{12}$.
+\end{lemma}
+\begin{proof}
+The original inward and noise intercepts are
+$\Delta=.057809$ and $\Lambda=.301161$.
+The necessary signed resource plane improves the actual-noise cap
+to $L_*=.17805629$. The original contact inequalities exclude
+$25$ of the $27$ count roots, leaving only $10$ and $11$.
+
+Current-count comparisons cover count $10$ on $[-1/2,0]$ with
+slope multiplier $1$, and count $11$ on its two half intervals
+with multipliers $3/2$ and $1$. Their upper bounds are respectively
+$-.000005610547$, $-.000934723659$, and $-.003337615615$.
+
+For the positive half of count $10$, retain the seven noise
+intervals and four allocation intervals above.
+On the first noise interval join the current price to the
+reflected-square price at $t=1/32$; on the second join at
+$1/8$; on intervals $3$--$7$ join at $1/4$.
+Each reflected-square price uses reference count $11$, width
+$h=7/8$ and Corollary~\ref{ce:allocation-interval}.
+Here $11>26p$, $p<1/2$, and the positive affine inward cap
+decreases in allocation. The moment floor therefore increases
+in allocation. All next-atom, legal-width and same-noise derivative
+gates hold on their whole stated domains. In the first interval
+$y_{\max}=3/32>0$ is allowed by the extended variance-derivative
+bound in Section~\ref{pp:section}.
+
+Every current prefix is at most $-.000025632850$;
+every clipped suffix is at most $-.001597137326$.
+Probability and phase chords include every closed boundary.
+The two pieces in each noise/allocation region meet at the stated
+phase, and the full noise union is $[0,L_*]$.
+Together with the three half-interval comparisons and the contact
+exclusions this covers the whole original profile. The least strict
+bound is $-.000005610547$.
+\end{proof}
+
+This replaces a conditional count comparison. The original support,
+floor and acquisition proofs remain its inputs; replaying the pure
+physical acquisition formulas does not establish those inputs anew.
+
+\begin{lemma}[An adjacent lower-moment profile]\label{fc:low39}
+Under the retained actual-$26$ acquisition and $C_{25}\le\CE$,
+the entire original profile $p\in[.39,.40]$, $1\le\rho\le11/10$
+has conditional count residual at most $-98710877/10^{12}$.
+\end{lemma}
+\begin{proof}
+The original intercepts are $\Delta=.05769$, $\Lambda=.30708$;
+the same signed resource argument gives $\lambda\le .17375152$.
+Contact excludes $24$ count roots. Only $9,10,11$ remain, and
+the count-$9$ contact lower phase is greater than $1/4$.
+Count $11$ has the two current-count half-interval comparisons
+with slope multipliers $3/2,1$.
+
+For the lower counts one reference law covers both sides of a
+nearest-count boundary. Use source count $9$, reference count $10$
+and width $7/8$. On noise intervals $1,2$ its auxiliary phase runs
+through $[1/4,7/8]$, and on intervals $3$--$7$ through $[1/4,3/4]$.
+The exact threshold identity
+\[
+ 9+(1+t)=10+t
+\]
+therefore covers count $9$ and the lower part of count $10$ by
+one continuous price in each noise group. Lemma~\ref{mc:staircase}
+holds for every real phase, so an auxiliary phase greater than
+$1/2$ is permitted. Here $10<26p$ throughout the probability
+interval, and Corollary~\ref{ce:allocation-interval} selects the
+lower allocation endpoint for both variance and moment cost.
+
+The remaining count-$10$ negative phases are $[-1/8,0]$ on
+the first two noise intervals and $[-1/4,0]$ on the others;
+current-count prices cover them. Its positive half uses the
+same $1/32,1/8,1/4$ handoffs as in Lemma~\ref{fc:low40}, now
+with this profile's own resources. Reference count $11>26p$
+selects the upper allocation endpoint for variance and the lower
+one for moment cost. All legal-width, next-atom, noise-derivative
+and continuous probability/phase gates are strict on their stated
+domains. The whole closed unions retain every original count,
+noise and allocation region, with largest upper bound
+$-.000098710877$.
+\end{proof}
+
+\begin{lemma}[Reversed signed noise prices]\label{fc:low41}
+Under the retained actual-$26$ acquisition and $C_{25}\le\CE$,
+the entire original profile $p\in[.41,.42]$, $1\le\rho\le11/10$
+has conditional count residual at most $-24705293/(5\cdot10^{11})$.
+\end{lemma}
+\begin{proof}
+The original intercepts are $\Delta=.054236$, $\Lambda=.276951$.
+Here $h_+-h_-<0$. The positive endpoint coefficients in
+\eqref{loc:two-endpoint-noise} still give a valid finite resource
+iteration and $\lambda\le L_*=.162619$, retaining the original
+joint intercept $\Lambda$. For the actual moment floor,
+\eqref{ce:signed-allocation-gate} is greater than $.473372164977$;
+both negative terms from the increasing inward cap are included.
+Thus $G$ increases with allocation on the whole domain.
+
+For current-count prices, the necessary weaker plane
+\[
+ g(a_0+a_1)+\lambda h_-
+ \le\mathfrak R+L_*(h_--h_+)_+
+\]
+supplies an allocation-independent inward cap. Its intercept is
+smaller than the original $\Delta$, and its noise slope is larger
+than $\Delta/\Lambda$, as required by the fixed-reference estimate.
+
+Contact excludes $24$ count roots and leaves $10,11,12$.
+Count $10$ starts above $-1/8$, and count $12$ ends below $-1/4$.
+Current-count prefixes cover count $10$ through $1/32,1/8,1/4$
+on the first, second and remaining noise intervals.
+One source-$10$, reference-$11$ square then covers both its
+positive suffix and the negative prefix of count $11$.
+On noise intervals $1,2$ the width is $7/8$ and its auxiliary
+phase ends at $7/8$. On intervals $3$--$6$ use width $9/8$
+with phase $[1/4,7/8]$. On the last interval use width $7/8$
+and phase $[1/4,3/4]$. The identity $10+(1+t)=11+t$
+gives the original count-$11$ phases exactly.
+
+Current-count prices complete count $11$ through zero and on its
+positive half; count $12$ uses slope multiplier $3/2$ on
+$[-1/2,-1/4]$. The original seven noise intervals and four
+allocation intervals are unchanged. All width, next-atom,
+allocation and noise gates, followed by the probability/phase
+chords, give a strict bound on the full closed unions.
+Their largest upper bound is $-.000049410586$.
+\end{proof}
+
+\begin{corollary}[A complete lower-moment strip]\label{fc:p41-strip}\label{fc:n27-low41}\label{fc:n28-low41}\label{fc:n29-low41}\label{fc:n30-low41}
+At each integer $n=26,\ldots,30$, under the retained actual-$n$ acquisition
+and $C_{n-1}\le\CE$, the original profile $p\in[.41,.42]$,
+$1\le\rho\le11/10$ has the following conditional count bounds.
+The original noise intercept is $\Lambda=.276951$ in all rows.
+The five residual bounds are the corresponding rows of
+Proposition~\ref{fc:lowprofiles}.
+
+\end{corollary}
+\begin{proof}
+Use the same comparison rules with each integer's own masses,
+variance and moment normalization. Lemma~\ref{fc:low41} gives $26$.
+At $27$, contact excludes
+$25$ of the $28$ roots and leaves $10,11,12$.
+Reference count $11<27p$ uses lower allocation
+endpoints for variance and cost, while $12>27p$ uses the two
+allocation corners. The signed moment derivative gate is positive.
+On the lowest noise interval the source-$10$ square
+runs through auxiliary phase $15/16$, which is exactly count-$11$
+phase $-1/16$. The current price on $[-1/16,1/32]$ and its
+clipped-square continuation then close the middle count.
+
+At $28$, the remaining counts are $11$ and $12$.
+Their outer phase intervals are $[-17/64,1/2]$ and $[-1/2,15/32]$.
+The same fixed current
+references for count $11$ use the phase faces $-1/8$ and $0$,
+followed by the square continuations. Count $12$ joins current
+slopes $3/2$ and $1$ at phase $-1/32$. Reference count $12>28p$
+has fixed variance direction throughout the probability interval.
+
+At $29$, contact excludes $27$ roots and leaves $11,12,13$.
+Reference count $12$ crosses $29p$ at $p=12/29$ inside the
+original probability interval. Use both variance-endpoint branches
+in \eqref{ce:variance-endpoint-max}, with the same actual noise
+and the lower-allocation moment cost in both. Each branch has
+its own whole-interval noise and curvature checks before their
+maximum is bounded. The lowest-count square starts at phase
+$1/8$, below the contact lower bound $.15468890249$; on the
+sixth noise interval, auxiliary phase $13/16$ meets original
+count-$12$ phase $-3/16$.
+
+At $30$, contact leaves only $12,13$, with valid outer phase
+intervals $[-7/16,1/2]$ and $[-1/2,5/16]$. The negative part
+of count $12$ uses a lower-allocation square and current prices;
+on the lowest noise interval the same current reference is
+interpolated through one extra phase face, $-1/8$.
+Its positive part hands off at $1/128$ with width $2/3$ on
+that interval. Here $y_{\max}=125/384>0$ and the one-clip
+and variance-derivative conditions hold on the whole region.
+Higher-noise square prices use width $5/4$ where specified
+by the plan, and the shifted-count joins close count $13$.
+
+All these explicit finite plans retain the seven original noise and
+four allocation intervals. Their remaining pieces use the current
+or square envelopes, and their closed unions cover every retained
+contact interval. Their largest upper bounds are those in the table.
+\end{proof}
+
+\section{Locations of the companion proofs}\label{app:companions}
+
+The moment-defect and original count arguments are due to
+Rodziewicz--Ko\l{}odziejek \cite{RK2026}; the completion notes identify
+their reconstruction scope. The companion sources retain their original
+attribution, theorem labels and statement scopes. A label quoted below belongs to the named companion,
+not to the numbering of this article. The source collection is prepared
+by \path{prepare_global_companions.py}; it includes the local TeX
+inputs of the multifile large-index proof.
+
+\paragraph{Input (I).}
+In \path{companions/low-index/}, the first-index bound is
+\path{n1/n1_base.tex}, Theorem~1 (\texttt{thm:base}).
+The source \path{n2-n3/manuscript.tex} contains
+\texttt{n2:thm:main} and \texttt{n3:thm:main}, together with their
+support reductions and continuous-domain polynomial certificate
+implications. The complete fourth-index proof is available in the
+existing public manuscript PDF
+\path{companions/references/rk-v3/moment-defects-v3.pdf},
+Section~26, Theorem~26.1 and its proof. A TeX source for that complete
+fourth-index proof is not included.
+
+The subsequent compositions are Theorem~1
+(\texttt{composition}) in \path{n5/five_sum_completion_20261025.tex};
+Proposition~1 and its completed composition in each of
+\path{n6/six_sum_interface_20261025.tex},
+\path{n7/seven_sum_interface_20261025.tex},
+\path{n8/eight_sum_interface_20261025.tex}, and
+\path{n9/nine_sum_interface_20261025.tex};
+the theorem entitled \emph{Unrestricted tenth-index conclusion}
+in \path{n10/main.tex}; and the ordered implication at the end of
+\path{n11-14/conditional_11_14_interface_20261026.tex}
+(which has no separately numbered conclusion).
+The final blocks are Theorem~1 in \path{n15-19/main.tex},
+Proposition~1 and its completed composition in
+\path{n20/twenty_sum_interface_20261025.tex},
+Theorem~1 in \path{n21-24/main.tex}, and
+Theorem~1 in \path{n25/main.tex}.
+The high-moment complement at the actual indices $25$--$30$
+is stated and derived in \path{n25-fourier/main.tex}.
+
+These interfaces are accompanied by continuous derivations.
+The source
+\path{companions/common/finite-analytic/BE_cutoff35_streamlined.tex}
+contains \path{global:attainment}, \texttt{global:contact},
+\path{complete44ent:smooth-fourier},
+\path{complete44ent:fourier-early-low},
+\path{complete44ent:re-enclosure}, \texttt{res:contract},
+and the section \emph{One finite-count comparison for all the new indices}.
+The additional small-index proofs retain their original text format under
+\path{companions/low-index/continuous-sources/work/}.
+In particular, the fifth-index
+\path{cutoff5_20261020/audit/ANALYTIC_DEPENDENCIES_V2.txt}
+locates the conserved-identity, finite-window LOW, resource and count
+derivations; their mathematical proof texts are included alongside that
+source map. They are distinct from numerical success records.
+The original frozen arithmetic inputs and actual returned objects are
+retained under \path{companions/low-index-support/}.
+Its \path{read_low_index_support.py} describes the existing joins,
+their exact input locations and their Python or compiler requirements.
+
+\paragraph{Input (II).}
+In \path{companions/actual-index/}, the coarse entry from
+$C_{30}<\CE+.01$ and the literal bridges to $34$ are
+Propositions \texttt{prop:31} and \texttt{prop:bridges} in
+\path{n31-34/main.tex}. The exceptional band-$7$ defect-domain
+argument is \path{n31-domain/sharp31_B7_D_domain_20261025.tex}.
+Continue with the theorem entitled
+\emph{Unrestricted index--35 conclusion} in
+\path{n35/actual35_conditional_composition_20261025.tex},
+the proposition entitled \emph{Unrestricted conclusions at 36, 37 and 38}
+in \path{n36-38/actual36_38_conditional_composition_20261026.tex},
+and Propositions~1 and~2 in \path{n39/main.tex}.
+The actual-$39$ continuous-domain extension is separately included in
+\path{n39-continuous/actual39_continuous_lemmas_20261026.tex}.
+Theorem \texttt{thm:main} in \path{n40-48/main.tex} contains the
+bridge through $48$; the present composition uses its steps only
+through $46$. Its two local implications are
+\texttt{prop:forty} and \texttt{prop:two}.
+The directories \path{n40-continuous/}, \path{n40-original/},
+\path{n42-continuous/}, and \path{n42-local/} contain the corresponding
+actual-index and finite-band continuous arguments.
+The corresponding compressed inputs, returned objects and existing
+join programs are retained under \path{companions/bridge-support/}.
+The accompanying \path{read_bridge_support.py} locates the mathematical
+objects and launches the original joins against those collected inputs.
+
+\paragraph{Input (III).}
+The local resource implication \path{re:localG} in
+\path{paper_entry/resource_entry.tex} is used with $b\ge0$, $P\ge0$,
+$\ell_-\ge0$ and $L_0\ge0$. These are the physical coefficients of
+\path{conf:moment} and the nonnegative noise subintervals; they license
+the substitutions $nP\ge NP$ and $n\theta\ge\ell_-^2L_0$.
+
+The proposition \texttt{global:local} in
+\path{companions/large-index/analytic-route/paper/sections/global_route.tex}
+contains the zero-allowance uniform local exclusion (III) used here.
+In the present proof, Corollary~\ref{gc:tail-support} replaces its
+initial radius-$3.84$ calculation over six index bands, both left radial
+contractions and the central radius-$2.5$ contraction. The resource
+schedule, coordinate-strip exclusions and local comparisons are
+retained. The broader original heat-expansion route remains in the archive.
+The continuous analytic route is the multifile source
+\path{companions/large-index/analytic-route/paper/main.tex}:
+\texttt{re:acquired}, \texttt{re:enclosure}, and
+\path{shortloc:theorem} supply its resource acquisition and
+local comparison. Its included coefficient atlas derives
+compensated inversion and the conserved identity, rather than treating
+them as numerical premises. The independently completed $n\ge49$
+route is also retained in
+\path{companions/large-index/completion/n49_completion_20261025.tex};
+the new induction from $45,46$ uses the local exclusion directly.
+The selected compressed source/input archive and its original returned
+calculation archive are included under \path{companions/uniform-tail/}.
+The accompanying \path{prepare_uniform_tail_support.py} can unpack
+them to a new directory, reconstruct the exact local cover, and run
+the original transcript-to-target join. Its Windows schedule launcher
+changes two path-key expressions to POSIX spelling; all mathematical
+conditions and original archive contents are preserved.
+
+\paragraph{Weighted localization and the 34 finite profiles.}
+Appendix~\ref{ut:section} gives the mathematical proof of
+\eqref{loc:weighted-transfer}, including the raw first step, all LOW and
+HIGH terms, the weighted induction and the order of actual-index support
+acquisition. The earlier fixed-floor derivations are retained in
+\path{companions/localization/analytic/UNIFORM25_CANTELLI_PRODUCTGAP_REVIEW.txt}
+and
+\path{companions/localization/analytic/UNIFORM25_BETA0_SOURCE_AND_COMPOSITION_REVIEW.txt}.
+The inward-plane scaling is derived in
+\path{companions/localization/original/new_audit/SCALED_INWARD_PHYSICAL_DERIVATION_V1.txt}.
+Their continuous foundation is the resource-enclosure and simultaneous-contract
+argument identified above; actual-index support acquisitions are still
+separate inputs.
+
+The initial B0/B1 radii now follow directly from
+Proposition~\ref{gc:initial-support}. Their original actual-index
+radius computations are no longer premises of this first step;
+later support refinements still use their own incoming data.
+The Peano-kernel and rational-ray calculations are also retained in
+\path{gaussian_contact_peano_20261028.tex} and
+\path{gaussian_contact_peano_20261028.py} in the finite analytic directory.
+
+The full finite comparison text is
+\path{companions/finite-steps/source/analytic/finite_gap_shared_stoploss_20261026.tex}.
+Theorems \path{global-c26-complete}, \path{global-c27-complete},
+\path{global-c28-complete}, \path{global-c29-complete}, and
+\path{global-c30-complete} give the five actual-index compositions.
+Their proofs identify the constituent profile lemmas.
+At $26$, these include \path{p34-p35-count8-complete},
+\path{p35-count9-second-moment-complete},
+\path{p36-p37-count10-second-moment-complete}, and the complete-panel
+corollaries for $36$--$39$.
+At $27$, the profile conclusions are
+\path{n27-p34-complete}, \path{n27-p35-complete},
+\path{n27-p36-complete}, \path{n27-central-complete}, and
+\path{n27-p39-complete}, \path{n27-p40-complete};
+the central corollary covers both $37$ and $38$.
+The corresponding $28$ statements are
+\path{n28-p34-p35-complete}, \path{n28-p36-complete},
+\path{n28-p37-complete}, \path{n28-p38-complete}, and
+\path{n28-p39-p40-complete}.
+The last two groups are the lemmas
+\path{n29-seven-panels-complete} and
+\path{n30-seven-panels-complete}.
+The lower-moment replacement in Lemma~\ref{fc:low40} is the
+separate program \path{probe_b0_shared_reference_20261027.py}
+in that analytic source directory, with the exact output
+\path{result_b0_n26_p40_complete_frozen_20261027.json}.
+Its \texttt{--complete} entry recomputes this whole conditional
+profile without reading a stored numerical result.
+Lemma~\ref{fc:low39} uses the separate
+\path{probe_b0_p39_shared_20261027.py} and
+\path{b0_allocation_interval_clip_20261027.py}, with output
+\path{result_b0_n26_p39_complete_frozen_20261027.json} in the
+same analytic directory.
+The signed-price extension in Lemma~\ref{fc:low41} is
+\path{probe_b0_p41_shared_20261027.py}, with
+\path{b0_two_endpoint_budget_20261027.py} and
+\path{b0_signed_allocation_interval_20261027.py}; its result is
+\path{result_b0_n26_p41_complete_frozen_20261027.json}.
+Corollary~\ref{fc:n27-low41} reuses these helpers through the
+explicit \texttt{PLAN} in
+\path{probe_b0_n27_p41_shared_20261027.py}; the actual-$27$ output is
+\path{result_b0_n27_p41_complete_fresh_20261027.json}.
+The actual-$28$ plan is
+\path{probe_b0_n28_p41_shared_20261028.py}, with output
+\path{result_b0_n28_p41_complete_fresh_20261028.json}.
+The crossing application at $29$ is the \texttt{PLAN} in
+\path{probe_b0_n29_p41_shared_20261028.py}, using
+\path{b0_variance_endpoint_branches_20261028.py}; its output is
+\path{result_b0_n29_p41_complete_fresh_20261028.json}.
+The actual-$30$ plan is
+\path{probe_b0_n30_p41_shared_20261028.py}, with final output
+\path{result_b0_n30_p41_complete_frozen_20261028.json}.
+Its earlier failed complete candidate is retained in the research
+sources and supplies no completed profile bound.
+The finite lower-envelope implementation in
+\path{probe_classical_order_compression_20261028.py} replaces optimization
+over mixture weights. Its exact algebraic replay of all $25$ nonempty
+N27/P35 mixed regions agrees with the old optimized bound. All other
+old fixed-mixture bounds transfer by the pointwise domination following
+Lemma~\ref{pp:mixture}; no numerical regeneration is required for this
+logical transfer.
+The acquisition, lower-moment, ordinary-forest and unrestricted
+Fourier inputs and returned objects are retained separately in
+\path{companions/finite-other-support/}. Its
+\path{read_finite_other_support.py} provides the original mathematical
+readers with temporary source materialization. The expensive complete
+lower-moment reader is an explicit option. Partial historical count
+runs retain their original domains; the analytic profile comparisons
+supply the stated complementary regions.
+
+The companion text identifies the continuous inequalities and compositions.
+The frozen coefficient data, closed subdivision trees, exact arithmetic
+programs and archived fresh calculations are retained in the collections
+above. Their mathematical readers relate returned objects to the complete
+parameter covers and consumed contracts. Fresh numerical regeneration
+is a separate operation using the retained producer entrypoints.
+
+
+\begin{thebibliography}{99}
+\bibitem{Bentkus2004}
+V. Bentkus, \emph{On Hoeffding's inequalities},
+Ann. Probab. \textbf{32} (2004), 1650--1673.
+\href{https://doi.org/10.1214/009117904000000360}{doi:10.1214/009117904000000360}.
+\bibitem{Pinelis2006}
+I. Pinelis, \emph{Binomial upper bounds on generalized moments and tail
+probabilities of (super)martingales with differences bounded from above},
+IMS Lecture Notes--Monograph Series \textbf{51} (2006), 33--52.
+\href{https://doi.org/10.1214/074921706000000743}{doi:10.1214/074921706000000743}.
+\bibitem{Schulz2016}
+J. Schulz, \emph{The optimal Berry--Esseen constant in the binomial case},
+Dissertation, Universit\"at Trier, 2016.
+\href{https://d-nb.info/1197702695/34}{Full dissertation}.
+\bibitem{Prawitz1972}
+H. Prawitz, \emph{Limits for a distribution, if the characteristic
+function is given in a finite domain}, Scandinavian Actuarial Journal
+\textbf{1972} (1972), no.~2, 138--154.
+\href{https://doi.org/10.1080/03461238.1972.10404645}{doi:10.1080/03461238.1972.10404645}.
+\bibitem{Shevtsova2012}
+I. Shevtsova, \emph{Moment-type estimates with asymptotically optimal
+structure for the accuracy of the normal approximation},
+Annales Mathematicae et Informaticae \textbf{39} (2012), 241--307.
+\url{https://ami.uni-eszterhazy.hu/uploads/papers/finalpdf/AMI_39_from241to307.pdf}.
+\bibitem{Shevtsova2013}
+I.~G. Shevtsova, \emph{On the absolute constants in the Berry--Esseen
+inequality and its structural and nonuniform improvements},
+Inform. Primen. \textbf{7} (2013), no.~1, 124--125 (in Russian).
+\url{https://www.mathnet.ru/eng/ia252}.
+\bibitem{HeCheng2026}
+H. He and G. Cheng, \emph{The Berry--Esseen Constant Conjecture is
+Eventually True}, arXiv:2609.06358v3 [math.PR], 30 September 2026.
+\url{https://arxiv.org/abs/2609.06358v3}.
+\bibitem{RK2026}
+K. Rodziewicz and B. Ko\l{}odziejek,
+\emph{Moment defects and sharp iid Berry--Esseen bounds},
+public working manuscript, version 3, 2026.
+\href{https://hexagonmath.org/2610.00147v3}{Version record}.
+\bibitem{RKFive2026}
+K. Rodziewicz and B. Ko\l{}odziejek,
+\emph{Five summands in the iid Berry--Esseen conjecture:
+A sign-count proof and the finite-index dependency chain},
+working draft, 20 October 2026.
+\href{https://github.com/rodziewiczk/berry-esseen-045-certificate/blob/75a94708872e2bc053f42a279559b23ed91e4402/moment-defects/five-summands-2026-10-20/manuscript.tex}{Frozen source}.
+\bibitem{RKSources2026}
+K. Rodziewicz and B. Ko\l{}odziejek,
+\emph{Supplementary proof and certificate sources for the iid
+Berry--Esseen problem}, repository snapshot, 23 October 2026.
+\href{https://github.com/rodziewiczk/berry-esseen-045-certificate/tree/75a94708872e2bc053f42a279559b23ed91e4402}{Source collection}.
+\end{thebibliography}
+\end{document}

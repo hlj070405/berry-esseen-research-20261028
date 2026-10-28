@@ -1,0 +1,282 @@
+\section{The five finite-index steps}\label{fc:section}
+
+We now compose the comparisons at the actual integers
+$n=26,\ldots,30$. The predecessor in each step is the unrestricted
+bound $C_{n-1}\le\CE$. All parameters in a single step describe
+one extremizer supplied by Lemma~\ref{gi:extremizer}.
+In particular, neither its third moment nor its noise is chosen
+independently for different count layers.
+Throughout this section $R(t)$ denotes \eqref{pp:actual-residual}
+with the fixed target $c_n=\CE/\sqrt n$. Computations can use
+a smaller directed rational coefficient: an upper bound for that
+larger residual is also an upper bound for this $R(t)$.
+
+\subsection{Localization and the domain of the calculation}
+The supporting localization proof gives three closed moment ranges.
+For $\rho\ge6/5$, a support-free Prawitz comparison at each actual
+integer gives $R_n(P)<.4097<\CE$; the large-moment ray is included.
+For $1\le\rho\le11/10$, the contact and resource reductions,
+with the full predecessor bound, give complete conditional count
+covers. The original covers across the five integers consist of $79$ probability
+intervals, $2289$ count roots and $74170$ terminal inequalities.
+Every other probability interval is excluded already during
+localization. These counts describe the coverage, not a replacement
+for the inequalities proving it. The present composition uses those
+ordinary count proofs on $72$ intervals.
+Proposition~\ref{fc:lowprofiles} covers the remaining seven.
+
+It remains to handle $11/10\le\rho\le6/5$.
+At each actual integer, localization covers the $100$ original
+closed intervals $[i/100,(i+1)/100]$, $0\le i<100$.
+It excludes $89$ intervals and leaves exactly
+\[
+ I_i=[i/100,(i+1)/100],\qquad 32\le i\le42.
+\]
+The four outer intervals $I_{32},I_{33},I_{41},I_{42}$ have
+complete ordinary count covers. At $n=26$, the same is true of
+$I_{40}$. The new comparisons therefore concern $34$ parameter
+profiles: $I_{34},\ldots,I_{39}$ at $26$, and
+$I_{34},\ldots,I_{40}$ at each of $27,28,29,30$.
+Their scalar caps are listed in Appendix~\ref{app:parameters}.
+
+A profile supplies inward and outward support caps
+$\Delta,O_0,O_1$, a noise cap $\Lambda$, and the necessary joint
+inequalities
+\begin{equation}\label{fc:resources}
+ a_0+a_1\le\Delta(1-\lambda/\Lambda),\qquad
+g(a_0+a_1)+\lambda
+       \{(1-\alpha)\mathfrak h_-+\alpha\mathfrak h_+\}
+       \le\mathfrak R.
+\end{equation}
+The second inequality is the consequence of
+\eqref{loc:affine-resource} with $D\le\overline D$ and
+$\mathfrak R=\overline D-b$. It can strengthen the first cap and supplies
+the signed plane \eqref{mc:signed-plane}. Its coefficients come
+from the actual-index resource proof. They are held fixed on
+their stated probability interval, not fitted to the count being
+estimated. The contact bounds also give
+\begin{equation}\label{fc:contact}
+ -H_-\sqrt{pq+\lambda/n}
+ \le k+t-np\le H_+\sqrt{pq+\lambda/n},\qquad |t|\le1/2.
+\end{equation}
+This leaves only three neighboring counts in each profile.
+The support caps, both resource bounds and the actual-moment floor
+are used simultaneously, with no finite-support assumption on the
+original conditional laws.
+
+\subsection{Bounding a whole parameter region}
+For a current-count price, let $L_*$ be the acquired actual-noise cap.
+The seven original closed noise intervals have endpoints
+\[
+ 0,\quad\Lambda/8,\quad\Lambda/4,\quad5\Lambda/16,\quad
+ 3\Lambda/8,\quad7\Lambda/16,\quad\Lambda/2,\quad L_*;
+\]
+the four allocation intervals have endpoints $0,1/4,1/2,3/4,1$.
+These endpoints are increasing in every profile.
+Their Cartesian product gives $28$ fixed reference laws per
+current-count family. Each is valid for its entire closed region
+by Lemma~\ref{mc:two-moment}; it is not a sample at its midpoint.
+The signed plane and the inward cap restrict the admissible
+conditional variances before the reference law is formed.
+The noise correction in Proposition~\ref{ce:fixed-box} preserves
+the difference between that reference law and the actual noise.
+Probability faces and phase faces extend to the whole region
+by the corresponding lower-curvature bounds. A tilted phase
+face at the Gaussian inflection is used when needed.
+
+For a reflected-square price, Proposition~\ref{ce:coherent}
+keeps the actual noise and allocation until the two derivative
+gates have been proved. The resulting endpoint envelope uses
+the same moment floor as the original law. A positive-atom
+activation is covered by the weak derivatives
+\eqref{pp:activation-curvature}. Complementary prices may then be
+combined through the finite lower envelope of Lemma~\ref{pp:mixture},
+using their directed lower target coefficients. Only explicit reference prices are
+differentiated in these steps.
+
+All parameter endpoints, chord coefficients and interval enclosures
+are rational. The square roots in the finite prices, and the
+normal CDF and density, are enclosed outwards. A stationary
+width is accepted only when it belongs to its asserted active
+set. Curvature bounds include activation boundaries. The finite
+maximum of every interpolating quadratic includes its interior
+vertex when present. Thus a negative upper bound applies to
+every point of the closed domain, including all shared faces.
+The full count roots and the unions of their closed phase
+intervals are retained when these regional bounds are composed.
+
+\subsection{Examples of the finite comparisons}
+An illustrative replacement occurs at $n=26$, $p\in I_{35}$,
+count $9$. The current-count price with the least legal slope
+is strict on $[-1/8,9/32]$ except for the last phase strip of
+the first noise interval. On that first noise interval,
+$[0,\Lambda/8]$, retain the current price through $t=1/4$ and
+use a coherent count-$10$ reflected-square price of width $9/8$
+on $[1/4,9/32]$. Its allocation and noise derivative margins
+are respectively at least $.120534962164$ and $.072056354791$,
+and its variance derivative is at least $.759364977755$.
+Its residual upper bound is $-.018464965470$ for its directed
+lower target coefficient. The other original noise intervals
+retain the current price on the whole strip.
+The resulting uniform upper bound on $[-1/8,9/32]$ is
+\begin{equation}\label{fc:n26-simple}
+ R(t)\le-.000067780727.
+\end{equation}
+The adjacent negative phases have a full-square or current-count
+bound, and $[9/32,1/2]$ has the full-square count-$10$ bound.
+Consequently this entire count layer uses only second-moment
+comparisons. The remaining count-$10$ regions in $I_{36},I_{37}$
+likewise admit current-count comparisons with the rational slope
+multipliers $1,5/4,3/2$. No fourth-moment price or optimized
+deterministic-group slope is needed by these analytic profile comparisons.
+
+A second completion illustrates why it is useful to distinguish
+the actual CDF from its price. At $n=30$, $p\in I_{37}$,
+the count-$10$ contact interval begins at the exact outward
+bound
+\[
+ a_{37}=249467754491/10^{12}<1/4.
+\]
+An endpoint estimate at $1/4$ extends over $[a_{37},1/4]$
+by Lemma~\ref{pp:cdf-bridge}. The comparison used to prove that
+endpoint estimate need not remain valid on the short interval.
+Monotonicity of the original CDF is sufficient.
+
+\begin{proposition}[Seven lower-moment profiles]\label{fc:lowprofiles}
+For each row below, retain the original actual-$n$ support and resource
+acquisition and the unrestricted predecessor $C_{n-1}\le\CE$.
+The whole profile $p\in I_i$, $1\le\rho\le11/10$ has conditional
+count residual bounded by the last column. The joint intercept
+$\Lambda$ is retained; $L_*$ is a necessary ceiling on the actual noise.
+\begin{center}\small\setlength{\tabcolsep}{3pt}
+\begin{tabular}{ccrrrr}\toprule
+$n$ & $I_i$ & $\Delta$ & $\Lambda$ & $L_*$ & residual upper\\\midrule
+26 & $I_{39}$ & .05769 & .30708 & .17375152 & $-.000098710877$\\
+26 & $I_{40}$ & .057809 & .301161 & .17805629 & $-.000005610547$\\
+26 & $I_{41}$ & .054236 & .276951 & .162619 & $-.000049410586$\\
+27 & $I_{41}$ & .052227 & .276951 & .16129388 & $-.000016889$\\
+28 & $I_{41}$ & .050362 & .276951 & .16009718 & $-.000027176644$\\
+29 & $I_{41}$ & .048625 & .276951 & .15901083 & $-.000059169468$\\
+30 & $I_{41}$ & .047004 & .276951 & .15802002 & $-.000017416596$\\
+\bottomrule\end{tabular}\end{center}
+\end{proposition}
+\begin{proof}
+Appendix~\ref{app:finite-details} gives all seven finite plans and their
+closed count/phase unions. Each uses the seven original noise bands and
+four allocation quarters. The signed resource plane first gives $L_*$;
+current-count and reflected-square prices then cover every surviving
+contact interval, with the bounds in the table.
+
+Three features require the full comparison rules: reversed signed
+prices use \eqref{loc:two-endpoint-noise}; the count-$12$ reference at
+$n=29$ crosses $np$ and uses both branches of
+\eqref{ce:variance-endpoint-max}; and the early $n=30$ square has
+$y_{\max}>0$, covered by the $y_{\max}<b$ bound in Section~\ref{pp:section}.
+The remaining steps use the same endpoint, curvature and threshold-shift
+identities, with each row's actual integer and acquired parameters.
+\end{proof}
+
+\subsection{The finite implications}
+
+
+The complete middle-moment profiles at $27$--$30$ give the following outward
+upper bounds on $R(t)$, uniformly over their probability interval,
+actual noise, allocation, all surviving counts and contact phases.
+For readability, the table reports $10^6$ times these bounds,
+rounded upwards to three decimal places.
+\begin{center}
+\begin{tabular}{crrrr}
+\toprule
+interval & $n=27$ & $n=28$ & $n=29$ & $n=30$\\
+\midrule
+$I_{34}$ & $-320.741$ & $-263.994$ & $-321.528$ & $-241.967$\\
+$I_{35}$ & $-297.200$ & $-134.578$ & $-287.407$ & $-436.298$\\
+$I_{36}$ & $-294.861$ & $-12.020$  & $-96.700$  & $-156.955$\\
+$I_{37}$ & $-145.182$ & $-12.884$  & $-1.810$   & $-63.857$\\
+$I_{38}$ & $-70.159$  & $-56.159$  & $-79.848$  & $-22.937$\\
+$I_{39}$ & $-35.366$  & $-4.435$   & $-585.317$ & $-75.052$\\
+$I_{40}$ & $-1160.650$& $-723.488$ & $-713.730$ & $-987.882$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The six analytic profiles at $26$ are also strictly negative;
+\eqref{fc:n26-simple} describes its only former fourth-moment
+region. The full results include the exact resource caps, count
+domains, price choices, derivative gates and outward rational
+bounds, rather than only these decimal margins.
+
+\begin{proposition}[The five actual-index implications]\label{fc:five}
+For each $n=26,27,28,29,30$,
+\[
+ C_{n-1}\le\CE\quad\Longrightarrow\quad C_n\le\CE.
+\]
+\end{proposition}
+\begin{proof}
+If $C_n>\CE$, Lemma~\ref{gi:extremizer} supplies a positive
+closed extremizer. The full predecessor bound makes its
+allowance \eqref{gi:predecessor} zero, so the actual-index
+localization and resource inequalities apply to this same law.
+The support-free Fourier estimate excludes $\rho\ge6/5$.
+The complete lower-moment count covers exclude
+$1\le\rho\le11/10$.
+In the remaining closed band, localization either gives an
+immediate contradiction or places the law in one of the eleven
+intervals above. The ordinary count covers and the $34$ analytic
+profiles exclude them all. Every surviving count and its entire
+contact interval has a strict negative bound, contradicting the
+positive extremal score. The three closed moment ranges exhaust
+$\rho\ge1$.
+\end{proof}
+
+\begin{theorem}[The iid Esseen-constant inequality]\label{fc:main}
+For every standardized real distribution $P$ with
+$\rho(P)=\E|X|^3<\infty$ and every positive integer $n$,
+\[
+ \sqrt n\,\Delta_n(P)\le
+ \frac{3+\sqrt{10}}{6\sqrt{2\pi}}\,\rho(P).
+\]
+The constant is optimal over this class and all $n$.
+\end{theorem}
+\begin{proof}
+Input~(I) of Proposition~\ref{gi:inputs} supplies the unrestricted
+bound at each index through $25$. Apply Proposition~\ref{fc:five}
+in order, discharging each global predecessor, to obtain the
+bounds through $30$. In particular $C_{30}<\CE+1/100$, so
+input~(II) gives $31$--$46$. Proposition~\ref{gi:tail} then gives
+every $n\ge47$ from its two sharp predecessors and the uniform
+local exclusion (III).
+These four ranges exhaust all positive integers.
+
+For the standardized Bernoulli law with
+$p_*=(4-\sqrt{10})/2$, the classical binomial asymptotic gives
+\[
+ \lim_{n\to\infty}\frac{\sqrt n\,\Delta_n(P_*)}{\rho(P_*)}=\CE;
+\]
+see Schulz \cite[Remarks~4.1 and 4.2]{Schulz2016}.
+Thus a smaller uniform constant is impossible.
+\end{proof}
+
+\section{Scope of the supporting material}\label{fc:supporting}
+The finite comparisons in Sections~\ref{mc:section}--\ref{ce:section}
+are analytic inequalities for arbitrary real conditional laws.
+The finite calculations certify their use on the closed parameter
+domains of Section~\ref{fc:section}. The supporting material also
+contains the continuous localization and the proofs of inputs
+(I)--(III). These are essential parts of the all-index argument,
+not hypotheses inferred from the numerical table.
+
+The moment-defect and localization framework, the original
+subdivisions, and the imported count and Fourier arguments are
+due to Rodziewicz and Ko\l{}odziejek \cite{RK2026}.
+The role of the present comparison method is to close the remaining
+general-law regions at the five actual integers and compose the
+supporting implications in a well-founded order.
+
+This working version includes the companion mathematical sources,
+exact acquired parameters, collected frozen arithmetic inputs and
+archived calculation outputs. The accompanying programs locate these
+materials and run their mathematical readers from the collected
+directories. Fresh numerical regeneration uses the retained producer
+entrypoints and their stated runtime requirements. The collection is
+local at this stage; no permanent public archive identifier is assigned
+in this draft.
