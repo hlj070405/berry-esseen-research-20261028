@@ -1,0 +1,23 @@
+# 2026-10-28: One manual, temporary transfer from the existing private Release.
+name: Transfer private review files to Zenodo
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: zenodo-private-review-23734685
+  cancel-in-progress: false
+jobs:
+  transfer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          sparse-checkout: .github
+      - name: Upload existing companion archive to the unpublished draft
+        env:
+          GH_REVIEW_READ_TOKEN: ${{ github.token }}
+          ZENODO_REVIEW_UPLOAD_TOKEN: ${{ secrets.ZENODO_REVIEW_UPLOAD_20261028 }}
+        run: python3 .github/zenodo_upload_20261028.py
