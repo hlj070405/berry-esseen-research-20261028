@@ -1,0 +1,172 @@
+{
+  "format": "n47-upper-moment-global-sine-pilot-v1",
+  "date": "2026-10-30",
+  "model": "upper-moment-fixed-sigma-global-actual-r-complete-sine-quadratic-spectrum",
+  "parameters": {
+    "model": "upper-moment-fixed-sigma-global-actual-r-complete-sine-quadratic-spectrum",
+    "actual_n": 47,
+    "actual_rho_closed_box": [
+      "173303/96000",
+      "7361/4000"
+    ],
+    "upper_moment_U": "7361/4000",
+    "virtual_sigma": "7361/4000",
+    "s": "752000000/54184321",
+    "d": "16000000/54184321",
+    "s_minus_d": "736000000/54184321",
+    "c_upper_moment": "11361/7361",
+    "A": "4/5",
+    "V": "4",
+    "resolution": 2048,
+    "target": "27404839/66655000",
+    "scale": "10000000000000000000000000000000000000000",
+    "beta_interval_numerators": [
+      "2684280506040004564024093071101785808399",
+      "2684280506040004564024093071101785808402"
+    ],
+    "sqrt_n_interval_numerators": [
+      "68556546004010441249358714490848489604606",
+      "68556546004010441249358714490848489604607"
+    ],
+    "physical_U0_interval_numerators": [
+      "29803144574491701127285407739534732608983",
+      "29803144574491701127285407739534732608991"
+    ],
+    "physical_Ufreq_interval_numerators": [
+      "149015722872458505636427038697673663044920",
+      "149015722872458505636427038697673663044951"
+    ],
+    "gamma_root_interval_numerators": [
+      "16727588864005686888369526483319391985675",
+      "16727588864005686888369526483319391985676"
+    ],
+    "gamma_upper_numerator": "16727588864005686888369526483319391985676",
+    "old_negative_square_coefficient": "1/47",
+    "reference_negative_square_coefficient": "1/94",
+    "predecessor_exponent_coefficient": "46/47",
+    "analytic_head_cubic_coefficient": "U/(6*sqrt(actual_n))",
+    "analytic_head_quartic_coefficient": "1/564",
+    "exact_A_squared_s": "481280000/54184321"
+  },
+  "scope": "ONE fixed n47 INITIAL closed-rho-box upper-moment route-selection pilot",
+  "affinity_mask": 3,
+  "scale": "10000000000000000000000000000000000000000",
+  "status": "completed",
+  "active_stage": null,
+  "completed_absolute_terms": {
+    "T1": {
+      "upper_numerator": "203850031307961103926841374841933072880",
+      "denominator": "10000000000000000000000000000000000000000",
+      "decimal_upper": "0.020385003130797"
+    },
+    "T2": {
+      "upper_numerator": "57318492994412658780955268570868769533",
+      "denominator": "10000000000000000000000000000000000000000",
+      "decimal_upper": "0.005731849299442"
+    },
+    "T3": {
+      "upper_numerator": "796460314999257112520287790497505648140",
+      "denominator": "10000000000000000000000000000000000000000",
+      "decimal_upper": "0.079646031499926"
+    },
+    "T4": {
+      "upper_numerator": "3549006717815458991840984620625920578",
+      "denominator": "10000000000000000000000000000000000000000",
+      "decimal_upper": "0.000354900671782"
+    }
+  },
+  "partial_terms_are_a_complete_bound": false,
+  "virtual_sigma_is_not_a_distribution": true,
+  "actual_rho_ge_sigma_assumed": false,
+  "rho_for_all_numerator_prices": "7361/4000",
+  "rho_for_final_ratio_denominator": "173303/96000",
+  "existing_true_gamma_root_helper": "finite_n_closed_rho_box_pilots.RhoBox.gamma",
+  "existing_full_sine_helper": "finite_n_closed_rho_box_pilots.RhoBox.h_complete",
+  "gamma_chosen_or_sampled": false,
+  "sine_caps": "both retained in full h_complete",
+  "CF_source": "same actual standardized iid law; four raw squared inequalities plus raw Taylor reference",
+  "sigma_normalization": {
+    "beta": "sigma/sqrt(n)",
+    "v": "beta*t",
+    "s": "n/sigma^2",
+    "d": "1/sigma^2",
+    "W": "sigma*H_U(v/sigma)",
+    "normalized_residual_forcing": "s*W_U(v)",
+    "pred_spectrum": "exp((s-d)*G_U(v))",
+    "core": "s^(3/2)*exp(-s*(v^2-w^2)/2+(s-d)*G_U(w))*W_U(w)",
+    "Laplace_prefactor_power": "3/2"
+  },
+  "new_upper_moment_normalized_and_pred_CF_bridge_Lean_proved": false,
+  "new_upper_moment_actual_error_spectral_bridge_Lean_proved": false,
+  "new_upper_moment_positive_Laplace_bridge_Lean_proved": false,
+  "formal_lean_numerical_theorem": false,
+  "whole_n47_initial_cell_formally_certified": false,
+  "whole_n47_through_212_certified": false,
+  "complete_classical_formula_claimed": false,
+  "min_loss_switch_used": false,
+  "Taylor_or_triangle_cap_used": false,
+  "P6_used": false,
+  "phase_cap_used": false,
+  "physical_tail_cap_used": false,
+  "old_source_or_result_modified": false,
+  "elapsed_seconds_metadata": 4.16052150001633,
+  "evaluation": {
+    "parts_delta_upper": [
+      {
+        "upper_numerator": "203850031307961103926841374841933072880",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.020385003130797"
+      },
+      {
+        "upper_numerator": "57318492994412658780955268570868769533",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.005731849299442"
+      },
+      {
+        "upper_numerator": "796460314999257112520287790497505648140",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.079646031499926"
+      },
+      {
+        "upper_numerator": "3549006717815458991840984620625920578",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.000354900671782"
+      }
+    ],
+    "delta_upper": {
+      "upper_numerator": "1061177846019446334219925418530933411131",
+      "denominator": "10000000000000000000000000000000000000000",
+      "decimal_upper": "0.106117784601945"
+    },
+    "sqrt_n_delta_over_rho_lower_upper": {
+      "upper_numerator": "4029974109294479938404946285904369418308",
+      "denominator": "10000000000000000000000000000000000000000",
+      "decimal_upper": "0.402997410929448"
+    },
+    "target": "27404839/66655000",
+    "arithmetic_strict_success_given_pending_bridges": true,
+    "strict_margin_lower_numerator": "81471243642283995283449183302741826159",
+    "denominator": "10000000000000000000000000000000000000000",
+    "actual_first_ODE_cells": 2048,
+    "actual_T2_cells": 2048,
+    "actual_T3_cells": 2048,
+    "actual_T4_finite_tail_cells": 2048,
+    "actual_mesh_lengths": [
+      2048,
+      2048,
+      2048
+    ],
+    "fourth_bound_selected": "Riemann_to_6_plus_tail",
+    "global_actual_error_ODE_terminal_upper": {
+      "upper_numerator": "226749932502429381169831394559242797549",
+      "denominator": "10000000000000000000000000000000000000000",
+      "decimal_upper": "0.022674993250243"
+    },
+    "actual_error_state_intersected_with_cap": false,
+    "actual_error_integrand_intersected_with_cap": false,
+    "only_first_cell_uses_analytic_head": true,
+    "all_four_terms_recomputed": true,
+    "old_price_or_gaussian_cache_reused": false,
+    "exp_saturation_used": false
+  }
+}

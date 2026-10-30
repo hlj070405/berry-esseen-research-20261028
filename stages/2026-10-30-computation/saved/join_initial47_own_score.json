@@ -1,0 +1,224 @@
+{
+  "date": "2026-10-30",
+  "original_actual_n_domain": "all integers n>=47",
+  "original_rho_closed_domain": [
+    "1",
+    "7361/4000"
+  ],
+  "requires_sharp_all_law_predecessor": true,
+  "Gaussian_Lean_source": "BerryEsseen.GaussianInitialMask",
+  "actual_CF_CDF_profile_Lean_source": "BerryEsseen.UpperMomentSpectrumPrice",
+  "fixed_cap_paid": "4247/10000",
+  "Gaussian_masks_cells_0_through_19": true,
+  "cases": [
+    {
+      "i": 20,
+      "rho_closed_box": [
+        "8161/4800",
+        "55527/32000"
+      ],
+      "CF_actual_n_band": [
+        47,
+        47
+      ],
+      "Gaussian_from_actual_n": 48,
+      "target": "84878761/204025000",
+      "CF_comparison_uppers": [
+        "64346461888940287265375339753059592129/156250000000000000000000000000000000000"
+      ],
+      "CF_nu_cover": [
+        [
+          "47",
+          "47"
+        ]
+      ]
+    },
+    {
+      "i": 21,
+      "rho_closed_box": [
+        "55527/32000",
+        "84971/48000"
+      ],
+      "CF_actual_n_band": [
+        47,
+        65
+      ],
+      "Gaussian_from_actual_n": 66,
+      "target": "7668837/18509000",
+      "CF_comparison_uppers": [
+        "4085579739145087383810592204622858135457/9882812500000000000000000000000000000000",
+        "9027108108785651843718909497352714412874111/22043125000000000000000000000000000000000000"
+      ],
+      "CF_nu_cover": [
+        [
+          "47",
+          "235/4"
+        ],
+        [
+          "235/4",
+          "65"
+        ]
+      ]
+    },
+    {
+      "i": 22,
+      "rho_closed_box": [
+        "84971/48000",
+        "173303/96000"
+      ],
+      "CF_actual_n_band": [
+        47,
+        100
+      ],
+      "Gaussian_from_actual_n": 101,
+      "target": "175340143/424855000",
+      "CF_comparison_uppers": [
+        "2028107961010602821281103057289180336943/4941406250000000000000000000000000000000",
+        "4055491574028317183945402954612268597773/9882812500000000000000000000000000000000",
+        "4058442598533237615473962692507214705183/9882812500000000000000000000000000000000",
+        "4488066541982859995240676521854063496168643/11028462500000000000000000000000000000000000"
+      ],
+      "CF_nu_cover": [
+        [
+          "47",
+          "235/4"
+        ],
+        [
+          "235/4",
+          "1175/16"
+        ],
+        [
+          "1175/16",
+          "5875/64"
+        ],
+        [
+          "5875/64",
+          "100"
+        ]
+      ]
+    },
+    {
+      "i": 23,
+      "rho_closed_box": [
+        "173303/96000",
+        "7361/4000"
+      ],
+      "CF_actual_n_band": [
+        47,
+        212
+      ],
+      "Gaussian_from_actual_n": 213,
+      "target": "27404839/66655000",
+      "CF_comparison_uppers": [
+        "1007493527323619984601236571476092354577/2470703125000000000000000000000000000000",
+        "805525663539095647166565157940753931411/1976562500000000000000000000000000000000",
+        "201457373837833547916007795455682192021/494140625000000000000000000000000000000",
+        "4033059325031515435724606608698860665029/9882812500000000000000000000000000000000",
+        "807660195133082511724044540177752766717/1976562500000000000000000000000000000000",
+        "2233325847651406392509882677808950891042109/5488036313864320000000000000000000000000000",
+        "814636786812050505142788773270684279591/1994140625000000000000000000000000000000",
+        "21862349936175843165765281144902552026567/53875000000000000000000000000000000000000"
+      ],
+      "CF_nu_cover": [
+        [
+          "47",
+          "235/4"
+        ],
+        [
+          "235/4",
+          "1175/16"
+        ],
+        [
+          "1175/16",
+          "5875/64"
+        ],
+        [
+          "5875/64",
+          "29375/256"
+        ],
+        [
+          "29375/256",
+          "146875/1024"
+        ],
+        [
+          "146875/1024",
+          "848/5"
+        ],
+        [
+          "848/5",
+          "954/5"
+        ],
+        [
+          "954/5",
+          "212"
+        ]
+      ]
+    }
+  ],
+  "finite_CF_index_cell_pairs": 240,
+  "nondegenerate_CF_nodes": 14,
+  "single_integer_points": 1,
+  "all_classical_INITIAL47_own_score_inputs_replaced_in_real_arithmetic": true,
+  "source_failed_chord_retained": [
+    {
+      "name": "nu848over5-to-212-A2over5",
+      "node": {
+        "name": "nu848over5-to-212-A2over5",
+        "nu_left": "848/5",
+        "nu_right": "212",
+        "s_left": "2713600000/54184321",
+        "s_right": "3392000000/54184321",
+        "A": "2/5",
+        "rmax": "3/2",
+        "theta": "3/256",
+        "factor": "256/253",
+        "fixed_spectrum_parameters": {
+          "U": "7361/4000",
+          "sigma": "7361/4000",
+          "rhoLower": "173303/96000",
+          "Gamma_interval_numerators": [
+            "16727588864005686888369526483319391985675",
+            "16727588864005686888369526483319391985676"
+          ],
+          "GammaUpper_numerator": "16727588864005686888369526483319391985676",
+          "d": "16000000/54184321",
+          "c": "11361/7361",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "27404839/66655000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 3
+        },
+        "noninteger_iid_sum_claimed": false
+      },
+      "status": "failed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=848/5|U=7361/4000|sigma=7361/4000|GammaUpper=16727588864005686888369526483319391985676/10000000000000000000000000000000000000000|rhoLower=173303/96000|A=2/5|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=212|U=7361/4000|sigma=7361/4000|GammaUpper=16727588864005686888369526483319391985676/10000000000000000000000000000000000000000|rhoLower=173303/96000|A=2/5|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=848/5|U=7361/4000|sigma=7361/4000|GammaUpper=16727588864005686888369526483319391985676/10000000000000000000000000000000000000000|rhoLower=173303/96000|A=2/5|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=212|U=7361/4000|sigma=7361/4000|GammaUpper=16727588864005686888369526483319391985676/10000000000000000000000000000000000000000|rhoLower=173303/96000|A=2/5|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "rmax": "3/2",
+      "theta": "3/256",
+      "factor": "256/253",
+      "joint_upper": {
+        "upper_numerator": "74057889710186409558435343024607661781",
+        "denominator": "179687500000000000000000000000000000000",
+        "decimal_upper": "0.412148255778429"
+      },
+      "strict_joint": false,
+      "failure": "Fraction chord joint not strict; no automatic subdivision"
+    }
+  ],
+  "independent_whole_join_review_completed": false,
+  "original_support_or_charged_premises_eliminated": false,
+  "entire_INITIAL47_certificate_newly_proved": false,
+  "formal_lean_numerical_prices": false,
+  "full_conjecture_Lean_proved": false
+}

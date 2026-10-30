@@ -1,0 +1,3385 @@
+{
+  "format": "upper-moment-initial47-i20-i22-v1",
+  "date": "2026-10-30",
+  "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+  "cases": [
+    {
+      "i": 20,
+      "actual_n_domain": [
+        47,
+        47
+      ],
+      "rho_closed_box": [
+        "8161/4800",
+        "55527/32000"
+      ],
+      "target": "84878761/204025000",
+      "fixed_spectrum_parameters": {
+        "U": "55527/32000",
+        "sigma": "55527/32000",
+        "rhoLower": "8161/4800",
+        "Gamma_interval_numerators": [
+          "15441706988648935269757555295530888098230",
+          "15441706988648935269757555295530888098232"
+        ],
+        "GammaUpper_numerator": "15441706988648935269757555295530888098232",
+        "d": "1024000000/3083247729",
+        "c": "87527/55527",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "target": "84878761/204025000",
+        "G_correction": "fixed 1/sigma^2; not a/M",
+        "W": "sigma*H_U(v/sigma)",
+        "rmax": "3/2",
+        "exp_method": "m8-upper-exp-minus-min-x-32",
+        "max_new_price_attempts": 13
+      }
+    },
+    {
+      "i": 21,
+      "actual_n_domain": [
+        47,
+        65
+      ],
+      "rho_closed_box": [
+        "55527/32000",
+        "84971/48000"
+      ],
+      "target": "7668837/18509000",
+      "fixed_spectrum_parameters": {
+        "U": "84971/48000",
+        "sigma": "84971/48000",
+        "rhoLower": "55527/32000",
+        "Gamma_interval_numerators": [
+          "15875253180038534184349329727210167266867",
+          "15875253180038534184349329727210167266869"
+        ],
+        "GammaUpper_numerator": "15875253180038534184349329727210167266869",
+        "d": "2304000000/7220070841",
+        "c": "132971/84971",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "target": "7668837/18509000",
+        "G_correction": "fixed 1/sigma^2; not a/M",
+        "W": "sigma*H_U(v/sigma)",
+        "rmax": "3/2",
+        "exp_method": "m8-upper-exp-minus-min-x-32",
+        "max_new_price_attempts": 13
+      }
+    },
+    {
+      "i": 22,
+      "actual_n_domain": [
+        47,
+        100
+      ],
+      "rho_closed_box": [
+        "84971/48000",
+        "173303/96000"
+      ],
+      "target": "175340143/424855000",
+      "fixed_spectrum_parameters": {
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "Gamma_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "GammaUpper_numerator": "16303741112488651923692201938933587650960",
+        "d": "9216000000/30033929809",
+        "c": "269303/173303",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "target": "175340143/424855000",
+        "G_correction": "fixed 1/sigma^2; not a/M",
+        "W": "sigma*H_U(v/sigma)",
+        "rmax": "3/2",
+        "exp_method": "m8-upper-exp-minus-min-x-32",
+        "max_new_price_attempts": 13
+      }
+    }
+  ],
+  "plans": [
+    {
+      "name": "i20-nu47-point",
+      "i": 20,
+      "A": "759/1000",
+      "context": {
+        "U": "55527/32000",
+        "sigma": "55527/32000",
+        "rhoLower": "8161/4800",
+        "Gamma_interval_numerators": [
+          "15441706988648935269757555295530888098230",
+          "15441706988648935269757555295530888098232"
+        ],
+        "GammaUpper_numerator": "15441706988648935269757555295530888098232",
+        "d": "1024000000/3083247729",
+        "c": "87527/55527",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "target": "84878761/204025000",
+        "G_correction": "fixed 1/sigma^2; not a/M",
+        "W": "sigma*H_U(v/sigma)",
+        "rmax": "3/2",
+        "exp_method": "m8-upper-exp-minus-min-x-32",
+        "max_new_price_attempts": 13
+      },
+      "kind": "point",
+      "nu": "47"
+    },
+    {
+      "name": "i21-node-01",
+      "i": 21,
+      "A": "387/500",
+      "context": {
+        "U": "84971/48000",
+        "sigma": "84971/48000",
+        "rhoLower": "55527/32000",
+        "Gamma_interval_numerators": [
+          "15875253180038534184349329727210167266867",
+          "15875253180038534184349329727210167266869"
+        ],
+        "GammaUpper_numerator": "15875253180038534184349329727210167266869",
+        "d": "2304000000/7220070841",
+        "c": "132971/84971",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "target": "7668837/18509000",
+        "G_correction": "fixed 1/sigma^2; not a/M",
+        "W": "sigma*H_U(v/sigma)",
+        "rmax": "3/2",
+        "exp_method": "m8-upper-exp-minus-min-x-32",
+        "max_new_price_attempts": 13
+      },
+      "kind": "node",
+      "nu_left": "47",
+      "nu_right": "235/4",
+      "rmax": "3/2",
+      "theta": "3/256",
+      "factor": "256/253"
+    },
+    {
+      "name": "i21-node-02",
+      "i": 21,
+      "A": "173/250",
+      "context": {
+        "U": "84971/48000",
+        "sigma": "84971/48000",
+        "rhoLower": "55527/32000",
+        "Gamma_interval_numerators": [
+          "15875253180038534184349329727210167266867",
+          "15875253180038534184349329727210167266869"
+        ],
+        "GammaUpper_numerator": "15875253180038534184349329727210167266869",
+        "d": "2304000000/7220070841",
+        "c": "132971/84971",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "target": "7668837/18509000",
+        "G_correction": "fixed 1/sigma^2; not a/M",
+        "W": "sigma*H_U(v/sigma)",
+        "rmax": "3/2",
+        "exp_method": "m8-upper-exp-minus-min-x-32",
+        "max_new_price_attempts": 13
+      },
+      "kind": "node",
+      "nu_left": "235/4",
+      "nu_right": "65",
+      "rmax": "3/2",
+      "theta": "75/35344",
+      "factor": "35344/35269"
+    },
+    {
+      "name": "i22-node-01",
+      "i": 22,
+      "A": "789/1000",
+      "context": {
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "Gamma_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "GammaUpper_numerator": "16303741112488651923692201938933587650960",
+        "d": "9216000000/30033929809",
+        "c": "269303/173303",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "target": "175340143/424855000",
+        "G_correction": "fixed 1/sigma^2; not a/M",
+        "W": "sigma*H_U(v/sigma)",
+        "rmax": "3/2",
+        "exp_method": "m8-upper-exp-minus-min-x-32",
+        "max_new_price_attempts": 13
+      },
+      "kind": "node",
+      "nu_left": "47",
+      "nu_right": "235/4",
+      "rmax": "3/2",
+      "theta": "3/256",
+      "factor": "256/253"
+    },
+    {
+      "name": "i22-node-02",
+      "i": 22,
+      "A": "353/500",
+      "context": {
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "Gamma_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "GammaUpper_numerator": "16303741112488651923692201938933587650960",
+        "d": "9216000000/30033929809",
+        "c": "269303/173303",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "target": "175340143/424855000",
+        "G_correction": "fixed 1/sigma^2; not a/M",
+        "W": "sigma*H_U(v/sigma)",
+        "rmax": "3/2",
+        "exp_method": "m8-upper-exp-minus-min-x-32",
+        "max_new_price_attempts": 13
+      },
+      "kind": "node",
+      "nu_left": "235/4",
+      "nu_right": "1175/16",
+      "rmax": "3/2",
+      "theta": "3/256",
+      "factor": "256/253"
+    },
+    {
+      "name": "i22-node-03",
+      "i": 22,
+      "A": "631/1000",
+      "context": {
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "Gamma_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "GammaUpper_numerator": "16303741112488651923692201938933587650960",
+        "d": "9216000000/30033929809",
+        "c": "269303/173303",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "target": "175340143/424855000",
+        "G_correction": "fixed 1/sigma^2; not a/M",
+        "W": "sigma*H_U(v/sigma)",
+        "rmax": "3/2",
+        "exp_method": "m8-upper-exp-minus-min-x-32",
+        "max_new_price_attempts": 13
+      },
+      "kind": "node",
+      "nu_left": "1175/16",
+      "nu_right": "5875/64",
+      "rmax": "3/2",
+      "theta": "3/256",
+      "factor": "256/253"
+    },
+    {
+      "name": "i22-node-04",
+      "i": 22,
+      "A": "113/200",
+      "context": {
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "Gamma_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "GammaUpper_numerator": "16303741112488651923692201938933587650960",
+        "d": "9216000000/30033929809",
+        "c": "269303/173303",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "target": "175340143/424855000",
+        "G_correction": "fixed 1/sigma^2; not a/M",
+        "W": "sigma*H_U(v/sigma)",
+        "rmax": "3/2",
+        "exp_method": "m8-upper-exp-minus-min-x-32",
+        "max_new_price_attempts": 13
+      },
+      "kind": "node",
+      "nu_left": "5875/64",
+      "nu_right": "100",
+      "rmax": "3/2",
+      "theta": "1323/883600",
+      "factor": "883600/882277"
+    }
+  ],
+  "max_new_price_attempts": 13,
+  "completed_prices": {
+    "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=55527/32000|sigma=55527/32000|GammaUpper=15441706988648935269757555295530888098232/10000000000000000000000000000000000000000|rhoLower=8161/4800|A=759/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32": {
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "47",
+        "s": "48128000000/3083247729",
+        "U": "55527/32000",
+        "sigma": "55527/32000",
+        "rhoLower": "8161/4800",
+        "d": "1024000000/3083247729",
+        "s_minus_d": "47104000000/3083247729",
+        "c": "87527/55527",
+        "A": "759/1000",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "68556546004010441249358714490848489604606",
+          "68556546004010441249358714490848489604607"
+        ],
+        "beta_interval_numerators": [
+          "2531076682157372188333205677881212820659",
+          "2531076682157372188333205677881212820662"
+        ],
+        "physical_U0_interval_numerators": [
+          "29987238448779973653617599682203758811327",
+          "29987238448779973653617599682203758811334"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "158035512246534775513136230209242470678935",
+          "158035512246534775513136230209242470678966"
+        ],
+        "gamma_root_interval_numerators": [
+          "15441706988648935269757555295530888098230",
+          "15441706988648935269757555295530888098232"
+        ],
+        "gamma_upper_numerator": "15441706988648935269757555295530888098232",
+        "old_negative_square_coefficient": "1/47",
+        "reference_negative_square_coefficient": "1/94",
+        "predecessor_exponent_coefficient": "46/47",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/564",
+        "exact_A_squared_s": "3080625152/342583081",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "parts_delta_upper": [
+        {
+          "upper_numerator": "192230714850985290451709246198201137694",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.019223071485099"
+        },
+        {
+          "upper_numerator": "72429289911554433140148804048563881382",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.007242928991156"
+        },
+        {
+          "upper_numerator": "753326963426837408048412757858716875424",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.075332696342684"
+        },
+        {
+          "upper_numerator": "3323674551040171758325957301340935126",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000332367455105"
+        }
+      ],
+      "delta_upper": {
+        "upper_numerator": "1021310642740417303398596765406822829626",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.102131064274042"
+      },
+      "ratio_upper": {
+        "upper_numerator": "4118173560892178384984021744195813896256",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.411817356089218"
+      },
+      "comparison_quantity": "(sigma/rhoLower)*normalized_profile = sqrt(nu)*absolute_Delta/rhoLower",
+      "first_ODE_cells": 2048,
+      "T2_cells": 2048,
+      "T3_cells": 2048,
+      "T4_finite_tail_cells": 2048,
+      "mesh_lengths": [
+        2048,
+        2048,
+        2048
+      ],
+      "fourth_bound_selected": "Riemann_to_6_plus_tail",
+      "profile_ODE_terminal_upper": {
+        "upper_numerator": "203998216342226357997180425674563261616",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.020399821634223"
+      },
+      "profile_state_intersected_with_cap": false,
+      "profile_integrand_intersected_with_cap": false,
+      "noninteger_iid_sum_claimed": false,
+      "saturation": {
+        "used": false,
+        "clipped_interval_calls": 0,
+        "calls_by_phase": {},
+        "threshold": "32",
+        "max_argument_upper_numerator": "200298705315274160596927453185072645619512",
+        "returns_upper_bound_only": true,
+        "exact_exp_enclosure_claimed": false,
+        "physical_frequency_tail_truncated": false
+      }
+    },
+    "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=387/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32": {
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "47",
+        "s": "108288000000/7220070841",
+        "U": "84971/48000",
+        "sigma": "84971/48000",
+        "rhoLower": "55527/32000",
+        "d": "2304000000/7220070841",
+        "s_minus_d": "105984000000/7220070841",
+        "c": "132971/84971",
+        "A": "387/500",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "68556546004010441249358714490848489604606",
+          "68556546004010441249358714490848489604607"
+        ],
+        "beta_interval_numerators": [
+          "2582144623451582980230168142288070483239",
+          "2582144623451582980230168142288070483242"
+        ],
+        "physical_U0_interval_numerators": [
+          "29975083230054911832227171161502195876123",
+          "29975083230054911832227171161502195876130"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "154909990852996960373267034426367937344306",
+          "154909990852996960373267034426367937344337"
+        ],
+        "gamma_root_interval_numerators": [
+          "15875253180038534184349329727210167266867",
+          "15875253180038534184349329727210167266869"
+        ],
+        "gamma_upper_numerator": "15875253180038534184349329727210167266869",
+        "old_negative_square_coefficient": "1/47",
+        "reference_negative_square_coefficient": "1/94",
+        "predecessor_exponent_coefficient": "46/47",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/564",
+        "exact_A_squared_s": "64872741888/7220070841",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "parts_delta_upper": [
+        {
+          "upper_numerator": "196214048669280921179967034745698485733",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.019621404866929"
+        },
+        {
+          "upper_numerator": "66773679214444396747194997752466412456",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.006677367921445"
+        },
+        {
+          "upper_numerator": "767765702282566099425103278731461398592",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.076776570228257"
+        },
+        {
+          "upper_numerator": "3338130918181574265179113899668202477",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000333813091819"
+        }
+      ],
+      "delta_upper": {
+        "upper_numerator": "1034091561084472991617444425129294499258",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.103409156108448"
+      },
+      "ratio_upper": {
+        "upper_numerator": "4085579739145087383810592204622858135457",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.408557973914509"
+      },
+      "comparison_quantity": "(sigma/rhoLower)*normalized_profile = sqrt(nu)*absolute_Delta/rhoLower",
+      "first_ODE_cells": 2048,
+      "T2_cells": 2048,
+      "T3_cells": 2048,
+      "T4_finite_tail_cells": 2048,
+      "mesh_lengths": [
+        2048,
+        2048,
+        2048
+      ],
+      "fourth_bound_selected": "Riemann_to_6_plus_tail",
+      "profile_ODE_terminal_upper": {
+        "upper_numerator": "209740809539087456836157371279891275801",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.020974080953909"
+      },
+      "profile_state_intersected_with_cap": false,
+      "profile_integrand_intersected_with_cap": false,
+      "noninteger_iid_sum_claimed": false,
+      "saturation": {
+        "used": false,
+        "clipped_interval_calls": 0,
+        "calls_by_phase": {},
+        "threshold": "32",
+        "max_argument_upper_numerator": "194637940567999569576805993064040232186427",
+        "returns_upper_bound_only": true,
+        "exact_exp_enclosure_claimed": false,
+        "physical_frequency_tail_truncated": false
+      }
+    },
+    "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=387/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32": {
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "235/4",
+        "s": "135360000000/7220070841",
+        "U": "84971/48000",
+        "sigma": "84971/48000",
+        "rhoLower": "55527/32000",
+        "d": "2304000000/7220070841",
+        "s_minus_d": "133056000000/7220070841",
+        "c": "132971/84971",
+        "A": "387/500",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "76648548583779458282768409957860243553466",
+          "76648548583779458282768409957860243553467"
+        ],
+        "beta_interval_numerators": [
+          "2309540362309334875796139915790547076234",
+          "2309540362309334875796139915790547076237"
+        ],
+        "physical_U0_interval_numerators": [
+          "33513161866808375023495215623617749214415",
+          "33513161866808375023495215623617749214423"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "173194634970585917434083801672443148394911",
+          "173194634970585917434083801672443148394945"
+        ],
+        "gamma_root_interval_numerators": [
+          "15875253180038534184349329727210167266867",
+          "15875253180038534184349329727210167266869"
+        ],
+        "gamma_upper_numerator": "15875253180038534184349329727210167266869",
+        "old_negative_square_coefficient": "4/235",
+        "reference_negative_square_coefficient": "2/235",
+        "predecessor_exponent_coefficient": "231/235",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/705",
+        "exact_A_squared_s": "81090927360/7220070841",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "parts_delta_upper": [
+        {
+          "upper_numerator": "177388470400031686132973592863594874182",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.017738847040004"
+        },
+        {
+          "upper_numerator": "54457776148547594526338019140034391062",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.005445777614855"
+        },
+        {
+          "upper_numerator": "691528053759737119354097917290681999504",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.069152805375974"
+        },
+        {
+          "upper_numerator": "894450999061277714620912691906772443",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000089445099907"
+        }
+      ],
+      "delta_upper": {
+        "upper_numerator": "924268751307377677728030441986218037191",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.092426875130738"
+      },
+      "ratio_upper": {
+        "upper_numerator": "4082704747689748720809823520195034690684",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.408270474768975"
+      },
+      "comparison_quantity": "(sigma/rhoLower)*normalized_profile = sqrt(nu)*absolute_Delta/rhoLower",
+      "first_ODE_cells": 2048,
+      "T2_cells": 2048,
+      "T3_cells": 2048,
+      "T4_finite_tail_cells": 2048,
+      "mesh_lengths": [
+        2048,
+        2048,
+        2048
+      ],
+      "fourth_bound_selected": "Riemann_to_6_plus_tail",
+      "profile_ODE_terminal_upper": {
+        "upper_numerator": "92750921813778894065231105752460293055",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.009275092181378"
+      },
+      "profile_state_intersected_with_cap": false,
+      "profile_integrand_intersected_with_cap": false,
+      "noninteger_iid_sum_claimed": false,
+      "saturation": {
+        "used": false,
+        "clipped_interval_calls": 0,
+        "calls_by_phase": {},
+        "threshold": "32",
+        "max_argument_upper_numerator": "243297425709999461971007491330050290232777",
+        "returns_upper_bound_only": true,
+        "exact_exp_enclosure_claimed": false,
+        "physical_frequency_tail_truncated": false
+      }
+    },
+    "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=173/250|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32": {
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "235/4",
+        "s": "135360000000/7220070841",
+        "U": "84971/48000",
+        "sigma": "84971/48000",
+        "rhoLower": "55527/32000",
+        "d": "2304000000/7220070841",
+        "s_minus_d": "133056000000/7220070841",
+        "c": "132971/84971",
+        "A": "173/250",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "76648548583779458282768409957860243553466",
+          "76648548583779458282768409957860243553467"
+        ],
+        "beta_interval_numerators": [
+          "2309540362309334875796139915790547076234",
+          "2309540362309334875796139915790547076237"
+        ],
+        "physical_U0_interval_numerators": [
+          "29962671849911363716096497689332664672319",
+          "29962671849911363716096497689332664672326"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "173194634970585917434083801672443148394911",
+          "173194634970585917434083801672443148394945"
+        ],
+        "gamma_root_interval_numerators": [
+          "15875253180038534184349329727210167266867",
+          "15875253180038534184349329727210167266869"
+        ],
+        "gamma_upper_numerator": "15875253180038534184349329727210167266869",
+        "old_negative_square_coefficient": "4/235",
+        "reference_negative_square_coefficient": "2/235",
+        "predecessor_exponent_coefficient": "231/235",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/705",
+        "exact_A_squared_s": "64819031040/7220070841",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "parts_delta_upper": [
+        {
+          "upper_numerator": "172362051594321602000726862621242476603",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.017236205159433"
+        },
+        {
+          "upper_numerator": "59104959533014383598611223818851861336",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.005910495953302"
+        },
+        {
+          "upper_numerator": "690311015564392119163468781340083423341",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.069031101556440"
+        },
+        {
+          "upper_numerator": "3352952466417961914480472124921451680",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000335295246642"
+        }
+      ],
+      "delta_upper": {
+        "upper_numerator": "925130979158146066677287339905099212960",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.092513097915815"
+      },
+      "ratio_upper": {
+        "upper_numerator": "4086513403705591599691674738502813224479",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.408651340370560"
+      },
+      "comparison_quantity": "(sigma/rhoLower)*normalized_profile = sqrt(nu)*absolute_Delta/rhoLower",
+      "first_ODE_cells": 2048,
+      "T2_cells": 2048,
+      "T3_cells": 2048,
+      "T4_finite_tail_cells": 2048,
+      "mesh_lengths": [
+        2048,
+        2048,
+        2048
+      ],
+      "fourth_bound_selected": "Riemann_to_6_plus_tail",
+      "profile_ODE_terminal_upper": {
+        "upper_numerator": "178702894476602782391327996957416171105",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.017870289447661"
+      },
+      "profile_state_intersected_with_cap": false,
+      "profile_integrand_intersected_with_cap": false,
+      "noninteger_iid_sum_claimed": false,
+      "saturation": {
+        "used": false,
+        "clipped_interval_calls": 0,
+        "calls_by_phase": {},
+        "threshold": "32",
+        "max_argument_upper_numerator": "243279159485800122444531120143231778374539",
+        "returns_upper_bound_only": true,
+        "exact_exp_enclosure_claimed": false,
+        "physical_frequency_tail_truncated": false
+      }
+    },
+    "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=65|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=173/250|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32": {
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "65",
+        "s": "149760000000/7220070841",
+        "U": "84971/48000",
+        "sigma": "84971/48000",
+        "rhoLower": "55527/32000",
+        "d": "2304000000/7220070841",
+        "s_minus_d": "147456000000/7220070841",
+        "c": "132971/84971",
+        "A": "173/250",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "80622577482985496523666132303037711311343",
+          "80622577482985496523666132303037711311344"
+        ],
+        "beta_interval_numerators": [
+          "2195699048495756610612959912795326079434",
+          "2195699048495756610612959912795326079437"
+        ],
+        "physical_U0_interval_numerators": [
+          "31516158850370670611503857205137054040993",
+          "31516158850370670611503857205137054041001"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "182174328614859367696554087890965630294763",
+          "182174328614859367696554087890965630294799"
+        ],
+        "gamma_root_interval_numerators": [
+          "15875253180038534184349329727210167266867",
+          "15875253180038534184349329727210167266869"
+        ],
+        "gamma_upper_numerator": "15875253180038534184349329727210167266869",
+        "old_negative_square_coefficient": "1/65",
+        "reference_negative_square_coefficient": "1/130",
+        "predecessor_exponent_coefficient": "64/65",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/780",
+        "exact_A_squared_s": "71714672640/7220070841",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "parts_delta_upper": [
+        {
+          "upper_numerator": "165126533876689461630942034496552015176",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.016512653387669"
+        },
+        {
+          "upper_numerator": "53589274909773456802422129993566653029",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.005358927490978"
+        },
+        {
+          "upper_numerator": "658391637756036147910817003369659480364",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.065839163775604"
+        },
+        {
+          "upper_numerator": "1906135458998986162829438594593204885",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000190613545900"
+        }
+      ],
+      "delta_upper": {
+        "upper_numerator": "879013582001498052507010606454371353454",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.087901358200150"
+      },
+      "ratio_upper": {
+        "upper_numerator": "4084115655361170008544245964399611295653",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.408411565536118"
+      },
+      "comparison_quantity": "(sigma/rhoLower)*normalized_profile = sqrt(nu)*absolute_Delta/rhoLower",
+      "first_ODE_cells": 2048,
+      "T2_cells": 2048,
+      "T3_cells": 2048,
+      "T4_finite_tail_cells": 2048,
+      "mesh_lengths": [
+        2048,
+        2048,
+        2048
+      ],
+      "fourth_bound_selected": "Riemann_to_6_plus_tail",
+      "profile_ODE_terminal_upper": {
+        "upper_numerator": "126631866748423879419203220850457142763",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.012663186674843"
+      },
+      "profile_state_intersected_with_cap": false,
+      "profile_integrand_intersected_with_cap": false,
+      "noninteger_iid_sum_claimed": false,
+      "saturation": {
+        "used": false,
+        "clipped_interval_calls": 0,
+        "calls_by_phase": {},
+        "threshold": "32",
+        "max_argument_upper_numerator": "269159921133225667385438686115916010116658",
+        "returns_upper_bound_only": true,
+        "exact_exp_enclosure_claimed": false,
+        "physical_frequency_tail_truncated": false
+      }
+    },
+    "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=789/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32": {
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "47",
+        "s": "433152000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "423936000000/30033929809",
+        "c": "269303/173303",
+        "A": "789/1000",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "68556546004010441249358714490848489604606",
+          "68556546004010441249358714490848489604607"
+        ],
+        "beta_interval_numerators": [
+          "2633212564745793772127130606694928145819",
+          "2633212564745793772127130606694928145822"
+        ],
+        "physical_U0_interval_numerators": [
+          "29963399482569643122112291595614778720568",
+          "29963399482569643122112291595614778720575"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "151905700798832157780036966264206736225948",
+          "151905700798832157780036966264206736225979"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "1/47",
+        "reference_negative_square_coefficient": "1/94",
+        "predecessor_exponent_coefficient": "46/47",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/564",
+        "exact_A_squared_s": "269646216192/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "parts_delta_upper": [
+        {
+          "upper_numerator": "200211449010898329654579029123579380540",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.020021144901090"
+        },
+        {
+          "upper_numerator": "61634310138089848001750082455619166131",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.006163431013809"
+        },
+        {
+          "upper_numerator": "782175772468628794918462545754612554652",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.078217577246863"
+        },
+        {
+          "upper_numerator": "3352081842959179069473923919009465373",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000335208184296"
+        }
+      ],
+      "delta_upper": {
+        "upper_numerator": "1047373613460576151644265581252820566696",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.104737361346058"
+      },
+      "ratio_upper": {
+        "upper_numerator": "4056215922021205642562206114578360673886",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.405621592202121"
+      },
+      "comparison_quantity": "(sigma/rhoLower)*normalized_profile = sqrt(nu)*absolute_Delta/rhoLower",
+      "first_ODE_cells": 2048,
+      "T2_cells": 2048,
+      "T3_cells": 2048,
+      "T4_finite_tail_cells": 2048,
+      "mesh_lengths": [
+        2048,
+        2048,
+        2048
+      ],
+      "fourth_bound_selected": "Riemann_to_6_plus_tail",
+      "profile_ODE_terminal_upper": {
+        "upper_numerator": "215558995343353245642955949270014852348",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.021555899534336"
+      },
+      "profile_state_intersected_with_cap": false,
+      "profile_integrand_intersected_with_cap": false,
+      "noninteger_iid_sum_claimed": false,
+      "saturation": {
+        "used": false,
+        "clipped_interval_calls": 0,
+        "calls_by_phase": {},
+        "threshold": "32",
+        "max_argument_upper_numerator": "189189650582446259819208695135251208698886",
+        "returns_upper_bound_only": true,
+        "exact_exp_enclosure_claimed": false,
+        "physical_frequency_tail_truncated": false
+      }
+    },
+    "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=789/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32": {
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "235/4",
+        "s": "541440000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "532224000000/30033929809",
+        "c": "269303/173303",
+        "A": "789/1000",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "76648548583779458282768409957860243553466",
+          "76648548583779458282768409957860243553467"
+        ],
+        "beta_interval_numerators": [
+          "2355216917591264443045853501937420884493",
+          "2355216917591264443045853501937420884496"
+        ],
+        "physical_U0_interval_numerators": [
+          "33500099040003873494226934581906639167890",
+          "33500099040003873494226934581906639167898"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "169835736577966405547411582164292213778916",
+          "169835736577966405547411582164292213778949"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "4/235",
+        "reference_negative_square_coefficient": "2/235",
+        "predecessor_exponent_coefficient": "231/235",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/705",
+        "exact_A_squared_s": "337057770240/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "parts_delta_upper": [
+        {
+          "upper_numerator": "181028533743529220648809989225220970090",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.018102853374353"
+        },
+        {
+          "upper_numerator": "49349935219362385348507126505280864070",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.004934993521937"
+        },
+        {
+          "upper_numerator": "704579485308566255441562783239994624985",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.070457948530857"
+        },
+        {
+          "upper_numerator": "898990287639330418409750260896714690",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000089899028764"
+        }
+      ],
+      "delta_upper": {
+        "upper_numerator": "935856944559097191857289649231393173835",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.093585694455910"
+      },
+      "ratio_upper": {
+        "upper_numerator": "4052135047440017515902522749933042445070",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.405213504744002"
+      },
+      "comparison_quantity": "(sigma/rhoLower)*normalized_profile = sqrt(nu)*absolute_Delta/rhoLower",
+      "first_ODE_cells": 2048,
+      "T2_cells": 2048,
+      "T3_cells": 2048,
+      "T4_finite_tail_cells": 2048,
+      "mesh_lengths": [
+        2048,
+        2048,
+        2048
+      ],
+      "fourth_bound_selected": "Riemann_to_6_plus_tail",
+      "profile_ODE_terminal_upper": {
+        "upper_numerator": "95621350033085429067938095690951781621",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.009562135003309"
+      },
+      "profile_state_intersected_with_cap": false,
+      "profile_integrand_intersected_with_cap": false,
+      "noninteger_iid_sum_claimed": false,
+      "saturation": {
+        "used": false,
+        "clipped_interval_calls": 0,
+        "calls_by_phase": {},
+        "threshold": "32",
+        "max_argument_upper_numerator": "236487063228057824774010868919064010873126",
+        "returns_upper_bound_only": true,
+        "exact_exp_enclosure_claimed": false,
+        "physical_frequency_tail_truncated": false
+      }
+    },
+    "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=353/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32": {
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "235/4",
+        "s": "541440000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "532224000000/30033929809",
+        "c": "269303/173303",
+        "A": "353/500",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "76648548583779458282768409957860243553466",
+          "76648548583779458282768409957860243553467"
+        ],
+        "beta_interval_numerators": [
+          "2355216917591264443045853501937420884493",
+          "2355216917591264443045853501937420884496"
+        ],
+        "physical_U0_interval_numerators": [
+          "29976007506011070579118144251997575731978",
+          "29976007506011070579118144251997575731985"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "169835736577966405547411582164292213778916",
+          "169835736577966405547411582164292213778949"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "4/235",
+        "reference_negative_square_coefficient": "2/235",
+        "predecessor_exponent_coefficient": "231/235",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/705",
+        "exact_A_squared_s": "269873187840/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "parts_delta_upper": [
+        {
+          "upper_numerator": "175908580843209033844519846345636687978",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.017590858084321"
+        },
+        {
+          "upper_numerator": "54033781831561792595202732183132347321",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.005403378183157"
+        },
+        {
+          "upper_numerator": "703352755641167591521296520252437667392",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.070335275564117"
+        },
+        {
+          "upper_numerator": "3337029606443026999423700301130224678",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000333702960645"
+        }
+      ],
+      "delta_upper": {
+        "upper_numerator": "936632147922381444960442799082336927369",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.093663214792239"
+      },
+      "ratio_upper": {
+        "upper_numerator": "4055491574028317183945402954612268597773",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.405549157402832"
+      },
+      "comparison_quantity": "(sigma/rhoLower)*normalized_profile = sqrt(nu)*absolute_Delta/rhoLower",
+      "first_ODE_cells": 2048,
+      "T2_cells": 2048,
+      "T3_cells": 2048,
+      "T4_finite_tail_cells": 2048,
+      "mesh_lengths": [
+        2048,
+        2048,
+        2048
+      ],
+      "fourth_bound_selected": "Riemann_to_6_plus_tail",
+      "profile_ODE_terminal_upper": {
+        "upper_numerator": "182774475103617692285461365200201244810",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.018277447510362"
+      },
+      "profile_state_intersected_with_cap": false,
+      "profile_integrand_intersected_with_cap": false,
+      "noninteger_iid_sum_claimed": false,
+      "saturation": {
+        "used": false,
+        "clipped_interval_calls": 0,
+        "calls_by_phase": {},
+        "threshold": "32",
+        "max_argument_upper_numerator": "236469134345421416101268992804355276589884",
+        "returns_upper_bound_only": true,
+        "exact_exp_enclosure_claimed": false,
+        "physical_frequency_tail_truncated": false
+      }
+    },
+    "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=1175/16|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=353/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32": {
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "1175/16",
+        "s": "676800000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "667584000000/30033929809",
+        "c": "269303/173303",
+        "A": "353/500",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "85695682505013051561698393113560612005758",
+          "85695682505013051561698393113560612005759"
+        ],
+        "beta_interval_numerators": [
+          "2106570051796635017701704485355942516655",
+          "2106570051796635017701704485355942516658"
+        ],
+        "physical_U0_interval_numerators": [
+          "33514195238742344810220655682040611179850",
+          "33514195238742344810220655682040611179857"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "189882125998540197225046207830258420282437",
+          "189882125998540197225046207830258420282474"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "16/1175",
+        "reference_negative_square_coefficient": "8/1175",
+        "predecessor_exponent_coefficient": "1159/1175",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "4/3525",
+        "exact_A_squared_s": "337341484800/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "parts_delta_upper": [
+        {
+          "upper_numerator": "159212975104150689474004378946002340598",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.015921297510416"
+        },
+        {
+          "upper_numerator": "43592117516512363715889905369626522833",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.004359211751652"
+        },
+        {
+          "upper_numerator": "633238016669411244060058744704839403333",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.063323801666942"
+        },
+        {
+          "upper_numerator": "894092828621389774530118236977018325",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000089409282863"
+        }
+      ],
+      "delta_upper": {
+        "upper_numerator": "836937202118695687024483147257445285089",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.083693720211870"
+      },
+      "ratio_upper": {
+        "upper_numerator": "4051560447648125535017495679055068447464",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.405156044764813"
+      },
+      "comparison_quantity": "(sigma/rhoLower)*normalized_profile = sqrt(nu)*absolute_Delta/rhoLower",
+      "first_ODE_cells": 2048,
+      "T2_cells": 2048,
+      "T3_cells": 2048,
+      "T4_finite_tail_cells": 2048,
+      "mesh_lengths": [
+        2048,
+        2048,
+        2048
+      ],
+      "fourth_bound_selected": "Riemann_to_6_plus_tail",
+      "profile_ODE_terminal_upper": {
+        "upper_numerator": "80312080943744222592827421347665002171",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.008031208094375"
+      },
+      "profile_state_intersected_with_cap": false,
+      "profile_integrand_intersected_with_cap": false,
+      "noninteger_iid_sum_claimed": false,
+      "saturation": {
+        "used": false,
+        "clipped_interval_calls": 0,
+        "calls_by_phase": {},
+        "threshold": "32",
+        "max_argument_upper_numerator": "295586417931776770126586241005444095737256",
+        "returns_upper_bound_only": true,
+        "exact_exp_enclosure_claimed": false,
+        "physical_frequency_tail_truncated": false
+      }
+    },
+    "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=1175/16|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=631/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32": {
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "1175/16",
+        "s": "676800000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "667584000000/30033929809",
+        "c": "269303/173303",
+        "A": "631/1000",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "85695682505013051561698393113560612005758",
+          "85695682505013051561698393113560612005759"
+        ],
+        "beta_interval_numerators": [
+          "2106570051796635017701704485355942516655",
+          "2106570051796635017701704485355942516658"
+        ],
+        "physical_U0_interval_numerators": [
+          "29953905376269716112251039285223265799554",
+          "29953905376269716112251039285223265799561"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "189882125998540197225046207830258420282437",
+          "189882125998540197225046207830258420282474"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "16/1175",
+        "reference_negative_square_coefficient": "8/1175",
+        "predecessor_exponent_coefficient": "1159/1175",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "4/3525",
+        "exact_A_squared_s": "269475364800/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "parts_delta_upper": [
+        {
+          "upper_numerator": "154819010371625730293591025336748258995",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.015481901037163"
+        },
+        {
+          "upper_numerator": "48070396624663920997420445405855102322",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.004807039662467"
+        },
+        {
+          "upper_numerator": "632105993552875180046161355551234928081",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.063210599355288"
+        },
+        {
+          "upper_numerator": "3363458281992832608118503937449532406",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000336345828200"
+        }
+      ],
+      "delta_upper": {
+        "upper_numerator": "838358858831157663945291330231287821804",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.083835885883116"
+      },
+      "ratio_upper": {
+        "upper_numerator": "4058442598533237615473962692507214705183",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.405844259853324"
+      },
+      "comparison_quantity": "(sigma/rhoLower)*normalized_profile = sqrt(nu)*absolute_Delta/rhoLower",
+      "first_ODE_cells": 2048,
+      "T2_cells": 2048,
+      "T3_cells": 2048,
+      "T4_finite_tail_cells": 2048,
+      "mesh_lengths": [
+        2048,
+        2048,
+        2048
+      ],
+      "fourth_bound_selected": "Riemann_to_6_plus_tail",
+      "profile_ODE_terminal_upper": {
+        "upper_numerator": "156772451364204746741512431367154570946",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.015677245136421"
+      },
+      "profile_state_intersected_with_cap": false,
+      "profile_integrand_intersected_with_cap": false,
+      "noninteger_iid_sum_claimed": false,
+      "saturation": {
+        "used": false,
+        "clipped_interval_calls": 0,
+        "calls_by_phase": {},
+        "threshold": "32",
+        "max_argument_upper_numerator": "295565884475765125702669407280040842845656",
+        "returns_upper_bound_only": true,
+        "exact_exp_enclosure_claimed": false,
+        "physical_frequency_tail_truncated": false
+      }
+    },
+    "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=5875/64|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=631/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32": {
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "5875/64",
+        "s": "846000000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "64368000000/2310302293",
+        "c": "269303/173303",
+        "A": "631/1000",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "95810685729724322853460512447325304441832",
+          "95810685729724322853460512447325304441833"
+        ],
+        "beta_interval_numerators": [
+          "1884173534073011554436682801549936707593",
+          "1884173534073011554436682801549936707596"
+        ],
+        "physical_U0_interval_numerators": [
+          "33489484306467750593880221358021370904529",
+          "33489484306467750593880221358021370904537"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "212294670722458006934264477705365267223643",
+          "212294670722458006934264477705365267223685"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "64/5875",
+        "reference_negative_square_coefficient": "32/5875",
+        "predecessor_exponent_coefficient": "5811/5875",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "16/17625",
+        "exact_A_squared_s": "336844206000/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "parts_delta_upper": [
+        {
+          "upper_numerator": "140277341716884410778708012627627040836",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.014027734171689"
+        },
+        {
+          "upper_numerator": "38861302761335372144019830598381850516",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.003886130276134"
+        },
+        {
+          "upper_numerator": "568830564675194107944389993625056706510",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.056883056467520"
+        },
+        {
+          "upper_numerator": "902694839381455301207504174983350300",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000090269483939"
+        }
+      ],
+      "delta_upper": {
+        "upper_numerator": "748871903992795346168325341026048948162",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.074887190399280"
+      },
+      "ratio_upper": {
+        "upper_numerator": "4053143626617495393561962666778802526951",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.405314362661750"
+      },
+      "comparison_quantity": "(sigma/rhoLower)*normalized_profile = sqrt(nu)*absolute_Delta/rhoLower",
+      "first_ODE_cells": 2048,
+      "T2_cells": 2048,
+      "T3_cells": 2048,
+      "T4_finite_tail_cells": 2048,
+      "mesh_lengths": [
+        2048,
+        2048,
+        2048
+      ],
+      "fourth_bound_selected": "Riemann_to_6_plus_tail",
+      "profile_ODE_terminal_upper": {
+        "upper_numerator": "68457179433416408877257028795094270684",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.006845717943342"
+      },
+      "profile_state_intersected_with_cap": false,
+      "profile_integrand_intersected_with_cap": false,
+      "noninteger_iid_sum_claimed": false,
+      "saturation": {
+        "used": true,
+        "clipped_interval_calls": 341,
+        "calls_by_phase": {
+          "T2": 341
+        },
+        "threshold": "32",
+        "max_argument_upper_numerator": "369457355594706407128336759100051053557345",
+        "returns_upper_bound_only": true,
+        "exact_exp_enclosure_claimed": false,
+        "physical_frequency_tail_truncated": false
+      }
+    },
+    "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=5875/64|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=113/200|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32": {
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "5875/64",
+        "s": "846000000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "64368000000/2310302293",
+        "c": "269303/173303",
+        "A": "113/200",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "95810685729724322853460512447325304441832",
+          "95810685729724322853460512447325304441833"
+        ],
+        "beta_interval_numerators": [
+          "1884173534073011554436682801549936707593",
+          "1884173534073011554436682801549936707596"
+        ],
+        "physical_U0_interval_numerators": [
+          "29986622239547193479464857475882843995339",
+          "29986622239547193479464857475882843995346"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "212294670722458006934264477705365267223643",
+          "212294670722458006934264477705365267223685"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "64/5875",
+        "reference_negative_square_coefficient": "32/5875",
+        "predecessor_exponent_coefficient": "5811/5875",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "16/17625",
+        "exact_A_squared_s": "270064350000/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "parts_delta_upper": [
+        {
+          "upper_numerator": "136594538198841256149259764632631947333",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.013659453819885"
+        },
+        {
+          "upper_numerator": "43034639912510874295929390297167787576",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.004303463991252"
+        },
+        {
+          "upper_numerator": "567820219587280057650887043833454070387",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.056782021958729"
+        },
+        {
+          "upper_numerator": "3324406009072523721582434028026662296",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000332440600908"
+        }
+      ],
+      "delta_upper": {
+        "upper_numerator": "750773803707704711817658632791280467592",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.075077380370771"
+      },
+      "ratio_upper": {
+        "upper_numerator": "4063437339957320050014193319922194202054",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.406343733995733"
+      },
+      "comparison_quantity": "(sigma/rhoLower)*normalized_profile = sqrt(nu)*absolute_Delta/rhoLower",
+      "first_ODE_cells": 2048,
+      "T2_cells": 2048,
+      "T3_cells": 2048,
+      "T4_finite_tail_cells": 2048,
+      "mesh_lengths": [
+        2048,
+        2048,
+        2048
+      ],
+      "fourth_bound_selected": "Riemann_to_6_plus_tail",
+      "profile_ODE_terminal_upper": {
+        "upper_numerator": "133900767000166281905086119453714908143",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.013390076700017"
+      },
+      "profile_state_intersected_with_cap": false,
+      "profile_integrand_intersected_with_cap": false,
+      "noninteger_iid_sum_claimed": false,
+      "saturation": {
+        "used": true,
+        "clipped_interval_calls": 334,
+        "calls_by_phase": {
+          "T2": 334
+        },
+        "threshold": "32",
+        "max_argument_upper_numerator": "369434682343089179753539004938921059365066",
+        "returns_upper_bound_only": true,
+        "exact_exp_enclosure_claimed": false,
+        "physical_frequency_tail_truncated": false
+      }
+    },
+    "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=100|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=113/200|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32": {
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "100",
+        "s": "921600000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "912384000000/30033929809",
+        "c": "269303/173303",
+        "A": "113/200",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "100000000000000000000000000000000000000000",
+          "100000000000000000000000000000000000000000"
+        ],
+        "beta_interval_numerators": [
+          "1805239583333333333333333333333333333333",
+          "1805239583333333333333333333333333333334"
+        ],
+        "physical_U0_interval_numerators": [
+          "31297784804648505796206643854982314212675",
+          "31297784804648505796206643854982314212682"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "221577237555033669353675354725538507700360",
+          "221577237555033669353675354725538507700400"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "1/100",
+        "reference_negative_square_coefficient": "1/200",
+        "predecessor_exponent_coefficient": "99/100",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/1200",
+        "exact_A_squared_s": "294197760000/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "parts_delta_upper": [
+        {
+          "upper_numerator": "131837386612353022041477930527707037458",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.013183738661236"
+        },
+        {
+          "upper_numerator": "39269602592573887779661237615298841634",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.003926960259258"
+        },
+        {
+          "upper_numerator": "545352872609291963184315035039847062798",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.054535287260930"
+        },
+        {
+          "upper_numerator": "2066216146149022143158733213986235743",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000206621614615"
+        }
+      ],
+      "delta_upper": {
+        "upper_numerator": "718526077960367895148612936396839177633",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.071852607796037"
+      },
+      "ratio_upper": {
+        "upper_numerator": "4058943844617299898451638905867681976956",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.405894384461730"
+      },
+      "comparison_quantity": "(sigma/rhoLower)*normalized_profile = sqrt(nu)*absolute_Delta/rhoLower",
+      "first_ODE_cells": 2048,
+      "T2_cells": 2048,
+      "T3_cells": 2048,
+      "T4_finite_tail_cells": 2048,
+      "mesh_lengths": [
+        2048,
+        2048,
+        2048
+      ],
+      "fourth_bound_selected": "Riemann_to_6_plus_tail",
+      "profile_ODE_terminal_upper": {
+        "upper_numerator": "99818782014916476930275804294836361549",
+        "denominator": "10000000000000000000000000000000000000000",
+        "decimal_upper": "0.009981878201492"
+      },
+      "profile_state_intersected_with_cap": false,
+      "profile_integrand_intersected_with_cap": false,
+      "noninteger_iid_sum_claimed": false,
+      "saturation": {
+        "used": true,
+        "clipped_interval_calls": 425,
+        "calls_by_phase": {
+          "T2": 425
+        },
+        "threshold": "32",
+        "max_argument_upper_numerator": "402447994382258851135770150061122515735703",
+        "returns_upper_bound_only": true,
+        "exact_exp_enclosure_claimed": false,
+        "physical_frequency_tail_truncated": false
+      }
+    }
+  },
+  "price_attempts": [
+    {
+      "key": "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=55527/32000|sigma=55527/32000|GammaUpper=15441706988648935269757555295530888098232/10000000000000000000000000000000000000000|rhoLower=8161/4800|A=759/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "47",
+        "s": "48128000000/3083247729",
+        "U": "55527/32000",
+        "sigma": "55527/32000",
+        "rhoLower": "8161/4800",
+        "d": "1024000000/3083247729",
+        "s_minus_d": "47104000000/3083247729",
+        "c": "87527/55527",
+        "A": "759/1000",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "68556546004010441249358714490848489604606",
+          "68556546004010441249358714490848489604607"
+        ],
+        "beta_interval_numerators": [
+          "2531076682157372188333205677881212820659",
+          "2531076682157372188333205677881212820662"
+        ],
+        "physical_U0_interval_numerators": [
+          "29987238448779973653617599682203758811327",
+          "29987238448779973653617599682203758811334"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "158035512246534775513136230209242470678935",
+          "158035512246534775513136230209242470678966"
+        ],
+        "gamma_root_interval_numerators": [
+          "15441706988648935269757555295530888098230",
+          "15441706988648935269757555295530888098232"
+        ],
+        "gamma_upper_numerator": "15441706988648935269757555295530888098232",
+        "old_negative_square_coefficient": "1/47",
+        "reference_negative_square_coefficient": "1/94",
+        "predecessor_exponent_coefficient": "46/47",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/564",
+        "exact_A_squared_s": "3080625152/342583081",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "status": "completed",
+      "active_stage": null,
+      "completed_absolute_terms": {
+        "T1": {
+          "upper_numerator": "192230714850985290451709246198201137694",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.019223071485099"
+        },
+        "T2": {
+          "upper_numerator": "72429289911554433140148804048563881382",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.007242928991156"
+        },
+        "T3": {
+          "upper_numerator": "753326963426837408048412757858716875424",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.075332696342684"
+        },
+        "T4": {
+          "upper_numerator": "3323674551040171758325957301340935126",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000332367455105"
+        }
+      }
+    },
+    {
+      "key": "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=387/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "47",
+        "s": "108288000000/7220070841",
+        "U": "84971/48000",
+        "sigma": "84971/48000",
+        "rhoLower": "55527/32000",
+        "d": "2304000000/7220070841",
+        "s_minus_d": "105984000000/7220070841",
+        "c": "132971/84971",
+        "A": "387/500",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "68556546004010441249358714490848489604606",
+          "68556546004010441249358714490848489604607"
+        ],
+        "beta_interval_numerators": [
+          "2582144623451582980230168142288070483239",
+          "2582144623451582980230168142288070483242"
+        ],
+        "physical_U0_interval_numerators": [
+          "29975083230054911832227171161502195876123",
+          "29975083230054911832227171161502195876130"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "154909990852996960373267034426367937344306",
+          "154909990852996960373267034426367937344337"
+        ],
+        "gamma_root_interval_numerators": [
+          "15875253180038534184349329727210167266867",
+          "15875253180038534184349329727210167266869"
+        ],
+        "gamma_upper_numerator": "15875253180038534184349329727210167266869",
+        "old_negative_square_coefficient": "1/47",
+        "reference_negative_square_coefficient": "1/94",
+        "predecessor_exponent_coefficient": "46/47",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/564",
+        "exact_A_squared_s": "64872741888/7220070841",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "status": "completed",
+      "active_stage": null,
+      "completed_absolute_terms": {
+        "T1": {
+          "upper_numerator": "196214048669280921179967034745698485733",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.019621404866929"
+        },
+        "T2": {
+          "upper_numerator": "66773679214444396747194997752466412456",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.006677367921445"
+        },
+        "T3": {
+          "upper_numerator": "767765702282566099425103278731461398592",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.076776570228257"
+        },
+        "T4": {
+          "upper_numerator": "3338130918181574265179113899668202477",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000333813091819"
+        }
+      }
+    },
+    {
+      "key": "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=387/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "235/4",
+        "s": "135360000000/7220070841",
+        "U": "84971/48000",
+        "sigma": "84971/48000",
+        "rhoLower": "55527/32000",
+        "d": "2304000000/7220070841",
+        "s_minus_d": "133056000000/7220070841",
+        "c": "132971/84971",
+        "A": "387/500",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "76648548583779458282768409957860243553466",
+          "76648548583779458282768409957860243553467"
+        ],
+        "beta_interval_numerators": [
+          "2309540362309334875796139915790547076234",
+          "2309540362309334875796139915790547076237"
+        ],
+        "physical_U0_interval_numerators": [
+          "33513161866808375023495215623617749214415",
+          "33513161866808375023495215623617749214423"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "173194634970585917434083801672443148394911",
+          "173194634970585917434083801672443148394945"
+        ],
+        "gamma_root_interval_numerators": [
+          "15875253180038534184349329727210167266867",
+          "15875253180038534184349329727210167266869"
+        ],
+        "gamma_upper_numerator": "15875253180038534184349329727210167266869",
+        "old_negative_square_coefficient": "4/235",
+        "reference_negative_square_coefficient": "2/235",
+        "predecessor_exponent_coefficient": "231/235",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/705",
+        "exact_A_squared_s": "81090927360/7220070841",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "status": "completed",
+      "active_stage": null,
+      "completed_absolute_terms": {
+        "T1": {
+          "upper_numerator": "177388470400031686132973592863594874182",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.017738847040004"
+        },
+        "T2": {
+          "upper_numerator": "54457776148547594526338019140034391062",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.005445777614855"
+        },
+        "T3": {
+          "upper_numerator": "691528053759737119354097917290681999504",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.069152805375974"
+        },
+        "T4": {
+          "upper_numerator": "894450999061277714620912691906772443",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000089445099907"
+        }
+      }
+    },
+    {
+      "key": "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=173/250|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "235/4",
+        "s": "135360000000/7220070841",
+        "U": "84971/48000",
+        "sigma": "84971/48000",
+        "rhoLower": "55527/32000",
+        "d": "2304000000/7220070841",
+        "s_minus_d": "133056000000/7220070841",
+        "c": "132971/84971",
+        "A": "173/250",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "76648548583779458282768409957860243553466",
+          "76648548583779458282768409957860243553467"
+        ],
+        "beta_interval_numerators": [
+          "2309540362309334875796139915790547076234",
+          "2309540362309334875796139915790547076237"
+        ],
+        "physical_U0_interval_numerators": [
+          "29962671849911363716096497689332664672319",
+          "29962671849911363716096497689332664672326"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "173194634970585917434083801672443148394911",
+          "173194634970585917434083801672443148394945"
+        ],
+        "gamma_root_interval_numerators": [
+          "15875253180038534184349329727210167266867",
+          "15875253180038534184349329727210167266869"
+        ],
+        "gamma_upper_numerator": "15875253180038534184349329727210167266869",
+        "old_negative_square_coefficient": "4/235",
+        "reference_negative_square_coefficient": "2/235",
+        "predecessor_exponent_coefficient": "231/235",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/705",
+        "exact_A_squared_s": "64819031040/7220070841",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "status": "completed",
+      "active_stage": null,
+      "completed_absolute_terms": {
+        "T1": {
+          "upper_numerator": "172362051594321602000726862621242476603",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.017236205159433"
+        },
+        "T2": {
+          "upper_numerator": "59104959533014383598611223818851861336",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.005910495953302"
+        },
+        "T3": {
+          "upper_numerator": "690311015564392119163468781340083423341",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.069031101556440"
+        },
+        "T4": {
+          "upper_numerator": "3352952466417961914480472124921451680",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000335295246642"
+        }
+      }
+    },
+    {
+      "key": "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=65|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=173/250|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "65",
+        "s": "149760000000/7220070841",
+        "U": "84971/48000",
+        "sigma": "84971/48000",
+        "rhoLower": "55527/32000",
+        "d": "2304000000/7220070841",
+        "s_minus_d": "147456000000/7220070841",
+        "c": "132971/84971",
+        "A": "173/250",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "80622577482985496523666132303037711311343",
+          "80622577482985496523666132303037711311344"
+        ],
+        "beta_interval_numerators": [
+          "2195699048495756610612959912795326079434",
+          "2195699048495756610612959912795326079437"
+        ],
+        "physical_U0_interval_numerators": [
+          "31516158850370670611503857205137054040993",
+          "31516158850370670611503857205137054041001"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "182174328614859367696554087890965630294763",
+          "182174328614859367696554087890965630294799"
+        ],
+        "gamma_root_interval_numerators": [
+          "15875253180038534184349329727210167266867",
+          "15875253180038534184349329727210167266869"
+        ],
+        "gamma_upper_numerator": "15875253180038534184349329727210167266869",
+        "old_negative_square_coefficient": "1/65",
+        "reference_negative_square_coefficient": "1/130",
+        "predecessor_exponent_coefficient": "64/65",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/780",
+        "exact_A_squared_s": "71714672640/7220070841",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "status": "completed",
+      "active_stage": null,
+      "completed_absolute_terms": {
+        "T1": {
+          "upper_numerator": "165126533876689461630942034496552015176",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.016512653387669"
+        },
+        "T2": {
+          "upper_numerator": "53589274909773456802422129993566653029",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.005358927490978"
+        },
+        "T3": {
+          "upper_numerator": "658391637756036147910817003369659480364",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.065839163775604"
+        },
+        "T4": {
+          "upper_numerator": "1906135458998986162829438594593204885",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000190613545900"
+        }
+      }
+    },
+    {
+      "key": "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=789/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "47",
+        "s": "433152000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "423936000000/30033929809",
+        "c": "269303/173303",
+        "A": "789/1000",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "68556546004010441249358714490848489604606",
+          "68556546004010441249358714490848489604607"
+        ],
+        "beta_interval_numerators": [
+          "2633212564745793772127130606694928145819",
+          "2633212564745793772127130606694928145822"
+        ],
+        "physical_U0_interval_numerators": [
+          "29963399482569643122112291595614778720568",
+          "29963399482569643122112291595614778720575"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "151905700798832157780036966264206736225948",
+          "151905700798832157780036966264206736225979"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "1/47",
+        "reference_negative_square_coefficient": "1/94",
+        "predecessor_exponent_coefficient": "46/47",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/564",
+        "exact_A_squared_s": "269646216192/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "status": "completed",
+      "active_stage": null,
+      "completed_absolute_terms": {
+        "T1": {
+          "upper_numerator": "200211449010898329654579029123579380540",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.020021144901090"
+        },
+        "T2": {
+          "upper_numerator": "61634310138089848001750082455619166131",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.006163431013809"
+        },
+        "T3": {
+          "upper_numerator": "782175772468628794918462545754612554652",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.078217577246863"
+        },
+        "T4": {
+          "upper_numerator": "3352081842959179069473923919009465373",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000335208184296"
+        }
+      }
+    },
+    {
+      "key": "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=789/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "235/4",
+        "s": "541440000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "532224000000/30033929809",
+        "c": "269303/173303",
+        "A": "789/1000",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "76648548583779458282768409957860243553466",
+          "76648548583779458282768409957860243553467"
+        ],
+        "beta_interval_numerators": [
+          "2355216917591264443045853501937420884493",
+          "2355216917591264443045853501937420884496"
+        ],
+        "physical_U0_interval_numerators": [
+          "33500099040003873494226934581906639167890",
+          "33500099040003873494226934581906639167898"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "169835736577966405547411582164292213778916",
+          "169835736577966405547411582164292213778949"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "4/235",
+        "reference_negative_square_coefficient": "2/235",
+        "predecessor_exponent_coefficient": "231/235",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/705",
+        "exact_A_squared_s": "337057770240/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "status": "completed",
+      "active_stage": null,
+      "completed_absolute_terms": {
+        "T1": {
+          "upper_numerator": "181028533743529220648809989225220970090",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.018102853374353"
+        },
+        "T2": {
+          "upper_numerator": "49349935219362385348507126505280864070",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.004934993521937"
+        },
+        "T3": {
+          "upper_numerator": "704579485308566255441562783239994624985",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.070457948530857"
+        },
+        "T4": {
+          "upper_numerator": "898990287639330418409750260896714690",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000089899028764"
+        }
+      }
+    },
+    {
+      "key": "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=353/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "235/4",
+        "s": "541440000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "532224000000/30033929809",
+        "c": "269303/173303",
+        "A": "353/500",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "76648548583779458282768409957860243553466",
+          "76648548583779458282768409957860243553467"
+        ],
+        "beta_interval_numerators": [
+          "2355216917591264443045853501937420884493",
+          "2355216917591264443045853501937420884496"
+        ],
+        "physical_U0_interval_numerators": [
+          "29976007506011070579118144251997575731978",
+          "29976007506011070579118144251997575731985"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "169835736577966405547411582164292213778916",
+          "169835736577966405547411582164292213778949"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "4/235",
+        "reference_negative_square_coefficient": "2/235",
+        "predecessor_exponent_coefficient": "231/235",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/705",
+        "exact_A_squared_s": "269873187840/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "status": "completed",
+      "active_stage": null,
+      "completed_absolute_terms": {
+        "T1": {
+          "upper_numerator": "175908580843209033844519846345636687978",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.017590858084321"
+        },
+        "T2": {
+          "upper_numerator": "54033781831561792595202732183132347321",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.005403378183157"
+        },
+        "T3": {
+          "upper_numerator": "703352755641167591521296520252437667392",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.070335275564117"
+        },
+        "T4": {
+          "upper_numerator": "3337029606443026999423700301130224678",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000333702960645"
+        }
+      }
+    },
+    {
+      "key": "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=1175/16|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=353/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "1175/16",
+        "s": "676800000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "667584000000/30033929809",
+        "c": "269303/173303",
+        "A": "353/500",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "85695682505013051561698393113560612005758",
+          "85695682505013051561698393113560612005759"
+        ],
+        "beta_interval_numerators": [
+          "2106570051796635017701704485355942516655",
+          "2106570051796635017701704485355942516658"
+        ],
+        "physical_U0_interval_numerators": [
+          "33514195238742344810220655682040611179850",
+          "33514195238742344810220655682040611179857"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "189882125998540197225046207830258420282437",
+          "189882125998540197225046207830258420282474"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "16/1175",
+        "reference_negative_square_coefficient": "8/1175",
+        "predecessor_exponent_coefficient": "1159/1175",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "4/3525",
+        "exact_A_squared_s": "337341484800/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "status": "completed",
+      "active_stage": null,
+      "completed_absolute_terms": {
+        "T1": {
+          "upper_numerator": "159212975104150689474004378946002340598",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.015921297510416"
+        },
+        "T2": {
+          "upper_numerator": "43592117516512363715889905369626522833",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.004359211751652"
+        },
+        "T3": {
+          "upper_numerator": "633238016669411244060058744704839403333",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.063323801666942"
+        },
+        "T4": {
+          "upper_numerator": "894092828621389774530118236977018325",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000089409282863"
+        }
+      }
+    },
+    {
+      "key": "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=1175/16|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=631/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "1175/16",
+        "s": "676800000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "667584000000/30033929809",
+        "c": "269303/173303",
+        "A": "631/1000",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "85695682505013051561698393113560612005758",
+          "85695682505013051561698393113560612005759"
+        ],
+        "beta_interval_numerators": [
+          "2106570051796635017701704485355942516655",
+          "2106570051796635017701704485355942516658"
+        ],
+        "physical_U0_interval_numerators": [
+          "29953905376269716112251039285223265799554",
+          "29953905376269716112251039285223265799561"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "189882125998540197225046207830258420282437",
+          "189882125998540197225046207830258420282474"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "16/1175",
+        "reference_negative_square_coefficient": "8/1175",
+        "predecessor_exponent_coefficient": "1159/1175",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "4/3525",
+        "exact_A_squared_s": "269475364800/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "status": "completed",
+      "active_stage": null,
+      "completed_absolute_terms": {
+        "T1": {
+          "upper_numerator": "154819010371625730293591025336748258995",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.015481901037163"
+        },
+        "T2": {
+          "upper_numerator": "48070396624663920997420445405855102322",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.004807039662467"
+        },
+        "T3": {
+          "upper_numerator": "632105993552875180046161355551234928081",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.063210599355288"
+        },
+        "T4": {
+          "upper_numerator": "3363458281992832608118503937449532406",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000336345828200"
+        }
+      }
+    },
+    {
+      "key": "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=5875/64|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=631/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "5875/64",
+        "s": "846000000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "64368000000/2310302293",
+        "c": "269303/173303",
+        "A": "631/1000",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "95810685729724322853460512447325304441832",
+          "95810685729724322853460512447325304441833"
+        ],
+        "beta_interval_numerators": [
+          "1884173534073011554436682801549936707593",
+          "1884173534073011554436682801549936707596"
+        ],
+        "physical_U0_interval_numerators": [
+          "33489484306467750593880221358021370904529",
+          "33489484306467750593880221358021370904537"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "212294670722458006934264477705365267223643",
+          "212294670722458006934264477705365267223685"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "64/5875",
+        "reference_negative_square_coefficient": "32/5875",
+        "predecessor_exponent_coefficient": "5811/5875",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "16/17625",
+        "exact_A_squared_s": "336844206000/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "status": "completed",
+      "active_stage": null,
+      "completed_absolute_terms": {
+        "T1": {
+          "upper_numerator": "140277341716884410778708012627627040836",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.014027734171689"
+        },
+        "T2": {
+          "upper_numerator": "38861302761335372144019830598381850516",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.003886130276134"
+        },
+        "T3": {
+          "upper_numerator": "568830564675194107944389993625056706510",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.056883056467520"
+        },
+        "T4": {
+          "upper_numerator": "902694839381455301207504174983350300",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000090269483939"
+        }
+      }
+    },
+    {
+      "key": "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=5875/64|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=113/200|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "5875/64",
+        "s": "846000000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "64368000000/2310302293",
+        "c": "269303/173303",
+        "A": "113/200",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "95810685729724322853460512447325304441832",
+          "95810685729724322853460512447325304441833"
+        ],
+        "beta_interval_numerators": [
+          "1884173534073011554436682801549936707593",
+          "1884173534073011554436682801549936707596"
+        ],
+        "physical_U0_interval_numerators": [
+          "29986622239547193479464857475882843995339",
+          "29986622239547193479464857475882843995346"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "212294670722458006934264477705365267223643",
+          "212294670722458006934264477705365267223685"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "64/5875",
+        "reference_negative_square_coefficient": "32/5875",
+        "predecessor_exponent_coefficient": "5811/5875",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "16/17625",
+        "exact_A_squared_s": "270064350000/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "status": "completed",
+      "active_stage": null,
+      "completed_absolute_terms": {
+        "T1": {
+          "upper_numerator": "136594538198841256149259764632631947333",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.013659453819885"
+        },
+        "T2": {
+          "upper_numerator": "43034639912510874295929390297167787576",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.004303463991252"
+        },
+        "T3": {
+          "upper_numerator": "567820219587280057650887043833454070387",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.056782021958729"
+        },
+        "T4": {
+          "upper_numerator": "3324406009072523721582434028026662296",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000332440600908"
+        }
+      }
+    },
+    {
+      "key": "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=100|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=113/200|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+      "parameters": {
+        "model": "fixed-upper-moment-global-complete-sine-real-nu-profile",
+        "nu": "100",
+        "s": "921600000000/30033929809",
+        "U": "173303/96000",
+        "sigma": "173303/96000",
+        "rhoLower": "84971/48000",
+        "d": "9216000000/30033929809",
+        "s_minus_d": "912384000000/30033929809",
+        "c": "269303/173303",
+        "A": "113/200",
+        "V": "4",
+        "resolution": 2048,
+        "scale": "10000000000000000000000000000000000000000",
+        "sqrt_nu_interval_numerators": [
+          "100000000000000000000000000000000000000000",
+          "100000000000000000000000000000000000000000"
+        ],
+        "beta_interval_numerators": [
+          "1805239583333333333333333333333333333333",
+          "1805239583333333333333333333333333333334"
+        ],
+        "physical_U0_interval_numerators": [
+          "31297784804648505796206643854982314212675",
+          "31297784804648505796206643854982314212682"
+        ],
+        "physical_Ufreq_interval_numerators": [
+          "221577237555033669353675354725538507700360",
+          "221577237555033669353675354725538507700400"
+        ],
+        "gamma_root_interval_numerators": [
+          "16303741112488651923692201938933587650958",
+          "16303741112488651923692201938933587650960"
+        ],
+        "gamma_upper_numerator": "16303741112488651923692201938933587650960",
+        "old_negative_square_coefficient": "1/100",
+        "reference_negative_square_coefficient": "1/200",
+        "predecessor_exponent_coefficient": "99/100",
+        "analytic_head_cubic_coefficient": "U/(6*sqrt(nu))",
+        "analytic_head_quartic_coefficient": "1/1200",
+        "exact_A_squared_s": "294197760000/30033929809",
+        "exp_method": "m8-upper-exp-minus-min-x-32"
+      },
+      "status": "completed",
+      "active_stage": null,
+      "completed_absolute_terms": {
+        "T1": {
+          "upper_numerator": "131837386612353022041477930527707037458",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.013183738661236"
+        },
+        "T2": {
+          "upper_numerator": "39269602592573887779661237615298841634",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.003926960259258"
+        },
+        "T3": {
+          "upper_numerator": "545352872609291963184315035039847062798",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.054535287260930"
+        },
+        "T4": {
+          "upper_numerator": "2066216146149022143158733213986235743",
+          "denominator": "10000000000000000000000000000000000000000",
+          "decimal_upper": "0.000206621614615"
+        }
+      }
+    }
+  ],
+  "entry_attempts": [
+    {
+      "name": "i20-nu47-point",
+      "entry": {
+        "name": "i20-nu47-point",
+        "i": 20,
+        "A": "759/1000",
+        "context": {
+          "U": "55527/32000",
+          "sigma": "55527/32000",
+          "rhoLower": "8161/4800",
+          "Gamma_interval_numerators": [
+            "15441706988648935269757555295530888098230",
+            "15441706988648935269757555295530888098232"
+          ],
+          "GammaUpper_numerator": "15441706988648935269757555295530888098232",
+          "d": "1024000000/3083247729",
+          "c": "87527/55527",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "84878761/204025000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "point",
+        "nu": "47"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=55527/32000|sigma=55527/32000|GammaUpper=15441706988648935269757555295530888098232/10000000000000000000000000000000000000000|rhoLower=8161/4800|A=759/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=55527/32000|sigma=55527/32000|GammaUpper=15441706988648935269757555295530888098232/10000000000000000000000000000000000000000|rhoLower=8161/4800|A=759/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "comparison_upper": {
+        "upper_numerator": "64346461888940287265375339753059592129",
+        "denominator": "156250000000000000000000000000000000000",
+        "decimal_upper": "0.411817356089218"
+      },
+      "strict": true
+    },
+    {
+      "name": "i21-node-01",
+      "entry": {
+        "name": "i21-node-01",
+        "i": 21,
+        "A": "387/500",
+        "context": {
+          "U": "84971/48000",
+          "sigma": "84971/48000",
+          "rhoLower": "55527/32000",
+          "Gamma_interval_numerators": [
+            "15875253180038534184349329727210167266867",
+            "15875253180038534184349329727210167266869"
+          ],
+          "GammaUpper_numerator": "15875253180038534184349329727210167266869",
+          "d": "2304000000/7220070841",
+          "c": "132971/84971",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "7668837/18509000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "node",
+        "nu_left": "47",
+        "nu_right": "235/4",
+        "rmax": "3/2",
+        "theta": "3/256",
+        "factor": "256/253"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=387/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=387/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=387/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=387/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "theta": "3/256",
+      "factor": "256/253",
+      "rmax": "3/2",
+      "comparison_upper": {
+        "upper_numerator": "4085579739145087383810592204622858135457",
+        "denominator": "9882812500000000000000000000000000000000",
+        "decimal_upper": "0.413402534870017"
+      },
+      "strict": true
+    },
+    {
+      "name": "i21-node-02",
+      "entry": {
+        "name": "i21-node-02",
+        "i": 21,
+        "A": "173/250",
+        "context": {
+          "U": "84971/48000",
+          "sigma": "84971/48000",
+          "rhoLower": "55527/32000",
+          "Gamma_interval_numerators": [
+            "15875253180038534184349329727210167266867",
+            "15875253180038534184349329727210167266869"
+          ],
+          "GammaUpper_numerator": "15875253180038534184349329727210167266869",
+          "d": "2304000000/7220070841",
+          "c": "132971/84971",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "7668837/18509000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "node",
+        "nu_left": "235/4",
+        "nu_right": "65",
+        "rmax": "3/2",
+        "theta": "75/35344",
+        "factor": "35344/35269"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=173/250|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=65|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=173/250|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=173/250|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=65|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=173/250|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "theta": "75/35344",
+      "factor": "35344/35269",
+      "rmax": "3/2",
+      "comparison_upper": {
+        "upper_numerator": "9027108108785651843718909497352714412874111",
+        "denominator": "22043125000000000000000000000000000000000000",
+        "decimal_upper": "0.409520342908987"
+      },
+      "strict": true
+    },
+    {
+      "name": "i22-node-01",
+      "entry": {
+        "name": "i22-node-01",
+        "i": 22,
+        "A": "789/1000",
+        "context": {
+          "U": "173303/96000",
+          "sigma": "173303/96000",
+          "rhoLower": "84971/48000",
+          "Gamma_interval_numerators": [
+            "16303741112488651923692201938933587650958",
+            "16303741112488651923692201938933587650960"
+          ],
+          "GammaUpper_numerator": "16303741112488651923692201938933587650960",
+          "d": "9216000000/30033929809",
+          "c": "269303/173303",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "175340143/424855000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "node",
+        "nu_left": "47",
+        "nu_right": "235/4",
+        "rmax": "3/2",
+        "theta": "3/256",
+        "factor": "256/253"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=789/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=789/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=789/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=789/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "theta": "3/256",
+      "factor": "256/253",
+      "rmax": "3/2",
+      "comparison_upper": {
+        "upper_numerator": "2028107961010602821281103057289180336943",
+        "denominator": "4941406250000000000000000000000000000000",
+        "decimal_upper": "0.410431334402146"
+      },
+      "strict": true
+    },
+    {
+      "name": "i22-node-02",
+      "entry": {
+        "name": "i22-node-02",
+        "i": 22,
+        "A": "353/500",
+        "context": {
+          "U": "173303/96000",
+          "sigma": "173303/96000",
+          "rhoLower": "84971/48000",
+          "Gamma_interval_numerators": [
+            "16303741112488651923692201938933587650958",
+            "16303741112488651923692201938933587650960"
+          ],
+          "GammaUpper_numerator": "16303741112488651923692201938933587650960",
+          "d": "9216000000/30033929809",
+          "c": "269303/173303",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "175340143/424855000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "node",
+        "nu_left": "235/4",
+        "nu_right": "1175/16",
+        "rmax": "3/2",
+        "theta": "3/256",
+        "factor": "256/253"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=353/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=1175/16|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=353/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=353/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=1175/16|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=353/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "theta": "3/256",
+      "factor": "256/253",
+      "rmax": "3/2",
+      "comparison_upper": {
+        "upper_numerator": "4055491574028317183945402954612268597773",
+        "denominator": "9882812500000000000000000000000000000000",
+        "decimal_upper": "0.410358040692194"
+      },
+      "strict": true
+    },
+    {
+      "name": "i22-node-03",
+      "entry": {
+        "name": "i22-node-03",
+        "i": 22,
+        "A": "631/1000",
+        "context": {
+          "U": "173303/96000",
+          "sigma": "173303/96000",
+          "rhoLower": "84971/48000",
+          "Gamma_interval_numerators": [
+            "16303741112488651923692201938933587650958",
+            "16303741112488651923692201938933587650960"
+          ],
+          "GammaUpper_numerator": "16303741112488651923692201938933587650960",
+          "d": "9216000000/30033929809",
+          "c": "269303/173303",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "175340143/424855000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "node",
+        "nu_left": "1175/16",
+        "nu_right": "5875/64",
+        "rmax": "3/2",
+        "theta": "3/256",
+        "factor": "256/253"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=1175/16|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=631/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=5875/64|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=631/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=1175/16|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=631/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=5875/64|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=631/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "theta": "3/256",
+      "factor": "256/253",
+      "rmax": "3/2",
+      "comparison_upper": {
+        "upper_numerator": "4058442598533237615473962692507214705183",
+        "denominator": "9882812500000000000000000000000000000000",
+        "decimal_upper": "0.410656642381229"
+      },
+      "strict": true
+    },
+    {
+      "name": "i22-node-04",
+      "entry": {
+        "name": "i22-node-04",
+        "i": 22,
+        "A": "113/200",
+        "context": {
+          "U": "173303/96000",
+          "sigma": "173303/96000",
+          "rhoLower": "84971/48000",
+          "Gamma_interval_numerators": [
+            "16303741112488651923692201938933587650958",
+            "16303741112488651923692201938933587650960"
+          ],
+          "GammaUpper_numerator": "16303741112488651923692201938933587650960",
+          "d": "9216000000/30033929809",
+          "c": "269303/173303",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "175340143/424855000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "node",
+        "nu_left": "5875/64",
+        "nu_right": "100",
+        "rmax": "3/2",
+        "theta": "1323/883600",
+        "factor": "883600/882277"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=5875/64|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=113/200|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=100|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=113/200|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=5875/64|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=113/200|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=100|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=113/200|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "theta": "1323/883600",
+      "factor": "883600/882277",
+      "rmax": "3/2",
+      "comparison_upper": {
+        "upper_numerator": "4488066541982859995240676521854063496168643",
+        "denominator": "11028462500000000000000000000000000000000000",
+        "decimal_upper": "0.406953058232992"
+      },
+      "strict": true
+    }
+  ],
+  "proved_entries": [
+    {
+      "name": "i20-nu47-point",
+      "entry": {
+        "name": "i20-nu47-point",
+        "i": 20,
+        "A": "759/1000",
+        "context": {
+          "U": "55527/32000",
+          "sigma": "55527/32000",
+          "rhoLower": "8161/4800",
+          "Gamma_interval_numerators": [
+            "15441706988648935269757555295530888098230",
+            "15441706988648935269757555295530888098232"
+          ],
+          "GammaUpper_numerator": "15441706988648935269757555295530888098232",
+          "d": "1024000000/3083247729",
+          "c": "87527/55527",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "84878761/204025000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "point",
+        "nu": "47"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=55527/32000|sigma=55527/32000|GammaUpper=15441706988648935269757555295530888098232/10000000000000000000000000000000000000000|rhoLower=8161/4800|A=759/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=55527/32000|sigma=55527/32000|GammaUpper=15441706988648935269757555295530888098232/10000000000000000000000000000000000000000|rhoLower=8161/4800|A=759/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "comparison_upper": {
+        "upper_numerator": "64346461888940287265375339753059592129",
+        "denominator": "156250000000000000000000000000000000000",
+        "decimal_upper": "0.411817356089218"
+      },
+      "strict": true
+    },
+    {
+      "name": "i21-node-01",
+      "entry": {
+        "name": "i21-node-01",
+        "i": 21,
+        "A": "387/500",
+        "context": {
+          "U": "84971/48000",
+          "sigma": "84971/48000",
+          "rhoLower": "55527/32000",
+          "Gamma_interval_numerators": [
+            "15875253180038534184349329727210167266867",
+            "15875253180038534184349329727210167266869"
+          ],
+          "GammaUpper_numerator": "15875253180038534184349329727210167266869",
+          "d": "2304000000/7220070841",
+          "c": "132971/84971",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "7668837/18509000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "node",
+        "nu_left": "47",
+        "nu_right": "235/4",
+        "rmax": "3/2",
+        "theta": "3/256",
+        "factor": "256/253"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=387/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=387/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=387/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=387/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "theta": "3/256",
+      "factor": "256/253",
+      "rmax": "3/2",
+      "comparison_upper": {
+        "upper_numerator": "4085579739145087383810592204622858135457",
+        "denominator": "9882812500000000000000000000000000000000",
+        "decimal_upper": "0.413402534870017"
+      },
+      "strict": true
+    },
+    {
+      "name": "i21-node-02",
+      "entry": {
+        "name": "i21-node-02",
+        "i": 21,
+        "A": "173/250",
+        "context": {
+          "U": "84971/48000",
+          "sigma": "84971/48000",
+          "rhoLower": "55527/32000",
+          "Gamma_interval_numerators": [
+            "15875253180038534184349329727210167266867",
+            "15875253180038534184349329727210167266869"
+          ],
+          "GammaUpper_numerator": "15875253180038534184349329727210167266869",
+          "d": "2304000000/7220070841",
+          "c": "132971/84971",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "7668837/18509000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "node",
+        "nu_left": "235/4",
+        "nu_right": "65",
+        "rmax": "3/2",
+        "theta": "75/35344",
+        "factor": "35344/35269"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=173/250|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=65|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=173/250|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=173/250|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=65|U=84971/48000|sigma=84971/48000|GammaUpper=15875253180038534184349329727210167266869/10000000000000000000000000000000000000000|rhoLower=55527/32000|A=173/250|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "theta": "75/35344",
+      "factor": "35344/35269",
+      "rmax": "3/2",
+      "comparison_upper": {
+        "upper_numerator": "9027108108785651843718909497352714412874111",
+        "denominator": "22043125000000000000000000000000000000000000",
+        "decimal_upper": "0.409520342908987"
+      },
+      "strict": true
+    },
+    {
+      "name": "i22-node-01",
+      "entry": {
+        "name": "i22-node-01",
+        "i": 22,
+        "A": "789/1000",
+        "context": {
+          "U": "173303/96000",
+          "sigma": "173303/96000",
+          "rhoLower": "84971/48000",
+          "Gamma_interval_numerators": [
+            "16303741112488651923692201938933587650958",
+            "16303741112488651923692201938933587650960"
+          ],
+          "GammaUpper_numerator": "16303741112488651923692201938933587650960",
+          "d": "9216000000/30033929809",
+          "c": "269303/173303",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "175340143/424855000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "node",
+        "nu_left": "47",
+        "nu_right": "235/4",
+        "rmax": "3/2",
+        "theta": "3/256",
+        "factor": "256/253"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=789/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=789/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=47|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=789/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=789/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "theta": "3/256",
+      "factor": "256/253",
+      "rmax": "3/2",
+      "comparison_upper": {
+        "upper_numerator": "2028107961010602821281103057289180336943",
+        "denominator": "4941406250000000000000000000000000000000",
+        "decimal_upper": "0.410431334402146"
+      },
+      "strict": true
+    },
+    {
+      "name": "i22-node-02",
+      "entry": {
+        "name": "i22-node-02",
+        "i": 22,
+        "A": "353/500",
+        "context": {
+          "U": "173303/96000",
+          "sigma": "173303/96000",
+          "rhoLower": "84971/48000",
+          "Gamma_interval_numerators": [
+            "16303741112488651923692201938933587650958",
+            "16303741112488651923692201938933587650960"
+          ],
+          "GammaUpper_numerator": "16303741112488651923692201938933587650960",
+          "d": "9216000000/30033929809",
+          "c": "269303/173303",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "175340143/424855000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "node",
+        "nu_left": "235/4",
+        "nu_right": "1175/16",
+        "rmax": "3/2",
+        "theta": "3/256",
+        "factor": "256/253"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=353/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=1175/16|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=353/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=235/4|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=353/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=1175/16|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=353/500|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "theta": "3/256",
+      "factor": "256/253",
+      "rmax": "3/2",
+      "comparison_upper": {
+        "upper_numerator": "4055491574028317183945402954612268597773",
+        "denominator": "9882812500000000000000000000000000000000",
+        "decimal_upper": "0.410358040692194"
+      },
+      "strict": true
+    },
+    {
+      "name": "i22-node-03",
+      "entry": {
+        "name": "i22-node-03",
+        "i": 22,
+        "A": "631/1000",
+        "context": {
+          "U": "173303/96000",
+          "sigma": "173303/96000",
+          "rhoLower": "84971/48000",
+          "Gamma_interval_numerators": [
+            "16303741112488651923692201938933587650958",
+            "16303741112488651923692201938933587650960"
+          ],
+          "GammaUpper_numerator": "16303741112488651923692201938933587650960",
+          "d": "9216000000/30033929809",
+          "c": "269303/173303",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "175340143/424855000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "node",
+        "nu_left": "1175/16",
+        "nu_right": "5875/64",
+        "rmax": "3/2",
+        "theta": "3/256",
+        "factor": "256/253"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=1175/16|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=631/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=5875/64|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=631/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=1175/16|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=631/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=5875/64|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=631/1000|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "theta": "3/256",
+      "factor": "256/253",
+      "rmax": "3/2",
+      "comparison_upper": {
+        "upper_numerator": "4058442598533237615473962692507214705183",
+        "denominator": "9882812500000000000000000000000000000000",
+        "decimal_upper": "0.410656642381229"
+      },
+      "strict": true
+    },
+    {
+      "name": "i22-node-04",
+      "entry": {
+        "name": "i22-node-04",
+        "i": 22,
+        "A": "113/200",
+        "context": {
+          "U": "173303/96000",
+          "sigma": "173303/96000",
+          "rhoLower": "84971/48000",
+          "Gamma_interval_numerators": [
+            "16303741112488651923692201938933587650958",
+            "16303741112488651923692201938933587650960"
+          ],
+          "GammaUpper_numerator": "16303741112488651923692201938933587650960",
+          "d": "9216000000/30033929809",
+          "c": "269303/173303",
+          "V": "4",
+          "resolution": 2048,
+          "scale": "10000000000000000000000000000000000000000",
+          "target": "175340143/424855000",
+          "G_correction": "fixed 1/sigma^2; not a/M",
+          "W": "sigma*H_U(v/sigma)",
+          "rmax": "3/2",
+          "exp_method": "m8-upper-exp-minus-min-x-32",
+          "max_new_price_attempts": 13
+        },
+        "kind": "node",
+        "nu_left": "5875/64",
+        "nu_right": "100",
+        "rmax": "3/2",
+        "theta": "1323/883600",
+        "factor": "883600/882277"
+      },
+      "status": "passed",
+      "endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=5875/64|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=113/200|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=100|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=113/200|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "obtained_endpoint_keys": [
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=5875/64|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=113/200|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32",
+        "fixed-upper-moment-global-complete-sine-real-nu-profile|nu=100|U=173303/96000|sigma=173303/96000|GammaUpper=16303741112488651923692201938933587650960/10000000000000000000000000000000000000000|rhoLower=84971/48000|A=113/200|V=4|res=2048|exp=m8-upper-exp-minus-min-x-32"
+      ],
+      "theta": "1323/883600",
+      "factor": "883600/882277",
+      "rmax": "3/2",
+      "comparison_upper": {
+        "upper_numerator": "4488066541982859995240676521854063496168643",
+        "denominator": "11028462500000000000000000000000000000000000",
+        "decimal_upper": "0.406953058232992"
+      },
+      "strict": true
+    }
+  ],
+  "new_price_attempts": 13,
+  "active_price_key": null,
+  "active_price_attempt_index": null,
+  "active_entry_index": null,
+  "terminal_failure": false,
+  "stop_reason": null,
+  "analytic_CF_CDF_profile_endpoint_Lean_proved": true,
+  "analytic_Lean_source": "BerryEsseen.UpperMomentSpectrumPrice",
+  "numerical_interval_to_profile_Lean_proved": false,
+  "formal_lean_numerical_theorem": false,
+  "Gaussian_mask_source": "BerryEsseen.GaussianInitialMask",
+  "Gaussian_mask_requires_full_domain_hprev": true,
+  "CF_prices_assume_hprev": false,
+  "Gaussian_masks_collected": false,
+  "case23_collected": false,
+  "entire_INITIAL47_certified": false,
+  "complete_classical_formula_claimed": false,
+  "noninteger_iid_sum_claimed": false,
+  "remaining_by_case": {
+    "20": [],
+    "21": [],
+    "22": []
+  },
+  "case_arithmetic_certified": {
+    "20": true,
+    "21": true,
+    "22": true
+  },
+  "three_remaining_cells_arithmetic_certified": true,
+  "current_invocation_elapsed_seconds_metadata": 64.7093003000191
+}
