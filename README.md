@@ -14,6 +14,8 @@ I'm a software engineering student, and this project started as a just-for-fun e
 
 **本轮已完成的 Lean 阶段源码见 [stages/2026-10-30](stages/2026-10-30/README.md)。** 包含独立可构建的依赖闭包、精确版本和来源说明。根目录的 `lean/`、论文与旧 Release 保留 10 月 28 日快照；进一步的数值覆盖正继续接入 Lean。
 
+本阶段已加入一份 **n=47 连续矩带的完整 Lean 证书**：任意原标准化实分布在 $9/5\le\rho\le7361/4000$ 上得到系数 $0.407<C_E$，没有支撑或前驱假设。完整数表、真实积分及原闭 CDF 已接合，并完成新的独立数学阅读；全 $n$ 形式化仍未完成。
+
 **本轮整数区间复算包见 [stages/2026-10-30-computation](stages/2026-10-30-computation/README.md)。** 共保存 69 个不同端点价格，提供接合检查和从空目录重新计算的入口；不需要原工作区或非标准 Python 依赖。
 
 阶段目录的构建入口：
@@ -49,6 +51,7 @@ $$
 | $n=1$ | 任意原标准化实分布、全部实阈值的 Esseen 目标；还得到更强的 $\Delta_1\le2\rho/5$。对应 `SingleSampleBound.sharp_one`。 |
 | $n=2$ | 任意原标准化实分布、全部实阈值的完整 Esseen 目标。对应 `N2CertifiedBound.sharp_two`。 |
 | 一个完整 Fourier 数值控制点 | 在 $n\ge42$、$\rho\ge7361/4000$、固定 $\beta=\rho/\sqrt n\approx0.2937993333$ 时，四项真实积分已接到实际 CDF，得到严格小于 $0.4071\beta<C_E\beta$ 的界。对应 `ControlCertifiedEndpoint.sharp_at_control_beta`；目前只是一处控制点。 |
+| $n=47$ 的连续矩带 | 当 $9/5\le\rho\le7361/4000$ 时，任意原标准化实分布、全部实阈值的系数严格小于 $0.407<C_E$。当 $173303/96000\le\rho\le7361/4000$ 时还有更强的 $0.405$。对应 `UpperMomentN47Certified.sharp_on_moment_band`、`actual_cdf_lt_405`；没有支撑或前驱假设。 |
 | 通用解析组件 | 任意 $n$ 的复数 Taylor 中心幂与 Bernstein 整区间控制，以及有限指标段的真实 CF/CDF 谱端点桥等已构建。对应 `GenericCenterPower`、`FiniteBandRayPrice`；定理保留各自的矩条件、指标范围及系数许可条件。 |
 
 上述已核对定理的构建公理输出只列出 Lean 的标准公理，没有用 `sorryAx` 代替证明。**完整的 `SharpIidBerryEsseen` 尚未证明；[Target.lean](lean/BerryEsseen/Target.lean) 中的该名称目前是目标命题的定义。**
@@ -64,13 +67,13 @@ $$
 | $15\le n\le30,\ \rho\ge1.9$ | $<0.408$；紧域已用 31 个闭谱节点接合，最大节点上界约为 $0.407706151$。 |
 | $n\ge31,\ \rho\ge\rho_0$ | $<0.4097$；其中 $n\ge42$ 的既有结果更强，为 $<0.408$。 |
 
-这些高矩覆盖已完成分阶段独立数学阅读、有理数接合和闭域复核。其具体数值证书仍在接入 Lean；本次上传的阶段包包含通用解析定理和上表所述的一个完整数值控制点。
+这些高矩覆盖已完成分阶段独立数学阅读、有理数接合和闭域复核。其具体数值证书仍在接入 Lean；本次上传的阶段包包含通用解析定理、完整数值控制点，以及另行接通的 n=47 连续矩带证书。
 
 本轮还把当前无限尾部证明的经典 own-score 输入，压成四个有限单元：高斯递推支付其余指标，新的上矩 CF/CDF 谱估计用 14 个闭区间和一个点补齐剩余 240 个“指标—单元”组合。在原全域尖锐前驱条件下，这一项已可独立替换；原支撑与资源前提继续保留。实际 n=31 至46、ρ∈[1.6,7361/4000] 的连续 own-score 包络也已用同一方法接通，不依赖前驱条件。两项均完成独立数学阅读，保存数据和复算入口已经包含在数值阶段中。
 
 接下来重点把已重建的数值证书、资源取得与支撑/矩条件按原依赖接回 Lean，最终装配全分布、全样本量定理。欢迎对候选数学证明、实际计算和形式化代码分别提出具体问题。
 
-**English status:** There is a computer-assisted candidate manuscript addressing the full iid conjecture. The [30 October Lean stage](stages/2026-10-30/README.md) contains the all-law cases $n=1,2$, one fully certified Fourier control point, and the verified analytic components described there. The full all-n theorem remains in progress. Further numerical covers are being connected to Lean.
+**English status:** There is a computer-assisted candidate manuscript addressing the full iid conjecture. The [30 October Lean stage](stages/2026-10-30/README.md) contains the all-law cases $n=1,2$, one fully certified Fourier control point, a complete n=47 certificate on $9/5\le\rho\le7361/4000$ with coefficient $0.407<C_E$, and the verified analytic components described there. The full all-n theorem remains in progress. Further numerical covers are being connected to Lean.
 
 The root snapshot was captured on 28 October 2026. Dated stage directories preserve subsequent verified components separately.
 

@@ -8,3 +8,4 @@ public import BerryEsseen.UpperMomentDamping
 public import BerryEsseen.UpperMomentSpectrumPrice
 public import BerryEsseen.GaussianInitialMask
 public import BerryEsseen.GenericCenterPower
+public import BerryEsseen.UpperMomentN47Certified

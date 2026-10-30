@@ -19,19 +19,35 @@ standardized-law assumptions, and the normalized iid sum law.
 This AI-assisted research stage contains all-law proofs for **n = 1 and
 n = 2**, general characteristic-function and CDF comparison theorems,
 spectral endpoint interpolation, Gaussian recurrence/conditional own-score
-results, and one fully certified numerical spectral endpoint. **The full
-all-n theorem remains in progress.** Further numerical covers are being
-connected to Lean; the theorem map below gives the scope of this snapshot.
+results, a fixed high-moment control endpoint, and a kernel-certified **n = 47
+upper-moment CDF bound**. **The full all-n theorem remains in progress.**
+The theorem map below gives the precise scope of this snapshot.
 
-中文状态：本阶段已形式化核证 n=1、n=2 的原始全分布结论，通用上矩 CF/CDF
-比较及谱端点插值、保留前驱假设的 Gaussian own-score 结果，以及一个完整数值
-端点。完整 all-n 猜想尚未在本阶段得到 Lean 核证；其他人类数值覆盖不冒充 Lean
-证明，正在推进的有限覆盖与论文草稿也不在本阶段范围内。
+For n=47, write $\Delta_{47}(\mu,x)$ for the original closed CDF error.
+The new certificate proves, for every standardized real law and every real x:
+
+* If $\rho\le7361/4000$, then $\Delta_{47}(\mu,x)<533/5000$.
+* If $173303/96000\le\rho\le7361/4000$, then
+  $\Delta_{47}(\mu,x)<(81/200)\rho/\sqrt{47}$, with coefficient **0.405**.
+* On the slightly wider, simpler band $9/5\le\rho\le7361/4000$,
+  $\Delta_{47}(\mu,x)<(407/1000)\rho/\sqrt{47}<C_E\rho/\sqrt{47}$,
+  with coefficient **0.407**.
+
+These conclusions concern the same original law, allow arbitrary support and
+atoms, and require no sharp-predecessor hypothesis. They are one-index moment
+band results; they do not establish the all-n conjecture.
+
+中文状态：本阶段保留原有八个入口，并新增 n=47 的原始闭 CDF 核证：任意标准化
+实分布在 $\rho\le7361/4000$ 时误差严格小于 $533/5000$；在
+$173303/96000\le\rho\le7361/4000$ 时系数为 0.405，在稍宽的
+$9/5\le\rho\le7361/4000$ 时系数为 0.407，小于 Esseen 常数。
+以上 n=47 结论没有支撑限制，也不依赖前驱假设。完整 all-n 猜想尚未获 Lean
+核证；其他外部数值覆盖不冒充本快照的 Lean 证明。
 
 ## Build
 
 Install [elan](https://github.com/leanprover/elan), then run these commands from
-this stage directory (`stages/2026-10-30` in the parent repository):
+the directory containing this nine-entry snapshot:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.35.0
@@ -68,8 +84,9 @@ module namespace; the Lean signatures are the precise interfaces.
 | [UpperMomentDamping](BerryEsseen/UpperMomentDamping.lean) | `charFun_norm_le_exp`, `normalized_power_le_exp`, `normalized_pred_power_le_exp` | A genuine upper moment bound ρ≤U and arbitrary fixed σ>0; normalized powers apply to every n>0, retaining the exact n and n−1 exponents. The capped variants additionally require the displayed signed-third-moment cap. |
 | [UpperMomentSpectrumPrice](BerryEsseen/UpperMomentSpectrumPrice.lean) | `normalized_actual_cdf_le_scale_spectralProfile`, `normalized_actual_cdf_le_endpoints`, `normalized_actual_cdf_le_sample_endpoints`, `normalized_actual_cdf_ratio_le_endpoints` | U>0, ρ≤U, n>0, 0<A≤V. Endpoint interpolation requires 0<a<b, n/U²∈[a,b], and 1/U²≤a. The ratio theorem also requires 0<L≤ρ and pays the explicit U/L factor. No numerical endpoint value is assumed proved. |
 | [GaussianInitialMask](BerryEsseen/GaussianInitialMask.lean), with [GaussianOwnScore](BerryEsseen/GaussianOwnScore.lean) | `fixedNSup_lt_gaussian_price`, `fixedNSup_lt_initialLeft_low`, `fixedNSup_lt_initialLeft20` through `fixedNSup_lt_initialLeft23`; `GaussianOwnScore.fixedNSup_lt_envelope` | **Conditional on `fixedNSup (n-1) ≤ esseenConstant`.** The Gaussian price applies from n≥26. INITIAL grid masks have the respective index cutoffs 47, 48, 66, 101, 213; the own-score envelope result applies for n≥213 and 0<r≤173303/96000. These are not unconditional sharp bounds for those indices. |
+| [UpperMomentN47Certified](BerryEsseen/UpperMomentN47Certified.lean) | `profile_lt`, `actual_cdf_lt`, `actual_cdf_lt_405`, `actual_cdf_lt_407`, `sharp_on_moment_band` | n=47, every standardized real law and every real threshold. For ρ≤7361/4000, the absolute closed CDF error is <533/5000. The strict error bound uses coefficient 0.405 when 173303/96000≤ρ≤7361/4000, and 0.407<C_E on 9/5≤ρ≤7361/4000. No support restriction or sharp-predecessor premise. |
 
-`BerryEsseen.lean` imports precisely these eight public entry points. Its
+`BerryEsseen.lean` imports precisely these nine public entry points. Its
 recursive import closure includes the mathematical reductions and certificate
 data actually needed by them. The explicit `literatureEnvelope` used in the
 Gaussian comparison is an algebraic function; those comparisons do not silently
