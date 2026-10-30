@@ -135,10 +135,66 @@ Gaussian CF 模只在 $M_4\le8/5$、$|t|\le0.9$ 有效；新增固定高频段�
 $642/625+(127/1500)|H|$。raw 还含实际矩系数和 H 二次项，原 P39 与
 raw-budget 尚未闭合；完整 all-n 尚未核证。
 
+## Conditional N26 projected charged-resource acquisition
+
+This addition retains the same original standardized law, actual n=26, and
+threshold H. It assumes `PositiveClosedMaximum μ 26 H C`, the **full all-law
+predecessor hypothesis `fixedNSup 25 ≤ esseenConstant`**, $C_E\le C$, and
+$\rho\le11/10$. The predecessor first acquires the original support in
+$[-12/5,12/5]$. Same-coordinate gap projection, the same-law K1 covariance
+bound, classical cubic characteristic-function damping, and joint polynomial
+prices then acquire
+
+$$
+\begin{aligned}
+\operatorname{chargedRaw}(\mu,26,H,C)
+  &=\operatorname{raw}(\mu,26,H,C)-26(C-C_E)\rho\le\frac{17}{10},\\
+D(\mu)&\le\frac{12750}{12961}<1,\\
+\operatorname{phase}(26,H)&\ge\frac{87}{104},\qquad
+0\notin\operatorname{support}(\mu).
+\end{aligned}
+$$
+
+Here D is `GapDefect.actualPhysicalDefect`. These acquisition clients have no
+incoming numerical raw, defect, or phase price. The 1.7 conclusion is for the
+**charged** resource. It does not conclude a general 1.7 bound for the uncharged
+raw at the original actual C. The library also prices
+`raw μ 26 H esseenConstant` as a literal function evaluation; it neither assumes
+nor establishes a positive closed maximum at the changed score $C_E$.
+
+The supporting cubic-CF tail theorem needs only standardization and
+$\rho\le11/10$, with **no support, contact, or predecessor assumption**:
+
+$$
+\sqrt{26}\int_{9/10}^{\infty}
+\frac{|\widehat\mu(t)^{26}|}{t^3}\,dt
+\le\frac{4901308573}{9663676416}\approx0.5071888.
+$$
+
+It bounds the two entire frequency bands $[9/10,2]$ and $[2,9/4]$ by the
+classical cubic estimate, retaining the complete inverse-cube tail above
+$9/4$. With the same law's acquired support and rho bound, the complete
+Fourier remainder estimate improves the preceding quartic bound to
+
+$$
+|E_{26}(H)|\le\frac{79}{125}+\frac{127}{1500}|H|.
+$$
+
+The older quartic and parameterized T results remain available in the import
+closure. **This initial charged-resource bound does not prove the stronger
+P39 defect target near 0.595 or its 32-round resource profile.** C25 remains a
+hypothesis; neither C25 nor the global all-n theorem is established here.
+
+中文增量：在原 n26 正最大、全域 C25 假设、$C\ge C_E$、$\rho\le1.1$ 下，
+先取得原支撑，再取得 charged raw≤1.7、$D\le12750/12961<1$、phase≥87/104
+和支撑不含0；没有另留数值 raw/D/phase 前提。该结论不等于原实际 C 的
+uncharged raw≤1.7。无支撑条件的 cubic CF 尾价及完整 Fourier 新界已分别写明
+前提；P39 的约0.595缺陷目标、32轮资源、C25及完整 all-n 仍未完成。
+
 ## Build
 
 Install [elan](https://github.com/leanprover/elan), then run these commands from
-the directory containing this fourteen-entry snapshot:
+the directory containing this fifteen-entry snapshot:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.35.0
@@ -181,8 +237,9 @@ module namespace; the Lean signatures are the precise interfaces.
 | [N26InitialLowFrequency](BerryEsseen/N26InitialLowFrequency.lean), with [N26P39ResourceAcquisition](BerryEsseen/N26P39ResourceAcquisition.lean) | `original_low_frequency`, `original_signed_integrable`; `N26P39ResourceAcquisition.original_support`, `N26P39ResourceAcquisition.original_moment_affine` | Under the original N26 maximum, C_E≤C, full-domain C25≤C_E, and ρ≤11/10: acquires support ±12/5, the actual-rho affine M4/M5 bounds, and the entire I0 price on (0,1/2]. No incoming free moment/gamma/raw price is used for these conclusions. |
 | [LowMomentGaussianBand](BerryEsseen/LowMomentGaussianBand.lean) | `norm_charFun_le_gaussian`, `norm_charFun_pow_le_gaussian`, `original_initial_segment_cost_le` | Finite M4≤8/5 and physical abs(t)≤9/10 give the Gaussian CF modulus bound. The original N26 client acquires its premises and bounds the middle CF segment by 204/1625 after √26 scaling. No all-frequency or probability-tail sub-Gaussian assertion. |
 | [N26QuarticHighTail](BerryEsseen/N26QuarticHighTail.lean), with [N26InitialFourierEnvelope](BerryEsseen/N26InitialFourierEnvelope.lean) | `original_cf_tail`, `original_fourier_envelope`; `N26InitialFourierEnvelope.original_value_le_of_tail` | Under the original N26 premises: the literal Fourier remainder is absolutely integrable and abs(E26(H))≤642/625+127·abs(H)/1500. The same law's full CF tail is ≤11/10, from an exact price strictly below 11/10. The fixed quartic band is [9/10,31/20] and the entire infinite ray is paid. A genuine full CF-tail price T gives 551/1875+(2/3)T+127·abs(H)/1500 instead. The conserved raw's moment coefficients and H-quadratic term remain; original P39/raw-budget obligations are open. |
+| [N26ProjectedRawAcquisition](BerryEsseen/N26ProjectedRawAcquisition.lean), with [N26CubicHighTail](BerryEsseen/N26CubicHighTail.lean) | `original_charged_raw_bound`, `original_defect_bound`, `original_phase_lower_bound`, `original_zero_absent`; `N26CubicHighTail.cf_tail_le_price`, `N26CubicHighTail.original_fourier_envelope` | Original n26 positive closed maximum, full-domain C25≤C_E, C_E≤C, ρ≤11/10: acquires support, chargedRaw≤17/10, D≤12750/12961<1, phase≥87/104 and 0 absent from support, without incoming numerical raw/D/phase prices. No general uncharged-raw≤1.7 assertion at actual C. The standalone cubic tail price needs no support; the full Fourier bound with support is 79/125+127·abs(H)/1500. Stronger P39/32-round/C25/all-n obligations remain open. |
 
-`BerryEsseen.lean` imports precisely these fourteen public entry points. Its
+`BerryEsseen.lean` imports precisely these fifteen public entry points. Its
 recursive import closure includes the mathematical reductions and certificate
 data actually needed by them. The explicit `literatureEnvelope` used in the
 Gaussian comparison is an algebraic function; those comparisons do not silently

@@ -14,3 +14,4 @@ public import BerryEsseen.GaussianMonotoneMask
 public import BerryEsseen.N26InitialLowFrequency
 public import BerryEsseen.LowMomentGaussianBand
 public import BerryEsseen.N26QuarticHighTail
+public import BerryEsseen.N26ProjectedRawAcquisition

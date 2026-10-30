@@ -16,7 +16,9 @@ I'm a software engineering student, and this project started as a just-for-fun e
 
 本阶段已加入一份 **n=47 连续矩带的完整 Lean 证书**：任意原标准化实分布在 $9/5\le\rho\le7361/4000$ 上得到系数 $0.407<C_E$，没有支撑或前驱假设。完整数表、真实积分及原闭 CDF 已接合，并完成新的独立数学阅读；全 $n$ 形式化仍未完成。
 
-本次又把共享谱接成 **全部实际整数 $47\le n\le58$** 的矩带证书：在 $173303/96000\le\rho\le7361/4000$ 上，系数为 $256/625=0.4096<C_E$。低矩分支也已在 Lean 中接通支撑到实际高阶矩、低频与中频价格及完整 Fourier 界 $|E_{26}(H)|\le642/625+(127/1500)|H|$；其原始最大法则和全域 $C_{25}\le C_E$ 前提仍保留。这不等于 raw 资源预算已证，后者还包含真实矩系数和 $H$ 的二次项。
+共享谱还给出 **全部实际整数 $47\le n\le58$** 的矩带证书：在 $173303/96000\le\rho\le7361/4000$ 上，系数为 $256/625=0.4096<C_E$。
+
+低矩分支现在有了一个解析初始取得：在原最大法则、全域 $C_{25}\le C_E$、$C\ge C_E$ 与 $\rho\le1.1$ 下，直接证明实际 charged raw $\le1.7$、物理缺陷 $D\le12750/12961<1$、phase $\ge87/104$，并排除 $0$ 属于原支撑。它保留同一分布的矩项抵消，无需输入数值 raw、D 或 phase；配套完整 Fourier 界已加强到 $|E_{26}(H)|\le79/125+(127/1500)|H|$。这闭合的是初始取得，更紧的 P39 联合资源预算仍待证明。
 
 **本轮整数区间复算包见 [stages/2026-10-30-computation](stages/2026-10-30-computation/README.md)。** 共保存 69 个不同端点价格，提供接合检查和从空目录重新计算的入口；不需要原工作区或非标准 Python 依赖。
 
@@ -55,7 +57,7 @@ $$
 | 一个完整 Fourier 数值控制点 | 在 $n\ge42$、$\rho\ge7361/4000$、固定 $\beta=\rho/\sqrt n\approx0.2937993333$ 时，四项真实积分已接到实际 CDF，得到严格小于 $0.4071\beta<C_E\beta$ 的界。对应 `ControlCertifiedEndpoint.sharp_at_control_beta`；目前只是一处控制点。 |
 | $n=47$ 的连续矩带 | 当 $9/5\le\rho\le7361/4000$ 时，任意原标准化实分布、全部实阈值的系数严格小于 $0.407<C_E$。当 $173303/96000\le\rho\le7361/4000$ 时还有更强的 $0.405$。对应 `UpperMomentN47Certified.sharp_on_moment_band`、`actual_cdf_lt_405`；没有支撑或前驱假设。 |
 | $47\le n\le58$ 的完整矩带 | 任意原标准化实分布、全部实阈值，在 $173303/96000\le\rho\le7361/4000$ 上有 $\sqrt n\Delta_n/\rho\le256/625=0.4096<C_E$。对应 `UpperMomentBand47To58.sharp_on_sample_band`；没有支撑或前驱假设。 |
-| 低矩初始化与 Fourier 价格 | 从原实际最大法则、全域 $C_{25}\le C_E$、$C\ge C_E$ 与 $\rho\le1.1$ 取得支撑和实际 $\rho$ 的仿射四、五阶矩界，再支付完整低频、中频与 Fourier 粗界。对应 `N26InitialFourierEnvelope`；粗界还不足以支付原 P39 的强资源预算。 |
+| 低矩解析初始化 | 原实际 n26 最大法则、全域 $C_{25}\le C_E$、$C\ge C_E$ 与 $\rho\le1.1$ 下，直接取得 charged raw $\le1.7$、$D\le12750/12961<1$、phase $\ge87/104$ 与 $0\notin\mathrm{support}\,\mu$。对应 `N26ProjectedRawAcquisition`；没有输入数值 raw/D/phase，更紧的 P39 资源仍待接合。 |
 | 通用解析组件 | 任意 $n$ 的复数 Taylor 中心幂与 Bernstein 整区间控制，以及有限指标段的真实 CF/CDF 谱端点桥等已构建。对应 `GenericCenterPower`、`FiniteBandRayPrice`；定理保留各自的矩条件、指标范围及系数许可条件。 |
 
 上述已核对定理的构建公理输出只列出 Lean 的标准公理，没有用 `sorryAx` 代替证明。**完整的 `SharpIidBerryEsseen` 尚未证明；[Target.lean](lean/BerryEsseen/Target.lean) 中的该名称目前是目标命题的定义。**
@@ -75,9 +77,9 @@ $$
 
 本轮还把当前无限尾部证明的经典 own-score 输入，压成四个有限单元：高斯递推支付其余指标，新的上矩 CF/CDF 谱估计用 14 个闭区间和一个点补齐剩余 240 个“指标—单元”组合。在原全域尖锐前驱条件下，这一项已可独立替换；原支撑与资源前提继续保留。实际 n=31 至46、ρ∈[1.6,7361/4000] 的连续 own-score 包络也已用同一方法接通，不依赖前驱条件。两项均完成独立数学阅读，保存数据和复算入口已经包含在数值阶段中。
 
-本轮 Gaussian 递推价格的实指标单调性还把四个 INITIAL own-score cutoff 降为 47、63、96、198，仍分别保留实际全域前驱假设。当前低矩 Fourier 界已连接真实完整积分，实际高 CF 尾价由 $85/27$ 降至 $11/10$；但还需结合实际 raw 矩系数和二次价格，必要时进一步加强高尾，才能完成原缺陷预算。接下来继续将这些条件和剩余数值覆盖接回 Lean，最终装配全分布、全样本量定理。欢迎对候选数学证明、实际计算和形式化代码分别提出具体问题。
+Gaussian 递推价格的实指标单调性把四个 INITIAL own-score cutoff 降为 47、63、96、198，仍分别保留实际全域前驱。低矩分支新用经典三次 CF 界把实际完整高尾价降至 $4901308573/9663676416\approx0.5071888$；联合缺口投影与同一分布的协方差抵消，已接通上述初始缺陷取得。接下来收紧 P39 联合资源预算，并将剩余指标覆盖接回 Lean，最终装配全分布、全样本量定理。
 
-**English status:** There is a computer-assisted candidate manuscript addressing the full iid conjecture. The [30 October Lean stage](stages/2026-10-30/README.md) contains the all-law cases $n=1,2$, a certified Fourier control point, the n=47 certificate, and a complete $47\le n\le58$ certificate on $173303/96000\le\rho\le7361/4000$ with coefficient $0.4096<C_E$. New conditional N26 initialization and Fourier-price results retain the full-domain predecessor and maximum-law premises; the stronger resource budget is still open in Lean. The full all-n theorem remains in progress.
+**English status:** The [30 October Lean stage](stages/2026-10-30/README.md) contains the all-law cases $n=1,2$, a certified Fourier control point, the n=47 certificate, and the complete $47\le n\le58$ moment band above. New N26 projected-resource results acquire charged raw $\le1.7$ and physical defect $D<1$ without incoming numerical raw/defect/phase prices; the full-law predecessor and original maximum premises remain explicit. The stronger P39 resource budget and full all-n Lean theorem remain in progress.
 
 The root snapshot was captured on 28 October 2026. Dated stage directories preserve subsequent verified components separately.
 
