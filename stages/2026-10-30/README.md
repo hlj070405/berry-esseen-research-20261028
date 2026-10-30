@@ -44,10 +44,101 @@ $9/5\le\rho\le7361/4000$ 时系数为 0.407，小于 Esseen 常数。
 以上 n=47 结论没有支撑限制，也不依赖前驱假设。完整 all-n 猜想尚未获 Lean
 核证；其他外部数值覆盖不冒充本快照的 Lean 证明。
 
+## Sample-band, Gaussian-mask, and conditional N26 additions
+
+For every actual integer $47\le n\le58$ and every standardized real law with
+$173303/96000\le\rho\le7361/4000$, the new sample-band theorem proves
+$\sqrt n\,\Delta_n(\mu,x)/\rho\le256/625=0.4096<C_E$ for every real x.
+It has no support restriction or sharp-predecessor hypothesis. The previously
+proved n=47 coefficients **0.405** on the original high moment cell and
+**0.407** on the wider band $9/5\le\rho\le7361/4000$ remain available unchanged.
+
+The monotone Gaussian recurrence pays the four INITIAL own-score envelopes
+from actual indices **47, 63, 96, and 198**, respectively, for cells 20 through
+23. Every such mask still assumes the full all-law predecessor
+`fixedNSup (n-1) ≤ esseenConstant` at the actual index. These are own-score
+comparisons; support, charged resources, and the rest of INITIAL remain
+separate obligations.
+
+The original-law N26 acquisition theorems require a standardized law,
+`PositiveClosedMaximum μ 26 H C`, $C_E\le C$, $\rho\le11/10$, and the
+**full-domain hypothesis `fixedNSup 25 ≤ esseenConstant`**. They acquire
+the original law's support in $[-12/5,12/5]$ and then the actual-rho bounds
+
+$$
+M_4=\mathbb E|X|^4\le1+\frac{578}{145}(\rho-1),\qquad
+M_5^{\rm abs}=\mathbb E|X|^5\le1+\frac{8511}{725}(\rho-1).
+$$
+
+Those affine moment bounds also hold directly under the displayed support
+premise. The N26 low-frequency client obtains the entire original
+$I_0$ contribution on $(0,1/2]$, its absolute integrability, and the signed
+quotient's integrability, without incoming free moment or gamma prices:
+
+$$
+\sqrt{26}\,I_0(\mu,26,H)\le
+\frac{29}{250}+\frac{127}{1000}|H|+
+\frac{23}{125\sqrt{26}}.
+$$
+
+The new characteristic-function Gaussian domination assumes a finite fourth
+moment $M_4\le8/5$ and the **physical-frequency restriction $|t|\le9/10$**:
+$|\widehat\mu(t)|\le\exp(-t^2/2)$, with the corresponding natural-power
+bound. It is a modulus bound on this finite frequency band, not an all-frequency
+claim or a sub-Gaussian probability-tail theorem. The acquired N26 support and
+moment bounds supply its premises in the original-maximum client.
+
+For the actual compensated Fourier remainder
+$E_{26}(H)=\texttt{FourierRemainder.value}\ \mu\ 26\ H$, the new original-law
+client proves absolute integrability and the strengthened bound
+
+$$
+|E_{26}(H)|\le\frac{642}{625}+\frac{127}{1500}|H|.
+$$
+
+The imported parameterized theorem remains available: if the **genuine whole
+high-frequency CF tail** has a numerical price T,
+
+$$
+\sqrt{26}\int_{9/10}^{\infty}
+\frac{|\widehat\mu(t)^{26}|}{t^3}\,dt\le T,
+$$
+
+the same original client instead gives
+
+$$
+|E_{26}(H)|\le\frac{551}{1875}+\frac23T+\frac{127}{1500}|H|.
+$$
+
+Here T prices the actual law's complete tail beyond 0.9. The new
+`N26QuarticHighTail` module acquires $M_4\le1014/725<7/5$ from the same law's
+support and rho premises, proves $|\widehat\mu(t)|^2\le18/25$ on the whole
+fixed band $[9/10,31/20]$, and pays the complete remaining infinite ray using
+$|\widehat\mu(t)|\le1$. Its exact tail price is strictly below $11/10$;
+the public support/original-maximum clients give $T\le11/10$, yielding the
+$642/625$ Fourier constant above. No tail is omitted or replaced by a Gaussian
+proxy, and `N26InitialFourierEnvelope` remains in the import closure.
+
+**The original P39 profile and original raw-budget closure remain open.** The
+new Fourier bound is not a proof of the raw budget near 1.082: the conserved
+raw also contains the actual moment coefficients and an H-quadratic term.
+The C25 bound above remains a hypothesis, not a proved result of this snapshot.
+Further high-frequency/resource pricing is still needed for those original
+obligations; these conditional acquisitions and Fourier bounds do not prove
+the original all-n theorem.
+
+中文增量：新增实际 n=47..58、原高矩带的 0.4096 严格低于 Esseen 常数结论，
+无前驱假设；Gaussian own-score 的新门槛为 47/63/96/198，仍保留全域前驱假设。
+N26 在原 maximum、全域 C25 假设及 $\rho\le1.1$ 下取得支撑、实际矩和低频整块。
+Gaussian CF 模只在 $M_4\le8/5$、$|t|\le0.9$ 有效；新增固定高频段的四次模界
+与完整无穷尾给真实尾价严格小于 $11/10$，全 Fourier 界提升为
+$642/625+(127/1500)|H|$。raw 还含实际矩系数和 H 二次项，原 P39 与
+raw-budget 尚未闭合；完整 all-n 尚未核证。
+
 ## Build
 
 Install [elan](https://github.com/leanprover/elan), then run these commands from
-the directory containing this nine-entry snapshot:
+the directory containing this fourteen-entry snapshot:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.35.0
@@ -85,8 +176,13 @@ module namespace; the Lean signatures are the precise interfaces.
 | [UpperMomentSpectrumPrice](BerryEsseen/UpperMomentSpectrumPrice.lean) | `normalized_actual_cdf_le_scale_spectralProfile`, `normalized_actual_cdf_le_endpoints`, `normalized_actual_cdf_le_sample_endpoints`, `normalized_actual_cdf_ratio_le_endpoints` | U>0, ρ≤U, n>0, 0<A≤V. Endpoint interpolation requires 0<a<b, n/U²∈[a,b], and 1/U²≤a. The ratio theorem also requires 0<L≤ρ and pays the explicit U/L factor. No numerical endpoint value is assumed proved. |
 | [GaussianInitialMask](BerryEsseen/GaussianInitialMask.lean), with [GaussianOwnScore](BerryEsseen/GaussianOwnScore.lean) | `fixedNSup_lt_gaussian_price`, `fixedNSup_lt_initialLeft_low`, `fixedNSup_lt_initialLeft20` through `fixedNSup_lt_initialLeft23`; `GaussianOwnScore.fixedNSup_lt_envelope` | **Conditional on `fixedNSup (n-1) ≤ esseenConstant`.** The Gaussian price applies from n≥26. INITIAL grid masks have the respective index cutoffs 47, 48, 66, 101, 213; the own-score envelope result applies for n≥213 and 0<r≤173303/96000. These are not unconditional sharp bounds for those indices. |
 | [UpperMomentN47Certified](BerryEsseen/UpperMomentN47Certified.lean) | `profile_lt`, `actual_cdf_lt`, `actual_cdf_lt_405`, `actual_cdf_lt_407`, `sharp_on_moment_band` | n=47, every standardized real law and every real threshold. For ρ≤7361/4000, the absolute closed CDF error is <533/5000. The strict error bound uses coefficient 0.405 when 173303/96000≤ρ≤7361/4000, and 0.407<C_E on 9/5≤ρ≤7361/4000. No support restriction or sharp-predecessor premise. |
+| [UpperMomentBand47To58](BerryEsseen/UpperMomentBand47To58.lean) | `ratio_le`, `sharp_on_sample_band` | Actual integer 47≤n≤58, 173303/96000≤ρ≤7361/4000: √n·CDF-error/ρ≤256/625=0.4096<C_E. Every real threshold; no support or sharp-predecessor premise. |
+| [GaussianMonotoneMask](BerryEsseen/GaussianMonotoneMask.lean) | `recurrencePrice_antitoneOn`, `fixedNSup_lt_initialLeft20` through `fixedNSup_lt_initialLeft23` | INITIAL own-score masks from 47/63/96/198, respectively, each conditional on the full all-law sharp predecessor at n−1. No support or resource acquisition follows from the masks alone. |
+| [N26InitialLowFrequency](BerryEsseen/N26InitialLowFrequency.lean), with [N26P39ResourceAcquisition](BerryEsseen/N26P39ResourceAcquisition.lean) | `original_low_frequency`, `original_signed_integrable`; `N26P39ResourceAcquisition.original_support`, `N26P39ResourceAcquisition.original_moment_affine` | Under the original N26 maximum, C_E≤C, full-domain C25≤C_E, and ρ≤11/10: acquires support ±12/5, the actual-rho affine M4/M5 bounds, and the entire I0 price on (0,1/2]. No incoming free moment/gamma/raw price is used for these conclusions. |
+| [LowMomentGaussianBand](BerryEsseen/LowMomentGaussianBand.lean) | `norm_charFun_le_gaussian`, `norm_charFun_pow_le_gaussian`, `original_initial_segment_cost_le` | Finite M4≤8/5 and physical abs(t)≤9/10 give the Gaussian CF modulus bound. The original N26 client acquires its premises and bounds the middle CF segment by 204/1625 after √26 scaling. No all-frequency or probability-tail sub-Gaussian assertion. |
+| [N26QuarticHighTail](BerryEsseen/N26QuarticHighTail.lean), with [N26InitialFourierEnvelope](BerryEsseen/N26InitialFourierEnvelope.lean) | `original_cf_tail`, `original_fourier_envelope`; `N26InitialFourierEnvelope.original_value_le_of_tail` | Under the original N26 premises: the literal Fourier remainder is absolutely integrable and abs(E26(H))≤642/625+127·abs(H)/1500. The same law's full CF tail is ≤11/10, from an exact price strictly below 11/10. The fixed quartic band is [9/10,31/20] and the entire infinite ray is paid. A genuine full CF-tail price T gives 551/1875+(2/3)T+127·abs(H)/1500 instead. The conserved raw's moment coefficients and H-quadratic term remain; original P39/raw-budget obligations are open. |
 
-`BerryEsseen.lean` imports precisely these nine public entry points. Its
+`BerryEsseen.lean` imports precisely these fourteen public entry points. Its
 recursive import closure includes the mathematical reductions and certificate
 data actually needed by them. The explicit `literatureEnvelope` used in the
 Gaussian comparison is an algebraic function; those comparisons do not silently

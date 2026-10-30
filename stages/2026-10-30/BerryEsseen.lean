@@ -9,3 +9,8 @@ public import BerryEsseen.UpperMomentSpectrumPrice
 public import BerryEsseen.GaussianInitialMask
 public import BerryEsseen.GenericCenterPower
 public import BerryEsseen.UpperMomentN47Certified
+public import BerryEsseen.UpperMomentBand47To58
+public import BerryEsseen.GaussianMonotoneMask
+public import BerryEsseen.N26InitialLowFrequency
+public import BerryEsseen.LowMomentGaussianBand
+public import BerryEsseen.N26QuarticHighTail
