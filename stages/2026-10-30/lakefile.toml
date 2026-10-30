@@ -1,0 +1,46 @@
+name = "berry_esseen"
+version = "0.1.0"
+defaultTargets = ["BerryEsseen"]
+weakLeanArgs = ["-j2"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "v4.35.0"
+
+[[lean_lib]]
+name = "BerryEsseen"
+
+# 2026-10-28: Apache-2.0 interval core, pinned to alerad/leancert commit
+# 44b323a0d6af00211d5013f6e021432db032087c; four source modules only.
+# Vendor changes only adapt module/visibility annotations for Lean 4.35:
+# module/public-import/expose headers; mulFast and sqrtScaleBits made public
+# for the exported mem_mulFast type and square-root default arguments.
+[[lean_lib]]
+name = "LeanCert"
+srcDir = "vendor/leancert-core"
+roots = [
+  "LeanCert.Core.Interval",
+  "LeanCert.Core.Expr",
+  "LeanCert.Core.IntervalRat.Basic",
+  "LeanCert.Core.IntervalRat.Transcendental",
+]
+globs = [
+  "LeanCert.Core.Interval",
+  "LeanCert.Core.Expr",
+  "LeanCert.Core.IntervalRat.Basic",
+  "LeanCert.Core.IntervalRat.Transcendental",
+]
+precompileModules = false
+
+# 2026-10-29: Apache-2.0 analytic smoothing and three moment/damping leaves, pinned to CausalSmith
+# a7085d88d2e4b30003db7097ca374f4718da0f01; see the subset's LICENSE and NOTICE.
+[[lean_lib]]
+name = "Causalean"
+srcDir = "vendor/causalean-smoothing"
+roots = ["Causalean.Stat.CLT.BerryEsseen"]
+# Lake requires sibling imports to be buildable too; this directory physically
+# contains only the selected smoothing/moment/damping subset recorded in NOTICE.
+globs = ["Causalean.Stat.CLT.BerryEsseen.+"]
+requiresModuleSystem = true
+precompileModules = false

@@ -12,7 +12,17 @@ I'm a software engineering student, and this project started as a just-for-fun e
 
 ## 当前进度（2026-10-30）
 
-以下进度已对照本地数学正文、实际结果文件和 Lean 构建记录核对。**仓库现有源码和 Release 附件仍是 10 月 28 日的快照；下文所述 10 月 30 日新增成果尚未全部上传。**
+**本轮已完成的 Lean 阶段源码见 [stages/2026-10-30](stages/2026-10-30/README.md)。** 包含独立可构建的依赖闭包、精确版本和来源说明。根目录的 `lean/`、论文与旧 Release 保留 10 月 28 日快照；进一步的数值覆盖正继续接入 Lean。
+
+阶段目录的构建入口：
+
+```sh
+cd stages/2026-10-30
+lake exe cache get
+lake build BerryEsseen
+```
+
+完整的定理范围和工具链安装命令见该阶段的 README。下面仍分别说明本地数学进展与已形式化的成果。
 
 ### 已有的候选证明
 
@@ -52,13 +62,15 @@ $$
 | $15\le n\le30,\ \rho\ge1.9$ | $<0.408$；紧域已用 31 个闭谱节点接合，最大节点上界约为 $0.407706151$。 |
 | $n\ge31,\ \rho\ge\rho_0$ | $<0.4097$；其中 $n\ge42$ 的既有结果更强，为 $<0.408$。 |
 
-7–14 及 15–30 的保存结果已核对有理数接合和闭域覆盖。**15–30 的新完整接合仍标记为待整轮独立复核；这些有限数值覆盖也尚未全部进入 Lean 内核。**
+这些高矩覆盖已完成分阶段独立数学阅读、有理数接合和闭域复核。其具体数值证书仍在接入 Lean；本次上传的阶段包包含通用解析定理和上表所述的一个完整数值控制点。
+
+本轮还把当前无限尾部证明的经典 own-score 输入，压成四个有限单元：高斯递推支付其余指标，新的上矩 CF/CDF 谱估计用 14 个闭区间和一个点补齐剩余 240 个“指标—单元”组合。在原全域尖锐前驱条件下，这一项已可独立替换；原支撑与资源前提继续保留。完整数值复算包会随后续阶段整理，相关通用解析定理已包含在本次源码中。
 
 接下来仍需独立补齐剩余低矩 own-score 等经典输入，并把全部数值证书、资源取得与支撑/矩条件按原依赖接回 Lean，最终装配全分布、全样本量定理。欢迎对候选数学证明、实际计算和形式化代码分别提出具体问题。
 
-**English status:** There is a computer-assisted candidate manuscript addressing the full iid conjecture. Local Lean proofs currently include the all-law cases $n=1,2$, one fully certified Fourier control point, and general analytic components. The full conjecture is not yet Lean-verified. The newer local results described above are not all included in this repository's 28 October snapshot.
+**English status:** There is a computer-assisted candidate manuscript addressing the full iid conjecture. The [30 October Lean stage](stages/2026-10-30/README.md) contains the all-law cases $n=1,2$, one fully certified Fourier control point, and the verified analytic components described there. The full all-n theorem remains in progress. Further numerical covers are being connected to Lean.
 
-Captured 2026-10-28T10:28:20+00:00 through 2026-10-28T10:29:39+00:00 from `outputs/berry-esseen`.
+The root snapshot was captured on 28 October 2026. Dated stage directories preserve subsequent verified components separately.
 
 This preserves a candidate proof and ongoing Lean formalization. It does not assert complete Lean verification or external peer review.
 
