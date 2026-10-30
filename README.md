@@ -20,7 +20,9 @@ I'm a software engineering student, and this project started as a just-for-fun e
 
 低矩初始化现已统一覆盖 **每个实际整数 $n\ge26$**：保留原最大法则、全域 $C_{n-1}\le C_E$、$C\ge C_E$ 与 $\rho\le1.1$，先直接取得 $D<1$、phase $\ge5/6$ 及支撑中的中央缺口，再支付整个无限频率尾。最终完整 Fourier 界为 $|E_n(H)|\le776/1875+(127/1500)|H|$，并取得包含物理缺陷、真实 gap 积分及分数超额的联合预算，特别有 $D\le18400/(997n)$。这条统一解析路线不输入数值 raw/D/phase 或概率分块；从小资源区域推出 $C\le C_E$ 的局部排除仍待完成。
 
-现在已完成其中第一块**原分布上的连续局部排除**：实际 $n=26$、$\rho\le1.1$、$p=\Pr(X>0)\in[.39,.4]$ 时，在上述最大值与完整 $C_{25}\le C_E$ 条件下，全部闭相位 $t\in[0,1]$ 的正 CDF 目标残差都 $\le-1/5000$；因此同一最大元的 canonical height $cH+26p\notin[11,12]$。方差、噪声与实际三阶矩费用均由原法则取得，未使用旧 P39 profile。对应 `P39ModeTailExclusion`，并不等于全部 P39 或完整 $C_{26}$ 已闭合。
+**原分布上的连续局部排除**现已扩成右侧整族：实际 $n=26$、$\rho\le1.1$、$p=\Pr(X>0)\in[.39,.4]$ 时，在上述最大值与完整 $C_{25}\le C_E$ 条件下，同一最大元的 canonical height 必须位于 $cH+26p\in(8.5,11)$。计数 11、12、13 的整个闭相位及其后的整条右射线均已排除；对应 `P39RightCountsExclusion.original_height_window`。这些证明未输入旧 P39 profile，窗口内部及完整 $C_{26}$ 仍待闭合。
+
+同一原分布还自动满足向内偏移总量 $\delta<1/16$、资源组合 $16v_0+14v_1<8/25$，所以计数 10 至 14 的实际方差均小于 $8/25$。实际总噪声 $\lambda<.3172$，正组残差几乎处处小于 $9/16$，由此取得更紧的共同参照。这里 $16+14$ 只是同一资源预算的比较，未把样本量换成 30。
 
 **本轮整数区间复算包见 [stages/2026-10-30-computation](stages/2026-10-30-computation/README.md)。** 共保存 69 个不同端点价格，提供接合检查和从空目录重新计算的入口；不需要原工作区或非标准 Python 依赖。
 
@@ -60,7 +62,8 @@ $$
 | $n=47$ 的连续矩带 | 当 $9/5\le\rho\le7361/4000$ 时，任意原标准化实分布、全部实阈值的系数严格小于 $0.407<C_E$。当 $173303/96000\le\rho\le7361/4000$ 时还有更强的 $0.405$。对应 `UpperMomentN47Certified.sharp_on_moment_band`、`actual_cdf_lt_405`；没有支撑或前驱假设。 |
 | $47\le n\le58$ 的完整矩带 | 任意原标准化实分布、全部实阈值，在 $173303/96000\le\rho\le7361/4000$ 上有 $\sqrt n\Delta_n/\rho\le256/625=0.4096<C_E$。对应 `UpperMomentBand47To58.sharp_on_sample_band`；没有支撑或前驱假设。 |
 | 统一低矩资源 | 每个实际 $n\ge26$，保留全域 $C_{n-1}\le C_E$、原最大法则、$C\ge C_E$、$\rho\le1.1$，取得 joint $\kappa nD+n^{3/2}L\le92/75$ 与 $D\le18400/(997n)$，还保留更强的 actual-excess 项。对应 `UniformLowMomentRebatedAcquisition`；无自由 p/raw/D/phase。 |
-| 原 n26 的一块局部排除 | 在完整 $C_{25}\le C_E$、原最大值、$C\ge C_E$、$\rho\le1.1$、$p\in[.39,.4]$ 下，全部闭相位 $[0,1]$ 的实际正目标残差 $\le-1/5000$，故同一最大元的 height 不在 $[11,12]$。对应 `P39ModeTailExclusion`；没有输入旧 P39 profile。 |
+| 原 n26 的连续局部排除 | 在完整 $C_{25}\le C_E$、原最大值、$C\ge C_E$、$\rho\le1.1$、$p\in[.39,.4]$ 下，同一最大元的 height 被压到 $(8.5,11)$；计数11至13的闭相位及整条右射线已排除。对应 `P39RightCountsExclusion.original_height_window`；没有输入旧 P39 profile。 |
+| 原 n26 的共同方差与残差帽 | 同一原条件取得 $\delta<1/16$、$16v_0+14v_1<.32$、计数10至14的真实方差 $<.32$、实际噪声 $\lambda<.3172$ 及正组残差 a.e. $<9/16$，并接入共同 Q 参照。对应 `P39RefinedResidualCaps`；没有另加源帽或方差平面。 |
 | 通用解析组件 | 任意 $n$ 的复数 Taylor 中心幂与 Bernstein 整区间控制，以及有限指标段的真实 CF/CDF 谱端点桥等已构建。对应 `GenericCenterPower`、`FiniteBandRayPrice`；定理保留各自的矩条件、指标范围及系数许可条件。 |
 
 上述已核对定理的构建公理输出只列出 Lean 的标准公理，没有用 `sorryAx` 代替证明。**完整的 `SharpIidBerryEsseen` 尚未证明；[Target.lean](lean/BerryEsseen/Target.lean) 中的该名称目前是目标命题的定义。**

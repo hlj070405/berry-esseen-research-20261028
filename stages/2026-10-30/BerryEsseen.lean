@@ -17,3 +17,5 @@ public import BerryEsseen.N26QuarticHighTail
 public import BerryEsseen.N26ProjectedRawAcquisition
 public import BerryEsseen.UniformLowMomentRebatedAcquisition
 public import BerryEsseen.P39ModeTailExclusion
+public import BerryEsseen.P39RightCountsExclusion
+public import BerryEsseen.P39RefinedResidualCaps

@@ -285,10 +285,33 @@ $p\in[0.39,0.4]$ 下，闭 phase 区间 [0,1] 的真实正 target residual 全�
 0.32 与总噪声 lambda 0.34 分开取得、分开使用；不依赖旧P39 profile或free
 raw/D/variance数值假设，也不声称 whole P39、C26 或完整 all-n 已完成。
 
+## P39 height window and acquired residual caps
+
+Both additions retain the same original standardized μ, actual n=26 and
+`PositiveClosedMaximum μ 26 H C`, the full all-law hypothesis
+`fixedNSup 25 ≤ esseenConstant`, $C_E\le C$, $\rho\le11/10$, and
+$p\in[39/100,2/5]$. For k=12 or 13, **every closed phase $t\in[0,1]$** has
+actual positive target residual at `canonicalThreshold μ h 26 k t` at most
+$-7/1000$. Combined with the existing count-11 exclusion, right-ray exclusion
+and lower-height localization, this places the **same H** in the strict window
+`canonicalHeight μ h 26 H ∈ (17/2,11)`. The separate acquisition chain obtains
+the inward sum $\delta=a_0+a_1<1/16$ and the resource comparison
+$16v_0+14v_1<8/25$, hence actual N26 count variances $<8/25$ for every
+k=10 through 14. It also acquires total noise $\lambda<793/2500=0.3172$,
+`noiseVariance` $s<793/65000=0.0122$, `scale` $<201/400=0.5025$, and the true
+positive-group residual law's almost-everywhere upper cap $9/16$; these license
+the common Q comparison against `uniformReferenceSumLaw (9/16) 26 (8/25)`.
+Here $v_0,v_1$ are the same original law's canonical residual variances;
+**16+14 is only a resource comparison**, not an N26 variance identity or a
+maximum at n=30. No independent source-cap or variance-plane premise is added.
+**The interior of the remaining height window, other p/n/rho domains, the
+whole P39 problem, C26 and the all-n theorem are not excluded or proved by
+these additions; the full C25 hypothesis remains.**
+
 ## Build
 
 Install [elan](https://github.com/leanprover/elan), then run these commands from
-the directory containing this seventeen-entry snapshot:
+the directory containing this nineteen-entry snapshot:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.35.0
@@ -334,8 +357,10 @@ module namespace; the Lean signatures are the precise interfaces.
 | [N26ProjectedRawAcquisition](BerryEsseen/N26ProjectedRawAcquisition.lean), with [N26CubicHighTail](BerryEsseen/N26CubicHighTail.lean) | `original_charged_raw_bound`, `original_defect_bound`, `original_phase_lower_bound`, `original_zero_absent`; `N26CubicHighTail.cf_tail_le_price`, `N26CubicHighTail.original_fourier_envelope` | Original n26 positive closed maximum, full-domain C25≤C_E, C_E≤C, ρ≤11/10: acquires support, chargedRaw≤17/10, D≤12750/12961<1, phase≥87/104 and 0 absent from support, without incoming numerical raw/D/phase prices. No general uncharged-raw≤1.7 assertion at actual C. The standalone cubic tail price needs no support; the full Fourier bound with support is 79/125+127·abs(H)/1500. Stronger P39/32-round/C25/all-n obligations remain open. |
 | [UniformLowMomentRebatedAcquisition](BerryEsseen/UniformLowMomentRebatedAcquisition.lean), with [UniformLowMomentPeriodicHighTail](BerryEsseen/UniformLowMomentPeriodicHighTail.lean) | `original_rebated_charged_raw_bound`, `original_joint_resource_with_excess`, `original_joint_resource_bound`, `original_defect_bound` | Actual integer n≥26, same original positive closed maximum, full all-law predecessor at n−1, C_E≤C and ρ≤11/10. Acquires first-pass D<1 and phase≥5/6, p/q band and the complete periodic tail≤9/50; no extra numerical support/raw/D/phase premise. The 7/50 curvature licenses a rebated charged price≤92/75, with actual L and actual excess retained in the joint resource, and D≤18400/(997n). No unrebated 92/75 price, C_n≤C_E or completed P39/all-n conclusion. |
 | [P39ModeTailExclusion](BerryEsseen/P39ModeTailExclusion.lean) | `original_closedCDF_le_uniform`, `original_residual_le_envelope`, `original_count11_phase_upper`, `original_not_height_interval` | Original n26 maximum, full C25≤C_E, C_E≤C, ρ≤11/10, p∈[39/100,2/5]: every t∈[0,1] has actual positive target residual≤−1/5000, so the same canonicalHeight is outside closed [11,12]. Count variance≤8/25 and total noise≤17/50 are acquired and used separately; no old P39 profile or free raw/D/variance premise. No whole P39/C26/all-n conclusion. |
+| [P39RightCountsExclusion](BerryEsseen/P39RightCountsExclusion.lean) | `original_count_phase_upper`, `original_not_height_interval`, `original_height_lt_eleven`, `original_height_window` | Same original n26 maximum, full C25≤C_E, C_E≤C, ρ≤11/10 and p∈[39/100,2/5]. Counts 12/13 have positive target residual≤−7/1000 on all closed phases [0,1]; with the earlier exclusions, the same canonicalHeight lies strictly in (17/2,11). The interior window and whole P39/C26/all-n remain open. |
+| [P39RefinedResidualCaps](BerryEsseen/P39RefinedResidualCaps.lean), with [P39LowCountVarianceAcquisition](BerryEsseen/P39LowCountVarianceAcquisition.lean) | `original_scale_lt`, `original_outward_caps`, `original_residual1_upper`, `original_reference_Q_le_uniform` | Under the same original n26 premises: δ<1/16, resource combination 16v0+14v1<8/25, actual counts10..14 variance<8/25, λ<0.3172, noiseVariance<0.0122, scale<0.5025 and residual1 a.e.<9/16; a common uniform Q comparison with cap9/16 and variance8/25 follows for counts10..14. The 16+14 combination is not a count-variance identity or a fabricated n30 maximum. |
 
-`BerryEsseen.lean` imports precisely these seventeen public entry points. Its
+`BerryEsseen.lean` imports precisely these nineteen public entry points. Its
 recursive import closure includes the mathematical reductions and certificate
 data actually needed by them. The explicit `literatureEnvelope` used in the
 Gaussian comparison is an algebraic function; those comparisons do not silently
