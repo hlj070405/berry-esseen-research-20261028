@@ -10,9 +10,9 @@
 
 I'm a software engineering student, and this project started as a just-for-fun exploration with GPT. Researchers in probability, normal approximation, and Lean are welcome to discuss the work and help review the arguments, computations, and code. Lean formalization is ongoing; complete Lean verification and external peer review are still pending.
 
-## 当前进度（2026-10-30）
+## 当前进度（2026-10-31）
 
-**本轮已完成的 Lean 阶段源码见 [stages/2026-10-30](stages/2026-10-30/README.md)。** 包含独立可构建的依赖闭包、精确版本和来源说明。根目录的 `lean/`、论文与旧 Release 保留 10 月 28 日快照；进一步的数值覆盖正继续接入 Lean。
+**最新已完成的 Lean 阶段源码见 [stages/2026-10-31](stages/2026-10-31/README.md)。** 包含独立可构建的依赖闭包、精确版本和来源说明，保留前一日的全部已核证入口。根目录的 `lean/`、论文与旧 Release 保留 10 月 28 日快照；进一步的数值覆盖正继续接入 Lean。
 
 本阶段已加入一份 **n=47 连续矩带的完整 Lean 证书**：任意原标准化实分布在 $9/5\le\rho\le7361/4000$ 上得到系数 $0.407<C_E$，没有支撑或前驱假设。完整数表、真实积分及原闭 CDF 已接合，并完成新的独立数学阅读；全 $n$ 形式化仍未完成。
 
@@ -24,12 +24,14 @@ I'm a software engineering student, and this project started as a just-for-fun e
 
 同一原分布还自动满足向内偏移总量 $\delta<1/16$、资源组合 $16v_0+14v_1<8/25$，所以计数 10 至 14 的实际方差均小于 $8/25$。实际总噪声 $\lambda<.3172$，正组残差几乎处处小于 $9/16$，由此取得更紧的共同参照。这里 $16+14$ 只是同一资源预算的比较，未把样本量换成 30。
 
+10 月 31 日新增 **count10 零相位的连续域排除**：保留上述原 n26 最大值、完整 C25 前驱和 P39 矩/概率条件，在整个已取得的连续噪声域上证明原正残差 $\le-1/9000-(67/271200)\lambda$，故同一最大元的 canonical height 不等于 10。联合约束 $\delta+0.158\lambda<0.0624$ 和三次矩信用还将实际噪声压到 $\lambda<0.2$；两个真实二项阶乘矩替代了参考尾项的逐格定价。对应 `P39Count10ZeroPhase`。这未排除其余相位或整个 $(8.5,11)$ 窗口。
+
 **本轮整数区间复算包见 [stages/2026-10-30-computation](stages/2026-10-30-computation/README.md)。** 共保存 69 个不同端点价格，提供接合检查和从空目录重新计算的入口；不需要原工作区或非标准 Python 依赖。
 
 阶段目录的构建入口：
 
 ```sh
-cd stages/2026-10-30
+cd stages/2026-10-31
 lake exe cache get
 lake build BerryEsseen
 ```
@@ -64,6 +66,7 @@ $$
 | 统一低矩资源 | 每个实际 $n\ge26$，保留全域 $C_{n-1}\le C_E$、原最大法则、$C\ge C_E$、$\rho\le1.1$，取得 joint $\kappa nD+n^{3/2}L\le92/75$ 与 $D\le18400/(997n)$，还保留更强的 actual-excess 项。对应 `UniformLowMomentRebatedAcquisition`；无自由 p/raw/D/phase。 |
 | 原 n26 的连续局部排除 | 在完整 $C_{25}\le C_E$、原最大值、$C\ge C_E$、$\rho\le1.1$、$p\in[.39,.4]$ 下，同一最大元的 height 被压到 $(8.5,11)$；计数11至13的闭相位及整条右射线已排除。对应 `P39RightCountsExclusion.original_height_window`；没有输入旧 P39 profile。 |
 | 原 n26 的共同方差与残差帽 | 同一原条件取得 $\delta<1/16$、$16v_0+14v_1<.32$、计数10至14的真实方差 $<.32$、实际噪声 $\lambda<.3172$ 及正组残差 a.e. $<9/16$，并接入共同 Q 参照。对应 `P39RefinedResidualCaps`；没有另加源帽或方差平面。 |
+| 原 n26/count10 零相位 | 同一原最大值、完整 C25 前驱、$\rho\le1.1$、$p\in[.39,.4]$ 下，原残差 $\le-1/9000-(67/271200)\lambda$，故 same height $\ne10$。对应 `P39Count10ZeroPhase`；实际 $\lambda<.2$，不假定 allocation=0，也没有证明其余相位。 |
 | 通用解析组件 | 任意 $n$ 的复数 Taylor 中心幂与 Bernstein 整区间控制，以及有限指标段的真实 CF/CDF 谱端点桥等已构建。对应 `GenericCenterPower`、`FiniteBandRayPrice`；定理保留各自的矩条件、指标范围及系数许可条件。 |
 
 上述已核对定理的构建公理输出只列出 Lean 的标准公理，没有用 `sorryAx` 代替证明。**完整的 `SharpIidBerryEsseen` 尚未证明；[Target.lean](lean/BerryEsseen/Target.lean) 中的该名称目前是目标命题的定义。**
