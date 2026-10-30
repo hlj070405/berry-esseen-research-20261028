@@ -248,10 +248,47 @@ rho 自动取得，没有额外数值 p/support/raw/D/phase 输入。真实全�
 及 $D\le18400/(997n)$。92/75不作为未扣曲率的价格，hprev没有消除，
 旧P39与完整 all-n 尚未完成。
 
+## Original n26 count-11 local height exclusion
+
+The new client assumes the same original standardized law and
+`PositiveClosedMaximum μ 26 H C`, the **full all-law hypothesis
+`fixedNSup 25 ≤ esseenConstant`**,
+$C_E\le C$, $\rho\le11/10$, and the additional sign strip
+$p(\mu)\in[39/100,2/5]$. For **every phase $t\in[0,1]$**, the actual
+closed CDF at `canonicalThreshold μ h 26 11 t` satisfies
+
+$$
+F_{26,\mu}(x(t))-\Phi(x(t))-C_E\frac{\rho}{\sqrt{26}}
+\le-\frac1{5000}.
+$$
+
+Consequently the **same original maximum** obeys
+`canonicalHeight μ h 26 H ∉ [11,12]`, including the interval endpoints.
+The price starts with the actual closed CDF and then subtracts the target
+using that law's actual third absolute moment. The reference and actual
+noise parameter stay fixed across the complete phase interval.
+
+Two acquired quantities remain distinct: the count-11 residual variance
+$15\operatorname{variance}_0+11\operatorname{variance}_1\le8/25=0.32$
+licenses reference enlargement; the total noise
+$\lambda=\texttt{noiseLevel}\ \mu\ h\ 26\le17/50=0.34$ prices the Gaussian
+noise loss. Neither variance bound is a free hypothesis. The client takes
+no old P39 profile or incoming numerical raw/defect price as a premise.
+
+This is a local exclusion of one count/height interval in the stated sign
+strip. **The whole P39 problem, the C26 bound, and the full all-n Lean theorem
+are not proved by this addition; the full C25 hypothesis remains.**
+
+中文增量：原 n26/同一正最大/完整全域 C25 假设及 $\rho\le1.1$、
+$p\in[0.39,0.4]$ 下，闭 phase 区间 [0,1] 的真实正 target residual 全部
+≤−1/5000，故同一最大值的 canonicalHeight 不在闭 [11,12]。count variance
+0.32 与总噪声 lambda 0.34 分开取得、分开使用；不依赖旧P39 profile或free
+raw/D/variance数值假设，也不声称 whole P39、C26 或完整 all-n 已完成。
+
 ## Build
 
 Install [elan](https://github.com/leanprover/elan), then run these commands from
-the directory containing this sixteen-entry snapshot:
+the directory containing this seventeen-entry snapshot:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.35.0
@@ -296,8 +333,9 @@ module namespace; the Lean signatures are the precise interfaces.
 | [N26QuarticHighTail](BerryEsseen/N26QuarticHighTail.lean), with [N26InitialFourierEnvelope](BerryEsseen/N26InitialFourierEnvelope.lean) | `original_cf_tail`, `original_fourier_envelope`; `N26InitialFourierEnvelope.original_value_le_of_tail` | Under the original N26 premises: the literal Fourier remainder is absolutely integrable and abs(E26(H))≤642/625+127·abs(H)/1500. The same law's full CF tail is ≤11/10, from an exact price strictly below 11/10. The fixed quartic band is [9/10,31/20] and the entire infinite ray is paid. A genuine full CF-tail price T gives 551/1875+(2/3)T+127·abs(H)/1500 instead. The conserved raw's moment coefficients and H-quadratic term remain; original P39/raw-budget obligations are open. |
 | [N26ProjectedRawAcquisition](BerryEsseen/N26ProjectedRawAcquisition.lean), with [N26CubicHighTail](BerryEsseen/N26CubicHighTail.lean) | `original_charged_raw_bound`, `original_defect_bound`, `original_phase_lower_bound`, `original_zero_absent`; `N26CubicHighTail.cf_tail_le_price`, `N26CubicHighTail.original_fourier_envelope` | Original n26 positive closed maximum, full-domain C25≤C_E, C_E≤C, ρ≤11/10: acquires support, chargedRaw≤17/10, D≤12750/12961<1, phase≥87/104 and 0 absent from support, without incoming numerical raw/D/phase prices. No general uncharged-raw≤1.7 assertion at actual C. The standalone cubic tail price needs no support; the full Fourier bound with support is 79/125+127·abs(H)/1500. Stronger P39/32-round/C25/all-n obligations remain open. |
 | [UniformLowMomentRebatedAcquisition](BerryEsseen/UniformLowMomentRebatedAcquisition.lean), with [UniformLowMomentPeriodicHighTail](BerryEsseen/UniformLowMomentPeriodicHighTail.lean) | `original_rebated_charged_raw_bound`, `original_joint_resource_with_excess`, `original_joint_resource_bound`, `original_defect_bound` | Actual integer n≥26, same original positive closed maximum, full all-law predecessor at n−1, C_E≤C and ρ≤11/10. Acquires first-pass D<1 and phase≥5/6, p/q band and the complete periodic tail≤9/50; no extra numerical support/raw/D/phase premise. The 7/50 curvature licenses a rebated charged price≤92/75, with actual L and actual excess retained in the joint resource, and D≤18400/(997n). No unrebated 92/75 price, C_n≤C_E or completed P39/all-n conclusion. |
+| [P39ModeTailExclusion](BerryEsseen/P39ModeTailExclusion.lean) | `original_closedCDF_le_uniform`, `original_residual_le_envelope`, `original_count11_phase_upper`, `original_not_height_interval` | Original n26 maximum, full C25≤C_E, C_E≤C, ρ≤11/10, p∈[39/100,2/5]: every t∈[0,1] has actual positive target residual≤−1/5000, so the same canonicalHeight is outside closed [11,12]. Count variance≤8/25 and total noise≤17/50 are acquired and used separately; no old P39 profile or free raw/D/variance premise. No whole P39/C26/all-n conclusion. |
 
-`BerryEsseen.lean` imports precisely these sixteen public entry points. Its
+`BerryEsseen.lean` imports precisely these seventeen public entry points. Its
 recursive import closure includes the mathematical reductions and certificate
 data actually needed by them. The explicit `literatureEnvelope` used in the
 Gaussian comparison is an algebraic function; those comparisons do not silently
