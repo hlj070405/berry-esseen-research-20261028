@@ -7,3 +7,4 @@ public import BerryEsseen.FiniteBandRayPrice
 public import BerryEsseen.UpperMomentDamping
 public import BerryEsseen.UpperMomentSpectrumPrice
 public import BerryEsseen.GaussianInitialMask
+public import BerryEsseen.GenericCenterPower

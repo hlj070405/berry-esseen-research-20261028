@@ -14,6 +14,8 @@ I'm a software engineering student, and this project started as a just-for-fun e
 
 **本轮已完成的 Lean 阶段源码见 [stages/2026-10-30](stages/2026-10-30/README.md)。** 包含独立可构建的依赖闭包、精确版本和来源说明。根目录的 `lean/`、论文与旧 Release 保留 10 月 28 日快照；进一步的数值覆盖正继续接入 Lean。
 
+**本轮整数区间复算包见 [stages/2026-10-30-computation](stages/2026-10-30-computation/README.md)。** 共保存 69 个不同端点价格，提供接合检查和从空目录重新计算的入口；不需要原工作区或非标准 Python 依赖。
+
 阶段目录的构建入口：
 
 ```sh
@@ -64,9 +66,9 @@ $$
 
 这些高矩覆盖已完成分阶段独立数学阅读、有理数接合和闭域复核。其具体数值证书仍在接入 Lean；本次上传的阶段包包含通用解析定理和上表所述的一个完整数值控制点。
 
-本轮还把当前无限尾部证明的经典 own-score 输入，压成四个有限单元：高斯递推支付其余指标，新的上矩 CF/CDF 谱估计用 14 个闭区间和一个点补齐剩余 240 个“指标—单元”组合。在原全域尖锐前驱条件下，这一项已可独立替换；原支撑与资源前提继续保留。完整数值复算包会随后续阶段整理，相关通用解析定理已包含在本次源码中。
+本轮还把当前无限尾部证明的经典 own-score 输入，压成四个有限单元：高斯递推支付其余指标，新的上矩 CF/CDF 谱估计用 14 个闭区间和一个点补齐剩余 240 个“指标—单元”组合。在原全域尖锐前驱条件下，这一项已可独立替换；原支撑与资源前提继续保留。实际 n=31 至46、ρ∈[1.6,7361/4000] 的连续 own-score 包络也已用同一方法接通，不依赖前驱条件。两项均完成独立数学阅读，保存数据和复算入口已经包含在数值阶段中。
 
-接下来仍需独立补齐剩余低矩 own-score 等经典输入，并把全部数值证书、资源取得与支撑/矩条件按原依赖接回 Lean，最终装配全分布、全样本量定理。欢迎对候选数学证明、实际计算和形式化代码分别提出具体问题。
+接下来重点把已重建的数值证书、资源取得与支撑/矩条件按原依赖接回 Lean，最终装配全分布、全样本量定理。欢迎对候选数学证明、实际计算和形式化代码分别提出具体问题。
 
 **English status:** There is a computer-assisted candidate manuscript addressing the full iid conjecture. The [30 October Lean stage](stages/2026-10-30/README.md) contains the all-law cases $n=1,2$, one fully certified Fourier control point, and the verified analytic components described there. The full all-n theorem remains in progress. Further numerical covers are being connected to Lean.
 
