@@ -18,7 +18,7 @@ I'm a software engineering student, and this project started as a just-for-fun e
 
 共享谱还给出 **全部实际整数 $47\le n\le58$** 的矩带证书：在 $173303/96000\le\rho\le7361/4000$ 上，系数为 $256/625=0.4096<C_E$。
 
-低矩分支现在有了一个解析初始取得：在原最大法则、全域 $C_{25}\le C_E$、$C\ge C_E$ 与 $\rho\le1.1$ 下，直接证明实际 charged raw $\le1.7$、物理缺陷 $D\le12750/12961<1$、phase $\ge87/104$，并排除 $0$ 属于原支撑。它保留同一分布的矩项抵消，无需输入数值 raw、D 或 phase；配套完整 Fourier 界已加强到 $|E_{26}(H)|\le79/125+(127/1500)|H|$。这闭合的是初始取得，更紧的 P39 联合资源预算仍待证明。
+低矩初始化现已统一覆盖 **每个实际整数 $n\ge26$**：保留原最大法则、全域 $C_{n-1}\le C_E$、$C\ge C_E$ 与 $\rho\le1.1$，先直接取得 $D<1$、phase $\ge5/6$ 及支撑中的中央缺口，再支付整个无限频率尾。最终完整 Fourier 界为 $|E_n(H)|\le776/1875+(127/1500)|H|$，并取得包含物理缺陷、真实 gap 积分及分数超额的联合预算，特别有 $D\le18400/(997n)$。这条统一解析路线不输入数值 raw/D/phase 或概率分块；从小资源区域推出 $C\le C_E$ 的局部排除仍待完成。
 
 **本轮整数区间复算包见 [stages/2026-10-30-computation](stages/2026-10-30-computation/README.md)。** 共保存 69 个不同端点价格，提供接合检查和从空目录重新计算的入口；不需要原工作区或非标准 Python 依赖。
 
@@ -57,7 +57,7 @@ $$
 | 一个完整 Fourier 数值控制点 | 在 $n\ge42$、$\rho\ge7361/4000$、固定 $\beta=\rho/\sqrt n\approx0.2937993333$ 时，四项真实积分已接到实际 CDF，得到严格小于 $0.4071\beta<C_E\beta$ 的界。对应 `ControlCertifiedEndpoint.sharp_at_control_beta`；目前只是一处控制点。 |
 | $n=47$ 的连续矩带 | 当 $9/5\le\rho\le7361/4000$ 时，任意原标准化实分布、全部实阈值的系数严格小于 $0.407<C_E$。当 $173303/96000\le\rho\le7361/4000$ 时还有更强的 $0.405$。对应 `UpperMomentN47Certified.sharp_on_moment_band`、`actual_cdf_lt_405`；没有支撑或前驱假设。 |
 | $47\le n\le58$ 的完整矩带 | 任意原标准化实分布、全部实阈值，在 $173303/96000\le\rho\le7361/4000$ 上有 $\sqrt n\Delta_n/\rho\le256/625=0.4096<C_E$。对应 `UpperMomentBand47To58.sharp_on_sample_band`；没有支撑或前驱假设。 |
-| 低矩解析初始化 | 原实际 n26 最大法则、全域 $C_{25}\le C_E$、$C\ge C_E$ 与 $\rho\le1.1$ 下，直接取得 charged raw $\le1.7$、$D\le12750/12961<1$、phase $\ge87/104$ 与 $0\notin\mathrm{support}\,\mu$。对应 `N26ProjectedRawAcquisition`；没有输入数值 raw/D/phase，更紧的 P39 资源仍待接合。 |
+| 统一低矩资源 | 每个实际 $n\ge26$，保留全域 $C_{n-1}\le C_E$、原最大法则、$C\ge C_E$、$\rho\le1.1$，取得 joint $\kappa nD+n^{3/2}L\le92/75$ 与 $D\le18400/(997n)$，还保留更强的 actual-excess 项。对应 `UniformLowMomentRebatedAcquisition`；无自由 p/raw/D/phase。 |
 | 通用解析组件 | 任意 $n$ 的复数 Taylor 中心幂与 Bernstein 整区间控制，以及有限指标段的真实 CF/CDF 谱端点桥等已构建。对应 `GenericCenterPower`、`FiniteBandRayPrice`；定理保留各自的矩条件、指标范围及系数许可条件。 |
 
 上述已核对定理的构建公理输出只列出 Lean 的标准公理，没有用 `sorryAx` 代替证明。**完整的 `SharpIidBerryEsseen` 尚未证明；[Target.lean](lean/BerryEsseen/Target.lean) 中的该名称目前是目标命题的定义。**
@@ -77,9 +77,9 @@ $$
 
 本轮还把当前无限尾部证明的经典 own-score 输入，压成四个有限单元：高斯递推支付其余指标，新的上矩 CF/CDF 谱估计用 14 个闭区间和一个点补齐剩余 240 个“指标—单元”组合。在原全域尖锐前驱条件下，这一项已可独立替换；原支撑与资源前提继续保留。实际 n=31 至46、ρ∈[1.6,7361/4000] 的连续 own-score 包络也已用同一方法接通，不依赖前驱条件。两项均完成独立数学阅读，保存数据和复算入口已经包含在数值阶段中。
 
-Gaussian 递推价格的实指标单调性把四个 INITIAL own-score cutoff 降为 47、63、96、198，仍分别保留实际全域前驱。低矩分支新用经典三次 CF 界把实际完整高尾价降至 $4901308573/9663676416\approx0.5071888$；联合缺口投影与同一分布的协方差抵消，已接通上述初始缺陷取得。接下来收紧 P39 联合资源预算，并将剩余指标覆盖接回 Lean，最终装配全分布、全样本量定理。
+Gaussian 递推价格的实指标单调性把四个 INITIAL own-score cutoff 降为 47、63、96、198，仍保留实际全域前驱。低矩分支现以真实异号事件和两个固定三次 CF 频段，对所有实际 $n\ge26$ 支付完整高尾价 $9/50$；归一化 $\sqrt n$、条件方差和无穷尾均保留。下一步利用真实联合资源完成局部排除，并接通剩余矩区间与小样本证明。
 
-**English status:** The [30 October Lean stage](stages/2026-10-30/README.md) contains the all-law cases $n=1,2$, a certified Fourier control point, the n=47 certificate, and the complete $47\le n\le58$ moment band above. New N26 projected-resource results acquire charged raw $\le1.7$ and physical defect $D<1$ without incoming numerical raw/defect/phase prices; the full-law predecessor and original maximum premises remain explicit. The stronger P39 resource budget and full all-n Lean theorem remain in progress.
+**English status:** The [30 October Lean stage](stages/2026-10-30/README.md) contains the all-law cases $n=1,2$, the certified Fourier and moment-band results above, and a uniform conditional low-moment resource theorem for every actual $n\ge26$. The latter acquires the entire infinite CF tail at price $9/50$ and the joint budget $\kappa nD+n^{3/2}L\le92/75$, retaining an additional actual-excess term. It keeps the original maximum and full predecessor hypotheses, with no free p/raw/defect/phase prices. The local exclusion step and full iid Lean theorem remain in progress.
 
 The root snapshot was captured on 28 October 2026. Dated stage directories preserve subsequent verified components separately.
 

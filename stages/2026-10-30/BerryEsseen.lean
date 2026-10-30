@@ -15,3 +15,4 @@ public import BerryEsseen.N26InitialLowFrequency
 public import BerryEsseen.LowMomentGaussianBand
 public import BerryEsseen.N26QuarticHighTail
 public import BerryEsseen.N26ProjectedRawAcquisition
+public import BerryEsseen.UniformLowMomentRebatedAcquisition

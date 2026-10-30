@@ -191,10 +191,67 @@ hypothesis; neither C25 nor the global all-n theorem is established here.
 uncharged raw≤1.7。无支撑条件的 cubic CF 尾价及完整 Fourier 新界已分别写明
 前提；P39 的约0.595缺陷目标、32轮资源、C25及完整 all-n 仍未完成。
 
+## Conditional uniform low-moment rebated acquisition
+
+The uniform client keeps the **actual integer n≥26**, the same original
+standardized law μ, and `PositiveClosedMaximum μ n H C`. Its remaining
+premises are the **full all-law predecessor
+`fixedNSup (n-1) ≤ esseenConstant`**, $C_E\le C$, and $\rho\le11/10$.
+There are no additional numerical p, support, raw, defect, or phase inputs.
+The original support in $[-12/5,12/5]$ is acquired first. Standardization and
+the rho cap alone also place the same law's canonical sign probabilities
+$p,q\in[37/100,63/100]$.
+
+The first pass uses the varying charged-resource budget
+$r(n)=11/8+\sqrt n/15$ to acquire $D<1$, phase≥5/6, and absence of zero from
+the original support. This pass is established before the periodic event or
+the retained curvature is used. The acquired first-pass defect and phase
+license the **7/50 curvature**, without taking a second-pass defect bound as
+an input.
+
+The true opposite-sign event then pays the **complete infinite actual-CF
+tail**; the Fourier bound has no remaining tail-price premise:
+
+$$
+\sqrt n\int_{9/10}^{\infty}\frac{|\widehat\mu(t)^n|}{t^3}\,dt
+\le\frac9{50},\qquad
+|E_n(H)|\le\frac{776}{1875}+\frac{127}{1500}|H|.
+$$
+
+Only deterministic prices use floor 26; the law, characteristic-function
+power, normalization, maximum, and predecessor all retain the actual n.
+The second acquisition proves
+
+$$
+\begin{aligned}
+\operatorname{chargedRaw}(\mu,n,H,C)-\frac7{50}H^2&\le\frac{92}{75},\\
+\kappa nD+n\sqrt n\,L&\le\frac{92}{75},\\
+D&\le\frac{18400}{997n}.
+\end{aligned}
+$$
+
+Here D is the original `GapDefect.actualPhysicalDefect`, L is the same
+`ContactGapSum.actualL μ n H`, and κ is `ConservedTransfer.kappa`. The joint
+resource theorem retains the actual gap cost L instead of dropping it. The
+source also retains the stronger actual excess-score term, with a positive
+coefficient bounded below by 6; no maximum at a changed score is introduced.
+
+**92/75 is a rebated charged-resource price**, not an unrebated raw or chargedRaw
+price. The predecessor hypothesis remains in every original-maximum uniform
+client. These resource acquisitions do not prove $C_n\le C_E$, the global
+all-n theorem, or completion of the old P39 profile.
+
+中文增量：对每个实际整数 n≥26，在同一原 μ/正最大、完整全域前驱、$C\ge C_E$、
+$\rho\le1.1$ 前提下，首遍变动预算先取得 D<1 和 phase≥5/6；p、q 的范围由
+rho 自动取得，没有额外数值 p/support/raw/D/phase 输入。真实全无穷尾≤9/50，
+独立首遍许可7/50曲率后，rebated charged raw≤92/75；保留 actual L 的联合资源
+及 $D\le18400/(997n)$。92/75不作为未扣曲率的价格，hprev没有消除，
+旧P39与完整 all-n 尚未完成。
+
 ## Build
 
 Install [elan](https://github.com/leanprover/elan), then run these commands from
-the directory containing this fifteen-entry snapshot:
+the directory containing this sixteen-entry snapshot:
 
 ```sh
 elan toolchain install leanprover/lean4:v4.35.0
@@ -238,8 +295,9 @@ module namespace; the Lean signatures are the precise interfaces.
 | [LowMomentGaussianBand](BerryEsseen/LowMomentGaussianBand.lean) | `norm_charFun_le_gaussian`, `norm_charFun_pow_le_gaussian`, `original_initial_segment_cost_le` | Finite M4≤8/5 and physical abs(t)≤9/10 give the Gaussian CF modulus bound. The original N26 client acquires its premises and bounds the middle CF segment by 204/1625 after √26 scaling. No all-frequency or probability-tail sub-Gaussian assertion. |
 | [N26QuarticHighTail](BerryEsseen/N26QuarticHighTail.lean), with [N26InitialFourierEnvelope](BerryEsseen/N26InitialFourierEnvelope.lean) | `original_cf_tail`, `original_fourier_envelope`; `N26InitialFourierEnvelope.original_value_le_of_tail` | Under the original N26 premises: the literal Fourier remainder is absolutely integrable and abs(E26(H))≤642/625+127·abs(H)/1500. The same law's full CF tail is ≤11/10, from an exact price strictly below 11/10. The fixed quartic band is [9/10,31/20] and the entire infinite ray is paid. A genuine full CF-tail price T gives 551/1875+(2/3)T+127·abs(H)/1500 instead. The conserved raw's moment coefficients and H-quadratic term remain; original P39/raw-budget obligations are open. |
 | [N26ProjectedRawAcquisition](BerryEsseen/N26ProjectedRawAcquisition.lean), with [N26CubicHighTail](BerryEsseen/N26CubicHighTail.lean) | `original_charged_raw_bound`, `original_defect_bound`, `original_phase_lower_bound`, `original_zero_absent`; `N26CubicHighTail.cf_tail_le_price`, `N26CubicHighTail.original_fourier_envelope` | Original n26 positive closed maximum, full-domain C25≤C_E, C_E≤C, ρ≤11/10: acquires support, chargedRaw≤17/10, D≤12750/12961<1, phase≥87/104 and 0 absent from support, without incoming numerical raw/D/phase prices. No general uncharged-raw≤1.7 assertion at actual C. The standalone cubic tail price needs no support; the full Fourier bound with support is 79/125+127·abs(H)/1500. Stronger P39/32-round/C25/all-n obligations remain open. |
+| [UniformLowMomentRebatedAcquisition](BerryEsseen/UniformLowMomentRebatedAcquisition.lean), with [UniformLowMomentPeriodicHighTail](BerryEsseen/UniformLowMomentPeriodicHighTail.lean) | `original_rebated_charged_raw_bound`, `original_joint_resource_with_excess`, `original_joint_resource_bound`, `original_defect_bound` | Actual integer n≥26, same original positive closed maximum, full all-law predecessor at n−1, C_E≤C and ρ≤11/10. Acquires first-pass D<1 and phase≥5/6, p/q band and the complete periodic tail≤9/50; no extra numerical support/raw/D/phase premise. The 7/50 curvature licenses a rebated charged price≤92/75, with actual L and actual excess retained in the joint resource, and D≤18400/(997n). No unrebated 92/75 price, C_n≤C_E or completed P39/all-n conclusion. |
 
-`BerryEsseen.lean` imports precisely these fifteen public entry points. Its
+`BerryEsseen.lean` imports precisely these sixteen public entry points. Its
 recursive import closure includes the mathematical reductions and certificate
 data actually needed by them. The explicit `literatureEnvelope` used in the
 Gaussian comparison is an algebraic function; those comparisons do not silently
